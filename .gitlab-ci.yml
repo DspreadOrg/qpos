@@ -7,8 +7,8 @@ cache:
 
 
 before_script:
-    - apt-get update && apt-get install -y \rsync 
-    - npm i docsify-cli -g
+    #- apt-get update && apt-get install -y \rsync 
+    #- npm i docsify-cli -g
 
 pages:
   script:
@@ -17,13 +17,13 @@ pages:
         # - apt-get update && apt-get install -y \yum
 
 
-    - docsify init ./public
+    #- docsify init ./public
 
     # The build directory is created based on the value set for projectName in
     # website/siteConfig.js. If you change it there, you need to change it here
     # as well.
-    - pwd
-    - ls -a
+    #- pwd
+    #- ls -a
 
     - cd public 
     
