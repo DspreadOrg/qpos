@@ -1,9 +1,9 @@
-- [ 基础 ]
+- [QPOS Knowledgebase]
 
-  - [用户指导](/user/README.md)
+；  - [用户指导](/user/README.md)
 
-  - [交易流程](/transaction/README.md)
-  - [更新秘钥](/transaction/README.md)
-  - [更新EMV](/transaction/README.md)
-  - [常用API](transaction/README.md)
+  - [Transaction Flow](/transaction/README.md)
+  - [Update Keys](/transaction/README.md)
+  - [Update EMV](/transaction/README.md)
+  - [API List](transaction/README.md)
 
