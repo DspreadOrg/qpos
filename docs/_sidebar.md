@@ -17,4 +17,8 @@
 
   - [General](yada.md)
 
+- Testing & Certification 
+
+  - [EMV L3](yada.md)
+
 - [**Synthstrom Audible**](https://synthstrom.com)
