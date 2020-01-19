@@ -6,6 +6,7 @@ According to PCI security, there is no any keys allowed to be injected into devi
 ### update IPEK key by TMK
 By default, QPOS is injected TMK(0123456789ABCDEFFEDCBA9876543210 ) in factory. so IPEK must be encrypted by default TMK(0123456789ABCDEFFEDCBA9876543210). 
 
+* [encrypted IPEK](http://extranet.cryptomathic.com/descalc/index?key=0123456789ABCDEFFEDCBA9876543210&iv=0000000000000000&input=11111111111111111111111111111111&mode=ecb&action=Encrypt&output=1A4D672DCA6CB3351FD1B02B237AF9AE)
 
 
 ### update IPEK key by RSA
