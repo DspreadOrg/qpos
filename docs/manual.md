@@ -13,15 +13,12 @@ You can download to install our [android-demo-app][android-app]
 [android-app]: https://fir.im/AndroidDemo
 [ios-app]: https://fir.im/iOSDemo
 
- 
+*  [Android SDK](https://gitlab.com/dspread/android) 
+*  [IOS SDK](https://gitlab.com/dspread/ios)
+*  [Windows SDK](https://gitlab.com/dspread/windows)
+*  [Hybrid](url)
+    * [cordava](https://gitlab.com/dspread/cordova-plugin)
+    * [ionic](https://gitlab.com/dspread/ionic-demo)
+    * [Flutter(todo)](url)
 
 
-
-## Change List
-
-Version | Author        | Date       | Description
---------|---------------|------------|----------------
-0.1     | Austin Wang   | 2016-05-01 | Initially Added
-1.0     | Austin Wang   | 2016-09-01 | Added EMV related function
-1.1     | Ausitn Wang   | 2017-03-01 | Merge QPOS standard and EMV Card reader together
-1.2     | Austin Wang   | 2017-10-20 | Added UART interface support for GES device
