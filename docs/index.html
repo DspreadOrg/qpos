@@ -15,7 +15,7 @@
     <div id="app"></div>
     <script>
       window.$docsify = {
-        // logo: "/_images/deluge_logo.png",
+        logo: "/_images/deluge_logo.png",
         coverpage: false,
         name: "qpos manual",
         loadSidebar: true,
@@ -38,7 +38,17 @@
         },
         markdown: {
           smartypants: true,
+          renderer: {
+            link: function() {
+              // ...
+            }
+          }
         },
+        // function
+        markdown: function(marked, renderer) {
+          // ...
+          return marked;
+        }
         pagination: {
           crossChapter: true,
         },
