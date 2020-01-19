@@ -1,18 +1,12 @@
 - Get Started
 
-  - [Environment Setup](manual.md)
-  - [Import Project](hardware.md)
+  - [SDK Installation](manual.md)
+  - [Tutorial Video](hardware.md)
 
 - Transaction Flow
 
-  - [Editing](seq-edit.md)
-  - [Clips](clips.md)
-  - [Notes](notes.md)
-  - [Presets](presets.md)
-  - [Sound Parameters](sound-params.md)
-  - [Scrolling & Zooming](scroll-zoom.md)
-  - [Scales](scales.md)
-  - [Recording & Automations](rec-auto.md)
+  - [Pre-Transaction](pre-transaction.md)
+  - [Post-Transaction](post-transaction.md)
 
 - Terminal Management
 
@@ -25,6 +19,6 @@
 
 - Common API List 
 
-  - [Yada Yada](yada.md)
+  - [General](yada.md)
 
 - [**Synthstrom Audible**](https://synthstrom.com)

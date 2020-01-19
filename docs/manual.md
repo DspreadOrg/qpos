@@ -1,54 +1,29 @@
-This manual is a work in progress and will be updated as we add new features into new firmwares.
+## Introduction
 
-> The current version for this manual is firmware version 3.0.0
+QPOS is a serial of mobile payment devices. It can communicate with the mobile device through audio jack, UART or USB cable. 
 
-This manual is dynamically generated with docsify.js, has a very fast search-box, and also works offline. To allow this manual to work offline, it will need to load in your browser and download the PWA worker, which only takes a few seconds while you'd be seeing a "Loading..." message.
+QPOS standard, QPOS mini, QPOS Plus, EMV06, EMV08, GEA and GES are all QPOS products, some of them are with PINPAD embedded and some of them are only card readers without PINPAD.
 
-## New sections 3.0
+This document aims to help readers for using the Android SDK of QPOS.
 
-- Recording count-in
-- Audio clips
-- Audio clip length editing and changing of waveform loop points
-- Grabbing tempo from an audio clip
-- Recording notes or audio into an arrangement
-- Audio track names
-- Audio track input sources
-- Changing a clip’s instrument, and creating audio clip
-- Recording into clips, and live looping, in song view
-- Input sources for recording
-- Arming clips to record
-- Recording a clip / loop
-- Overdubs - regular
-- Overdubs - continuous layering
-- Setting the tempo with the first-recorded loop
-- Further notes on overdubs
-- MIDI control of looping
-- Saving and loading songs
-- Alphanumeric keyboard
-- The file browser and loading audio files
-- Deleting audio files
-- Saving sound presets
-- Loading sound presets
-- “Cloning” sound presets, to add an additional instance
-- Deleting sound presets
-- Renaming sounds within a kit
-- Audio clip / loop recording with extra “margins”
-- Audio Thru
-- MIDI control of functions and sounds
-- USB host mode for MIDI devices
-- Settings menu
+## QPOS Programming Guide
+You can download to install our [android-demo-app][android-app]
+ and [ios-demo-app][ios-app] .
+ 
+    Note: You will need accept "Dsprad Technology Co., Ltd" in "Setting->General->Device Management" 
 
-## New sections 2.1
+[logo]: androidDemo.png
+[android-app]: https://fir.im/AndroidDemo
+[ios-app]: https://fir.im/iOSDemo
+ 
 
-- Arrangement recording from song view
-- Waveform view
-- Samples and multisampling for melodic “synth” instruments
-- Sample pitch detection
-- Single-cycle waveforms
-- Collect-media tool
-- Audio and synth engine
-- Signal flow
-- Sample interpolation / pitch
-- Applying FX at the song level
-- Factory reset
-- Importing a whole folder of samples as a kit
+
+
+## Change List
+
+Version | Author        | Date       | Description
+--------|---------------|------------|----------------
+0.1     | Austin Wang   | 2016-05-01 | Initially Added
+1.0     | Austin Wang   | 2016-09-01 | Added EMV related function
+1.1     | Ausitn Wang   | 2017-03-01 | Merge QPOS standard and EMV Card reader together
+1.2     | Austin Wang   | 2017-10-20 | Added UART interface support for GES device
