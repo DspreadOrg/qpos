@@ -9,8 +9,6 @@ The application use the init method to init the EMV card reader hardware and get
 
 To avoid the application block and improve the speed of  data interaction between the smart terminal and QPOS, the SDK framework is designed to work under asynchronous mode.
 
-# Programming Interface
-
 ## Initialization
 
 The Class named ‘QPOSService’ is the core of SDK library. Before the APP create this core instance with the parameter of “CommunicationMode mode”, the APP must register all the sub-functions in ‘QPOSServiceListener’. Below code snipplet shows how to init the SDK.
