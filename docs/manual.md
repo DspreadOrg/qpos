@@ -6,15 +6,13 @@ QPOS standard, QPOS mini, QPOS Plus, EMV06, EMV08, GEA and GES are all QPOS prod
 
 This document aims to help readers for using the Android SDK of QPOS.
 
-## QPOS Programming Guide
+## Download
 You can download to install our [android-demo-app][android-app]
  and [ios-demo-app][ios-app] .
- 
-    Note: You will need accept "Dsprad Technology Co., Ltd" in "Setting->General->Device Management" 
 
-[logo]: androidDemo.png
 [android-app]: https://fir.im/AndroidDemo
 [ios-app]: https://fir.im/iOSDemo
+
  
 
 
