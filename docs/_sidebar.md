@@ -13,7 +13,7 @@
   - [Key Management](key-management.md)
   - [EMV Configuration](emv-config.md)
 
-- API DOCS 
+- API Reference 
 
   - [General](yada.md)
 
