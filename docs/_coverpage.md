@@ -1,4 +1,4 @@
-![](_images/deluge_top_panel.png)
+![](_images/banner1878988.jpg)
 
 # deluge <small>3.0.0</small>
 
