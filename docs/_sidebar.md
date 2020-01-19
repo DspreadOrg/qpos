@@ -1,12 +1,12 @@
 - Get Started
 
   - [SDK Installation](manual.md)
-  - [Import Project](hardware.md)
+  - [Tutorial Video](hardware.md)
 
 - Transaction Flow
 
-  - [Pre-Transaction](transaction.md)
-  - [Post-Transaction](transaction.md)
+  - [Pre-Transaction](pre-transaction.md)
+  - [Post-Transaction](post-transaction.md)
 
 - Terminal Management
 

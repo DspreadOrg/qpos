@@ -1,9 +1,29 @@
-This manual is a work in progress and will be updated as we add new features into new firmwares.
+## Introduction
 
-> The current version for this manual is firmware version 3.0.0
+QPOS is a serial of mobile payment devices. It can communicate with the mobile device through audio jack, UART or USB cable. 
 
-This manual is dynamically generated with docsify.js, has a very fast search-box, and also works offline. To allow this manual to work offline, it will need to load in your browser and download the PWA worker, which only takes a few seconds while you'd be seeing a "Loading..." message.
+QPOS standard, QPOS mini, QPOS Plus, EMV06, EMV08, GEA and GES are all QPOS products, some of them are with PINPAD embedded and some of them are only card readers without PINPAD.
 
-## New sections 3.0
+This document aims to help readers for using the Android SDK of QPOS.
 
-<iframe width="640" height="480" src="https://www.youtube.com/embed/JuWdCf5UlQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## QPOS Programming Guide
+You can download to install our [android-demo-app][android-app]
+ and [ios-demo-app][ios-app] .
+ 
+    Note: You will need accept "Dsprad Technology Co., Ltd" in "Setting->General->Device Management" 
+
+[logo]: androidDemo.png
+[android-app]: https://fir.im/AndroidDemo
+[ios-app]: https://fir.im/iOSDemo
+ 
+
+
+
+## Change List
+
+Version | Author        | Date       | Description
+--------|---------------|------------|----------------
+0.1     | Austin Wang   | 2016-05-01 | Initially Added
+1.0     | Austin Wang   | 2016-09-01 | Added EMV related function
+1.1     | Ausitn Wang   | 2017-03-01 | Merge QPOS standard and EMV Card reader together
+1.2     | Austin Wang   | 2017-10-20 | Added UART interface support for GES device
