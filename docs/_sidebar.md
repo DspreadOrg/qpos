@@ -1,6 +1,6 @@
 - Get Started
 
-  - [Environment Setup](manual.md)
+  - [SDK Installation](manual.md)
   - [Import Project](hardware.md)
 
 - Transaction Flow
