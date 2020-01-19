@@ -13,6 +13,9 @@
   - [Key Management](key-management.md)
   - [EMV Configuration](emv-config.md)
 
+- Tools
+
+  - [Encryption/Decryption](encryption-decryption.md)
 - API Reference 
 
   - [General](yada.md)
