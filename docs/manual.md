@@ -6,4 +6,4 @@ This manual is dynamically generated with docsify.js, has a very fast search-box
 
 ## New sections 3.0
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JuWdCf5UlQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/JuWdCf5UlQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
