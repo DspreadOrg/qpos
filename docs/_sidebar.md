@@ -6,13 +6,6 @@
 - Transaction Flow
 
   - [Transaction](transaction.md)
-  - [Clips](clips.md)
-  - [Notes](notes.md)
-  - [Presets](presets.md)
-  - [Sound Parameters](sound-params.md)
-  - [Scrolling & Zooming](scroll-zoom.md)
-  - [Scales](scales.md)
-  - [Recording & Automations](rec-auto.md)
 
 - Terminal Management
 
