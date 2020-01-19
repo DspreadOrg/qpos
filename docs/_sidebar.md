@@ -15,7 +15,8 @@
 
 - Tools
 
-  - [Encryption/Decryption](encryption-decryption.md)
+  - [Dukpt Tool](encryption-decryption.md)
+  - [EMV Tool](emv-tool.md)
 - API Reference 
 
   - [General](yada.md)
