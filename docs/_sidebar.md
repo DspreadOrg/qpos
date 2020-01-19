@@ -16,7 +16,7 @@
 - Tools
 
   - [Dukpt Tool](encryption-decryption.md)
-  - [EMV Tool](emv-tool.md)
+  - [TLV Parser](emv-tool.md)
 - API Reference 
 
   - [General](yada.md)
