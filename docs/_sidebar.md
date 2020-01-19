@@ -5,7 +5,7 @@
 
 - Transaction Flow
 
-  - [Editing](seq-edit.md)
+  - [Transaction](transaction.md)
   - [Clips](clips.md)
   - [Notes](notes.md)
   - [Presets](presets.md)
