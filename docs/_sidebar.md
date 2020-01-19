@@ -5,7 +5,8 @@
 
 - Transaction Flow
 
-  - [Transaction](transaction.md)
+  - [Pre-Transaction](transaction.md)
+  - [Post-Transaction](transaction.md)
 
 - Terminal Management
 
