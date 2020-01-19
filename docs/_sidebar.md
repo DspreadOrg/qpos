@@ -19,6 +19,6 @@
 
 - Common API List 
 
-  - [Yada Yada](yada.md)
+  - [General](yada.md)
 
 - [**Synthstrom Audible**](https://synthstrom.com)
