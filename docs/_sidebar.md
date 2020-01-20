@@ -7,9 +7,6 @@
 
   - [Pre-Transaction](pre-transaction.md)
   - [Post-Transaction](post-transaction.md)
-    -[Magnetic Stripe]
-    -[IC Card]
-    -[NFC Card] 
 
 - Terminal Management
 

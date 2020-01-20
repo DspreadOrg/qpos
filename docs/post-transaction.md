@@ -77,9 +77,7 @@ Below is another example, the track data is encrypted using data key whith 3DES 
 01-21 04:46:26.766: D/POS_SDK(30241): swipe card:Card Swiped:Format ID: 30
 01-21 04:46:26.766: D/POS_SDK(30241): Masked PAN: 622526XXXXXX5453
 01-21 04:46:26.766: D/POS_SDK(30241): Expiry Date: 1011
-01-21 04:46:26.766: D/POS_SDK(30241): Cardholder Name: MR.ZHOU CHENG HAO         
-01-21 04:46:26.766: D/POS_SDK(30241): KSN: 
-01-21 04:46:26.766: D/POS_SDK(30241): pinKsn: 
+01-21 04:46:26.766: D/POS_SDK(30241): Cardholder Name: MR.ZHOU CHENG HAO   
 01-21 04:46:26.766: D/POS_SDK(30241): trackksn: 00000332100300E00002
 01-21 04:46:26.766: D/POS_SDK(30241): Service Code: 106
 01-21 04:46:26.766: D/POS_SDK(30241): Track 1 Length: 68
@@ -89,8 +87,8 @@ Below is another example, the track data is encrypted using data key whith 3DES 
 01-21 04:46:26.766: D/POS_SDK(30241): Encrypted Track 1: 22FB2E931F3EFAFC8C3899AB779F3719E75D392365DB748EEA789560EEB7714D84AB7FFA5B2E162C9BD566D03DCD240FC9D316CAC4015B782294365F9062CA0A
 01-21 04:46:26.766: D/POS_SDK(30241): Encrypted Track 2: 153CEE49576C0B709515946D991CB48368FEA0375837ECA6
 01-21 04:46:26.766: D/POS_SDK(30241): Encrypted Track 3: 
-01-21 04:46:26.766: D/POS_SDK(30241): Partial Track: 
-01-21 04:46:26.766: D/POS_SDK(30241): pinBlock: 
+01-21 04:46:26.766: D/POS_SDK(30241): pinKsn: 00000332100300E000C6
+01-21 04:46:26.766: D/POS_SDK(30241): pinBlock: 377D28B8C7EF080A
 01-21 04:46:26.766: D/POS_SDK(30241): encPAN: 
 01-21 04:46:26.766: D/POS_SDK(30241): trackRandomNumber: 
 01-21 04:46:26.766: D/POS_SDK(30241): pinRandomNumber: 
@@ -128,7 +126,7 @@ def decrypt_card_info(ksn, data):
 ```
 The decoded track 1 and track 2 data are the same as the track data we got in previous section.
 
-## Decoding PIN 
+### Decoding PIN 
 
 The QPOS will also send the encryted PIN to the mobile application:
 ```
@@ -136,26 +134,14 @@ The QPOS will also send the encryted PIN to the mobile application:
 10-07 11:37:49.571: V/vahid(20753): Masked PAN: 622106XXXXXX1111
 10-07 11:37:49.571: V/vahid(20753): Expiry Date: 1605
 10-07 11:37:49.571: V/vahid(20753): Cardholder Name:
-10-07 11:37:49.571: V/vahid(20753): KSN:
-10-07 11:37:49.571: V/vahid(20753): pinKsn: 00000332100300E000E6
-10-07 11:37:49.571: V/vahid(20753): trackksn: 00000332100300E000C6
-10-07 11:37:49.571: V/vahid(20753): Service Code: 100
-10-07 11:37:49.571: V/vahid(20753): Track 1 Length: 0
-10-07 11:37:49.571: V/vahid(20753): Track 2 Length: 37
-10-07 11:37:49.571: V/vahid(20753): Track 3 Length: 37
-10-07 11:37:49.571: V/vahid(20753): Encrypted Tracks: 47B35616888BB17A055BE87FBAC76DCDD3EFFACA5F1C901047B35616888BB17A055BE87FBAC76DCDD3EFFACA5F1C901060325F039768CE5760325F039768CE5760325F039768CE5760325F039768CE57
-10-07 11:37:49.571: V/vahid(20753): Encrypted Track 1:
-10-07 11:37:49.571: V/vahid(20753): Encrypted Track 2: 47B35616888BB17A055BE87FBAC76DCDD3EFFACA5F1C9010
-10-07 11:37:49.571: V/vahid(20753): Encrypted Track 3: 47B35616888BB17A055BE87FBAC76DCDD3EFFACA5F1C901060325F039768CE5760325F039768CE5760325F039768CE5760325F039768CE57
-10-07 11:37:49.571: V/vahid(20753): Partial Track:
-10-07 11:37:49.571: V/vahid(20753): pinBlock: 377D28B8C7EF080A
-10-07 11:37:49.571: V/vahid(20753): encPAN:
-10-07 11:37:49.571: V/vahid(20753): trackRandomNumber:
-10-07 11:37:49.571: V/vahid(20753): pinRandomNumber:
+...
+01-21 04:46:26.766: D/POS_SDK(30241): pinKsn: 00000332100300E000C6
+01-21 04:46:26.766: D/POS_SDK(30241): pinBlock: 377D28B8C7EF080A
+...
 ```
 
 Decode the Track 2 data using the method descripted before: 
-6221061055111111D16051007832281716058FFFFFFFFFFF
+> 6221061055111111D16051007832281716058FFFFFFFFFFF
 
 Below python script demostrate how to decode PINBLOCK:
 
@@ -193,13 +179,13 @@ if __name__ == "__main__":
 The decrypted PINBLOCK (formated Pin data) is: 0411019efaaeeeee
 The real PIN value can be caculated using formated pin data and PAN as inputs, according to ANSI X9.8. Below is an example:
 
-1) PAN: 6221061055111111
-2) 12 right most PAN digits without checksum: 106105511111
-3) Add 0000 to the left: 0000106105511111
-4) XOR (#3) and Formated PIN Data 
+* 1) PAN: 6221061055111111
+* 2) 12 right most PAN digits without checksum: 106105511111
+* 3) Add 0000 to the left: 0000106105511111
+* 4) XOR (#3) and Formated PIN Data 
 
-XOR (0000106105511111, 0411019efaaeeeee) = 041111FFFFFFFFFF
-In our example, the plain PIN is 4 bytes in length with data "1111"
+> XOR (0000106105511111, 0411019efaaeeeee) = 041111FFFFFFFFFF
+> In our example, the plain PIN is 4 bytes in length with data "1111"
 
 
 ## Chip Card Transaction
