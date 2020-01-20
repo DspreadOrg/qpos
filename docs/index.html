@@ -22,10 +22,16 @@
         autoHeader: true,
         loadNavbar: true,
         mergeNavbar: true,
-        search: 'false', // default
+        search: 'auto', // default
         subMaxLevel: 4,
         // cornerExternalLinkTarget: "_blank",// default: '_blank'
         //formatUpdated: "{YY}/{MM}/{DD} {HH}:{mm}",
+        search : [
+          '/',            // => /README.md
+          '/guide',       // => /guide.md
+          '/get-started', // => /get-started.md
+          '/zh-cn/',      // => /zh-cn/README.md
+        ],
         search: {
           maxAge: 86400000, // Expiration time, the default one day
           paths: "auto", // or 'auto'
