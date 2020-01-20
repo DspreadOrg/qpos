@@ -14,7 +14,11 @@
     <link rel="stylesheet" href="//unpkg.com/botui/build/botui-theme-default.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div id="my-botui-app">
+      <bot-ui></bot-ui>
+      </div>
+    </div>
     <script>
       window.$docsify = {
         logo: "/_images/logo.jpg",
@@ -82,9 +86,7 @@
         navigator.serviceWorker.register("sw.js");
       }
     </script>
-    <div id="my-botui-app">
-      <bot-ui></bot-ui>
-    </div>
+    
     <script>
       var botui = new BotUI('my-botui-app');
     </script>
