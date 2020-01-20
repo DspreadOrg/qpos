@@ -11,8 +11,8 @@
 - Terminal Management
 
   - [Key Management](key-management.md)
-    - [DUKPT]()
-    - [MKSK]()
+    - [DUKPT](dukpt-scheme.md)
+    - [MKSK](mksk-scheme.md)
   - [EMV Configuration](emv-config.md)
 
 - Tools
