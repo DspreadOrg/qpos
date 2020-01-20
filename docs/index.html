@@ -10,15 +10,9 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
-    <link rel="stylesheet" href="//unpkg.com/botui/build/botui.min.css" />
-    <link rel="stylesheet" href="//unpkg.com/botui/build/botui-theme-default.css" />
   </head>
   <body>
-    <div id="app">
-      <div id="my-botui-app">
-      <bot-ui></bot-ui>
-      </div>
-    </div>
+    <div id="app"></div>
     <script>
       window.$docsify = {
         logo: "/_images/logo.jpg",
@@ -62,9 +56,6 @@
       };
     </script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-    <script src="//unpkg.com/docsify/lib/plugins/disqus.min.js"></script>
-    <script src="//cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
-    <script src="//unpkg.com/botui/build/botui.min.js"></script>
     <!-- <script src="//unpkg.com/docsify/lib/docsify.min.js" data-ga="UA-156515663-1"></script>
     <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -85,10 +76,6 @@
       if (typeof navigator.serviceWorker !== "undefined") {
         navigator.serviceWorker.register("sw.js");
       }
-    </script>
-    
-    <script>
-      var botui = new BotUI('my-botui-app');
     </script>
   </body>
 </html>
