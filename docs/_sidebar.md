@@ -19,12 +19,14 @@
 
   - [Dukpt Tool](encryption-decryption.md)
   - [TLV Parser](emv-tool.md)
+
+- Testing & Certification 
+
+  - [EMV L3](emv_l3.md)
+
 - API Reference 
 
   - [General](yada.md)
 
-- Testing & Certification 
-
-  - [EMV L3](yada.md)
 
 - [**Synthstrom Audible**](https://synthstrom.com)
