@@ -1,10 +1,12 @@
-- Synthstrom Audible
+- Skype Us
 
-  - [Official Dspread website](https://dspread.com)
+  - [Official Dspread website](https://www.dspread.com)
 
-- Want to Help?
+- Download
 
-  - [How to contribute](https://gitlab.com/gacallea/man_deluge/blob/master/CONTRIBUTING.md)
+  - [Android](https://gitlab.com/dspread/android)
+  - [IOS](https://gitlab.com/dspread/ios)
+  - [Windows](https://gitlab.com/dspread/windows)
 
 - Translations
   - [:uk: English](/)
