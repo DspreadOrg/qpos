@@ -16,13 +16,13 @@ You can download to install our [android-demo-app][android-app]
 
 <div style='color: blue'>
 
--[x]  [Android SDK](https://gitlab.com/dspread/android) 
--[x]  [IOS SDK](https://gitlab.com/dspread/ios)
--[x]  [Windows SDK](https://gitlab.com/dspread/windows)
--[x]  [Hybrid](url)
-    -[x] [cordava](https://gitlab.com/dspread/cordova-plugin)
-    -[x] [ionic](https://gitlab.com/dspread/ionic-demo)
-    -[] [Flutter(todo)](url)
+[x]  [Android SDK](https://gitlab.com/dspread/android) 
+[x]  [IOS SDK](https://gitlab.com/dspread/ios)
+[x]  [Windows SDK](https://gitlab.com/dspread/windows)
+[x]  [Hybrid](url)
+    [x] [cordava](https://gitlab.com/dspread/cordova-plugin)
+    [x] [ionic](https://gitlab.com/dspread/ionic-demo)
+    [] [Flutter(todo)](url)
     
 </div>
 
