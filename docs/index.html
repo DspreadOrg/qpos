@@ -11,6 +11,7 @@
     />
     <!--<link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" /> -->
     <!--<link rel="stylesheet" href="//unpkg.com/prism-github/prism-github.css">-->
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable/dist/css/theme-simple.css">
     <link rel="stylesheet" href="./_assets/css/prism-xonokai.css">
     <link rel="stylesheet" href="./_assets/css/styles.css">
@@ -69,6 +70,19 @@
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/docsify-themeable"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+      const gitalk = new Gitalk({
+        clientID: 'Github Application Client ID',
+        clientSecret: 'Github Application Client Secret',
+        repo: 'Github repo',
+        owner: 'Github repo owner',
+        admin: ['Github repo collaborators, only these guys can initialize github issues'],
+        // facebook-like distraction free mode
+        distractionFreeMode: false
+      })
+    </script>
     <!-- <script src="//unpkg.com/docsify/lib/docsify.min.js" data-ga="UA-156515663-1"></script>
     <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
