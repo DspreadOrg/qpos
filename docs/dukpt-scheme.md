@@ -4,8 +4,7 @@ According to PCI security, there is no any keys allowed to be injected into devi
 
 
 ### update IPEK key by TMK (symetrical)
-By default, QPOS is injected TMK in factory. default TMK:
->0123456789ABCDEFFEDCBA9876543210. 
+By default, QPOS is injected TMK in factory. default TMK: **0123456789ABCDEFFEDCBA9876543210**. 
 
 ?>server side should use same TMK as inside terminal to encrypt IPEK keys to get encryptedIPEK and calculate its Key Check Value, then call API pos.updateIPEKOperation() to inject into terminal
 
