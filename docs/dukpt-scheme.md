@@ -22,4 +22,4 @@ pos.updateIPEKOperation(keyIndex,encDemoIpek,demoIpekKcv);
 
 ### update IPEK key by RSA （Asymetrical）
 
-[digital envelope](/_assets/remote-key-injection.pdf)
+![logo](/_images/remote-key-inject.png)
