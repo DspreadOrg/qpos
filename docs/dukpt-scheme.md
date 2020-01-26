@@ -8,18 +8,18 @@ By default, QPOS is injected TMK in factory. default TMK: **0123456789ABCDEFFEDC
 
 ?>server side should use same TMK as inside terminal to encrypt IPEK keys to get encryptedIPEK and calculate its Key Check Value, then call API pos.updateIPEKOperation() to inject into terminal
 ``` java
-String trackIpek="11111111111111111111111111111111"
+String demoIpek="11111111111111111111111111111111"
+//encDemoIpek = 1A4D672DCA6CB3351FD1B02B237AF9AE
+String encDemoIpek = TDES.tdesECBDecrypt(tmk, demoIpek)); 
+String demoIpekKcv = TDES.tdesECBDecrypt(demoIpek, "0000000000000000")); 
 
-String encTrackIpek = envelope.bytes2hex(TDES.tdesECBDecrypt(tmk, trackIpek)); //encTrackIpek = 1A4D672DCA6CB3351FD1B02B237AF9AE
-s
+//call api to inejct ipek, let keyIndex =0
+pos.updateIPEKOperation(keyIndex,encDemoIpek,demoIpekKcv);
 ```
 
 <div style='color: red'>
-- Step 1: calculate encryptedIPEK under TMK（[demo encryptedIPEK](http://extranet.cryptomathic.com/descalc/index?key=0123456789ABCDEFFEDCBA9876543210&iv=0000000000000000&input=11111111111111111111111111111111&mode=ecb&action=Encrypt&output=1A4D672DCA6CB3351FD1B02B237AF9AE)）
+[Online Tool to calculate 3des calculation demo](http://extranet.cryptomathic.com/descalc/index?key=0123456789ABCDEFFEDCBA9876543210&iv=0000000000000000&input=11111111111111111111111111111111&mode=ecb&action=Encrypt&output=1A4D672DCA6CB3351FD1B02B237AF9AE)
 
-
-- Step 2: calculate key check value ([demo KCV](http://extranet.cryptomathic.com/descalc/index?key=11111111111111111111111111111111&iv=0000000000000000&input=0000000000000000&mode=ecb&action=Encrypt&output=9B3A7B883A100F739B3A7B883A100F73)）
-
-
+</div>
 
 ### update IPEK key by RSA （Asymetrical）
