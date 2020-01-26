@@ -8,8 +8,9 @@ By default, QPOS is injected TMK in factory. default TMK: **0123456789ABCDEFFEDC
 
 ?>server side should use same TMK as inside terminal to encrypt IPEK keys to get encryptedIPEK and calculate its Key Check Value, then call API pos.updateIPEKOperation() to inject into terminal
 
-*Step 1: calculate encryptedIPEK under TMK（[demo encryptedIPEK](http://extranet.cryptomathic.com/descalc/index?key=0123456789ABCDEFFEDCBA9876543210&iv=0000000000000000&input=11111111111111111111111111111111&mode=ecb&action=Encrypt&output=1A4D672DCA6CB3351FD1B02B237AF9AE)）
-*Step 2: calculate key check value ([demo KCV](http://extranet.cryptomathic.com/descalc/index?key=11111111111111111111111111111111&iv=0000000000000000&input=0000000000000000&mode=ecb&action=Encrypt&output=9B3A7B883A100F739B3A7B883A100F73)）
+- Step 1: calculate encryptedIPEK under TMK（[demo encryptedIPEK](http://extranet.cryptomathic.com/descalc/index?key=0123456789ABCDEFFEDCBA9876543210&iv=0000000000000000&input=11111111111111111111111111111111&mode=ecb&action=Encrypt&output=1A4D672DCA6CB3351FD1B02B237AF9AE)）
+
+- Step 2: calculate key check value ([demo KCV](http://extranet.cryptomathic.com/descalc/index?key=11111111111111111111111111111111&iv=0000000000000000&input=0000000000000000&mode=ecb&action=Encrypt&output=9B3A7B883A100F739B3A7B883A100F73)）
 
 
 
