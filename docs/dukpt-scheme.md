@@ -22,4 +22,4 @@ pos.updateIPEKOperation(keyIndex,encDemoIpek,demoIpekKcv);
 
 ### update IPEK key by RSA （Asymetrical）
 
-![logo](/_images/transaction.jpg)
+![logo](/_images/Transaction.jpg)
