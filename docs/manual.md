@@ -14,7 +14,7 @@ You can download to install our [android-demo-app][android-app]
 [ios-app]: https://fir.im/iOSDemo
 
 
-<div style='color: red'>
+<div style='color: green'>
 
 *  [Android SDK](https://gitlab.com/dspread/android) 
 *  [IOS SDK](https://gitlab.com/dspread/ios)
