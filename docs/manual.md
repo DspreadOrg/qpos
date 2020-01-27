@@ -3,7 +3,16 @@
 QPOS is a serial of mobile payment devices. It can communicate with the mobile device through audio jack, UART or USB cable. 
 
 QPOS standard, QPOS mini, QPOS Plus, EMV06, EMV08, GEA and GES are all QPOS products, some of them are with PINPAD embedded and some of them are only card readers without PINPAD.
-
+### Section X
+```plantuml
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+ 
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml
+```
 This document aims to help readers for using the Android SDK of QPOS.
 
 ## Download
