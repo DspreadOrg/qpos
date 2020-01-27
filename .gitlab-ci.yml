@@ -10,6 +10,7 @@ before_script:
     #- apt-get update && apt-get install -y \rsync 
     #- npm i docsify-cli -g
     - npm i docsify-comment
+    - npm i docsify-plantuml
 
 pages:
   script:
