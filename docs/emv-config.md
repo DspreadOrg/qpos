@@ -5,8 +5,7 @@ Download emv config template xml file, then put it into **Assets** folder, call 
 ``` java
 pos.updateEmvConfig(InputStream is)
 
-callback
-/* 
+//callback
 onReturnCustomConfigResult(boolean isSuccess,String result)
 
 ```
@@ -44,7 +43,7 @@ pos.updateEmvCAPKByTlv(EMVDataOperation.Update,"9F0607A00000000410109F3303E028C8
 onReturnUpdateEmvResult(boolean isSuccess)
 
 ```
-**example 2:**
+**example 3:**
 update terminal capabilities and cvm execute limit for all AID list, if not specify AID, then the config will be effective for AIDs inside terminal
 ``` java
 //9F33 = E0F8C8 (len : 3bytes), means terminal support only support signature, disable pin
