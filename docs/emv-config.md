@@ -6,7 +6,7 @@ Download emv config [template xml](/_assets/emv_profile_tlv.xml) file, then put 
 pos.updateEmvConfig(InputStream is)
 
 Overloaded function
-updateEmvConfig(String xmlContent)
+pos.updateEmvConfig(String xmlContent)
 
 
 //callback
