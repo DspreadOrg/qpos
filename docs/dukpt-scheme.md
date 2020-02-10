@@ -10,8 +10,8 @@ By default, QPOS is injected TMK in factory. default TMK: **0123456789ABCDEFFEDC
 ``` java
 String demoIpek="11111111111111111111111111111111"
 //encDemoIpek = 1A4D672DCA6CB3351FD1B02B237AF9AE
-String encDemoIpek = TDES.tdesECBDecrypt(tmk, demoIpek)); 
-String demoIpekKcv = TDES.tdesECBDecrypt(demoIpek, "0000000000000000")); 
+String encDemoIpek = TDES.tdesECBEncrypt(tmk, demoIpek)); 
+String demoIpekKcv = TDES.tdesECBEncrypt(demoIpek, "0000000000000000")); 
 
 //call api to inejct ipek, let keyIndex =0
 pos.updateIPEKOperation(keyIndex,encDemoIpek,demoIpekKcv);
