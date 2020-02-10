@@ -5,6 +5,10 @@ Download emv config [template xml](/_assets/emv_profile_tlv.xml) file, then put 
 ``` java
 pos.updateEmvConfig(InputStream is)
 
+Overloaded function
+updateEmvConfig(String xmlContent)
+
+
 //callback
 onReturnCustomConfigResult(boolean isSuccess,String result)
 
