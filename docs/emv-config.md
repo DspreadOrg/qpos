@@ -3,8 +3,6 @@
 Download emv config [template xml](/_assets/emv_profile_tlv.xml) file, then put it into **Assets** folder, call below function to upgrade the config to terminal
 
 ``` java
-pos.updateEmvConfig(InputStream is)
-
 Overloaded function
 pos.updateEmvConfig(String xmlContent)
 
