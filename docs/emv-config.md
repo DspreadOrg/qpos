@@ -1,6 +1,6 @@
 ## update emv config file
 
-Download emv config [template xml](/_assets/emv_profile_tlv.xml) file, then put it into **Assets** folder, call below function to upgrade the config to terminal
+Download emv config [template xml](/FAQs_Document/tools/emv_profile_tlv.xml) file, then put it into **Assets** folder, call below function to upgrade the config to terminal
 
 ``` java
 Overloaded function
