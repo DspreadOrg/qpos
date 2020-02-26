@@ -4,7 +4,7 @@ Download emv config [template xml](https://gitlab.com/dspread/FAQs_Document/-/bl
 
 ``` java
 Overloaded function
-pos.updateEmvConfig(String xmlContent)
+pos.updateEmvConfig(FileUtils.readAssetsLineAsString("emv_profile_tlv.xml", MainActivity.this));
 
 
 //callback
