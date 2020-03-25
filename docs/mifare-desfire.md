@@ -1,6 +1,9 @@
 ## mifare desfire
+
 **Mifare Desfire**
+
 	Desfire card is different from the above Clasic cards. It has easy method to transfer data.
+	
 	1).Power on card
 ```java
 	pos.powerOnNFC(int isEncrypt, int timeout)
