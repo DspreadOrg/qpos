@@ -13,19 +13,19 @@ As the above image, we can know the work flow for the Mifare Classic.
 	pos.authenticateMifareCard(MifareCardType cardType,String keyType,String block,String keyValue,int timeout)
 ```
 3).Operate Card
-   - Add/Reduce/Restore
+    - Add/Reduce/Restore
 ```java
 	pos.operateMifareCardData(MifareCardOperationType type,String block,String data,int timeout)
 ```
-- Read
+    - Read
 ```java
 	pos.readMifareCard(MifareCardType cardType,String block,int timeout)
 ```
-- Write
+    - Write
 ```java
 	pos.writeMifareCard(MifareCardType cardType,String block,String data,int timeout)
 ```
-4)Finish
+4).Finish
 ```java
 	pos.finishMifareCard(int timeout)
 ```
