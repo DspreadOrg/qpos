@@ -33,7 +33,7 @@
 - API Reference 
 
   - [General](yada.md)
-  - [API Reference](java_doc_api.md)
+  - [API Reference](https://dspread.gitlab.io/qpos/api_sdk%20doc/index.html)
 
 
 - [**Synthstrom Audible**](https://synthstrom.com)
