@@ -33,7 +33,7 @@
 - API Reference 
 
   - [General](yada.md)
-  - [**API Reference**](api_sdk_doc/index.html)
+  - [**API Reference**](api_sdk_doc/)
 
 
 - [**Synthstrom Audible**](https://synthstrom.com)
