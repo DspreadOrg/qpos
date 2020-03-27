@@ -30,10 +30,4 @@
 
   - [EMV L3](emv_l3.md)
 
-- API Reference 
-
-  - [General](yada.md)
-  - [API Reference](https://dspread.gitlab.io/qpos/api/index.html)
-
-
-- [**Synthstrom Audible**](https://synthstrom.com)
+- [**API Reference**](https://dspread.gitlab.io/qpos/api/index.html)
