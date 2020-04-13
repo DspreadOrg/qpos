@@ -44,7 +44,7 @@ String encDemoNewMasterKey = TDES.tdesECBEncrypt(tmk, demoNewMasterKey));
 String demoNewMasterKeyKcv = TDES.tdesECBEncrypt(demoNewMasterKey, "0000000000000000")); 
 
 //call api to inejct new master key, let keyIndex =0
-pos.udpdateMasterKey(encDemoNewMasterKey, demoNewMasterKeyKcv, //new master key
+pos.setMasterKey(encDemoNewMasterKey, demoNewMasterKeyKcv, //new master key
                     keyIndex);
 
 ```
