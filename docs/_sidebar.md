@@ -31,3 +31,5 @@
   - [EMV L3](emv_l3.md)
 
 - [**API Reference**](https://dspread.gitlab.io/qpos/api/index.html)
+
+- [**Web Bluetooth Demo**](https://gitlab.com/dspread/qpos/-/blob/master/docs/webBluetoothDemo/index.html)
