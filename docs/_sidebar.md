@@ -32,4 +32,4 @@
 
 - [**API Reference**](https://dspread.gitlab.io/qpos/api/index.html)
 
-- [**Web Bluetooth Demo**](https://gitlab.com/dspread/qpos/-/blob/master/docs/webBluetoothDemo/index.html)
+- [**Web Bluetooth Demo**](https://dspread.gitlab.io/qpos/webBluetoothDemo/index.html)
