@@ -1,6 +1,6 @@
 - Skype Us
 
-  - [Official Dspread website](https://www.dspread.com)
+  - [Official Dspread website](http://dspread.com)
 
 - Download
 

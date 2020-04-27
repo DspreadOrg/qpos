@@ -10,8 +10,8 @@ This document aims to help readers for using the Android SDK of QPOS.
 You can download to install our [android-demo-app][android-app]
  and [ios-demo-app][ios-app] .
 
-[android-app]: https://fir.im/AndroidDemo
-[ios-app]: https://fir.im/iOSDemo
+[android-app]: https://dspread.gitlab.io/qpos/webdemo/checkout.html
+[ios-app]: https://dspread.gitlab.io/qpos/webdemo/checkout.html
 
 
 <div style='color: blue'>
@@ -22,7 +22,7 @@ You can download to install our [android-demo-app][android-app]
 - [x] [Hybrid](url)
     - [x] [cordava](https://gitlab.com/dspread/cordova-plugin)
     - [x] [ionic](https://gitlab.com/dspread/ionic-demo)
-    - [ ] [Flutter(todo)](url)
+    - [x] [Flutter](https://gitlab.com/dspread/flutter_demo)
     
 </div>
 
