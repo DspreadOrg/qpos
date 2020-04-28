@@ -18,65 +18,199 @@ var Connected = false;
 //服务是否存在
 var MPOS_SERVICE_FLAG = false;
 
+var trasactionData = document.getElementById("displayText");
 
 var mService = new QPOSService();
-function QPOSServiceListenerImpl() { }
+function QPOSServiceListenerImpl() {}
 var qPOSServiceListenerImpl = new QPOSServiceListenerImpl();
 mService.initListener(qPOSServiceListenerImpl);
 mOnResult = new QPOSAnalyResult(qPOSServiceListenerImpl);
 
 QPOSServiceListenerImpl.prototype.onQposInfoResult = function (deviceInfo) {
-    console.log("onQposInfoResult" + deviceInfo);
+    console.log("onQposInfoResult:" + deviceInfo);
+    var str = "";
+    for(var key in deviceInfo){
+        str += key + ": " +deviceInfo[key]+"\r";
+    }
+    trasactionData.innerText = "onQposInfoResult:" + "\r" + str;
 }
 QPOSServiceListenerImpl.prototype.onQposIdResult = function (deviceId) {
     console.log("onQposIdResult" + deviceId);
+    var str = "";
+    for(var key in deviceId){
+        str += key + ": " +deviceId[key]+"\r";
+    }
+    trasactionData.innerText = "onQposIdResult:" + "\r" + str;
 }
 QPOSServiceListenerImpl.prototype.onRequestSelectEmvApp = function (hashtable) {
     console.log("onRequestSelectEmvApp" + hashtable);
     mService.selectEmvApp(0);
 }
+
 QPOSServiceListenerImpl.prototype.onRequestDisplay = function (msg) {
     console.log("onRequestDisplay" + msg);
+    trasactionData.innerText = "onRequestDisplay:" + msg;
 }
+QPOSServiceListenerImpl.prototype.onRequestWaitingUser = function (msg) {
+    console.log("onRequestWaitingUser" + msg);
+    trasactionData.innerText = "Please insert/swipe/tap card now.";
+}
+
 QPOSServiceListenerImpl.prototype.onRequestTransactionResult = function (msg) {
     console.log("onRequestTransactionResult" + msg);
+    alert("onRequestTransactionResult "+msg);
 }
 QPOSServiceListenerImpl.prototype.onError = function (msg) {
     console.log("onError" + msg);
 }
 QPOSServiceListenerImpl.prototype.onEmvICCExceptionData = function (msg) {
     console.log("onEmvICCExceptionData" + msg);
+    trasactionData.innerText = "onEmvICCExceptionData:" + msg;
 }
 QPOSServiceListenerImpl.prototype.onDoTradeResult = function (msg,msg1) {
     console.log("onDoTradeResult" + msg);
     console.log("onDoTradeResult" + msg1);
-    //getPin(1, 0, 6, "please input pin", "6230202010566462", "", 20);
+    if (msg=="ICC") {
+        trasactionData.innerText = "onDoTradeResult: " + msg;
+    }else if(msg=="MCR"){
+        var track1 = msg1[0].toUpperCase();
+        var track2 = msg1[1].toUpperCase();
+        var track3 = msg1[2].toUpperCase();
+        var fomatid = msg1[3];
+        var cardNum = msg1[4];
+        var expiredData = msg1[5];
+        var serviceCode = msg1[6];
+        var serviceCode1 = msg1[7];
+        var pinBlock = msg1[8].toUpperCase();
+        var trackksn = msg1[9].toUpperCase();
+        var pinksn = msg1[10].toUpperCase();
+        trasactionData.innerText = "onDoTradeResult: " + msg + "\r" +
+                                    "track1: " + track1 + "\r" +
+                                    "track2: " + track2 + "\r" +
+                                    "track3: " + track3 + "\r" +
+                                    "fomatid: " + fomatid + "\r" +
+                                    "cardNum: " + cardNum + "\r" +
+                                    "expiredData: " + expiredData + "\r" +
+                                    "serviceCode: " + serviceCode + "\r" +
+                                    "pinBlock: " + pinBlock + "\r" +
+                                    "pinksn: " + pinksn + "\r" +
+                                    "trackksn: " + trackksn + "\r";
+    }else if (msg=="NFC_ONLINE") {
+        var track1 = msg1[0].toUpperCase();
+        var track2 = msg1[1].toUpperCase();
+        var track3 = msg1[2].toUpperCase();
+        var fomatid = msg1[3];
+        var cardNum = msg1[4];
+        var expiredData = msg1[5];
+        var serviceCode = msg1[6];
+        var serviceCode1 = msg1[7];
+        var pinBlock = msg1[8].toUpperCase();
+        var trackksn = msg1[9].toUpperCase();
+        var pinksn = msg1[10].toUpperCase();
+        trasactionData.innerText = "onDoTradeResult: " + msg + "\r" +
+                                    "track1: " +  track1 + "\r" +
+                                    "track2: " +  track2 + "\r" +
+                                    "track3: " +  track3 + "\r" +
+                                    "fomatid: " + fomatid + "\r" +
+                                    "cardNum: " + cardNum + "\r" +
+                                    "expiredData: " + expiredData + "\r" +
+                                    "serviceCode: " + serviceCode + "\r" +
+                                    "pinBlock: " + pinBlock + "\r" +
+                                    "pinksn: " + pinksn + "\r" +
+                                    "trackksn: " + trackksn + "\r";
+
+        mService.getNFCBatchData(function onSuccess(nfcBatchData) {
+            trasactionData.innerText = "NFCBatchData: " + "\r" + nfcBatchData.toUpperCase();
+        } , function onError(error){
+            console.log(error);
+        });
+        
+    }else if (msg=="NFC_OFFLINE") {
+        trasactionData.innerText = "onDoTradeResult: " + msg + "\r" + msg1;
+    }else if (msg=="NFC_DECLINED") {
+        trasactionData.innerText = "onDoTradeResult: " + msg + "\r" + msg1;
+    }else if (msg=="TRY_ANOTHER_INTERFACE") {
+        trasactionData.innerText = "onDoTradeResult: " + msg;
+    }else if (msg=="BAD_SWIPE") {
+        trasactionData.innerText = "onDoTradeResult: " + msg;
+    }else if (msg=="NONE") {
+        trasactionData.innerText = "onDoTradeResult: " + msg;
+    }else if (msg=="NOT_ICC") {
+        trasactionData.innerText = "onDoTradeResult: " + msg;
+    }else if (msg=="NO_RESPONSE") {
+        trasactionData.innerText = "onDoTradeResult: " + msg;
+    }else if (msg=="NO_UPDATE_WORK_KEY") {
+        trasactionData.innerText = "onDoTradeResult: " + msg;
+    }
 }
 
 QPOSServiceListenerImpl.prototype.onRequestOnlineProcess = function (msg) {
     var str = "8A023030";//Currently the default value,
     mService.sendOnlineProcessResult(str);
+    trasactionData.innerText = "onRequestOnlineProcess:"+"\r" + msg;
 }
 
 QPOSServiceListenerImpl.prototype.onRequestBatchData = function (iccData) {
     console.log("onRequestBatchData" + iccData);
+    trasactionData.innerText = "onRequestBatchData:" +"\r"+ iccData;
 } 
 
 QPOSServiceListenerImpl.prototype.onReturnReversalData = function (iccData) {
     console.log("onReturnReversalData" + iccData);
+    trasactionData.innerText = "onReturnReversalData:" +"\r"+ iccData;
 }
 
 QPOSServiceListenerImpl.prototype.onReturnGetEMVListResult = function (aidString) {
     console.log("onReturnGetEMVListResult(aidString)" + aidString);
+    trasactionData.innerText = "onReturnGetEMVListResult: " + aidString;
 }
 QPOSServiceListenerImpl.prototype.onReturnUpdateEMVResult = function (flag) {
-    console.log("onReturnUpdateEMVResult(true)" + flag);
+    console.log("onReturnUpdateEMVResult: " + flag);
+    if (flag) {
+       trasactionData.innerText = "onReturnUpdateEMVResult: Success"; 
+    }else{
+       trasactionData.innerText = "onReturnUpdateEMVResult: Fail";
+    }
 }
 QPOSServiceListenerImpl.prototype.onReturnUpdateEMVRIDResult = function (flag) {
-    console.log("onReturnUpdateEMVRIDResult(false)" + flag);
+    console.log("onReturnUpdateEMVRIDResult: " + flag);
+    if (flag) {
+       trasactionData.innerText = "onReturnUpdateEMVRIDResult: Success"; 
+    }else{
+       trasactionData.innerText = "onReturnUpdateEMVRIDResult: Fail";
+    }
 }
 QPOSServiceListenerImpl.prototype.onReturnCustomConfigResult = function (flag) {
-    console.log("onReturnCustomConfigResult(true)" + flag);
+    console.log("onReturnCustomConfigResult: " + flag);
+    if (flag) {
+       trasactionData.innerText = "onReturnCustomConfigResult: Success"; 
+    }else{
+       trasactionData.innerText = "onReturnCustomConfigResult: Fail";
+    } 
+}
+QPOSServiceListenerImpl.prototype.onReturnSetMasterKeyResult = function (flag) {
+    console.log("onReturnSetMasterKeyResult: " + flag);
+    if (flag) {
+       trasactionData.innerText = "onReturnSetMasterKeyResult: Success"; 
+    }else{
+       trasactionData.innerText = "onReturnSetMasterKeyResult: Fail";
+    } 
+}
+QPOSServiceListenerImpl.prototype.onRequestUpdateWorkKeyResult = function (flag) {
+    console.log("onRequestUpdateWorkKeyResult: " + flag);
+    if (flag) {
+       trasactionData.innerText = "onRequestUpdateWorkKeyResult: Success"; 
+    }else{
+       trasactionData.innerText = "onRequestUpdateWorkKeyResult: Fail";
+    } 
+}
+QPOSServiceListenerImpl.prototype.onReturnUpdateIPEKResult = function (flag) {
+    console.log("onReturnUpdateIPEKResult: " + flag);
+    if (flag) {
+       trasactionData.innerText = "onReturnUpdateIPEKResult: Success"; 
+    }else{
+       trasactionData.innerText = "onReturnUpdateIPEKResult: Fail";
+    } 
 }
 
 //连接设备或断开连接
@@ -85,23 +219,93 @@ function DiscoveOrDisConnect() {
         Connected_Device.gatt.disconnect();
         console.log("===>用户断开了连接<===")
         UpdateUI();
-    }
-    else {
+    }else {
         DiscoverDevice();
         UpdateUI();
     }
 }
 
-function start(){
-
+function startTrade(){
+    var currency = document.getElementById("currency_code").value;   //获取form表单中第一个元素的值      
+    var amount = document.getElementById("Amount").value;   //直接通过元素的属性Id来直接获取  
+    var tractionType = document.getElementById("TractionType").value; 
     if(Connected){
-        setAmount("1111", "", "0156", TransactionType.GOODS);
+        setAmount(amount, "", currency, transactionTypeConvert(tractionType));
         mService.doTrade(0,20);
-        // getQPosInfo();
     }else{
         DiscoverDevice();
         UpdateUI();
     }
+}
+
+function transactionTypeConvert(str){
+   console.log("Str:" + str);
+   if (str == "0") {
+       return TransactionType.GOODS;
+   }else if (str == "1") {
+       return TransactionType.SERVICES;
+   }else if (str == "2") {
+       return TransactionType.CASH;
+   }else if (str == "3") {
+       return TransactionType.CASHBACK;
+   }else if (str == "4") {
+       return TransactionType.INQUIRY;
+   }else if (str == "5") {
+       return TransactionType.TRANSFER;
+   }else if (str == "6") {
+       return TransactionType.ADMIN;
+   }else if (str == "7") {
+       return TransactionType.CASHDEPOSIT;
+   }else if (str == "8") {
+       return TransactionType.PAYMENT;
+   }else if (str == "9") {
+       return TransactionType.PBOCLOG;
+   }else if (str == "10") {
+       return TransactionType.SALE;
+   }else if (str == "11") {
+       return TransactionType.PREAUTH;
+   }else if (str == "12") {
+       return TransactionType.ECQ_DESIGNATED_LOAD;
+   }else if (str == "13") {
+       return TransactionType.ECQ_UNDESIGNATED_LOAD;
+   }else if (str == "14") {
+       return TransactionType.ECQ_CASH_LOAD;
+   }else if (str == "15") {
+       return TransactionType.ECQ_CASH_LOAD_VOID;
+   }else if (str == "16") {
+       return TransactionType.UPDATE_PIN;
+   }else if (str == "17") {
+       return TransactionType.REFUND;
+   }
+}
+
+var appCfgStr = "";
+var capkCfgStr = "";
+function readLine(){
+   appCfgStr="";
+   capkCfgStr="";
+   const ipt = document.createElement('input')
+   ipt.type = 'file'
+   ipt.style.display = 'none'
+   document.body.appendChild(ipt)
+   ipt.click()
+
+   ipt.onchange = () => {
+   const files = ipt.files[0]
+   var fileName = files.name;
+   const reader = new FileReader()
+   reader.readAsArrayBuffer(files)
+   reader.onload = () => {
+        var content = byteArray2Hex(reader.result);
+        if ("emv_app.bin" == fileName) {
+            appCfgStr = content;
+            console.log("app:"+"\r"+appCfgStr);
+        }else if ("emv_capk.bin" == fileName) {
+            capkCfgStr = content;
+            console.log("\r"+"capk:"+"\r"+capkCfgStr);
+        } 
+    }
+   }
 }
 
 //发现蓝牙设备
@@ -109,7 +313,7 @@ function DiscoverDevice() {
     //过滤出我们需要的蓝牙设备
     //过滤器
     var options = {
-        filters: [{ namePrefix: 'MPOS' }],
+        filters: [{ namePrefix: 'MPOS' },{ namePrefix: 'QPOS' }],
         optionalServices: [MPOS_SERVICE]
     };
 
