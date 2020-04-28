@@ -35,6 +35,11 @@ body{
     display: block;
 }
 
+.input_control{
+    height: 25px;
+    width: 138px
+}
+
 h2{
     margin: 0px;
     font-size: 21px;
@@ -56,6 +61,30 @@ ol{
 ol li{
     padding: 6px 0 6px 0;
     line-height: 20px;
+}
+
+.divForm{
+position:relative;
+text-align: left; /*让div内部文字居中*/
+background-color: #fff;
+border-radius: 20px;
+left: 50%;
+width: 360px;
+height: 150px;
+margin-left: -180px;
+margin-top: 50px;  
+display: block;
+}
+
+.displayText{ 
+position:relative;
+left: 50%;
+width:300px;
+height:300px;
+margin-left: -150px;  
+margin-top: 10px;  
+display: block;
+word-break:break-all;
 }
 
 .leds_box{
