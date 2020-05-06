@@ -10,7 +10,7 @@ This document aims to help readers for using the Android SDK of QPOS.
 You can download to install our [android-demo-app][android-app]
  and [ios-demo-app][ios-app] .
 
-[android-app]: https://dspread.gitlab.io/qpos/webdemo/checkout.html
+[android-app]: http://d.7short.com/AndroidDemo
 [ios-app]: https://dspread.gitlab.io/qpos/webdemo/checkout.html
 
 
