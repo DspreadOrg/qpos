@@ -6,18 +6,18 @@ By default, QPOS is injected TMK in factory. default TMK: **0123456789ABCDEFFEDC
 ?>server side should use same TMK as inside terminal to encrypt session keys to get encrypted session keys and calculate its Key Check Value, then call API pos.updateWorkKey() to inject into terminal
 ``` java
 String demoPINKey="11111111111111111111111111111111"
-//encDemoPINKey = 1A4D672DCA6CB3351FD1B02B237AF9AE
 String encDemoPINKey = TDES.tdesECBEncrypt(tmk, demoPINKey)); 
+//encDemoPINKey = 9B3A7B883A100F739B3A7B883A100F73
 String demoPINKeyKcv = TDES.tdesECBEncrypt(demoPINKey, "0000000000000000")); 
 
 String demoTRACKKey="11111111111111111111111111111111"
-//encDemoIpek = 1A4D672DCA6CB3351FD1B02B237AF9AE
 String encDemoTRACKKey = TDES.tdesECBEncrypt(tmk, demoTRACKKey)); 
+//encDemoTRACKKey = 9B3A7B883A100F739B3A7B883A100F73
 String demoTRACKKeyKcv = TDES.tdesECBEncrypt(demoTRACKKey, "0000000000000000")); 
 
 String demoMACKey="11111111111111111111111111111111"
-//encDemoMACkey = 1A4D672DCA6CB3351FD1B02B237AF9AE
 String encDemoMACKey = TDES.tdesECBEncrypt(tmk, demoMACKey)); 
+//encDemoMACKey = 9B3A7B883A100F739B3A7B883A100F73
 String demoMACKeyKcv = TDES.tdesECBEncrypt(demoMACKey, "0000000000000000")); 
 
 //call api to inejct session keys, let keyIndex =0
@@ -29,7 +29,7 @@ pos.udpateWorkKey(
 
 ```
 
-[Online Tool to 3des calculation demo](http://extranet.cryptomathic.com/descalc/index?key=0123456789ABCDEFFEDCBA9876543210&iv=0000000000000000&input=11111111111111111111111111111111&mode=ecb&action=Encrypt&output=1A4D672DCA6CB3351FD1B02B237AF9AE)
+[Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=11111111111111111111111111111111&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
 
 
 ### update master key
@@ -38,9 +38,10 @@ By default, QPOS is injected TMK in factory. default TMK: **0123456789ABCDEFFEDC
 
 ?>server side should use default TMK to encrypt new TMK to get encrypted new TMK key and calculate its Key Check Value, then call API pos.updateMasterKey() to inject into terminal
 ``` java
-String demoNewMasterKey="11111111111111111111111111111111"
-//encDemoNewMasterKey = 1A4D672DCA6CB3351FD1B02B237AF9AE
+String demoNewMasterKey="22222222222222222222222222222222"
 String encDemoNewMasterKey = TDES.tdesECBEncrypt(tmk, demoNewMasterKey)); 
+
+//encDemoNewMasterKey = B4ABA2BB791C50E7B4ABA2BB791C50E7
 String demoNewMasterKeyKcv = TDES.tdesECBEncrypt(demoNewMasterKey, "0000000000000000")); 
 
 //call api to inejct new master key, let keyIndex =0
@@ -49,6 +50,6 @@ pos.setMasterKey(encDemoNewMasterKey, demoNewMasterKeyKcv, //new master key
 
 ```
 
-[Online Tool to 3des calculation demo](http://extranet.cryptomathic.com/descalc/index?key=0123456789ABCDEFFEDCBA9876543210&iv=0000000000000000&input=11111111111111111111111111111111&mode=ecb&action=Encrypt&output=1A4D672DCA6CB3351FD1B02B237AF9AE)
+[Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=22222222222222222222222222222222&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
 
 
