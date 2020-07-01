@@ -58,6 +58,11 @@
         //   return marked;
         // }
 
+        // docsify-valine (defaults)
+        Valine: {
+            appId: 'zPiyELbyCMIutj9junrmQB33-gzGzoHsz',
+            appKey: 'msvVdRUjG2QFwBzGwPyHQ6J9'
+        },
         plantuml: {
           skin: 'default',
         },
@@ -93,12 +98,12 @@
     <!-- <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script> -->
     <script src="//unpkg.com/docsify-copy-code"></script>
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script>
     <script>
       if (typeof navigator.serviceWorker !== "undefined") {
         navigator.serviceWorker.register("sw.js");
       }
     </script>
-    <script defer src="https://cdn.commento.io/js/commento.js"></script>
-<div id="commento"></div>
   </body>
 </html>
