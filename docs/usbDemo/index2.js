@@ -21,7 +21,7 @@ button.addEventListener('click', async () => {
   if (button.innerHTML === 'Connect') {
     // connect to the USB device
     navigator.usb
-      .requestDevice({ filters: [{ vendorId: 0x03EB }] })
+      .requestDevice({ filters: [{ }] })
       .then(device => {
         this.device = device;
         button.innerHTML = 'Disconnect';
