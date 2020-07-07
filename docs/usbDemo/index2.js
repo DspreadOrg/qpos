@@ -41,11 +41,7 @@ button.addEventListener('click', async () => {
 });
 
 async function OpenDevice(device) {
-  await device.open().then(
-      function(opened){
-        console.log(opened);
-      }
-    );
+  await device.open();
   if (device.configuration === null) await device.selectConfiguration(1);
   await device.claimInterface(2);
   console.log('i *think* we have claimed the device at this point.');
