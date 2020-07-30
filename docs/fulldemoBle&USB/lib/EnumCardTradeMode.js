@@ -1,0 +1,13 @@
+const CardTradeMode = {};
+CardTradeMode.CardTradeMode_ONLY_INSERT_CARD = 0x01;
+CardTradeMode.CardTradeMode_ONLY_SWIPE_CARD = 0x02;
+CardTradeMode.CardTradeMode_SWIPE_INSERT_CARD = 0x05;
+CardTradeMode.CardTradeMode_UNALLOWED_LOW_TRADE = 0x04;
+CardTradeMode.CardTradeMode_SWIPE_TAP_INSERT_CARD = 0x03;
+CardTradeMode.CardTradeMode_SWIPE_TAP_INSERT_CARD_UNALLOWED_LOW_TRADE = 0x06;
+CardTradeMode.CardTradeMode_ONLY_TAP_CARD = 0x07;
+CardTradeMode.CardTradeMode_SWIPE_TAP_INSERT_CARD_NOTUP = 0x08;
+CardTradeMode.CardTradeMode_SWIPE_TAP_INSERT_CARD_NOTUP_UNALLOWED_LOW_TRADE = 0x09;
+CardTradeMode.CardTradeMode_TAP_INSERT_CARD = 0x0B;
+CardTradeMode.CardTradeMode_TAP_INSERT_CARD_NOTUP = 0x0A;
+CardTradeMode.CardTradeMode_SWIPE_TAP_INSERT_CARD_DOWN = 0x0C;

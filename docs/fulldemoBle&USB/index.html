@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="top">
+        <h1 class="title">Dspread Web BlueTooth</h1>
+    </div>
+    <div class="body">
+        <div class="connect_box">
+            <h2>Dspread Web BlueTooth</h2>
+            <ol>
+                <li id="UI_Connected">Connect Status：Disconnect</li>
+                <li id="UI_DeviceType">Device Type：Unknow</li>
+            </ol>
+            <button id="MBtn" onclick="DiscoveOrDisConnect()">Connect</button>
+        </div>
+    </div>
+    <button id = "test" onclick="test()">test</button>
+
+    <div class="divForm">
+        <table cellpadding="3px">
+            <!-- 下拉列表 -->
+            <tr>
+                <td>
+                    CURRENCY
+                </td>
+                <td>
+                    <select id="currency_code" name="currency code"><!-- city=tj -->
+                        <option value="0156" selected="selected">CNY</option>
+                        <option value="0840">USD</option>
+                        <option value="0978">EUR</option>
+                        <option value="0036">AUD</option>
+                        <option value="0860">UZS</option>
+                        <option value="0704">VND</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 下拉列表 -->
+            <tr>
+                <td>
+                    TRACTION TYPE
+                </td>
+                <td>
+                    <select id="TractionType" name="TractionType"><!-- city=tj -->
+                        <option value="0" selected="selected">GOODS</option>
+                        <option value="1">SERVICES</option>
+                        <option value="2">CASH</option>
+                        <option value="3">CASHBACK</option>
+                        <option value="4">INQUIRY</option>
+                        <option value="5">TRANSFER</option>
+                        <option value="6">ADMIN</option>
+                        <option value="7">CASHDEPOSIT</option>
+                        <option value="8">PAYMENT</option>
+                        <option value="9">PBOCLOG||ECQ_INQUIRE_LOG</option>
+                        <option value="10">SALE</option>
+                        <option value="11">PREAUTH</option>
+                        <option value="12">ECQ_DESIGNATED_LOAD</option>
+                        <option value="13">ECQ_UNDESIGNATED_LOAD</option>
+                        <option value="14">ECQ_CASH_LOAD</option>
+                        <option value="15">ECQ_CASH_LOAD_VOID</option>
+                        <option value="16">CHANGE_PIN</option>
+                        <option value="17">REFOUND</option>
+                    </select>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    AMOUNT
+                </td>
+                <td>
+                    <input id="Amount" class="input_control" type="text" name="Amount" value="0.00">
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button id="start" onclick="startTrade()">Start Trade</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="displayText">
+        <pre-wrap id="displayText" style="width:200px; height:20px;">
+            display transaction data here.
+        </pre-wrap>
+    </div>
+<!-- 
+    <div>
+        <button id="start_trade" onclick="startTrade()">Start Trade</button>
+    </div> -->
+
+</body>
+<!-- <script src="./lib/all.js" defer></script> -->
+<script src="./lib/webBluetooth.js" defer></script>
+<!-- <script src="./lib/emvTradeMode.js" defer></script> -->
+    <script src="./lib/util.js" defer></script>
+    <script src="./lib/posBufferManager.js" async></script>
+    <script src="./lib/keyManager.js"></script>
+    <script src="./lib/EnumTransactionType.js" defer></script>
+    <script src="./lib/EnumCardTradeMode.js" defer></script>
+    <script src="./lib/EnumEMVDataOperation.js" defer></script>
+    <script src="./lib/EMVManager.js"></script>
+    <script src="./lib/analyPoInfo.js" defer></script>
+    <script src="./lib/CmdId.js" defer></script>
+    <script src="./lib/CommandDownlink.js" defer></script>
+    <script src="./lib/CommandUplink.js" defer></script>
+    <script src="./lib/packet.js" defer></script>
+    <script src="./lib/doTrade.js" defer></script>
+    <script src="./lib/SerialManager.js"></script>
+    <script src="./lib/UpdateFirmwareManager.js" defer></script>
+    <script src="./lib/getPosInfo.js"></script>
+    <script src="./lib/QPOSService.js"></script>
+    <script src="./lib/pinOperation.js"></script>
+    <script src="./lib/GetMifareCardInfo.js"></script>
+    <script src="./lib/QPOSAnalyResult.js"></script>
+
+
+<script src="./Script.js" defer></script>
+</html>
