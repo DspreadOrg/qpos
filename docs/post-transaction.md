@@ -286,10 +286,12 @@ If the EMV kernel found the transaction need to go online, below call back will 
 ```java
 		@Override
 		public void onRequestOnlineProcess(String tlv) {
-             //sending online message tlv data to issuer
+             //sending online message tlv data to backend server
+			 response=sendTlvToServer()
              ....
              //send the received online processing result to POS
-             pos.sendOnlineProcessResult("8A023030");
+			 //response should contain tag 8A (authorise responce code) and tag 91 (ARPC)
+             pos.sendOnlineProcessResult(response);
         }
 ```
 
