@@ -151,7 +151,7 @@ QPOSServiceListenerImpl.prototype.onDoTradeResult = function (msg,msg1) {
     }else if (msg=="NO_UPDATE_WORK_KEY") {
         trasactionData.innerText = "onDoTradeResult: " + msg;
     }
-    window.print();
+    // window.print();
 }
 
 QPOSServiceListenerImpl.prototype.onRequestOnlineProcess = function (msg) {
