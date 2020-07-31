@@ -23,9 +23,7 @@ var result = null;
 function startSession(buf, onReceiveDate, delay) {
     delay *= 100;
     result = null;
-    setTimeout(function() {
-      writePromise(buf);
-    }, 500);
+    writePromise(buf);
     console.log('writePromise' + getDate());
     function onWaitingNotifyDataFun() {
         delay --;
