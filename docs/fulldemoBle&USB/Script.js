@@ -72,8 +72,7 @@ QPOSServiceListenerImpl.prototype.onLcdShowCustomDisplay = function(msg){
 }
 
 QPOSServiceListenerImpl.prototype.onReturnDoInputCustomStr = function(msg,name){
-    console.log("onReturnDoInputCustomStr: " + msg);
-    console.log(name);
+    console.log("onReturnDoInputCustomStr: " + msg+" "+name);
 }
 
 QPOSServiceListenerImpl.prototype.onDoTradeResult = function (msg,msg1) {
@@ -257,7 +256,7 @@ function DiscoveOrDisConnect() {
 }
 
 function test(){
-  window.print()
+  mService.finishMifareCard(30);
 }
 
 function startTrade(){
@@ -266,12 +265,14 @@ function startTrade(){
     var tractionType = document.getElementById("TractionType").value; 
     if(Connected){
 
-        setAmount(amount, "", currency, transactionTypeConvert(tractionType));
+        // setAmount(amount, "", currency, transactionTypeConvert(tractionType));
         // setAmountIcon(AmountType.MONEY_TYPE_CUSTOM_STR,"Rs");
-        mService.doTrade(0,20);
-        // var strArr = stringToBytes("enter amount");
+        // mService.doTrade(0,20);
+        // var strArr = stringToBytes("pls input");
         // var displayStr = byteArray2Hex(strArr);
-        // mService.doInputCustomStr(CustomInputOperateType.isNumber, CustomInputDisplayType.Other, 6,displayStr,"test",15);
+        // mService.doInputCustomStr(CustomInputOperateType.isNumber, CustomInputDisplayType.Other, 6,displayStr,15);
+       mService.setInputCsutomStr(0,   6,   "pls input",  20);
+          // mService.pollOnMifareCard(30);
     }else{
         DiscoverDevice();
         UpdateUI();
