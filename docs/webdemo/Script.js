@@ -67,6 +67,15 @@ QPOSServiceListenerImpl.prototype.onEmvICCExceptionData = function (msg) {
     console.log("onEmvICCExceptionData" + msg);
     trasactionData.innerText = "onEmvICCExceptionData:" + msg;
 }
+QPOSServiceListenerImpl.prototype.onLcdShowCustomDisplay = function(msg){
+    console.log("onLcdShowCustomDisplay" + msg);
+}
+
+QPOSServiceListenerImpl.prototype.onReturnDoInputCustomStr = function(msg,name){
+    console.log("onReturnDoInputCustomStr: " + msg);
+    console.log(name);
+}
+
 QPOSServiceListenerImpl.prototype.onDoTradeResult = function (msg,msg1) {
     console.log("onDoTradeResult" + msg);
     console.log("onDoTradeResult" + msg1);
@@ -142,6 +151,7 @@ QPOSServiceListenerImpl.prototype.onDoTradeResult = function (msg,msg1) {
     }else if (msg=="NO_UPDATE_WORK_KEY") {
         trasactionData.innerText = "onDoTradeResult: " + msg;
     }
+  
 }
 
 QPOSServiceListenerImpl.prototype.onRequestOnlineProcess = function (msg) {
@@ -204,6 +214,34 @@ QPOSServiceListenerImpl.prototype.onRequestUpdateWorkKeyResult = function (flag)
        trasactionData.innerText = "onRequestUpdateWorkKeyResult: Fail";
     } 
 }
+QPOSServiceListenerImpl.prototype.onSearchMifareCardResult = function (value) {
+    console.log("onSearchMifareCardResult: " + value);
+    
+    var status = value.status;
+    var cardType = value.cardType;
+    var ATQA = value.ATQA;
+    var SAK = value.SAK;
+    var cardUidLen = value.cardUidLen;
+    var cardUid = value.cardUid;
+    var cardAtsLen = value.cardAtsLen;
+    var cardAts = value.cardAts;
+    console.log(status+" "+cardType+" "+ATQA+" "+SAK+" "+cardUid+" "+cardAts);  
+}
+
+QPOSServiceListenerImpl.prototype.onFinishMifareCardResult = function (flag) {
+    console.log("onFinishMifareCardResult: " + flag);
+}
+
+QPOSServiceListenerImpl.prototype.onReturnGetPinResult = function (value) {
+    console.log("onReturnGetPinResult: " + value);
+}
+
+QPOSServiceListenerImpl.prototype.onRequestSetPin = function () {
+    console.log("onRequestSetPin: ");
+    // mService.sendPin("1234");
+    dialog();
+}
+
 QPOSServiceListenerImpl.prototype.onReturnUpdateIPEKResult = function (flag) {
     console.log("onReturnUpdateIPEKResult: " + flag);
     if (flag) {
@@ -211,6 +249,14 @@ QPOSServiceListenerImpl.prototype.onReturnUpdateIPEKResult = function (flag) {
     }else{
        trasactionData.innerText = "onReturnUpdateIPEKResult: Fail";
     } 
+}
+
+function dialog(){
+  var str = prompt("Please input your pin","123456");
+  if(str){
+    console.log("dialog = "+str);
+    mService.sendPin(str);
+  }
 }
 
 //连接设备或断开连接
@@ -225,13 +271,24 @@ function DiscoveOrDisConnect() {
     }
 }
 
+function test(){
+ 	
+}
+
 function startTrade(){
     var currency = document.getElementById("currency_code").value;   //获取form表单中第一个元素的值      
     var amount = document.getElementById("Amount").value;   //直接通过元素的属性Id来直接获取  
     var tractionType = document.getElementById("TractionType").value; 
     if(Connected){
+
         setAmount(amount, "", currency, transactionTypeConvert(tractionType));
+        // setAmountIcon(AmountType.MONEY_TYPE_CUSTOM_STR,"Rs");
         mService.doTrade(0,20);
+        // var strArr = stringToBytes("enter amount");
+        // var displayStr = byteArray2Hex(strArr);
+        // mService.doInputCustomStr(CustomInputOperateType.isNumber, CustomInputDisplayType.Other, 6,displayStr,"test",amount);
+        // mService.doUpdateIPEKOperation("0","09120200630001E0004C","2B7D562AFA3EAC7970664394CD19D3D3","B62AA00000000000",
+        // 	"09120200630001E0004C","2B7D562AFA3EAC7970664394CD19D3D3","B62AA00000000000","09120200630001E0004C","2B7D562AFA3EAC7970664394CD19D3D3","B62AA00000000000")
     }else{
         DiscoverDevice();
         UpdateUI();
@@ -313,12 +370,13 @@ function DiscoverDevice() {
     //过滤出我们需要的蓝牙设备
     //过滤器
     var options = {
-        filters: [{ namePrefix: 'MPOS' },{ namePrefix: 'QPOS' }],
+        filters: [{ namePrefix: 'MPOS' },{ namePrefix: 'QPOS' },{ namePrefix: 'VEL' }],
         optionalServices: [MPOS_SERVICE]
     };
 
     navigator.bluetooth.requestDevice(options)
         .then(device => {
+            console.log(device);
             console.log('> 设备名称: ' + device.name);
             console.log('> 设备Id: ' + device.id);
             console.log('> 是否已连接到其它设备: ' + device.gatt.connected);
@@ -326,7 +384,7 @@ function DiscoverDevice() {
             Connected_Device = device;
             ConnectDevice();
         })
-        .catch(error => {
+        .catch(error => {pos现在发展
             console.log("=> Exception: " + error);
         });
 }
@@ -345,6 +403,7 @@ function ConnectDevice() {
 
             //监听连接断开事件
             Connected_Device.addEventListener('gattserverdisconnected', function () {
+                console.log('disconnect ')
                 Connected = false;
                 UpdateUI();
             });
