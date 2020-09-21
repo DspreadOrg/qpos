@@ -8,19 +8,19 @@ By default, QPOS is injected TMK in factory. default tmk: **0123456789ABCDEFFEDC
 
 ?>server side should use same tmk as inside terminal to encrypt IPEK keys to get encryptedIPEK and calculate its Key Check Value, then call API pos.updateIPEKOperation() to inject into terminal
 ``` java
-String demoTrackKsn ="091202006300001E0004C"
+String demoTrackKsn ="09120200630001E0004C"
 String demoTrackIpek="A5DBF2D67C6DAC23824D300990F99F35 "
 String demoIpekKcv = TDES.tdesECBEncrypt(demoTrackIpek, "0000000000000000"));
 //encDemoTrackIpek = 2B7D562AFA3EAC7970664394CD19D3D3
 String encDemoTrackIpek = TDES.tdesECBEncrypt(tmk, demoTrackIpek)); 
 
- String demoEmvKsn ="091202006300001E0004C"
+ String demoEmvKsn ="09120200630001E0004C"
 String demoEmvIpek="A5DBF2D67C6DAC23824D300990F99F35 "
 String demoEmvIpekKcv = TDES.tdesECBEncrypt(demoEmvIpek, "0000000000000000"));
 //encDemoEmvIpek = 2B7D562AFA3EAC7970664394CD19D3D3
 String encDemoEmvIpek = TDES.tdesECBEncrypt(tmk, demoEmvIpek)); 
 
-String demoPinKsn ="091202006300001E0004C"
+String demoPinKsn ="09120200630001E0004C"
 String demoPinIpek="A5DBF2D67C6DAC23824D300990F99F35 "
 String demoPinIpekKcv = TDES.tdesECBEncrypt(demoPinIpek, "0000000000000000"));
 //encDemoIpek = 2B7D562AFA3EAC7970664394CD19D3D3
