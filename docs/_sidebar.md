@@ -34,5 +34,3 @@
 - [**API Reference**](https://dspread.gitlab.io/qpos/api/index.html)
 
 - [**Web Demo**](https://dspread.gitlab.io/qpos/webdemo/checkout.html)
-
-- [**USB Demo**](https://dspread.gitlab.io/qpos/usbDemo/index2.html)
