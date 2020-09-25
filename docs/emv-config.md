@@ -26,7 +26,7 @@ update the terminal capabilities for only VISA Debit/Credit (Classic).
 ``` java
 
 //9F33 = E0F8C8 (len =3), means terminal support pin/signature 
-pos.updateEmvCAPKByTlv(EMVDataOperation.Update,"9F0607A00000000310109F3303E0F8C8");
+pos.updateEmvAPPByTlv(EMVDataOperation.Update,"9F0607A00000000310109F3303E0F8C8");
 
 //callback function
 onReturnUpdateEmvResult(boolean isSuccess)
@@ -38,7 +38,7 @@ update terminal capabilities and cvm execute limit for only MasterCard Credit/De
 //9F33 = E028C8 (len : 3bytes), means terminal support only support signature, disable pin
 //DF21 = 000000000010 (len : 6bytes), means terminal will execute cvm above amount = 10
 //                                    below amount =10 no cvm , that's is no pin, no signature 
-pos.updateEmvCAPKByTlv(EMVDataOperation.Update,"9F0607A00000000410109F3303E028C8DF2106000000000010");
+pos.updateEmvAPPByTlv(EMVDataOperation.Update,"9F0607A00000000410109F3303E028C8DF2106000000000010");
 
 //callback function
 onReturnUpdateEmvResult(boolean isSuccess)
@@ -50,7 +50,7 @@ update terminal capabilities and cvm execute limit for all AID list, if not spec
 //9F33 = E0F8C8 (len : 3bytes), means terminal support only support signature, disable pin
 //DF21 = 000000000010 (len : 6bytes), means terminal will execute cvm above amount = 10
 //                                    below amount =10 no cvm , that's is no pin, no signature 
-pos.updateEmvCAPKByTlv(EMVDataOperation.Update,"9F3303E0F8C8DF2106000000000010");
+pos.updateEmvAPPByTlv(EMVDataOperation.Update,"9F3303E0F8C8DF2106000000000010");
 
 //callback function
 onReturnUpdateEmvResult(boolean isSuccess)
