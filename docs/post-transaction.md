@@ -131,17 +131,17 @@ The decoded track 1 and track 2 data are the same as the track data we got in pr
 The QPOS will also send the encryted PIN to the mobile application:
 ```
 10-07 11:37:49.571: V/vahid(20753): ???? ????? ??:Format ID: 30
-10-07 11:37:49.571: V/vahid(20753): Masked PAN: 622106XXXXXX1112
-10-07 11:37:49.571: V/vahid(20753): Expiry Date: 1605
+10-07 11:37:49.571: V/vahid(20753): Masked PAN: 622622XXXXXX3256
+10-07 11:37:49.571: V/vahid(20753): Expiry Date: 2612
 10-07 11:37:49.571: V/vahid(20753): Cardholder Name:
 ...
-01-21 04:46:26.766: D/POS_SDK(30241): pinKsn: 00000332100300E000C6
-01-21 04:46:26.766: D/POS_SDK(30241): pinBlock: 377D28B8C7EF080A
+01-21 04:46:26.766: D/POS_SDK(30241): pinKsn: 09118041200085E0000B
+01-21 04:46:26.766: D/POS_SDK(30241): pinBlock: FFB0DFF5141385FA
 ...
 ```
 
 Decode the Track 2 data using the method descripted before: 
-> 6221061055111112D16051007832281716058FFFFFFFFFFF
+> 6226220129263256D26122200059362100000FFFFFFFFFFF
 
 Below python script demostrate how to decode PINBLOCK:
 
@@ -169,22 +169,22 @@ def decrypt_pinblock(ksn, data):
     return hexlify(res)
 
 if __name__ == "__main__":
-    KSN = "00000332100300E000E6"
-    DATA = "377D28B8C7EF080A"
-    #DATA="153CEE49576C0B709515946D991CB48368FEA0375837ECA6"
+    KSN = "09118041200085E0000B"
+    DATA = "FFB0DFF5141385FA"
+    #DATA="1909568B7256B930EC0DFAB30061B640F24CD3CD0006D349"
     print decrypt_pinblock(KSN, DATA)
 
 ```
 
-The decrypted PINBLOCK (formated Pin data) is: 0411019efaaeeeee
+The decrypted PINBLOCK (formated Pin data) is: 041173DFED6D9CDA
 The real PIN value can be caculated using formated pin data and PAN as inputs, according to ANSI X9.8. Below is an example:
 
-* 1) PAN: 6221061055111112
-* 2) 12 right most PAN digits without checksum: 106105511111
-* 3) Add 0000 to the left: 0000106105511111
+* 1) PAN: 6226220129263256
+* 2) 12 right most PAN digits without checksum: 622012926325
+* 3) Add 0000 to the left: 0000622012926325
 * 4) XOR (#3) and Formated PIN Data 
 
-> XOR (0000106105511111, 0411019efaaeeeee) = 041111FFFFFFFFFF
+> XOR (0000622012926325, 041173DFED6D9CDA) = 041111FFFFFFFFFF
 > In our example, the plain PIN is 4 bytes in length with data "1111"
 
 
