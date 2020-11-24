@@ -1,6 +1,21 @@
-## Programming Model
+## MPOS Business Model
 
-![transaction Flow](./_images/transaction-flow.svg ':size=50%')
+When user choose *card present payment*, the transaction process will involve merchants, terminals, card networks and acquiring banks. First, the merchant confirms the user's purchase amount and initiates a card reading transaction on the POS terminal. The POS terminal reads the user's bank card information and sends the card information acquirer bank and confirmed the authenticity of the transaction by issuer bank
+
+![transaction Flow](./_images/transaction-flow.svg ':size=100%')
+
+#### Transaction flow
+##### 1.Customer Choose Card Present Payment
+Customers use bank cards to pay, merchants use POS terminals to read customer card information
+
+##### 2.Transaction Data transmission
+The POS terminal encrypts the card data and safely transmit it to the acquirer bank
+
+##### 3. Transaction Authorisaction
+Issuer bank authorise current transaction, and send ARPC to terminal 
+
+
+## Initialization
 All methods the SDK provided can be devided into three types:
 1. Init methods；
 2. Interactive methods；
@@ -9,8 +24,6 @@ All methods the SDK provided can be devided into three types:
 The application use the init method to init the EMV card reader hardware and get an instance of the Card Reader. It then can use the interactive methods to start the communication with the card reader. During the communication process, if any message returned from the Card reader, a listener method will be invoked by the SDK package.
 
 To avoid the application block and improve the speed of  data interaction between the smart terminal and QPOS, the SDK framework is designed to work under asynchronous mode.
-
-## Initialization
 
 The Class named ‘QPOSService’ is the core of SDK library. Before the APP create this core instance with the parameter of “CommunicationMode mode”, the APP must register all the sub-functions in ‘QPOSServiceListener’. Below code snipplet shows how to init the SDK.
 
