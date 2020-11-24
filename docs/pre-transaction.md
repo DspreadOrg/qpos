@@ -2,7 +2,7 @@
 
 When user choose *card present payment*, the transaction process will involve merchants, terminals, card networks and acquiring banks. First, the merchant confirms the user's purchase amount and initiates a card reading transaction on the POS terminal. The POS terminal reads the user's bank card information and sends the card information acquirer bank and confirmed the authenticity of the transaction by issuer bank
 
-![transaction Flow](./_images/transaction-flow.svg ':size=100%')
+![transaction Flow](./_images/transaction-flow.svg ':size=80%')
 
 
 ## Initialization
