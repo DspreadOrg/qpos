@@ -1,5 +1,6 @@
 ## Programming Model
 
+![transaction Flow](./_images/transaction-flow.svg ':size=50%')
 All methods the SDK provided can be devided into three types:
 1. Init methods；
 2. Interactive methods；
