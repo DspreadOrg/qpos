@@ -1,6 +1,6 @@
 ## Introduction
 
-<iframe width="800" height="800" src="./products/products.html" frameborder="0"  scrolling="no" allowfullscreen></iframe>
+<iframe width="800" height="400" src="./products/products.html" frameborder="0"  scrolling="no" allowfullscreen></iframe>
 
 QPOS is a serial of mobile payment devices. It can communicate with the mobile device through audio jack, UART or USB cable. 
 
