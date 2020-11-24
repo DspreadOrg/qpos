@@ -4,16 +4,6 @@ When user choose *card present payment*, the transaction process will involve me
 
 ![transaction Flow](./_images/transaction-flow.svg ':size=100%')
 
-#### Transaction flow
-##### 1.Customer Choose Card Present Payment
-Customers use bank cards to pay, merchants use POS terminals to read customer card information
-
-##### 2.Transaction Data transmission
-The POS terminal encrypts the card data and safely transmit it to the acquirer bank
-
-##### 3. Transaction Authorisaction
-Issuer bank authorise current transaction, and send ARPC to terminal 
-
 
 ## Initialization
 All methods the SDK provided can be devided into three types:
