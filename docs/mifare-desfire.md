@@ -16,3 +16,6 @@
 ```java
 	pos.powerOffNFC(int timeout)
 ```
+
+Mifare Desfire Reading Card Demo
+https://www.linkedin.com/pulse/mifare-desfire-introduction-david-coelho/
