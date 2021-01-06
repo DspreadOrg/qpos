@@ -1,6 +1,6 @@
 ## update emv config file
 
-Download emv config template xml file for [QPOS mini](assets/emv_profile_tlv_qpos_mini.xml) and [CR100](assets/emv_profile_tlv_cr100.xml), then put it into **Assets** folder, call below function to upgrade the config to terminal
+Download emv config template xml file for [QPOS mini](https://drive.google.com/file/d/1W3bgT9MXwN40WlaYviEqDxHu21DMlXu4/view?usp=sharing) and [CR100](https://drive.google.com/file/d/126dWWzGdwwRupAX8Y0b0gc1eKr871BD4/view?usp=sharing), then put it into **Assets** folder, call below function to upgrade the config to terminal
 
 ``` java
 Overloaded function
