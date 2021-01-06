@@ -1,6 +1,6 @@
 ## update emv config file
 
-Download emv config [template xml](https://gitlab.com/dspread/FAQs_Document/-/blob/master/tools/emv_profile_tlv.xml) file, then put it into **Assets** folder, call below function to upgrade the config to terminal
+Download emv config template xml file for [QPOS mini](assets/emv_profile_tlv_qpos_mini.xml) and [CR100](assets/emv_profile_tlv_cr100.xml), then put it into **Assets** folder, call below function to upgrade the config to terminal
 
 ``` java
 Overloaded function
