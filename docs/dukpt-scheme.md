@@ -36,6 +36,8 @@ pos.updateIPEKOperation(keyIndex,
 
 [Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=A5DBF2D67C6DAC23824D300990F99F35&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
 
+### update IPEK key by Key Type （Asymetrical）
+
 
 ### update IPEK key by RSA （Asymetrical）
 
