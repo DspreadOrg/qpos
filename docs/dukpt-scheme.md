@@ -37,7 +37,7 @@ pos.doUpdateIPEKOperation(keyIndex,
 [Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=A5DBF2D67C6DAC23824D300990F99F35&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
 
 ### update IPEK key by Key Type （Asymetrical）
-This API can update TRACK IPEK, EMV IPEK, PIN IPEK separately, the following example is to update TRACK IPEK and EMV IPEK separately.
+This API can be used updated single or multiple IPEK KEY, the following example is to update TRACK IPEK and EMV IPEK separately.
 ``` java
 String demoTrackKsn ="09120200630001E0004C"
 String demoTrackIpek="A5DBF2D67C6DAC23824D300990F99F35 "
