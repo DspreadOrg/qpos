@@ -14,7 +14,7 @@ String demoIpekKcv = TDES.tdesECBEncrypt(demoTrackIpek, "0000000000000000"));
 //encDemoTrackIpek = 2B7D562AFA3EAC7970664394CD19D3D3
 String encDemoTrackIpek = TDES.tdesECBEncrypt(tmk, demoTrackIpek)); 
 
- String demoEmvKsn ="09120200630001E0004C"
+String demoEmvKsn ="09120200630001E0004C"
 String demoEmvIpek="A5DBF2D67C6DAC23824D300990F99F35 "
 String demoEmvIpekKcv = TDES.tdesECBEncrypt(demoEmvIpek, "0000000000000000"));
 //encDemoEmvIpek = 2B7D562AFA3EAC7970664394CD19D3D3
@@ -28,7 +28,7 @@ String encDemoPinIpek = TDES.tdesECBEncrypt(tmk, demoPinIpek));
 
 
 //call api to inejct ipek, let keyIndex =0
-pos.updateIPEKOperation(keyIndex,   
+pos.doUpdateIPEKOperation(keyIndex,   
         demoTrackKsn,encDemoTrackIpek,demoIpekKcv,   
         demoEmvKsn,encDemoEmvIpek,demoEmvIpekKcv,   
         demoPinKsn,encDemoPinIpek,demoPinIpekKcv);
@@ -37,7 +37,26 @@ pos.updateIPEKOperation(keyIndex,
 [Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=A5DBF2D67C6DAC23824D300990F99F35&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
 
 ### update IPEK key by Key Type （Asymetrical）
+This API can update TRACK IPEK, EMV IPEK, PIN IPEK separately, the following example is to update TRACK IPEK and EMV IPEK separately.
+``` java
+String demoTrackKsn ="09120200630001E0004C"
+String demoTrackIpek="A5DBF2D67C6DAC23824D300990F99F35 "
+String demoIpekKcv = TDES.tdesECBEncrypt(demoTrackIpek, "0000000000000000"));
+//encDemoTrackIpek = 2B7D562AFA3EAC7970664394CD19D3D3
+String encDemoTrackIpek = TDES.tdesECBEncrypt(tmk, demoTrackIpek)); 
 
+String demoEmvKsn ="09120200630001E0004C"
+String demoEmvIpek="A5DBF2D67C6DAC23824D300990F99F35 "
+String demoEmvIpekKcv = TDES.tdesECBEncrypt(demoEmvIpek, "0000000000000000"));
+//encDemoEmvIpek = 2B7D562AFA3EAC7970664394CD19D3D3
+String encDemoEmvIpek = TDES.tdesECBEncrypt(tmk, demoEmvIpek)); 
+
+//call api to inejct ipek, let keyIndex =0
+pos.updateIPEKOperationByKeyType(keyIndex,   
+        demoTrackKsn,encDemoTrackIpek,demoIpekKcv,   
+        demoEmvKsn,encDemoEmvIpek,demoEmvIpekKcv,   
+        "","","");
+```
 
 ### update IPEK key by RSA （Asymetrical）
 
