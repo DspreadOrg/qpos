@@ -18,5 +18,5 @@ updateThread.start();
 Note: please keep device charging with USB while firmware upgrade
 
 <p align="center">
-<iframe width="980" align height="360" src="https://www.youtube.com/embed/5ZTFwyKwPls" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="840" align height="360" src="https://www.youtube.com/embed/5ZTFwyKwPls" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
