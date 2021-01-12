@@ -14,7 +14,7 @@
       - [DUKPT](dukpt-scheme.md)
       - [MKSK](mksk-scheme.md)
   - [EMV Configuration](emv-config.md)
-  - [Firmware Upgrade](firmware-ota.md)
+  - [Firmware Upgrade](firmware-OTA.md)
 
 - Mifare Card 
 
