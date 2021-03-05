@@ -25,7 +25,7 @@ You can download to install our [android-demo-app][android-app]
 - [x] [Android SDK](https://gitlab.com/dspread/android) 
 - [x] [IOS SDK](https://gitlab.com/dspread/ios)
 - [x] [Windows SDK](https://gitlab.com/dspread/windows)
-- [x] [Hybrid] [cordava]
+- [x] [Hybrid](https://gitlab.com/dspread/cordova-plugin)
     - [x] [cordava](https://gitlab.com/dspread/cordova-plugin)
     - [x] [ionic](https://gitlab.com/dspread/ionic-demo)
     - [x] [Flutter](https://gitlab.com/dspread/flutter_demo)
