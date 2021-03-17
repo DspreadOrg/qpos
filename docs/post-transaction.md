@@ -226,7 +226,7 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 
 ### Input PIN 
 
-The PIN information can be sent to the EMV kernel by:
+CR100：The PIN information can be sent to the EMV kernel by:
 ```java
 		@Override
 		public void onRequestSetPin() {
@@ -245,6 +245,24 @@ If the user do not want to input PIN, the applicaiton can bypass PIN enter by ca
 if the user want to cancel the transaction, the app should call
 ```java
 	pos.cancelPin();
+```
+
+D20：
+```java
+		@Override
+		public void onQposRequestPinResult(List<String> dataList, int offlinePinTimes) {
+				//draw the pin input keyboard,after finish the keyboard,then call the below api
+				pos.pinMapSync(value,30);//the value is the keyboard pin coordinate position
+				
+		}
+```
+After send the pin keyboard coordinate position to the D20 device, the you can click the pin keyboard, and you can get the input pin count on the callback method onReturnGetPinInputResult
+```java
+		@Override
+		public void onReturnGetPinInputResult(int num) {
+				//the num is the counter of your pin input
+				
+		}
 ```
 
 ### Set Time
