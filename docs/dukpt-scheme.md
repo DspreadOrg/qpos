@@ -14,14 +14,14 @@ String demoIpekKcv = TDES.tdesECBEncrypt(demoTrackIpek, "0000000000000000"));
 //encDemoTrackIpek = 2B7D562AFA3EAC7970664394CD19D3D3
 String encDemoTrackIpek = TDES.tdesECBEncrypt(tmk, demoTrackIpek)); 
 
-String demoEmvKsn ="09120200630001E0004C"
-String demoEmvIpek="A5DBF2D67C6DAC23824D300990F99F35 "
+String demoEmvKsn ="09220200630001E0004C"
+String demoEmvIpek="91B075704A9470B08F49F20E07E6EF9B "
 String demoEmvIpekKcv = TDES.tdesECBEncrypt(demoEmvIpek, "0000000000000000"));
-//encDemoEmvIpek = 2B7D562AFA3EAC7970664394CD19D3D3
+//encDemoEmvIpek = 91B075704A9470B08F49F20E07E6EF9B
 String encDemoEmvIpek = TDES.tdesECBEncrypt(tmk, demoEmvIpek)); 
 
-String demoPinKsn ="09120200630001E0004C"
-String demoPinIpek="A5DBF2D67C6DAC23824D300990F99F35 "
+String demoPinKsn ="09320200630001E0004C"
+String demoPinIpek="1698A73467BA046746AD5E46DA7A49DC "
 String demoPinIpekKcv = TDES.tdesECBEncrypt(demoPinIpek, "0000000000000000"));
 //encDemoIpek = 2B7D562AFA3EAC7970664394CD19D3D3
 String encDemoPinIpek = TDES.tdesECBEncrypt(tmk, demoPinIpek)); 
