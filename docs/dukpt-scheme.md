@@ -11,7 +11,7 @@ By default, QPOS is injected TMK in factory. default tmk: **0123456789ABCDEFFEDC
 String demoTrackKsn ="09120200630001E0004C"
 String demoTrackIpek="A5DBF2D67C6DAC23824D300990F99F35 "
 String demoIpekKcv = TDES.tdesECBEncrypt(demoTrackIpek, "0000000000000000"));
-//encDemoTrackIpek = 2B7D562AFA3EAC7970664394CD19D3D3
+//encDemoTrackIpek = A5DBF2D67C6DAC23824D300990F99F35
 String encDemoTrackIpek = TDES.tdesECBEncrypt(tmk, demoTrackIpek)); 
 
 String demoEmvKsn ="09220200630001E0004C"
@@ -21,7 +21,7 @@ String demoEmvIpekKcv = TDES.tdesECBEncrypt(demoEmvIpek, "0000000000000000"));
 String encDemoEmvIpek = TDES.tdesECBEncrypt(tmk, demoEmvIpek)); 
 
 String demoPinKsn ="09320200630001E0004C"
-String demoPinIpek="1698A73467BA046746AD5E46DA7A49DC "
+String demoPinIpek="2B7D562AFA3EAC7970664394CD19D3D3 "
 String demoPinIpekKcv = TDES.tdesECBEncrypt(demoPinIpek, "0000000000000000"));
 //encDemoIpek = 2B7D562AFA3EAC7970664394CD19D3D3
 String encDemoPinIpek = TDES.tdesECBEncrypt(tmk, demoPinIpek)); 
@@ -36,27 +36,6 @@ pos.doUpdateIPEKOperation(keyIndex,
 
 [Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=A5DBF2D67C6DAC23824D300990F99F35&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
 
-### update IPEK key by Key Type （Asymetrical）
-This API can be used updated single or multiple IPEK KEY, the following example is to update TRACK IPEK and EMV IPEK separately.
-``` java
-String demoTrackKsn ="09120200630001E0004C"
-String demoTrackIpek="A5DBF2D67C6DAC23824D300990F99F35 "
-String demoIpekKcv = TDES.tdesECBEncrypt(demoTrackIpek, "0000000000000000"));
-//encDemoTrackIpek = 2B7D562AFA3EAC7970664394CD19D3D3
-String encDemoTrackIpek = TDES.tdesECBEncrypt(tmk, demoTrackIpek)); 
-
-String demoEmvKsn ="09120200630001E0004C"
-String demoEmvIpek="A5DBF2D67C6DAC23824D300990F99F35 "
-String demoEmvIpekKcv = TDES.tdesECBEncrypt(demoEmvIpek, "0000000000000000"));
-//encDemoEmvIpek = 2B7D562AFA3EAC7970664394CD19D3D3
-String encDemoEmvIpek = TDES.tdesECBEncrypt(tmk, demoEmvIpek)); 
-
-//call api to inejct ipek, let keyIndex =0
-pos.updateIPEKOperationByKeyType(keyIndex,   
-        demoTrackKsn,encDemoTrackIpek,demoIpekKcv,   
-        demoEmvKsn,encDemoEmvIpek,demoEmvIpekKcv,   
-        "","","");
-```
 
 ### update IPEK key by RSA （Asymetrical）
 
