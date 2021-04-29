@@ -11,23 +11,31 @@ By default, QPOS is injected TMK in factory. default tmk: **0123456789ABCDEFFEDC
 String demoTrackKsn ="09120200630001E0004C"
 String demoTrackIpek="A5DBF2D67C6DAC23824D300990F99F35 "
 String demoIpekKcv = TDES.tdesECBEncrypt(demoTrackIpek, "0000000000000000"));
-//encDemoTrackIpek = A5DBF2D67C6DAC23824D300990F99F35
+//encDemoTrackIpek = 2B7D562AFA3EAC7970664394CD19D3D3
+//demoIpekKcv = B62AA0959DD665C1
 String encDemoTrackIpek = TDES.tdesECBEncrypt(tmk, demoTrackIpek)); 
 
 String demoEmvKsn ="09220200630001E0004C"
 String demoEmvIpek="91B075704A9470B08F49F20E07E6EF9B "
 String demoEmvIpekKcv = TDES.tdesECBEncrypt(demoEmvIpek, "0000000000000000"));
-//encDemoEmvIpek = 91B075704A9470B08F49F20E07E6EF9B
+//encDemoEmvIpek = 03F686995B0BD20F9E738AFE05AFBB71
+//demoIpekKcv = 321C1F0712CF5F1D
 String encDemoEmvIpek = TDES.tdesECBEncrypt(tmk, demoEmvIpek)); 
 
 String demoPinKsn ="09320200630001E0004C"
 String demoPinIpek="2B7D562AFA3EAC7970664394CD19D3D3 "
 String demoPinIpekKcv = TDES.tdesECBEncrypt(demoPinIpek, "0000000000000000"));
-//encDemoIpek = 2B7D562AFA3EAC7970664394CD19D3D3
+//encDemoIpek = A7B8EDBEED5A71AFDB6763F5A1169F96
+//demoIpekKcv = 6988C7294F5809F9
 String encDemoPinIpek = TDES.tdesECBEncrypt(tmk, demoPinIpek)); 
 
 
 //call api to inejct ipek, let keyIndex =0
+/* pos.doUpdateIPEKOperation(0,   
+        09120200630001E0004C,2B7D562AFA3EAC7970664394CD19D3D3,B62AA0959DD665C1,   
+        09220200630001E0004C,03F686995B0BD20F9E738AFE05AFBB71,321C1F0712CF5F1D,   
+         09320200630001E0004C,A7B8EDBEED5A71AFDB6763F5A1169F96,6988C7294F5809F9);*/
+
 pos.doUpdateIPEKOperation(keyIndex,   
         demoTrackKsn,encDemoTrackIpek,demoIpekKcv,   
         demoEmvKsn,encDemoEmvIpek,demoEmvIpekKcv,   
