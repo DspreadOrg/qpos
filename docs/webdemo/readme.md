@@ -1,0 +1,1 @@
+Open the checkout.html file then start to do a trade
