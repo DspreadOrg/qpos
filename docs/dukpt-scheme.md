@@ -9,32 +9,32 @@ By default, QPOS is injected TMK in factory. default tmk: **0123456789ABCDEFFEDC
 ?>server side should use same tmk as inside terminal to encrypt IPEK keys to get encryptedIPEK and calculate its Key Check Value, then call API pos.updateIPEKOperation() to inject into terminal
 ``` java
 String demoTrackKsn ="09120200630001E0004C"
-String demoTrackIpek="A5DBF2D67C6DAC23824D300990F99F35 "
+String demoTrackIpek="5AF93691729D99703E3F2E386B619DFC "
 String demoIpekKcv = TDES.tdesECBEncrypt(demoTrackIpek, "0000000000000000"));
-//encDemoTrackIpek = 2B7D562AFA3EAC7970664394CD19D3D3
-//demoIpekKcv = B62AA0959DD665C1
+//encDemoTrackIpek = FF811AB9745399D6A5096AC1E6EE0AA7
+//demoIpekKcv = 377EE0
 String encDemoTrackIpek = TDES.tdesECBEncrypt(tmk, demoTrackIpek)); 
 
 String demoEmvKsn ="09220200630001E0004C"
-String demoEmvIpek="91B075704A9470B08F49F20E07E6EF9B "
+String demoEmvIpek="FA21E5290EE89881AF360574087496EA "
 String demoEmvIpekKcv = TDES.tdesECBEncrypt(demoEmvIpek, "0000000000000000"));
-//encDemoEmvIpek = 03F686995B0BD20F9E738AFE05AFBB71
-//demoIpekKcv = 321C1F0712CF5F1D
+//encDemoEmvIpek = 39A694D57E565D2BDB85447BF856F074
+//demoIpekKcv = AE8F91
 String encDemoEmvIpek = TDES.tdesECBEncrypt(tmk, demoEmvIpek)); 
 
 String demoPinKsn ="09320200630001E0004C"
-String demoPinIpek="2B7D562AFA3EAC7970664394CD19D3D3 "
+String demoPinIpek="0F3E0B885C29062A5C32263A06FB7533 "
 String demoPinIpekKcv = TDES.tdesECBEncrypt(demoPinIpek, "0000000000000000"));
-//encDemoIpek = A7B8EDBEED5A71AFDB6763F5A1169F96
-//demoIpekKcv = 6988C7294F5809F9
+//encDemoIpek = E1AAE4AB1550A8776CF693BE6EA9C9FB
+//demoIpekKcv = 7DD75C
 String encDemoPinIpek = TDES.tdesECBEncrypt(tmk, demoPinIpek)); 
 
 
 //call api to inejct ipek, let keyIndex =0
 /* pos.doUpdateIPEKOperation(0,   
-        09120200630001E0004C,2B7D562AFA3EAC7970664394CD19D3D3,B62AA0959DD665C1,   
-        09220200630001E0004C,03F686995B0BD20F9E738AFE05AFBB71,321C1F0712CF5F1D,   
-         09320200630001E0004C,A7B8EDBEED5A71AFDB6763F5A1169F96,6988C7294F5809F9);*/
+        09120200630001E0004C,FF811AB9745399D6A5096AC1E6EE0AA7,377EE0,   
+        09220200630001E0004C,39A694D57E565D2BDB85447BF856F074,AE8F91,   
+        09320200630001E0004C,E1AAE4AB1550A8776CF693BE6EA9C9FB,7DD75C);*/
 
 pos.doUpdateIPEKOperation(keyIndex,   
         demoTrackKsn,encDemoTrackIpek,demoIpekKcv,   
@@ -42,7 +42,7 @@ pos.doUpdateIPEKOperation(keyIndex,
         demoPinKsn,encDemoPinIpek,demoPinIpekKcv);
 ```
 
-[Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=A5DBF2D67C6DAC23824D300990F99F35&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
+[Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=FA21E5290EE89881AF360574087496EA&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
 
 
 ### update IPEK key by RSA （Asymetrical）
