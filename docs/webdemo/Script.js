@@ -259,6 +259,33 @@ function dialog(){
   }
 }
 
+function upload(input) {  //支持chrome IE10  
+    if (window.FileReader) {  
+        console.log("upload");
+        var file = input.files[0];  
+        filename = file.name.split(".")[0];  
+        var reader = new FileReader();  
+        reader.onload = function() {  
+            alert(this.result.length); 
+            mService.updateEMVConfigByXml(this.result);
+        }  
+        reader.readAsText(file);  
+    }
+    else{
+        alert("not support");
+    }
+}
+
+function selectEmvFile(){
+    //$('#updateEmvFile').click();
+    if(Connected){
+    document.getElementById("updateEmvFile").click();
+    } else{
+        DiscoverDevice();
+        UpdateUI();
+    }
+}
+
 //连接设备或断开连接
 function DiscoveOrDisConnect() {
     if (Connected) {
@@ -370,7 +397,7 @@ function DiscoverDevice() {
     //过滤出我们需要的蓝牙设备
     //过滤器
     var options = {
-        filters: [{ namePrefix: 'MPOS' },{ namePrefix: 'QPOS' },{ namePrefix: 'VEL' }],
+        filters: [{ namePrefix: 'MPOS' },{ namePrefix: 'QPOS' },{ namePrefix: 'VEL' },{ namePrefix:'watu'}],
         optionalServices: [MPOS_SERVICE]
     };
 

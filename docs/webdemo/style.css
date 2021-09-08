@@ -216,3 +216,7 @@ button
     border-color: #1B9AF7;
     color: #FFF; 
 }
+
+.inputFile{
+    display: none;
+}
