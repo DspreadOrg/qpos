@@ -62,6 +62,7 @@ QPOSServiceListenerImpl.prototype.onRequestTransactionResult = function (msg) {
 }
 QPOSServiceListenerImpl.prototype.onError = function (msg) {
     console.log("onError" + msg);
+    trasactionData.innerText = "onError:" + msg;
 }
 QPOSServiceListenerImpl.prototype.onEmvICCExceptionData = function (msg) {
     console.log("onEmvICCExceptionData" + msg);
@@ -190,12 +191,12 @@ QPOSServiceListenerImpl.prototype.onReturnUpdateEMVRIDResult = function (flag) {
        trasactionData.innerText = "onReturnUpdateEMVRIDResult: Fail";
     }
 }
-QPOSServiceListenerImpl.prototype.onReturnCustomConfigResult = function (flag) {
-    console.log("onReturnCustomConfigResult: " + flag);
+QPOSServiceListenerImpl.prototype.onReturnCustomConfigResult = function (flag, msg) {
+    console.log("onReturnCustomConfigResult: " + flag+ "\n"+msg);
     if (flag) {
-       trasactionData.innerText = "onReturnCustomConfigResult: Success"; 
+       trasactionData.innerText = "onReturnCustomConfigResult: Success\n"+msg; 
     }else{
-       trasactionData.innerText = "onReturnCustomConfigResult: Fail";
+       trasactionData.innerText = "onReturnCustomConfigResult: Fail\n"+msg;
     } 
 }
 QPOSServiceListenerImpl.prototype.onReturnSetMasterKeyResult = function (flag) {
@@ -411,7 +412,7 @@ function DiscoverDevice() {
             Connected_Device = device;
             ConnectDevice();
         })
-        .catch(error => {pos现在发展
+        .catch(error => {
             console.log("=> Exception: " + error);
         });
 }
