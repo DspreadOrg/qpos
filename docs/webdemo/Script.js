@@ -271,6 +271,7 @@ function upload(input) {  //支持chrome IE10
             mService.updateEMVConfigByXml(this.result);
         }  
         reader.readAsText(file);  
+        document.getElementById('updateEmvFile').value = null;
     }
     else{
         alert("not support");
