@@ -278,6 +278,10 @@ function upload(input) {  //支持chrome IE10
     }
 }
 
+function getQPosInfo(){
+    mService.getQPosInfo();
+}
+
 function selectEmvFile(){
     //$('#updateEmvFile').click();
     if(Connected){
