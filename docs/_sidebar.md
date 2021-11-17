@@ -24,6 +24,7 @@
 
 - Tools
 
+  - [TVR Decoder](paymentcardtools.md)
   - [Dukpt Tool](encryption-decryption.md)
   - [TLV Parser](emv-tool.md)
   - [ISO8583 Parser](emv-iso8583.md)
