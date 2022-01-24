@@ -143,6 +143,12 @@ The QPOS will also send the encryted PIN to the mobile application:
 Decode the Track 2 data using the method descripted before: 
 > 6226220129263256D26122200059362100000FFFFFFFFFFF
 
+Note：
+
+​	“D” is stand for “=”
+
+​	So **PAN**=6226220129263256；"**D**"=Separater; **Expiry Date**=2612; **Service Code**=220; **Random**=0059362100000
+
 Below python script demostrate how to decode PINBLOCK:
 
 ```python
