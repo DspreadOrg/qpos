@@ -47,7 +47,7 @@ onReturnUpdateEmvResult(boolean isSuccess)
 **example 3:**
 update terminal capabilities and cvm execute limit for all AID list, if not specify AID, then the config will be effective for AIDs inside terminal
 ``` java
-//9F33 = E0F8C8 (len : 3bytes), means terminal support only support signature, disable pin
+//9F33 = E0F8C8 (len : 3bytes), means terminal support pin and signature
 //DF21 = 000000000010 (len : 6bytes), means terminal will execute cvm above amount = 10
 //                                    below amount =10 no cvm , that's is no pin, no signature 
 pos.updateEmvAPPByTlv(EMVDataOperation.Update,"9F3303E0F8C8DF2106000000000010");
