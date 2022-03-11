@@ -1,5 +1,5 @@
 If you want to implement firmware upgrade, please folow below code. 
-Futhere details, please refer to [demo project](https://gitlab.com/dspread/android/-/blob/master/pos_android_studio_demo/pos_android_studio_app/src/main/java/com/dspread/demoui/activities/MainActivity.java#L2461)
+For more details, please refer to [demo project](https://gitlab.com/dspread/android/-/blob/master/pos_android_studio_demo/pos_android_studio_app/src/main/java/com/dspread/demoui/activities/MainActivity.java#L2461)
 
 
 
