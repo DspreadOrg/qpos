@@ -66,11 +66,11 @@ encTrack3	  | Encrypted track 3 data with T-Des encryption key derived from DATA
 partialTrack  |	Reserved
 trackksn	  | KSN of the track data
 
-The track data returned in the hashtable is encrytped. It can be encrypted by Dukpt Data Key Variant 3DES CBC mode, or by Dukpt Data Key 3DES CBC mode. Per ANSI X9.24 2009 version request, The later (Data Key with 3DES CBC mode) is usually a recommanded choice.
+The track data returned in the hashtable is encrytped. It can be encrypted by Dukpt Data Key Variant 3DES CBC mode, or by Dukpt Data Key 3DES CBC mode. Per ANSI X9.24 2009 version request, The later (Data Key with 3DES CBC mode) is usually a recommended choice.
 
 ### Decoding Track Data Encrypted with Data Key
 
-Below is another example, the track data is encrypted using data key whith 3DES CBC mode (per ANSI X9.24 2009 version request)
+Below is another example, the track data is encrypted using data key with 3DES CBC mode (per ANSI X9.24 2009 version request)
 
 ```
 01-21 04:46:26.764: D/POS_SDK(30241): decodeData: {track3Length=0, track2Length=32, expiryDate=1011, encTrack3=, encPAN=, encTrack1=22FB2E931F3EFAFC8C3899AB779F3719E75D392365DB748EEA789560EEB7714D84AB7FFA5B2E162C9BD566D03DCD240FC9D316CAC4015B782294365F9062CA0A, pinRandomNumber=, encTrack2=153CEE49576C0B709515946D991CB48368FEA0375837ECA6, trackRandomNumber=, trackksn=00000332100300E00002, maskedPAN=622526XXXXXX5453, cardholderName=MR.ZHOU CHENG HAO         , partialTrack=, encTracks=153CEE49576C0B709515946D991CB48368FEA0375837ECA6, psamNo=, formatID=30, track1Length=68, pinKsn=, serviceCode=106, ksn=, pinBlock=}
@@ -196,7 +196,7 @@ The real PIN value can be caculated using formated pin data and PAN as inputs, a
 
 ## Chip Card Transaction
 
-EMV Chip card transaction is much more complicate than magnatic swipe card transaction. The EMV kernel inside the device may need a lot of information to process the transaction, including:
+EMV Chip card transaction is much more complicate than magnetic swipe card transaction. The EMV kernel inside the device may need a lot of information to process the transaction, including:
 
 1. PIN from the card holder
 2. Current time from the application
@@ -237,16 +237,16 @@ CR100：The PIN information can be sent to the EMV kernel by:
 		@Override
 		public void onRequestSetPin() {
 				pos.sendPin("123456");
-				//pos.emptyPin();    //Bypass PIN Entry
+				//pos.bypassPin();    //Bypass PIN Entry
 				//pos.cancelPin();   //Cancel the transaction
 		}
 ```
 Note, the kernel will not call the callback if PIN is not required for the transaction, or if the QPOS itself is with an embedded PINPAD.
 
-If the user do not want to input PIN, the applicaiton can bypass PIN enter by calling 
+If the user do not want to input PIN, the applicaiton can bypass PIN entry by calling 
 
 ```java
-	pos.emptyPin();
+	pos.bypassPin();
 ```
 if the user want to cancel the transaction, the app should call
 ```java
@@ -262,7 +262,9 @@ D20：
 				
 		}
 ```
-After send the pin keyboard coordinate position to the D20 device, the you can click the pin keyboard, and you can get the input pin count on the callback method onReturnGetPinInputResult
+
+After sending the pin keyboard coordinate position to the D20 device, then you can click the pin keyboard, and you can get the input pin count on the callback method onReturnGetPinInputResult
+
 ```java
 		@Override
 		public void onReturnGetPinInputResult(int num) {
@@ -279,7 +281,7 @@ The current time information can be sent to the EMV kernel by:
 		@Override
 		public void onRequestTime() {
 			String terminalTime = new SimpleDateFormat("yyyyMMddHHmmss")
-					.format(Calendar.getInstance().getTime());
+				.format(Calendar.getInstance().getTime());
 			pos.sendTime(terminalTime);
 		}
 ```
