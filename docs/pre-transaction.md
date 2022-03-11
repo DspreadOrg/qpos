@@ -36,7 +36,8 @@ The CommunicaitonMode can be
 ```java
 	public static enum CommunicationMode{
 		AUDIO,
-		BLUETOOTH_VER2,
+		BLUETOOTH,
+		BLUETOOTH_BLE,
 		UART,
         USB
 	}
@@ -85,7 +86,20 @@ The transaction amount can be set by:
 									TransactionType.GOODS);
 ```
 
-the setAmount method can be called before start a transaction. If it was not called, a call back will be invoked by the SDK, giving app another chance to enter the transaction amount.
+The transaction icon can be set by:
+
+```java
+        	pos.setAmountIcon(AmountType.MONEY_TYPE_CUSTOM_STR, amountIcon);
+
+			public static enum AmountType {
+        		MONEY_TYPE_NONE,
+        		MONEY_TYPE_RMB,
+        		MONEY_TYPE_DOLLAR,
+        		MONEY_TYPE_CUSTOM_STR
+    }
+```
+
+the setAmount method and setAmountIcon method can be called before starting a transaction. If setAmount was not called, a call back will be invoked by the SDK, giving app another chance to enter the transaction amount.
 
 ```java
 		@Override
@@ -98,7 +112,7 @@ the setAmount method can be called before start a transaction. If it was not cal
 The setAmount method has below parameters: 
 1. amount : how much money in cents
 2. cashbackAmount : reserved for future use 
-3. currency code : US Dollar,  CNY, etc
+3. currency code : US Dollar, CNY, etc
 4. transactionType : which kind of transaction to be started. The transaction type can be:
 
 ```java
