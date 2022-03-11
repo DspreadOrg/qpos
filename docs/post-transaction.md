@@ -316,7 +316,7 @@ If the EMV kernel found the transaction need to go online, below call back will 
 			 response=sendTlvToServer()
              ....
              //send the received online processing result to POS
-			 //response should contain tag 8A (authorise responce code) and tag 91 (ARPC)
+			 //response should contain tag 8A (Authorisation Response Code) and tag 91 (Issuer Authentication Data) 
              pos.sendOnlineProcessResult(response);
         }
 ```
@@ -354,7 +354,7 @@ Inside the table, there are:
 1. Some EMV TAGs (5F20,4F,5F24 ...) with plain text value. 
 2. Some Proprietary tags starting with 0xC, in our case C4,C1,C7,C0 and C2.
 
-The defination of proprietary tags can be found below:
+The definition of proprietary tags can be found below:
 
 Tag   | Name                      | Length(Bytes)
 ------|---------------------------|--------------
@@ -367,7 +367,7 @@ C5    | Batch Data                | var
 C6    | Reversal Data             | var
 C7    | PINBLOCK                  | 8
 
-It's the responsibility of the app to handle the online message string, sending them to the bank( the cardd issuer), and check the bank processing result.
+It's the responsibility of the app to handle the online message string, sending them to the bank (the card issuer), and check the bank processing result.
 
 The value of tag C2 is the encrypted Online Message, usually the app need to send it to the back end system, along with the tag C0 value. The backend system can derive the 3DES key from C0 value, and decrypt the C2 value and get the real online data in plain text format.
 
@@ -441,7 +441,7 @@ Decoding the tlv inside onRequestBatchData is similar to decoding onRequestOnlin
 
 ### Reversal Handling
 
-If the EMV chip card refuse the transaction, but the transaction was approved by the issuer. A reversal procedure should be initiated by the mobile app. The requred data for doing reversal can be got by below call back:
+If the EMV chip card refuse the transaction, but the transaction was approved by the issuer. A reversal procedure should be initiated by the mobile app. Below callback can get the required data for doing reversal:
 
 ```java
 		@Override
