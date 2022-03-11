@@ -63,7 +63,7 @@ The code below shows how to open the communication bridge with the open() method
 			}
 			
 		} else {   //We will use Bluetooth
-			open(CommunicationMode.BLUETOOTH_VER2);
+			open(CommunicationMode.BLUETOOTH);
 			posType = POS_TYPE.BLUETOOTH;
             //...
 		}
