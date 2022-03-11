@@ -20,7 +20,7 @@ String encDemoMACKey = TDES.tdesECBEncrypt(tmk, demoMACKey));
 //encDemoMACKey = 9B3A7B883A100F739B3A7B883A100F73
 String demoMACKeyKcv = TDES.tdesECBEncrypt(demoMACKey, "0000000000000000")); 
 
-//call api to inejct session keys, let keyIndex =0
+//call api to inject session keys, let keyIndex =0
 pos.udpateWorkKey(
                     encDemoPINKey, demoPINKeyKcv,//PIN KEY
                     encDemoTRACKKey, demoTRACKKeyKcv,  //TRACK KEY
@@ -44,7 +44,7 @@ String encDemoNewMasterKey = TDES.tdesECBEncrypt(tmk, demoNewMasterKey));
 //encDemoNewMasterKey = B4ABA2BB791C50E7B4ABA2BB791C50E7
 String demoNewMasterKeyKcv = TDES.tdesECBEncrypt(demoNewMasterKey, "0000000000000000")); 
 
-//call api to inejct new master key, let keyIndex =0
+//call api to inject new master key, let keyIndex =0
 pos.setMasterKey(encDemoNewMasterKey, demoNewMasterKeyKcv, //new master key
                     keyIndex);
 
