@@ -304,8 +304,18 @@ QPOSServiceListenerImpl.prototype.onSetBuzzerResult = function(result){
 }
 
 
+QPOSServiceListenerImpl.prototype.onUpdatePosFirmwareResult = function(result,str){
+    console.log("onUpdatePosFirmwareResult:"+result+"\n"+str);
+    updateResult.innerText = "onUpdatePosFirmwareResult:"+result+"\n"+str;
+}
+
+QPOSServiceListenerImpl.prototype.onRturnSwitchWinusbResult = function (isSuccess) {
+    console.log("onRturnSwitchWinusbResult" + isSuccess);
+    trasactionData.innerText ="Switch to winusb is "+isSuccess;
+}
+
 button.addEventListener('click', async () => {
-    if (button.innerHTML === 'Connect') {
+    if (button.innerHTML === 'USB Connect') {
       connectToDeviceUSB();
       mService.setCommunicationMode(CommunicationMode.USB); 
       Connected = true;
@@ -315,7 +325,7 @@ button.addEventListener('click', async () => {
       // TODO: figure out how to release this
       // await mDevice.close(); 
       disconnectToDeviceUSB();
-      button.innerHTML = 'Connect';
+      button.innerHTML = 'USB Connect';
       Connected = false;
     }
   });
@@ -352,11 +362,57 @@ function selectEmvFile(){
     if(Connected){
         //mService.resetPosStatus();
         // mService.doSetBuzzerOperation(3);
-    document.getElementById("updateEmvFile").click();
+        updateResult.innerText = "updating EMV..."
+        document.getElementById("updateEmvFile").click();
     } else{
         DiscoverDevice();
         UpdateUI();
     }
+}
+
+function dialog(){
+    var str = prompt("Please input your pin","123456");
+    if(str){
+      console.log("dialog = "+str);
+      mService.sendPin(str);
+    }
+  }
+  
+  function upload2(input) {  //支持chrome IE10  
+      console.log("upload2");
+      if (window.FileReader) {  
+          console.log("upload2");
+          var file = input.files[0];  
+          filename = file.name.split(".")[0];  
+          var reader = new FileReader();  
+          reader.onload = function() {  
+              alert(testChar(this.result).length); 
+              mService.updatePosFirmware(testChar(this.result),Connected_Device);
+          }  
+          reader.readAsArrayBuffer(file); 
+          document.getElementById('updateFwFile').value = null;
+      }
+      else{
+          alert("not support");
+      }
+  }
+  
+  function selectFwFile(){
+      //$('#updateEmvFile').click();
+      if(Connected){
+          //mService.resetPosStatus();
+          // mService.doSetBuzzerOperation(3);
+          updateResult.innerText = "updating Firmware...";
+        document.getElementById("updateFwFile").click();
+      } else{
+          DiscoverDevice();
+          UpdateUI();
+      }
+  }
+
+  function testChar(data){
+    var hexString = byteArray2Hex(data);
+    return hexString;
 }
 
 //连接设备或断开连接

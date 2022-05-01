@@ -47,6 +47,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="javascript:void(0);" class="nav-link" onclick="DiscoveOrDisConnect()" id="UI_Connected">Connect</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="javascript:void(0);" class="nav-link" id="request-device">USB Connect</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -160,9 +163,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link" onclick="selectFwFile()">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Update device Firmware</p>
+                  <input type="file" id="updateFwFile" onchange="upload2(this)" class="inputFile" hidden/>
                 </a>
               </li>
             </ul>
@@ -393,7 +397,7 @@
     <strong>Copyright &copy; 2009-2022 Dspread Technology (Beijing) Inc.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 4.0.4
+      <b>Version</b> 4.0.5
     </div>
   </footer>
 
