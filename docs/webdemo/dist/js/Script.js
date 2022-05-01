@@ -346,7 +346,7 @@ function upload(input) {  //支持chrome IE10
         filename = file.name.split(".")[0];  
         var reader = new FileReader();  
         reader.onload = function() {  
-            alert(this.result.length); 
+            // alert(this.result.length); 
             mService.updateEMVConfigByXml(this.result);
         }  
         reader.readAsText(file);  
@@ -386,7 +386,7 @@ function dialog(){
           filename = file.name.split(".")[0];  
           var reader = new FileReader();  
           reader.onload = function() {  
-              alert(testChar(this.result).length); 
+            //   alert(testChar(this.result).length); 
               mService.updatePosFirmware(testChar(this.result),Connected_Device);
           }  
           reader.readAsArrayBuffer(file); 
