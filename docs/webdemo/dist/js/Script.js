@@ -63,7 +63,7 @@ QPOSServiceListenerImpl.prototype.onQposIdResult = function (deviceId) {
     infoData.innerText = "onQposIdResult:" + "\r" + str;
 }
 QPOSServiceListenerImpl.prototype.onRequestSelectEmvApp = function (hashtable) {
-    console.log("onRequestSelectEmvApp" + hashtable);
+    console.log("onRequestSelectEmvApp:" + hashtable);
     mService.selectEmvApp(0);
 }
 
@@ -314,6 +314,14 @@ QPOSServiceListenerImpl.prototype.onRturnSwitchWinusbResult = function (isSucces
     trasactionData.innerText ="Switch to winusb is "+isSuccess;
 }
 
+function getProgress(progress){
+    if(progress == "100"){
+        updateResult.innerHTML = "update successfully";
+    } else{
+        updateResult.innerHTML = "update process:"+parseInt(progress)+"%";
+    }
+}
+
 button.addEventListener('click', async () => {
     if (button.innerHTML === 'USB Connect') {
       connectToDeviceUSB();
@@ -435,6 +443,8 @@ function startTrade(){
     if(Connected){
         
         setAmount(amount, "", currency, transactionTypeConvert(tractionType));
+        // mService.setIsSupportClsSelectEmvAPP(true);
+
         mService.doTrade(0,20);
         // setAmountIcon(AmountType.MONEY_TYPE_CUSTOM_STR,"Rs");
         // mService.getQPosInfo();
@@ -542,7 +552,7 @@ function DiscoverDevice() {
     //过滤出我们需要的蓝牙设备
     //过滤器
     var options = {
-        filters: [{ namePrefix: 'MPOS' },{ namePrefix: 'QPOS' },{ namePrefix: 'VEL' },{ namePrefix: 'MIPS' },{ namePrefix: 'watu' }],
+        filters: [{ namePrefix: 'MPOS' },{ namePrefix: 'QPOS' },{ namePrefix: 'VEL' },{ namePrefix: 'MIPS' },{ namePrefix: 'watu' },{ namePrefix: 'POINT' }],
         optionalServices: [MPOS_SERVICE]
     };
 
