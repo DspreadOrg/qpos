@@ -35,6 +35,7 @@ navigator.usb.addEventListener('disconnect', event => {
 });
   
 let button = document.getElementById('request-device');
+let contiUpdateEmvBtn = document.getElementById('continue-updateEmv');
 
 var trasactionData = document.getElementById("result_div");
 var infoData = document.getElementById("div_infoResult");
@@ -217,6 +218,7 @@ QPOSServiceListenerImpl.prototype.onReturnUpdateEMVRIDResult = function (flag) {
     }else{
         updateResult.innerText = "onReturnUpdateEMVRIDResult: Fail";
     }
+    contiUpdateEmvBtn.style.display = "none";
 }
 QPOSServiceListenerImpl.prototype.onReturnCustomConfigResult = function (flag, msg) {
     console.log("onReturnCustomConfigResult: " + flag+ " "+msg);
@@ -225,6 +227,7 @@ QPOSServiceListenerImpl.prototype.onReturnCustomConfigResult = function (flag, m
     }else{
         updateResult.innerText = "onReturnCustomConfigResult: Fail\n"+msg;
     } 
+    contiUpdateEmvBtn.style.display = "none";
 }
 QPOSServiceListenerImpl.prototype.onReturnSetMasterKeyResult = function (flag) {
     console.log("onReturnSetMasterKeyResult: " + flag);
@@ -322,6 +325,19 @@ function getProgress(progress){
     }
 }
 
+function getEmvList(list){
+    updateResult.innerHTML = "";
+    for(x in list){
+        // console.log(list[x]);
+        if(list[x].type == "APP")
+            updateResult.innerHTML =updateResult.innerHTML+"type:"+list[x].type+" Aid:"+list[x].id+" index:"+list[x].index+"</br>";
+        else
+            updateResult.innerHTML =updateResult.innerHTML+"type:"+list[x].type+" Rid:"+list[x].id+" index:"+list[x].index+"</br>";
+    }
+
+    contiUpdateEmvBtn.style.display = "block";
+}
+
 button.addEventListener('click', async () => {
     if (button.innerHTML === 'USB Connect') {
       connectToDeviceUSB();
@@ -338,6 +354,12 @@ button.addEventListener('click', async () => {
     }
   });
 
+contiUpdateEmvBtn.addEventListener('click',async()=>{
+    updateResult.innerHTML ="updating...</br>"+updateResult.innerHTML;
+    continueUpdateEmvByXml();
+
+});
+
 function dialog(){
   var str = prompt("Please input your pin","123456");
   if(str){
@@ -348,6 +370,7 @@ function dialog(){
 
 function upload(input) {  //支持chrome IE10  
     console.log("upload");
+
     if (window.FileReader) {  
         console.log("upload");
         var file = input.files[0];  
@@ -367,6 +390,14 @@ function upload(input) {  //支持chrome IE10
 
 function selectEmvFile(){
     //$('#updateEmvFile').click();
+    // updateResult.innerHTML = "132456</br>123333";
+    // console.log(contiUpdateEmvBtn.style.display);
+
+    // if(contiUpdateEmvBtn.style.display=="none")
+    //     contiUpdateEmvBtn.style.display = "inline-block";
+    // else
+    // contiUpdateEmvBtn.style.display = "none";
+
     if(Connected){
         //mService.resetPosStatus();
         // mService.doSetBuzzerOperation(3);
