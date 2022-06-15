@@ -314,7 +314,7 @@ QPOSServiceListenerImpl.prototype.onUpdatePosFirmwareResult = function(result,st
 
 QPOSServiceListenerImpl.prototype.onRturnSwitchWinusbResult = function (isSuccess) {
     console.log("onRturnSwitchWinusbResult" + isSuccess);
-    trasactionData.innerText ="Switch to winusb is "+isSuccess;
+    trasactionData.innerText ="Switch to Serial is "+isSuccess;
 }
 
 function getProgress(progress){
@@ -403,6 +403,16 @@ function selectEmvFile(){
         // mService.doSetBuzzerOperation(3);
         updateResult.innerText = "updating EMV..."
         document.getElementById("updateEmvFile").click();
+    } else{
+        DiscoverDevice();
+        UpdateUI();
+    }
+}
+
+function switchToSerial(){
+    if(Connected){
+        mService.setCommunicationMode(CommunicationMode.USB);
+        mService.testCommand("00");
     } else{
         DiscoverDevice();
         UpdateUI();
