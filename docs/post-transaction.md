@@ -50,21 +50,21 @@ After the app start a transaction, if the user use a magnatic card, below callba
 
 Below table describes the meaning of each data element SDK returned:
 
-Key         | Description
-------------|------------------
-maskedPAN	| Masked card number showing at most the first 6 and last 4 digits with in-between digits masked by “X”
-expiryDate	| 4-digit in the form of YYMM in the track data
-cardHolderName|	The cardholder name as seen on the card. This can be up to 26 characters.
-serviceCode	  | 3-digit service code in the track data
-track1Length  |	Length of Track 1 data
-track2Length  |	Length of Track 2 data
-track3Length  |	Length of Track 3 data
-encTracks	  | Reserved
-encTrack1	  | Encrypted track 1 data with T-Des encryption key derived from DATA-key to be generated with trackksn and IPEK
-encTrack2	  | Encrypted track 2 data with T-Des encryption key derived from DATA-key to be generated with trackksn and IPEK
-encTrack3	  | Encrypted track 3 data with T-Des encryption key derived from DATA-key to be generated with trackksn and IPEK 
-partialTrack  |	Reserved
-trackksn	  | KSN of the track data
+| Key            | Description                              |
+| -------------- | ---------------------------------------- |
+| maskedPAN      | Masked card number showing at most the first 6 and last 4 digits with in-between digits masked by “X” |
+| expiryDate     | 4-digit in the form of YYMM in the track data |
+| cardHolderName | The cardholder name as seen on the card. This can be up to 26 characters. |
+| serviceCode    | 3-digit service code in the track data   |
+| track1Length   | Length of Track 1 data                   |
+| track2Length   | Length of Track 2 data                   |
+| track3Length   | Length of Track 3 data                   |
+| encTracks      | Reserved                                 |
+| encTrack1      | Encrypted track 1 data with T-Des encryption key derived from DATA-key to be generated with trackksn and IPEK |
+| encTrack2      | Encrypted track 2 data with T-Des encryption key derived from DATA-key to be generated with trackksn and IPEK |
+| encTrack3      | Encrypted track 3 data with T-Des encryption key derived from DATA-key to be generated with trackksn and IPEK |
+| partialTrack   | Reserved                                 |
+| trackksn       | KSN of the track data                    |
 
 The track data returned in the hashtable is encrytped. It can be encrypted by Dukpt Data Key Variant 3DES CBC mode, or by Dukpt Data Key 3DES CBC mode. Per ANSI X9.24 2009 version request, The later (Data Key with 3DES CBC mode) is usually a recommended choice.
 
@@ -93,6 +93,12 @@ Below is another example, the track data is encrypted using data key with 3DES C
 01-21 04:46:26.766: D/POS_SDK(30241): trackRandomNumber: 
 01-21 04:46:26.766: D/POS_SDK(30241): pinRandomNumber: 
 ```
+
+The track ksn 00000332100300E00002 can be used to decode the track data:
+
+Track 1 data:22FB2E931F3EFAFC8C3899AB779F3719E75D392365DB748EEA789560EEB7714D84AB7FFA5B2E162C9BD566D03DCD240FC9D316CAC4015B782294365F9062CA0A
+
+Track 2 data:153CEE49576C0B709515946D991CB48368FEA0375837ECA6
 
 Below python script demostrate how to decode track data encrypted with DataKey in CBC mode:
 
@@ -124,7 +130,33 @@ def decrypt_card_info(ksn, data):
     return hexlify(res)
 
 ```
-The decoded track 1 and track 2 data are the same as the track data we got in previous section.
+Using data key variant to decrypt track 1, will get:
+
+```
+16259249 54964104 16598554 553FADC8 EEA8BF50 23A25BA7 02886F00 00000000 0003E450 45145059 15D44964 10653590 41041041 F0000000 00000000 00000000
+```
+
+Each character in Track 1 is 6 bits in length, 4 characters are packed into 3 bytes. Each character is mapped from 0x20 to 0x5F. So to get the real ASCII value of each charactor, you need to add 0x20 to each decoded 6 bits.
+
+```
+For example, the leading 3 bytes of above track 1 data is 16,25,92
+
+Which in binary is: 00010110 00100101 10010010
+Unpacked them to 4 bytes: 000101 100010 010110 010010
+Which in binary is:05221612
+Add 0x20 to each byte:25423632
+Which is in ASCII :%B62
+```
+
+Using data key to decrypt track 2, will get: 
+
+> `62252600 06685453 D1011106 17426936 FFFFFFFF FFFFFFFF `
+
+Note：
+
+​	“D” is stand for “=”
+
+​	So **PAN**=6225260006685453；"**D**"=Separater; **Expiry Date**=1011; **Service Code**=106; **Random**=17426936 
 
 ### Decoding PIN 
 
@@ -139,15 +171,6 @@ The QPOS will also send the encryted PIN to the mobile application:
 01-21 04:46:26.766: D/POS_SDK(30241): pinBlock: FFB0DFF5141385FA
 ...
 ```
-
-Decode the Track 2 data using the method descripted before: 
-> 6226220129263256D26122200059362100000FFFFFFFFFFF
-
-Note：
-
-​	“D” is stand for “=”
-
-​	So **PAN**=6226220129263256；"**D**"=Separater; **Expiry Date**=2612; **Service Code**=220; **Random**=0059362100000
 
 Below python script demostrate how to decode PINBLOCK:
 
@@ -181,6 +204,10 @@ if __name__ == "__main__":
     print decrypt_pinblock(KSN, DATA)
 
 ```
+
+Decode the Track 2 data using the method descripted before: 
+
+> 6226220129263256D26122200059362100000FFFFFFFFFFF
 
 The decrypted PINBLOCK (formated Pin data) is: 041173DFED6D9CDA
 The real PIN value can be caculated using formated pin data and PAN as inputs, according to ANSI X9.8. Below is an example:
@@ -336,19 +363,19 @@ http://www.emvlab.org/tlvutils/?data=5F200220204F08A0000003330101015F24032312319
 
 As we can see from the decoded table:
 
-Tag  | Tag Name            | Value
------|---------------------|------
-5F20 | Cardholder Name     |
-4F   | AID                 | A000000333010101
-5F24 | App Expiration Date | 231231
-9F16 | Merchant ID         | B C T E S T 1 2 3 4 5 6 7 8
-9F21 | Transaction Time    | 175213
-...  | ...                 | ...
-C4   | Masked PAN          | 623061FFFFFFFF5284
-C1   | KSN(PIN)            | 00000332100300E00003
-C7   | PINBLOCK            | A68701E68CB34BDE
-C0   | KSN Online Msg      | 00000332100300E00003
-C2   | Online Message      | E84B5D0D2AA9F40A2EFC....
+| Tag  | Tag Name            | Value                       |
+| ---- | ------------------- | --------------------------- |
+| 5F20 | Cardholder Name     |                             |
+| 4F   | AID                 | A000000333010101            |
+| 5F24 | App Expiration Date | 231231                      |
+| 9F16 | Merchant ID         | B C T E S T 1 2 3 4 5 6 7 8 |
+| 9F21 | Transaction Time    | 175213                      |
+| ...  | ...                 | ...                         |
+| C4   | Masked PAN          | 623061FFFFFFFF5284          |
+| C1   | KSN(PIN)            | 00000332100300E00003        |
+| C7   | PINBLOCK            | A68701E68CB34BDE            |
+| C0   | KSN Online Msg      | 00000332100300E00003        |
+| C2   | Online Message      | E84B5D0D2AA9F40A2EFC....    |
 
 Inside the table, there are:
 1. Some EMV TAGs (5F20,4F,5F24 ...) with plain text value. 
@@ -356,16 +383,16 @@ Inside the table, there are:
 
 The definition of proprietary tags can be found below:
 
-Tag   | Name                      | Length(Bytes)
-------|---------------------------|--------------
-C0    | KSN of Online Msg         | 10
-C1    | KSN of PIN                | 10
-C2    | Online Message(E)         | var
-C3    | KSN of Batch/Reversal Data| 10
-C4    | Masked PAN                | 0~10
-C5    | Batch Data                | var
-C6    | Reversal Data             | var
-C7    | PINBLOCK                  | 8
+| Tag  | Name                       | Length(Bytes) |
+| ---- | -------------------------- | ------------- |
+| C0   | KSN of Online Msg          | 10            |
+| C1   | KSN of PIN                 | 10            |
+| C2   | Online Message(E)          | var           |
+| C3   | KSN of Batch/Reversal Data | 10            |
+| C4   | Masked PAN                 | 0~10          |
+| C5   | Batch Data                 | var           |
+| C6   | Reversal Data              | var           |
+| C7   | PINBLOCK                   | 8             |
 
 It's the responsibility of the app to handle the online message string, sending them to the bank (the card issuer), and check the bank processing result.
 
