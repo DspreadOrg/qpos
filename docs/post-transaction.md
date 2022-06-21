@@ -138,19 +138,95 @@ Using data key variant to decrypt track 1, will get:
 
 Each character in Track 1 is 6 bits in length, 4 characters are packed into 3 bytes. Each character is mapped from 0x20 to 0x5F. So to get the real ASCII value of each charactor, you need to add 0x20 to each decoded 6 bits.
 
-```
-For example, the leading 3 bytes of above track 1 data is 16,25,92
+> For example, the leading 3 bytes of above track 1 data is 16,25,92
+>
+> Which in binary is: 00010110 00100101 10010010
+> Unpacked them to 4 bytes: 000101 100010 010110 010010
+> Which in binary is:05221612
+> Add 0x20 to each byte:25423632
+> Which is in ASCII :%B62
 
-Which in binary is: 00010110 00100101 10010010
-Unpacked them to 4 bytes: 000101 100010 010110 010010
-Which in binary is:05221612
-Add 0x20 to each byte:25423632
-Which is in ASCII :%B62
+Below java script demonstrate how to decode track1 data :
+
+```java
+public static void analysisTrack1Data(String track1){
+    byte[] trackArr = QPOSUtil.HexStringToByteArray(track1);
+    StringBuffer trackBit = new StringBuffer();
+
+    for(int i = 0 ; i < trackArr.length; i++){
+      byte value = trackArr[i];
+      String bit = getBit(value);
+      trackBit.append(bit);
+    }
+    StringBuffer trackBit2 = new StringBuffer();
+    if(trackBit.length()%6 != 0){
+      String startBit = trackBit.substring(0,trackBit.length()-trackBit2.length()%6);
+      String endBit = trackBit.substring(trackBit.length()-trackBit2.length()%6,trackBit.length());
+      String zeroBit = "";
+      for(int i = 0 ; i < 6-trackBit.length()%6;i++){
+        zeroBit+="0";
+      }
+      trackBit.delete(0,trackBit.length());
+      trackBit.append(startBit).append(zeroBit).append(endBit);
+    }
+    for(int i = 0; i < trackBit.length();){
+      String newBit = trackBit.substring(i,i+6);
+      newBit = "00"+newBit;
+      i+=6;
+      byte newByte = bitToByte(newBit);
+      byte[] trackArr2 = new byte[]{newByte};
+      trackBit2.append(QPOSUtil.byteArray2Hex(trackArr2));
+    }
+    byte[] newByte = QPOSUtil.HexStringToByteArray(trackBit2.toString());
+    for(int i = 0 ; i < newByte.length; i++){
+      newByte[i] = (byte) (0x20+newByte[i]);
+    }
+    String track1Value = QPOSUtil.convertHexToString(QPOSUtil.byteArray2Hex(newByte));
+    System.out.println("track1Value = "+track1Value);
+}
+
+public static String getBit(byte by){
+    StringBuffer sb = new StringBuffer();
+    sb.append((by>>7)&0x1)
+      .append((by>>6)&0x1)
+      .append((by>>5)&0x1)
+      .append((by>>4)&0x1)
+      .append((by>>3)&0x1)
+      .append((by>>2)&0x1)
+      .append((by>>1)&0x1)
+      .append((by>>0)&0x1);
+    return sb.toString();
+}
+
+public static byte bitToByte(String bit) {
+    int re, len;
+    if (null == bit) {
+      return 0;
+    }
+    len = bit.length();
+    if (len != 4 && len != 8) {
+      return 0;
+    }
+    if (len == 8) {// 8 bit
+      if (bit.charAt(0) == '0') {
+        re = Integer.parseInt(bit, 2);
+      } else {
+        re = Integer.parseInt(bit, 2) - 256;
+      }
+    } else {//4 bit
+      re = Integer.parseInt(bit, 2);
+    }
+    return (byte) re;
+}
 ```
+
+After decode, you can get the track 1 data:
+
+> %B6225260006685453^MR.ZHOU CHENG HAO         ^10111061742600936000000? 
 
 Using data key to decrypt track 2, will get: 
 
-> `62252600 06685453 D1011106 17426936 FFFFFFFF FFFFFFFF `
+> 62252600 06685453 D1011106 17426936 FFFFFFFF FFFFFFFF 
 
 Note：
 
