@@ -357,6 +357,7 @@ button.addEventListener('click', async () => {
 contiUpdateEmvBtn.addEventListener('click',async()=>{
     updateResult.innerHTML ="updating...</br>"+updateResult.innerHTML;
     continueUpdateEmvByXml();
+    contiUpdateEmvBtn.style.display = "none";
 
 });
 
