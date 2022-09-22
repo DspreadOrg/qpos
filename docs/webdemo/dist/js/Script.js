@@ -317,15 +317,7 @@ QPOSServiceListenerImpl.prototype.onRturnSwitchWinusbResult = function (isSucces
     trasactionData.innerText ="Switch to Serial is "+isSuccess;
 }
 
-function getProgress(progress){
-    if(progress == "100"){
-        updateResult.innerHTML = "update successfully";
-    } else{
-        updateResult.innerHTML = "update process:"+parseInt(progress)+"%";
-    }
-}
-
-function getEmvList(list){
+QPOSServiceListenerImpl.prototype.onReturnShowEMVOfXml = function(list){
     updateResult.innerHTML = "";
     for(x in list){
         // console.log(list[x]);
@@ -334,8 +326,15 @@ function getEmvList(list){
         else
             updateResult.innerHTML =updateResult.innerHTML+"type:"+list[x].type+" Rid:"+list[x].id+" index:"+list[x].index+"</br>";
     }
-
     contiUpdateEmvBtn.style.display = "block";
+}
+
+function getProgress(progress){
+    if(progress == "100"){
+        updateResult.innerHTML = "update successfully";
+    } else{
+        updateResult.innerHTML = "update process:"+parseInt(progress)+"%";
+    }
 }
 
 button.addEventListener('click', async () => {
@@ -356,7 +355,7 @@ button.addEventListener('click', async () => {
 
 contiUpdateEmvBtn.addEventListener('click',async()=>{
     updateResult.innerHTML ="updating...</br>"+updateResult.innerHTML;
-    continueUpdateEmvByXml();
+    mService.updateEMVConfigByXml(mEMVConfigBuffer);
     contiUpdateEmvBtn.style.display = "none";
 
 });
@@ -369,6 +368,7 @@ function dialog(){
   }
 }
 
+var mEMVConfigBuffer;
 function upload(input) {  //支持chrome IE10  
     console.log("upload");
 
@@ -379,7 +379,10 @@ function upload(input) {  //支持chrome IE10
         var reader = new FileReader();  
         reader.onload = function() {  
             // alert(this.result.length); 
-            mService.updateEMVConfigByXml(this.result);
+            // mService.updateEMVConfigByXml(this.result);
+            mEMVConfigBuffer = this.result;
+            console.log("xml:\n"+mEMVConfigBuffer);
+            mService.showEMVListOfXml(mEMVConfigBuffer);
         }  
         reader.readAsText(file);  
         document.getElementById('updateEmvFile').value = null;
