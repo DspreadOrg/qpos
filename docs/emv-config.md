@@ -2,6 +2,7 @@
 
 Download emv config template xml file for [QPOS mini](https://drive.google.com/file/d/1W3bgT9MXwN40WlaYviEqDxHu21DMlXu4/view?usp=sharing) and [CR100,QPOS Cute and D20](https://drive.google.com/file/d/126dWWzGdwwRupAX8Y0b0gc1eKr871BD4/view?usp=sharing), then put it into **Assets** folder, call below function to upgrade the config to terminal
 
+If you want to know the meaning of each EMV tag in emv config xml file, please download [EMV TAG BOOK](https://drive.google.com/file/d/181_DZb561_U8Buq8Bn3wiaFzgE3rYgjg/view?usp=sharing)
 ``` java
 Overloaded function
 pos.updateEMVConfigByXml(String xmlStr);
