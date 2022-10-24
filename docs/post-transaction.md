@@ -149,75 +149,36 @@ Each character in Track 1 is 6 bits in length, 4 characters are packed into 3 by
 Below java script demonstrate how to decode track1 data :
 
 ```java
-public static void analysisTrack1Data(String track1){
-    byte[] trackArr = QPOSUtil.HexStringToByteArray(track1);
-    StringBuffer trackBit = new StringBuffer();
+public static String decodeTrack1(String compressedTrack1) {
+        String resultTrack1 = "" ;
 
-    for(int i = 0 ; i < trackArr.length; i++){
-      byte value = trackArr[i];
-      String bit = getBit(value);
-      trackBit.append(bit);
-    }
-    StringBuffer trackBit2 = new StringBuffer();
-    if(trackBit.length()%6 != 0){
-      String startBit = trackBit.substring(0,trackBit.length()-trackBit2.length()%6);
-      String endBit = trackBit.substring(trackBit.length()-trackBit2.length()%6,trackBit.length());
-      String zeroBit = "";
-      for(int i = 0 ; i < 6-trackBit.length()%6;i++){
-        zeroBit+="0";
-      }
-      trackBit.delete(0,trackBit.length());
-      trackBit.append(startBit).append(zeroBit).append(endBit);
-    }
-    for(int i = 0; i < trackBit.length();){
-      String newBit = trackBit.substring(i,i+6);
-      newBit = "00"+newBit;
-      i+=6;
-      byte newByte = bitToByte(newBit);
-      byte[] trackArr2 = new byte[]{newByte};
-      trackBit2.append(QPOSUtil.byteArray2Hex(trackArr2));
-    }
-    byte[] newByte = QPOSUtil.HexStringToByteArray(trackBit2.toString());
-    for(int i = 0 ; i < newByte.length; i++){
-      newByte[i] = (byte) (0x20+newByte[i]);
-    }
-    String track1Value = QPOSUtil.convertHexToString(QPOSUtil.byteArray2Hex(newByte));
-    System.out.println("track1Value = "+track1Value);
-}
+        for(int i = 0; i<compressedTrack1.length()/6; i++) {
+            //1. convert every 6chars(3bytes) to binary string
+            String sub = compressedTrack1.substring(i * 6, (i + 1) * 6);
+            int threeByteInt = Integer.parseInt(sub, 16);
 
-public static String getBit(byte by){
-    StringBuffer sb = new StringBuffer();
-    sb.append((by>>7)&0x1)
-      .append((by>>6)&0x1)
-      .append((by>>5)&0x1)
-      .append((by>>4)&0x1)
-      .append((by>>3)&0x1)
-      .append((by>>2)&0x1)
-      .append((by>>1)&0x1)
-      .append((by>>0)&0x1);
-    return sb.toString();
-}
+            BigInteger bigInter = BigInteger.valueOf(threeByteInt);
+            String strBinary = bigInter.toString(2);
 
-public static byte bitToByte(String bit) {
-    int re, len;
-    if (null == bit) {
-      return 0;
+            //BigInteger.toString(radix) will miss leading 0s, so need padding 0 at the begging with length of 3byte(24 bits)
+            String withLeadingZeros = String.format("%24s", strBinary).replace(' ', '0');
+
+            //2. group binary result on every 6 binary chars into 4 groups (bytes)
+            byte[] fourBytes = new byte[]{0x00, 0x00, 0x00, 0x00};
+            for (int j = 0; j < withLeadingZeros.length() / 6; j++) {
+                String byteStr = withLeadingZeros.substring(j * 6, (j + 1) * 6);
+                fourBytes[j] = Byte.parseByte(byteStr, 2);
+                fourBytes[j] += 0x20;
+
+//                System.out.println(byteStr + "->" + fourBytes[j]);
+            }
+
+            //3. append each 4bytes array to result string
+            resultTrack1 += new String(fourBytes);
+        }
+
+        return resultTrack1;
     }
-    len = bit.length();
-    if (len != 4 && len != 8) {
-      return 0;
-    }
-    if (len == 8) {// 8 bit
-      if (bit.charAt(0) == '0') {
-        re = Integer.parseInt(bit, 2);
-      } else {
-        re = Integer.parseInt(bit, 2) - 256;
-      }
-    } else {//4 bit
-      re = Integer.parseInt(bit, 2);
-    }
-    return (byte) re;
-}
 ```
 
 After decode, you can get the track 1 data:
