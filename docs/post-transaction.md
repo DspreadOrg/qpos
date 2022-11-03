@@ -200,12 +200,12 @@ Note：
 The QPOS will also send the encryted PIN to the mobile application:
 ```
 10-07 11:37:49.571: V/vahid(20753): ???? ????? ??:Format ID: 30
-10-07 11:37:49.571: V/vahid(20753): Masked PAN: 622622XXXXXX3256
-10-07 11:37:49.571: V/vahid(20753): Expiry Date: 2612
+10-07 11:37:49.571: V/vahid(20753): Masked PAN: 621000XXXXXXXXX0004
+10-07 11:37:49.571: V/vahid(20753): Expiry Date: 2900
 10-07 11:37:49.571: V/vahid(20753): Cardholder Name:
 ...
-01-21 04:46:26.766: D/POS_SDK(30241): pinKsn: 09118041200085E0000B
-01-21 04:46:26.766: D/POS_SDK(30241): pinBlock: FFB0DFF5141385FA
+01-21 04:46:26.766: D/POS_SDK(30241): pinKsn: 0C110AF0000001E00060
+01-21 04:46:26.766: D/POS_SDK(30241): pinBlock: 371F3EE7E56AC550
 ...
 ```
 
@@ -235,8 +235,8 @@ def decrypt_pinblock(ksn, data):
     return hexlify(res)
 
 if __name__ == "__main__":
-    KSN = "09118041200085E0000B"
-    DATA = "FFB0DFF5141385FA"
+    KSN = "0C110AF0000001E00060"
+    DATA = "371F3EE7E56AC550"
     #DATA="1909568B7256B930EC0DFAB30061B640F24CD3CD0006D349"
     print decrypt_pinblock(KSN, DATA)
 
@@ -244,17 +244,17 @@ if __name__ == "__main__":
 
 Decode the Track 2 data using the method descripted before: 
 
-> 6226220129263256D26122200059362100000FFFFFFFFFFF
+> 6210003652125010004D29000200000101412FFFFFFFFFFF
 
-The decrypted PINBLOCK (formated Pin data) is: 041173DFED6D9CDA
+The decrypted PINBLOCK (formated Pin data) is: 041127ADEDAFEFFF
 The real PIN value can be caculated using formated pin data and PAN as inputs, according to ANSI X9.8. Below is an example:
 
-* 1) PAN: 6226220129263256
-* 2) 12 right most PAN digits without checksum: 622012926325
-* 3) Add 0000 to the left: 0000622012926325
+* 1) PAN: 6210003652125010004
+* 2) 12 right most PAN digits without checksum: 365212501000
+* 3) Add 0000 to the left: 0000365212501000
 * 4) XOR (#3) and Formated PIN Data 
 
-> XOR (0000622012926325, 041173DFED6D9CDA) = 041111FFFFFFFFFF
+> XOR (0000365212501000, 041127ADEDAFEFFF) = 041111FFFFFFFFFF
 > In our example, the plain PIN is 4 bytes in length with data "1111"
 
 
