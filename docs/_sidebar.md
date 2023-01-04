@@ -10,6 +10,7 @@
 
 - Terminal Management
 
+  - [Sign and install App](Sign-and-install-App.md)
   - [Key Management](key-management.md)
       - [DUKPT](dukpt-scheme.md)
       - [MKSK](mksk-scheme.md)
