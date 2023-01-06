@@ -24,7 +24,13 @@
 
 ![](./_images/signApp2.jpg)
 
-3. Open cmd(windows)/Terminal(mac); for Windows OS, input "apksigner sign **-ks** app.keystore QRscan.apk"; for Mac OS, input "apksigner sign **--ks** app.keystore QRscan.apk". When you will see a new generated file (.idsig), it shows success. And the signed apk is the original name.
+3. Open cmd(windows)/Terminal(mac);  input
+
+   ```
+    apksigner sign --ks app.keystore QRscan.apk
+   ```
+
+    When you will see a new generated file (.idsig), it shows success. And the signed apk is the original name.
 
 ![](./_images/signApp3.jpg)
 
