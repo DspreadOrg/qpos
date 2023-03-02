@@ -14,7 +14,6 @@
   - [Key Management](key-management.md)
       - [DUKPT](dukpt-scheme.md)
       - [MKSK](mksk-scheme.md)
-      - [TR-31](tr31-update.md)
   - [EMV Configuration](emv-config.md)
   - [Firmware Upgrade](firmware-ota.md)
 
