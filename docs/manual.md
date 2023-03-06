@@ -2,7 +2,7 @@
 
 <iframe width="800" height="400" src="./products/products.html" frameborder="0"  scrolling="no" allowfullscreen></iframe>
 
-CR100 and QPOS Mini allows you to make secure payments anytime and anywhere with Smartphones and Tablets.
+CR100 and QPOS Cute allows you to make secure payments anytime and anywhere with Smartphones and Tablets.
 It can easily be integrated with Apps running on iOS, Android, Windows and Linux.
 
 D20 is an elegantly designed and compact secure electronic payment terminal powered by the Android operating system. A wide range of advanced connectivity options are supported, as well as inbuilt NFC contactless, high-speed printer and massive amounts of memory to enable exceptionally fast processing of applications.
