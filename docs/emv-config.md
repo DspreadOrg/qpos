@@ -4,7 +4,7 @@ If you want to know the meaning of each EMV tag in emv config xml file, please d
 
 ## update emv config file
 
-Download emv config template xml file for [QPOS mini](https://drive.google.com/file/d/1W3bgT9MXwN40WlaYviEqDxHu21DMlXu4/view?usp=sharing) and [CR100,QPOS Cute and D20](https://drive.google.com/file/d/126dWWzGdwwRupAX8Y0b0gc1eKr871BD4/view?usp=sharing), then put it into **Assets** folder, call below function to upgrade the config to terminal
+Download emv config template xml file for [QPOS mini](https://drive.google.com/file/d/1CaksVjo6EfCHO9NGBX2dcC1GIrrG1_Wm/view?usp=sharing) and [CR100,QPOS Cute and D20](https://drive.google.com/file/d/126dWWzGdwwRupAX8Y0b0gc1eKr871BD4/view?usp=sharing), then put it into **Assets** folder, call below function to upgrade the config to terminal
 
 ``` java
 Overloaded function
@@ -61,4 +61,12 @@ pos.updateEmvAPPByTlv(EMVDataOperation.Update,"9F3303E0F8C8DF2106000000000010");
 onReturnUpdateEmvResult(boolean isSuccess)
 
 ```
+## L3 certification
 
+### The following is the emv configuration we generated based on the test cases of each country, it will help you pass L3 certification successfully, please use it.
+
+
+|     Country     |        QPOS mini         |            QPOS cute,CR100,D20,D30              |  
+|      :--:       |          :---:           |               :---:                             |
+|     MEXICO      |       [MEXICO-QPOS mini](https://drive.google.com/file/d/1CaksVjo6EfCHO9NGBX2dcC1GIrrG1_Wm/view?usp=sharing)   |            MEXICO-QPOS cute,CR100,D20,D30       |
+|    NIGERIA      |       NIGERIA-QPOS mini  |            NIGERIA-QPOS cute,CR100,D20,D30      |
