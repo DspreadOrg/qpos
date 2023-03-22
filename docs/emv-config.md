@@ -1,10 +1,13 @@
 ## emv tag book
 
-If you want to know the meaning of each EMV tag in emv config xml file, please download [EMV TAG BOOK](https://drive.google.com/file/d/181_DZb561_U8Buq8Bn3wiaFzgE3rYgjg/view?usp=sharing)
+Download the below **emv tag book** document, it contain the meaning of each EMV tag in emv config xml file. 
+- [EMV TAG BOOK](https://drive.google.com/file/d/181_DZb561_U8Buq8Bn3wiaFzgE3rYgjg/view?usp=sharing)
 
 ## update emv config file
 
-Download emv config template xml file for [QPOS mini](https://drive.google.com/file/d/1CaksVjo6EfCHO9NGBX2dcC1GIrrG1_Wm/view?usp=sharing) and [CR100,QPOS Cute and D20](https://drive.google.com/file/d/126dWWzGdwwRupAX8Y0b0gc1eKr871BD4/view?usp=sharing), then put it into **Assets** folder, call below function to upgrade the config to terminal
+Download the below emv config template xml file,then put it into **Assets** folder, call below function to upgrade the config to terminal
+- [QPOS mini](https://drive.google.com/file/d/1CaksVjo6EfCHO9NGBX2dcC1GIrrG1_Wm/view?usp=sharing) 
+- [CR100, QPOS Cute, D20, D30](https://drive.google.com/file/d/1C-E0qPG8JrElrAl4yuxn387zmJJTObGI/view?usp=sharing)
 
 ``` java
 Overloaded function
@@ -14,53 +17,6 @@ pos.updateEMVConfigByXml(String xmlStr);
 onReturnCustomConfigResult(boolean isSuccess,String result)
 
 ```
-
-## update specific emv tag
-|   AID           |              Description           |  
-|      :--:       |            ---:                    |
-|A0000000031010   |   VISA Debit/Credit (Classic)      | 
-|A0000000041010   |   MasterCard Credit/Debit (Global) |
-
-9F06: AID
-9F33: terminal capabilities
-DF21: CVM execute limit
-
-**example 1:**
-update the terminal capabilities for only VISA Debit/Credit (Classic). 
-
-``` java
-
-//9F33 = E0F8C8 (len =3), means terminal support pin/signature 
-pos.updateEmvAPPByTlv(EMVDataOperation.Update,"9F0607A00000000310109F3303E0F8C8");
-
-//callback function
-onReturnUpdateEmvResult(boolean isSuccess)
-
-```
-**example 2:**
-update terminal capabilities and cvm execute limit for only MasterCard Credit/Debit (Global)
-``` java
-//9F33 = E028C8 (len : 3bytes), means terminal support only support signature, disable pin
-//DF21 = 000000000010 (len : 6bytes), means terminal will execute cvm above amount = 10
-//                                    below amount = 10 it will be no cvm , which is no pin, no signature 
-pos.updateEmvAPPByTlv(EMVDataOperation.Update,"9F0607A00000000410109F3303E028C8DF2106000000000010");
-
-//callback function
-onReturnUpdateEmvResult(boolean isSuccess)
-
-```
-**example 3:**
-update terminal capabilities and cvm execute limit for all AID list, if AID is not specified, then the config will be effective for all AIDs inside terminal
-``` java
-//9F33 = E0F8C8 (len : 3bytes), means terminal support pin and signature
-//DF21 = 000000000010 (len : 6bytes), means terminal will execute cvm above amount = 10
-//                                    below amount = 10 it will be no cvm , which is no pin, no signature 
-pos.updateEmvAPPByTlv(EMVDataOperation.Update,"9F3303E0F8C8DF2106000000000010");
-
-//callback function
-onReturnUpdateEmvResult(boolean isSuccess)
-
-```
 ## L3 certification
 
 The following is the emv configuration we generated based on the test cases of each country, it will help you pass L3 certification successfully, please use it.
@@ -68,5 +24,5 @@ The following is the emv configuration we generated based on the test cases of e
 
 |     Country     |        QPOS mini         |            QPOS cute,CR100,D20,D30              |  
 |      :--:       |          :---:           |               :---:                             |
-|     MEXICO      |       [MEXICO-QPOS mini](https://drive.google.com/file/d/1CaksVjo6EfCHO9NGBX2dcC1GIrrG1_Wm/view?usp=sharing)   |            MEXICO-QPOS cute,CR100,D20,D30       |
+|     MEXICO      |       [MEXICO-QPOS mini](https://drive.google.com/file/d/1CaksVjo6EfCHO9NGBX2dcC1GIrrG1_Wm/view?usp=sharing)   |            [MEXICO-QPOS cute,CR100,D20,D30](https://drive.google.com/file/d/1C-E0qPG8JrElrAl4yuxn387zmJJTObGI/view?usp=sharing)       |
 |    NIGERIA      |       NIGERIA-QPOS mini  |            NIGERIA-QPOS cute,CR100,D20,D30      |
