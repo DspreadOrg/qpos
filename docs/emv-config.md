@@ -63,7 +63,7 @@ onReturnUpdateEmvResult(boolean isSuccess)
 ```
 ## L3 certification
 
-### The following is the emv configuration we generated based on the test cases of each country, it will help you pass L3 certification successfully, please use it.
+The following is the emv configuration we generated based on the test cases of each country, it will help you pass L3 certification successfully, please use it.
 
 
 |     Country     |        QPOS mini         |            QPOS cute,CR100,D20,D30              |  
