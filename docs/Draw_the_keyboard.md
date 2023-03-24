@@ -2,7 +2,7 @@
 
 Please check our demo about draw the keyboard : [link](https://gitlab.com/dspread/android/-/tree/master/pos_android_studio_demo/pos_android_studio_app/src/main/java/com/dspread/demoui/keyboard)
 
-![keyboard](./_images/keyboard.jpg)
+![keyboard](./_images/keyboard.png)
 
 
 

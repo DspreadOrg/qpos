@@ -22,7 +22,7 @@ onReturnCustomConfigResult(boolean isSuccess,String result)
 The following is the emv configuration we generated based on the test cases of each country, it will help you pass L3 certification successfully, please use it.
 
 
-|     Country     |        QPOS mini         |            QPOS cute,CR100,D20,D30              |  
-|      :--:       |          :---:           |               :---:                             |
-|     MEXICO      |       [MEXICO-QPOS mini](https://drive.google.com/file/d/1CaksVjo6EfCHO9NGBX2dcC1GIrrG1_Wm/view?usp=sharing)   |            [MEXICO-QPOS cute,CR100,D20,D30](https://drive.google.com/file/d/1C-E0qPG8JrElrAl4yuxn387zmJJTObGI/view?usp=sharing)       |
-|    NIGERIA      |       NIGERIA-QPOS mini  |            NIGERIA-QPOS cute,CR100,D20,D30      |
+|     Country     |        QPOS mini         |            QPOS cute,CR100,D20,D30              |       TPP File       |
+|      :--:       |          :---:           |               :---:                             |        :---:         |
+|     MEXICO      |       [MEXICO-QPOS mini.xml](https://drive.google.com/file/d/1CaksVjo6EfCHO9NGBX2dcC1GIrrG1_Wm/view?usp=sharing)   |            [MEXICO-QPOS cute,CR100,D20,D30.xml](https://drive.google.com/file/d/1C-E0qPG8JrElrAl4yuxn387zmJJTObGI/view?usp=sharing)       |         [MEXICO-Certification.tpp](https://drive.google.com/file/d/14MZeyZb298URLTjtI229hgjps_61iovx/view?usp=sharing)            |
+|    NIGERIA      |       NIGERIA-QPOS mini.xml  |            NIGERIA-QPOS cute,CR100,D20,D30.xml      |       NIGERIA-Certification.tpp          |
