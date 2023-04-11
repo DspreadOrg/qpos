@@ -20,6 +20,12 @@
   - [EMV Configuration](emv-config.md)
   - [Firmware Upgrade](firmware-ota.md)
 
+- TMS Service
+
+  - [Files Upload and Push](Files-Upload-and-Push.md)
+  - [Operation Video](Operation-Video.md)
+  - [Supplementary Explanation](Supplementary-Explanation.md)
+
 - Mifare Card 
 
   - [Mifare Classic](mifare-classic.md)
