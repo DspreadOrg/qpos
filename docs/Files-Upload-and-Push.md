@@ -1,4 +1,4 @@
-## 1. Login TMS SE System
+## 1. Login TMS SE
 
 URL: https://www.dspreadser.net/#/login  
 
