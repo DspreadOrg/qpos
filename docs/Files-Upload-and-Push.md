@@ -16,13 +16,19 @@ Configure the model of the device you purchased.
 ### 2.2 Add Devices
 There are two ways: 
 1. Add a single device;
-2. Import a batch of devices: download the import template and fill in the information according to the template format;
+2. Import a batch of devices. download the import template and fill in the information according to the template format;
 
+**1. Add a single device**  
 Please fill in the blanks as below(DSN, Model and System Version are mandatory), then click the button “OK”.  
 > Note:   
 > After adding the device, turn on the power to start TMS normally. If the device is already turned on, a reboot is required.  
 
 ![2-1](./_images/2-1.png)
+
+**2. Import a batch of devices**  
+Firstly, you need to download the "[Import Template](._images/Import-Template.xls)" and fill in the information according to the template format.  
+Secondly, click the button and select the file of Import Templete.
+![2-2](./_images/2-2.png)
 
 ## 3.Upload ROM/Firmware Files
 
@@ -65,21 +71,21 @@ You can see the status change from “Off the shelf” to “On the shelf”.
 
 This part is about how to push the files that already uploaded on TMS to the devices.
 
-1.Click the “Push task” menu on the left and click the Add button.
+### 1.Click the “Push task” menu on the left and click the Add button.
 ![5-1](./_images/5-1.png)
 
-2.Select file to push.
+### 2.Select file to push.
 > Note: “Message Type”  
 If the file is firmware(.asc file), select “Firmware Update”;  
 If the file is ROM(.zip file), select “File Push”;  
 If the file is APP(.apk file), select “App Install”.
 ![5-2](./_images/5-2.png)
 
-3.After clicking confirm button, the device will pop up a prompt about force downloading the upgrade package.
+### 3.After clicking confirm button, the device will pop up a prompt about force downloading the upgrade package.
 
 <img src="./_images/5-3.png" width = "400" />
 
-4.You can see the download progress from the drop-down menu bar, see as below.
+### 4.You can see the download progress from the drop-down menu bar, see as below.
 
 <img src="./_images/5-4.png" width = "400" />
 
