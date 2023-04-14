@@ -71,21 +71,23 @@ You can see the status change from “Off the shelf” to “On the shelf”.
 
 This part is about how to push the files that already uploaded on TMS to the devices.
 
-### 5.1 Click the “Push task” menu on the left and click the Add button.
+### 5.1 Add file
+Click the “Push task” menu on the left and click the Add button.
 ![5-1](./_images/5-1.png)
 
-### 5.2 Select file to push.
+### 5.2 Select file to push
 > Note: “Message Type”  
 If the file is firmware(.asc file), select “Firmware Update”;  
 If the file is ROM(.zip file), select “File Push”;  
 If the file is APP(.apk file), select “App Install”.
+
 ![5-2](./_images/5-2.png)
 
-### 5.3 After clicking confirm button, the device will pop up a prompt about force downloading the upgrade package.
-
+### 5.3 Pop up
+After clicking confirm button, the device will pop up a prompt about force downloading the upgrade package.
 <img src="./_images/5-3.png" width = "400" />
 
-### 5.4 You can see the download progress from the drop-down menu bar, see as below.
-
+### 5.4 Download
+You can see the download progress from the drop-down menu bar, see as below.
 <img src="./_images/5-4.png" width = "400" />
 
