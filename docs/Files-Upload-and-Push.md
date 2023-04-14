@@ -1,6 +1,6 @@
 ## 1. Login TMS SE
 
-URL: https://www.dspreadser.net/#/login  
+URL: https://cs.dspread.net:9030/#/login   
 
 *If you want to test the functionality of TMS, please contact us. We will provide you with a TMS account and password.*
 
