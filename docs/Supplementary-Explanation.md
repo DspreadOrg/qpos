@@ -9,23 +9,23 @@ Click the “Off the shelf” button to remove the file from the app store. Afte
 
 ![6-2](./_images/6-2.png)
 
-### 2. Download
+### 3. Download
 Click the button “History” and download the file, see as below.
 
 ![6-3-1](./_images/6-3-1.png)
 ![6-3-2](./_images/6-3-2.png)
 
-### 3. Edit
+### 4. Edit
 Click the “Edit” option to change Visual Range and Visual Object.
 
 ![6-4](./_images/6-4.png)
 
-### 4. Delete
+### 5. Delete
 Click the Delete Button to remove file.
 
 ![6-5](./_images/6-5.png)
 
-### 5. Upgrade
+### 6. Upgrade
 If there is an update to the APP version, you can update the original version to the new version without adding the file on the main menu again. Click the button “Upgrade” and upload the new version of APP.  
 ![4-3](./_images/4-3.png)
 
