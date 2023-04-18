@@ -78,7 +78,7 @@ Click the “Push task” menu on the left and click the Add button.
 ### 5.2 Select file to push
 > Note: “Message Type”  
 If the file is firmware(.asc file), select “Firmware Update”;  
-If the file is ROM(.zip file), select “File Push”;  
+If the file is ROM(.zip file), select “Firmware Update”;  
 If the file is APP(.apk file), select “App Install”.
 
 ![5-2](./_images/5-2.png)
