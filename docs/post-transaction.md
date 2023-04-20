@@ -521,22 +521,19 @@ During the transaction, if there is anything abnormal happened, the onError call
 ```java
 		@Override
 		public void onError(Error errorState) {
-			if (errorState == Error.CMD_NOT_AVAILABLE) {
-			} else if (errorState == Error.TIMEOUT) {
-			} else if (errorState == Error.DEVICE_RESET) {
-			} else if (errorState == Error.UNKNOWN) {
-			} else if (errorState == Error.DEVICE_BUSY) {
-			} else if (errorState == Error.INPUT_OUT_OF_RANGE) {
-			} else if (errorState == Error.INPUT_INVALID_FORMAT) {
-			} else if (errorState == Error.INPUT_ZERO_VALUES) {
-			} else if (errorState == Error.INPUT_INVALID) {
-			} else if (errorState == Error.CASHBACK_NOT_SUPPORTED) {
-			} else if (errorState == Error.CRC_ERROR) {
-			} else if (errorState == Error.COMM_ERROR) {
-			} else if (errorState == Error.MAC_ERROR) {
-			} else if (errorState == Error.CMD_TIMEOUT) {
-			}
 		}
 
 ```
 
+|   Enum Value    |  Error Reason                      |
+| ---------  | --------------------------- |
+| TIMEOUT   | 1.The firmware update failed on the way, and the firmware is damaged; 2.Send two command at the same time  |
+| MAC_ERROR                    | Data error in the sent instruction            |
+| COM_NOT_AVAILABLE     | Command is not supported by firmware                     |
+| DEVICE_RESET       | Call the function resetPosStatus() |
+| UNKNOWN     | /                      |
+| DEVICE_BUSY      | Devices is processing command                 | Send two commands at the same time                        |
+| INPUT_OUT_OF_RANGE           | The length of the input data out of the range          |
+| INPUT_INVALID_FORMAT                | The length of the input data does not match the required length        |
+| INPUT_INVALID             | The length or format of the input data does not match the requirements            |
+| AMOUNT_OUT_OF_LIMIT        | 00000332100The length of the input data out of the range300E00003        |
