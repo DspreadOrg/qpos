@@ -11,4 +11,4 @@
 <iframe width="800" height="450" src="https://www.youtube.com/embed/y0ctlyeDOeg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### 5. D30 Support
-<iframe width="800" height="450" src="https://www.youtube.com/embed/IHyNZbacSIE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HMOHm61e7ZE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
