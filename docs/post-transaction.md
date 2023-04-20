@@ -540,3 +540,15 @@ During the transaction, if there is anything abnormal happened, the onError call
 
 ```
 
+|   Name   | Description         | Error Reason                      |
+| -------- | ------------------- | --------------------------- |
+| TIMEOUT  | SDK received instructions returned by pos is timeout     | 1.The firmware update failed on the way, and the firmware is damaged; 2.Send two command at the same time  |
+| MAC_ERROR   | N/A                  | Data error in the sent instruction            |
+| COM_NOT_AVAILABLE     | N/A  | Command is not supported by firmware                     |
+| DEVICE_RESET | N/A        | Call the function resetPosStatus() |
+| UNKNOWN | N/A     | /                      |
+| DEVICE_BUSY      | Devices is processing command                 | Send two commands at the same time                        |
+| INPUT_OUT_OF_RANGE      | N/A         | The length of the input data out of the range          |
+| INPUT_INVALID_FORMAT       | N/A            | The length of the input data does not match the required length        |
+| INPUT_INVALID       | N/A            | The length or format of the input data does not match the requirements            |
+| AMOUNT_OUT_OF_LIMIT       | Amount out of limit      | 00000332100The length of the input data out of the range300E00003        |
