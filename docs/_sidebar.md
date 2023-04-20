@@ -41,7 +41,7 @@
 
 - Testing & Certification 
 
-  - [EMV L3](emv_l3.md)
+  - [Certification](emv_l3.md)
 
 - [**API Reference**](https://dspread.gitlab.io/qpos/api/index.html)
   - [Android](https://gitlab.com/dspread/android/-/blob/master/QPOS-Android-SDK-Userguid-en-detail.pdf)
