@@ -525,15 +525,14 @@ During the transaction, if there is anything abnormal happened, the onError call
 
 ```
 
-|   Enum Value    |  Error Reason                      |
-| ---------  | --------------------------- |
-| TIMEOUT   | 1.The firmware update failed on the way, and the firmware is damaged; 2.Send two command at the same time  |
-| MAC_ERROR                    | Data error in the sent instruction            |
-| COM_NOT_AVAILABLE     | Command is not supported by firmware                     |
-| DEVICE_RESET       | Call the function resetPosStatus() |
-| UNKNOWN     | /                      |
-| DEVICE_BUSY      | Devices is processing command                 | Send two commands at the same time                        |
-| INPUT_OUT_OF_RANGE           | The length of the input data out of the range          |
-| INPUT_INVALID_FORMAT                | The length of the input data does not match the required length        |
-| INPUT_INVALID             | The length or format of the input data does not match the requirements            |
-| AMOUNT_OUT_OF_LIMIT        | 00000332100The length of the input data out of the range300E00003        |
+|   Enum Value    |         Description         |
+| --------------- | --------------------------- |
+| TIMEOUT               | 1.When call two functions at the same time,the terminal cannot handle the second function and return timeout 2.When you fail to update the firmware and call the function, the SDK will return timeout
+| COM_NOT_AVAILABLE     | Function is not supported by firmware                    
+| DEVICE_RESET          | Call the function resetPosStatus() 
+| DEVICE_BUSY           | Terminal is processing task，you need to wait for the callback result of this task before calling the new function                 
+| INPUT_OUT_OF_RANGE    | The length of the input data out of the range       
+| INPUT_INVALID_FORMAT  | The length of the input data does not match the required length       
+| INPUT_INVALID         | The length or format of the input data does not match the requirements           
+| AMOUNT_OUT_OF_LIMIT   | The length of the input data out of the range    
+| MAC_ERROR             | Data error in the sent instruction        
