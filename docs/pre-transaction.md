@@ -122,7 +122,7 @@ Below table describes the meaning of each enumerate variables of CardTradeMode:
 | ONLY_INSERT_CARD| Only allow ICC transactions. |
 | ONLY_TAP_CARD| Only allow NFC transactions.   |
 | SWIPE_INSERT_CARD   | Allow MAG and ICC transactions.               |
-| SWIPE_INSERT_CARD_UNALLOWED_LOW_TRADE| Allow MAG/ICC transactions, press the UP button "▲" to start NFC mode. Downgrading transactions not allowed.  (Downgrading transactions not allowed: If the card support ICC transaction, the MAG transaction is not allow.)|
+| SWIPE_INSERT_CARD_UNALLOWED_LOW_TRADE| Allow MAG/ICC transactions, press the UP button "▲" to start NFC mode. Downgrading transactions not allowed. (Downgrading transactions not allowed: If the card support ICC transaction, the MAG transaction is not allow.)|
 | TAP_INSERT_CARD_NOTUP| Allow ICC and NFC transactions.             |
 | TAP_INSERT_CARD| Allow ICC and NFC transactions, press the UP button "▲" to start NFC mode.                              |
 | SWIPE_TAP_INSERT_CARD_NOTUP| Allow MAG/ICC/NFC transactions. |
