@@ -115,8 +115,9 @@ Before initiating a transaction, you can set the card trade mode to set the card
 		pos.setCardTradeMode(QPOSService.CardTradeMode.SWIPE_TAP_INSERT_CARD);
 ```  
 Below table describes the meaning of each enumerate variables of CardTradeMode:  
+
 | Card Trade Mode                                | Description                              |
-| -----------------------------------------------| ---------------------------------------- |
+| ---------------------------------------------- | ---------------------------------------- |
 | SWIPE_TAP_INSERT_CARD (default)                | Allow MAG/ICC/NFC transactions, press the UP button "▲" to start NFC mode.|
 | ONLY_SWIPE_CARD                                | Only allow MAG transactions.|
 | ONLY_INSERT_CARD                               | Only allow ICC transactions.|
