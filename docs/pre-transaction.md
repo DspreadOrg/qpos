@@ -112,7 +112,7 @@ In addition, the below code shows how to use the open() method described above t
 
 Before initiating a transaction, you can set the card trade mode to set the card reading mode allowed by the device, by below method:
 ```java
-		pos.setCardTradeMode(QPOSService.CardTradeMode.SWIPE_TAP_INSERT_CARD);
+		pos.setCardTradeMode(CardTradeMode.SWIPE_TAP_INSERT_CARD);
 ```  
 Below table describes the meaning of each enumerate variables of CardTradeMode:  
 
