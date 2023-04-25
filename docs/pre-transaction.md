@@ -71,11 +71,31 @@ The code below shows how to open the communication bridge with the open() method
 
 ## Start Transaction
 
+Before initiating a transaction, we need to set the transaction types allowed by the device, by below method:
+```java
+		pos.setCardTradeMode(QPOSService.CardTradeMode.SWIPE_TAP_INSERT_CARD);
+```  
+Below table describes the meaning of each enumerate variables of CardTradeMode:
+| Transaction Type| Description                              |
+| --------- | ---------------------------------------- |
+| SWIPE_TAP_INSERT_CARD (default)      | Allow MAC/ICC/NFC transactions, press the UP button to start NFC mode. |
+| ONLY_SWIPE_CARD| Only allow MAC transactions. |
+| ONLY_INSERT_CARD| Only allow ICC transactions. |
+| ONLY_TAP_CARD| Only allow NFC transactions.   |
+| SWIPE_INSERT_CARD   | Allow MAC and ICC transactions.               |
+| SWIPE_INSERT_CARD_UNALLOWED_LOW_TRADE| Allow MAC/ICC transactions, press the "UP" button to start NFC mode. Downgrading transactions not allowed.|
+| TAP_INSERT_CARD_NOTUP| Allow ICC and NFC transactions.             |
+| TAP_INSERT_CARD| Allow ICC and NFC transactions, press the "UP" button to start NFC mode.                              |
+| SWIPE_TAP_INSERT_CARD_NOTUP| Allow MAC/ICC/NFC transactions. |
+| SWIPE_TAP_INSERT_CARD_DOWN| Allow MAC/ICC/NFC transactions, press the "DOWN" button to start MAC and ICC mode. |
+| SWIPE_TAP_INSERT_CARD_NOTUP_UNALLOWED_LOW_TRADE| Allow MAC/ICC/NFC transactions. Downgrading transactions not allowed. |
+|       | Downgrading transactions not allowed: If the card support ICC transaction, the MAC transaction is not allow |
+  
 The app can start a magnatic swipe card transaction, or an EMV chip card transaction, by below method:
 ```java
 		pos.doTrade(60);
 ```
-The only paramter is the time out value in second. If the user is using magnatic swipe card, after timeout seconds, the transaction will be timed out.
+The only paramter is the time out value in second. If the user is using magnatic swipe card, after timeout seconds, the transaction will be timed out.  
 
 ## Set Transaction Amount
 
