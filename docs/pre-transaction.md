@@ -126,7 +126,8 @@ Below table describes the meaning of each enumerate variables of CardTradeMode:
 | TAP_INSERT_CARD_NOTUP                          | Allow ICC and NFC transactions.|
 | TAP_INSERT_CARD                                | Allow ICC and NFC transactions, press the UP button "▲" to start NFC mode.|
 | SWIPE_TAP_INSERT_CARD_NOTUP                    | Allow MAG/ICC/NFC transactions.|
-| SWIPE_TAP_INSERT_CARD_NOTUP_UNALLOWED_LOW_TRADE| Allow MAG/ICC/NFC transactions. Downgrading transactions not allowed.
+| SWIPE_TAP_INSERT_CARD_NOTUP_UNALLOWED_LOW_TRADE| Allow MAG/ICC/NFC transactions. Downgrading transactions not allowed.|
+
 
 The app can start a magnatic swipe card transaction, or an EMV chip card transaction, by below method:
 ```java
