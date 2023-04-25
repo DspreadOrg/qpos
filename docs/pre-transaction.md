@@ -30,6 +30,21 @@ The Class named ‘QPOSService’ is the core of SDK library. Before the APP cre
 		pos.initListener(handler, listener);
 	}
 ```
+In addition, the below code shows initializing the SDK while binding the serial port service.
+
+```java
+	private void open(CommunicationMode mode) {
+		listener = new MyPosListener();
+		pos = QPOSService.getInstance(OtherActivity.this, mode);
+		if (pos == null) {
+			statusEditText.setText("CommunicationMode unknow");
+			return;
+		}
+		Handler handler = new Handler(Looper.myLooper());
+		pos.initListener(handler, listener);
+	}
+```
+
 
 The CommunicaitonMode can be 
 
@@ -68,6 +83,30 @@ The code below shows how to open the communication bridge with the open() method
             //...
 		}
 ```
+In addition, the below code shows how to use the open() method described above to open the communication bridge and use the serial port service.
+```java
+		if (//we want to use Audio Jack as communication mode) {
+			open(CommunicationMode.AUDIO);
+			posType = POS_TYPE.AUDIO;
+			pos.openAudio();
+		} else if (//we want to use UART as communication mode) {
+			if (isUsb) {
+				open(CommunicationMode.USB);
+				posType = POS_TYPE.UART;
+				pos.openUsb();
+			}else {
+				open(CommunicationMode.UART);
+				posType = POS_TYPE.UART;
+				pos.openUartService();
+			}
+			
+		} else {   //We will use Bluetooth
+			open(CommunicationMode.BLUETOOTH);
+			posType = POS_TYPE.BLUETOOTH;
+            //...
+		}
+```
+
 
 ## Start Transaction
 
