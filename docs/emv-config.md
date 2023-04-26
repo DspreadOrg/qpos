@@ -1,7 +1,7 @@
 ## emv tag book
 
 Download the below **emv tag book** document, it contain the meaning of each EMV tag in emv config xml file. 
-- [EMV TAG BOOK](https://drive.google.com/file/d/181_DZb561_U8Buq8Bn3wiaFzgE3rYgjg/view?usp=sharing)
+- [EMV TAG BOOK](https://drive.google.com/file/d/1Ui4O2dQFKf_zzxfGzZWxqSmJCJHhSoxC/view?usp=share_link)
 
 ## update emv config file
 
