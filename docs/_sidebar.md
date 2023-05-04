@@ -19,6 +19,7 @@
       - [MKSK](mksk-scheme.md)
   - [EMV Configuration](emv-config.md)
   - [Firmware Upgrade](firmware-ota.md)
+  - [LED Indicator](led-indicator.md)
 
 - TMS Service
 
