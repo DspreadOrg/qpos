@@ -1,12 +1,1 @@
-### 1.QPOS Mini
-
-![A27-LED.jpg](./_images/A27_LED.jpg)
-
-### 2.QPOS Cute
-
-![A29-LED.jpg](./_images/A29_LED.jpg)
-
-### 3.CR100
-
-![CR100-LED.jpg](./_images/CR100-LED.jpg)
-
+[LED Indicator Description](https://drive.google.com/file/d/1Jo2JSLYU-R5DFaZDq4nrk1LE42d3G5yV/view?usp=sharing)
