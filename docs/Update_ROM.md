@@ -1,4 +1,4 @@
-- [Windows driver for QPOS Cute & QPOS Mini & CR100](https://drive.google.com/file/d/1mKBArgv2va3HGvZQuDY-7FYOxjQDu-ex/view?usp=sharing)
+- [Windows driver for QPOS Cute & QPOS Mini & CR100](https://drive.google.com/file/d/1xNbvd55bUugjuLYi8g9s8y8gllaaNgqP/view?usp=sharing)
 
 - [D20 Driver and Flash Tool](https://drive.google.com/file/d/1SY_VzAGB_WV2-UOVRbM0eI5CahyBhanJ/view?usp=sharing)
 
