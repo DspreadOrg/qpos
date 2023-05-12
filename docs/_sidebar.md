@@ -20,6 +20,7 @@
   - [EMV Configuration](emv-config.md)
   - [Firmware Upgrade](firmware-ota.md)
   - [LED Indicator](led-indicator.md)
+  - [Driver installation](Update_ROM.md)
 
 - TMS Service
 
