@@ -15,22 +15,8 @@ The application use the init method to init the EMV card reader hardware and get
 
 To avoid the application block and improve the speed of  data interaction between the smart terminal and QPOS, the SDK framework is designed to work under asynchronous mode.
 
-The Class named ‘QPOSService’ is the core of SDK library. Before the APP create this core instance with the parameter of “CommunicationMode mode”, the APP must register all the sub-functions in ‘QPOSServiceListener’. Below code snipplet shows how to init the SDK.
-
-```java
-	private void open(CommunicationMode mode) {
-		listener = new MyPosListener();
-		pos = QPOSService.getInstance(mode);
-		if (pos == null) {
-			statusEditText.setText("CommunicationMode unknow");
-			return;
-		}
-		pos.setConext(getApplicationContext());
-		Handler handler = new Handler(Looper.myLooper());
-		pos.initListener(handler, listener);
-	}
-```
-In addition, the below code shows initializing the SDK while binding the serial port service.
+The Class named ‘QPOSService’ is the core of SDK library. Before the APP create this core instance with the parameter of “CommunicationMode mode”, the APP must register all the sub-functions in ‘QPOSServiceListener’. 
+The below code shows initializing the SDK while binding the serial port service.
 
 ```java
 	private void open(CommunicationMode mode) {
@@ -53,7 +39,8 @@ The CommunicaitonMode can be
 		AUDIO,
 		BLUETOOTH,
 		BLUETOOTH_BLE,
-		UART,
+		UART, 
+		UARTSERVICE,
         USB
 	}
 ```
@@ -72,7 +59,7 @@ The code below shows how to open the communication bridge with the open() method
 				posType = POS_TYPE.UART;
 				pos.openUsb();
 			}else {
-				open(CommunicationMode.UART);
+				open(CommunicationMode.UARTSERVICE);
 				posType = POS_TYPE.UART;
 				pos.openUart();
 			}
@@ -83,29 +70,9 @@ The code below shows how to open the communication bridge with the open() method
             //...
 		}
 ```
-In addition, the below code shows how to use the open() method described above to open the communication bridge and use the serial port service.
-```java
-		if (//we want to use Audio Jack as communication mode) {
-			open(CommunicationMode.AUDIO);
-			posType = POS_TYPE.AUDIO;
-			pos.openAudio();
-		} else if (//we want to use UART as communication mode) {
-			if (isUsb) {
-				open(CommunicationMode.USB);
-				posType = POS_TYPE.UART;
-				pos.openUsb();
-			}else {
-				open(CommunicationMode.UART);
-				posType = POS_TYPE.UART;
-				pos.openUartService();
-			}
-			
-		} else {   //We will use Bluetooth
-			open(CommunicationMode.BLUETOOTH);
-			posType = POS_TYPE.BLUETOOTH;
-            //...
-		}
-```
+
+Note: The reason why the CommunicationMode is specified as UARTSERVICE in the above code.  
+Serial ports, like cameras, belong to public resources and only have one. Multiple apps accessing the serial port simultaneously can lead to the issue of serial port occupation. This problem can be effectively solved by the serial port service(UARTSERVICE), which stipulates that only one app can access the serial port at the same time.
 
 
 ## Start Transaction
