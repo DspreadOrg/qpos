@@ -40,7 +40,7 @@ The CommunicaitonMode can be
 		BLUETOOTH,
 		BLUETOOTH_BLE,
 		UART, 
-		UARTSERVICE,
+		UART_SERVICE,
         USB
 	}
 ```
@@ -59,7 +59,11 @@ The code below shows how to open the communication bridge with the open() method
 				posType = POS_TYPE.UART;
 				pos.openUsb();
 			}else {
-				open(CommunicationMode.UARTSERVICE);
+				open(CommunicationMode.UART);
+				posType = POS_TYPE.UART;
+				pos.openUart();
+			}else {
+				open(CommunicationMode.UART_SERVICE);
 				posType = POS_TYPE.UART;
 				pos.openUart();
 			}
@@ -71,8 +75,8 @@ The code below shows how to open the communication bridge with the open() method
 		}
 ```
 
-Note: The reason why the CommunicationMode is specified as UARTSERVICE in the above code.  
-Serial ports, like cameras, belong to public resources and only have one. Multiple apps accessing the serial port simultaneously can lead to the issue of serial port occupation. This problem can be effectively solved by the serial port service(UARTSERVICE), which stipulates that only one app can access the serial port at the same time.
+Note: The reason why the CommunicationMode is specified as UART_SERVICE in the above code.  
+Serial ports, like cameras, belong to public resources and only have one. Multiple apps accessing the serial port simultaneously can lead to the issue of serial port occupation. This problem can be effectively solved by the serial port service(UART_SERVICE), which stipulates that only one app can access the serial port at the same time.
 
 
 ## Start Transaction
