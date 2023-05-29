@@ -50,4 +50,4 @@
   - [iOS](https://gitlab.com/dspread/ios/-/blob/master/QPOS-iOS-SDK-Userguid-en-detail.pdf)
 
 - [**Web Demo**](https://dspread.gitlab.io/qpos/webdemo/checkout.html)
-- [**FAQs Document**](https://gitlab.com/dspread/FAQs_Document)
+- [**FAQs**](FAQs.md)
