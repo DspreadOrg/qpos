@@ -58,28 +58,21 @@ public void printResult(boolean b, String status, int type){
 
 public void printText(String text)
 
-Parameter Description：
-
-text:Specify the printed text content.
-
-printer:D30,MP600
-
-
 
 | API           | public void printText(String text)            |
-| ----          | --------------------------------------------- |
+| --------      | --------------------------------------------- |
 | Inputs        |text: Text that needs to be printed            |
 | Description   |Print text.                                    |
 | Callback      | void printResult(boolean isSuccess, String status,int type)
-isSuccess:true/false
-status: Normal; Printing; NoPaper; Overheated; Undefined
-type: 1 PRINT_RESULT;
-      3 GET_DESITY
-      5 GET_SPEED
-      6 GET_TEMPERATURE
-      7 GET_VOLTAGE
-      8 GET_STATUS                                               | 
-| printer | D30/MP600                                            |
+                 isSuccess:true/false
+                 status: Normal; Printing; NoPaper; Overheated; Undefined
+                 type: 1 PRINT_RESULT;
+                       3 GET_DESITY
+                       5 GET_SPEED
+                       6 GET_TEMPERATURE
+                       7 GET_VOLTAGE
+                       8 GET_STATUS                              | 
+| printer       | D30/MP600                                      |
 
 
 ## APIs for printing BarCode
