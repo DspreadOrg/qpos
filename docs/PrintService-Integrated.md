@@ -192,16 +192,150 @@ public void stopPrint()
 | Callback      | void printResult(boolean isSuccess, String status,int type)    | 
 | printer       | MP600                                                          |
 
+## APIs for Print CallBack
+
+public void printResult(boolean isSuccess, String status,int type).
+
+| API           | public void printResult(boolean isSuccess, String status,int type) |
+| --------      | ------------------------------------------------------------       |
+| Description   |Callback interface                                                  |
+| printer       | D30/MP600                                                          |
+
+**Parameter Description:** 
+isSuccess: true/false. 
+
+statue: Returns the printer status value. 
+
+type: 1 PRINT_RESULT;3 GET_DESITY;5 GET_SPEED;6 GET_TEMPERATURE
+
+
+## Printer Setting
+
+### Set Print Density
+
+public void setPrintDensity(int printDensityLevel) 
+
+| API           | public void setPrintDensity(int printDensityLevel)             |
+| --------      | ------------------------------------------------------------   |
+| Description   | Set print Density.                                             |
+| Callback      | void printResult(boolean isSuccess, String status,int type)    | 
+| printer       | MP600                                                          |
+
+**Parameter Description:** 
+
+printDensityLevel: Print concentration levels. 
+
+Concentration level: 1 to 5 (5 is the highest). 
+
+### Set Print Speed
+
+public void setPrintSpeed(int printDensityLevel). 
+
+| API           | public void setPrintSpeed(int printDensityLevel)               |
+| --------      | ------------------------------------------------------------   |
+| Description   | Set print Speed.                                               |
+| Callback      | void printResult(boolean isSuccess, String status,int type)    | 
+| printer       | MP600                                                          |
+
+**Parameter Description:** 
+
+printSpeedLevel: Print speed levels. 
+
+Speed level: 1 to 5 (5 is the highest). 
+
+### Set Text Print Style
+
+public void setPrintStyle(PrintLineStyle style). 
+
+| API           | public void setPrintStyle(PrintLineStyle style)                |
+| --------      | ------------------------------------------------------------   |
+| Description   | Set the text alignment and font effect.                                              |
+| Callback      | null                                                           | 
+| printer       | D30/MP600                                                      |
+
+**Parameter Description:** 
+
+ 1、PrintLineStyle: 
+  void setAlign(int align); 
+  void setFontSize(int fontSize); 
+  void setFontStyle (int bold);
+
+ 2、setAlign(int align): PrintLine.LEFT、PrintLine.CENTER、PrintLine.RIGHT 
+
+ 3、setFontStyle(int bold): PrintStyle.FontStyle.NORMAL、PrintStyle.FontStyle.BOLD、PrintStyle.FontStyle.ITALIC、PrintStyle.FontStyle.BOLD_ITALIC 
+ 
+ 4、setFontSize(int fontsize): Custom Text Size. 
+
+
 ## Printer Status Getting Function
 
 ### Get Printer Status
 
+Call the API getPrinterStatus() to get the status of the printer.
+
+public void getPrinterStatus().
+
+status: Normal; Printing; NoPaper; Overheated; Undefined
+
+| API           | public void getPrinterStatus()                                               |
+| --------      | --------------------------------------------------------------------         |
+| Description   | get print status                                                              |
+| Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
+| printer       | MP600                                                                        |
+
 ### Get Print Density
+
+Call the API getPrintDensity() to get the density of the printer. 
+
+public void getPrintDensity(). 
+
+status: 1 to 5,5 is the highest. 
+
+| API           | public void  getPrintDensity()                                               |
+| --------      | --------------------------------------------------------------------         |
+| Description   | get Print Density                                                            |
+| Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
+| printer       | MP600                                                                        |
 
 ### Get Print Speed
 
+Call the API getPrintSpeed() to get the density of the printer. 
+
+public void getPrintSpeed(). 
+
+statue: 1 to 5,5 is the highest.
+
+| API           | public void  getPrintSpeed()                                               |
+| --------      | --------------------------------------------------------------------       |
+| Description   | get Print Speed                                                            |
+| Callback      | void printResult(boolean isSuccess, String status,int type)                | 
+| printer       | MP600                                                                      |
+
 ### Get Print Temperature
+
+Call the API getPrintTemperature() to get the density of the printer. 
+
+public void getTemperature(). 
+
+statue: Printer temperature value.
+
+| API           | public void  getPrintTemperature()                                         |
+| --------      | --------------------------------------------------------------------       |
+| Description   | get Printer temperature value                                              |
+| Callback      | void printResult(boolean isSuccess, String status,int type)                | 
+| printer       | MP600                                                                      |
 
 ### Get Print Voltage
 
-### 
+Call the API getPrintVoltage() to get the density of the printer. 
+
+public void getPrintVoltage(). 
+
+statue: Printer Voltage value.
+
+| API           | public void  getPrintVoltage()                                         |
+| --------      | --------------------------------------------------------------------   |
+| Description   | get Printer Voltage value                                              |
+| Callback      | void printResult(boolean isSuccess, String status,int type)            | 
+| printer       | MP600                                                                  |
+
