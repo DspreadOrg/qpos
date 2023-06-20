@@ -6,7 +6,7 @@ According to PCI security, there is no keys allowed to be injected into device i
 ### update IPEK key by TMK (symetrical)
 By default, QPOS is injected TMK in factory. default tmk: **0123456789ABCDEFFEDCBA9876543210**. 
 
-?>server side should use same tmk as inside terminal to encrypt IPEK keys to get encryptedIPEK and calculate its Key Check Value, then call API pos.updateIPEKOperation() to inject into terminal
+> server side should use same tmk as inside terminal to encrypt IPEK keys to get encryptedIPEK and calculate its Key Check Value, then call API pos.updateIPEKOperation() to inject into terminal
 ``` java
 String demoTrackKsn ="09120200630001E0004C"
 String demoTrackIpek="5AF93691729D99703E3F2E386B619DFC"
