@@ -84,7 +84,7 @@ public void printBarCode(Context context,String symbology, int width, int height
 
 **Parameter Description:** 
 
-width: Set the block width.
+context: Context. 
 
 symbology: 
           Barcode1D.CODE_128.name(); 
@@ -94,6 +94,8 @@ symbology:
           Barcode1D.EAN_13.name(); 
           Barcode1D.UPC_A.name(); 
           Barcode1D.UPC_E.name(); 
+
+width: Set the block width.
           
 height: Set barcode height. 
 
@@ -103,12 +105,91 @@ position: Set barcode alignment.
 
 ## APIs for printing QRCode
 
+public void printQRCode(Context context,String errorLevel,int width,String content,int position) 
+
+| API           | public void printQRCode(Context context,String errorLevel,int width,String content,int position)|
+| --------      | ---------------------------------------------------------- |
+| Description   |Print QRCode.                                               |
+| Callback      | void printResult(boolean isSuccess, String status,int type)| 
+| printer       | D30/MP600                                                  | 
+
+**Parameter Description:** 
+
+context: Context. 
+
+errorLevel:Error correction level. 
+Barcode2D.ErrorLevel.L.name(),
+Barcode2D.ErrorLevel.H.name(),
+Barcode2D.ErrorLevel.M.name(),
+Barcode2D.ErrorLevel.Q.name() 
+
+width:Set the size of the QR code block. 
+
+content:Set up the QR code block content. 
+
+position:Set up the QR code block alignment. 
+
+
 ## APIs for printing Bitmap
+
+public void printBitmap(Context context, Bitmap bitmap)
+
+| API           | public void printBitmap(Context context, Bitmap bitmap)    |
+| --------      | ---------------------------------------------------------- |
+| Description   |Print Bitmap                                                |
+| Callback      | void printResult(boolean isSuccess, String status,int type)| 
+| printer       | D30/MP600                                                  | 
+
+**Parameter Description:** 
+
+cotext: Context.
+
+bitmap: Image bitmap data. 
 
 ## APIs for printing Multiple Columns
 
+public void addTexts(String[] texts, int[] colsWidthArrs, int[] styles) 
 
-## Print
+| API           | public void addTexts(String[] texts, int[] colsWidthArrs, int[] styles)      |
+| --------      | --------------------------------------------------------------------         |
+| Description   |Send print content to the printer in a row with fixed size fixed style content|
+| Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
+| printer       | D30/MP600                                                                    |
+
+**Parameter Description:** 
+
+texts:Each column to print, the array size is the number of columns. 
+
+colsWidthArrs:The proportion of each column in a row, such as int[] {1,1}, will print each column by 1:1. 
+
+styles:Set Text Position.
+
+
+## APIs for Print
+
+public void print(Context context)
+
+Before calling the method, you can call the following method to add content: 
+addText(),addTexts(),addBarCode(),addQRCode(),addBitmap(). 
+
+| API           | public void print(Context context)                                           |
+| --------      | --------------------------------------------------------------------         |
+| Description   |Print composite type files,First add the different types of files. Then call this interface to print|
+| Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
+| printer       | D30/MP600                                                                    |
+
+**Parameter Description:** 
+
+context:Context. 
+
 
 ## Stop Print
+public void stopPrint()
+
+| API           | public void stopPrint()                                        |
+| --------      | ------------------------------------------------------------   |
+| Description   |Stop Print                                                      |
+| Callback      | void printResult(boolean isSuccess, String status,int type)    | 
+| printer       | MP600                                                          |
+
 
