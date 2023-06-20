@@ -1,7 +1,8 @@
-Please follow the below printer sdk document to integrate printer functions
-- [Printer SDK Guide](https://drive.google.com/file/d/1Dj5ATBWgj7eZPmXPmF_WVgHQCXrPLLxw/view?usp=sharing)
 
 ## Dspread Printing SDK Overview
+
+Please follow the below printer sdk document to integrate printer functions
+- [Printer SDK Guide](https://drive.google.com/file/d/1Dj5ATBWgj7eZPmXPmF_WVgHQCXrPLLxw/view?usp=sharing)
 
  1. How to integrate SDK
 
@@ -46,9 +47,8 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
 class MyPrinterListener implements PrinterListener{
 @Override
 public void printResult(boolean b, String status, int type){
-
 }
-}
+  }
 ```
  4. SDK exceptions
 
@@ -68,7 +68,7 @@ public void printText(String text)
 
 **Parameter Description:** 
 
-String text:Specify the printed text content 
+String text: Specify the printed text content 
 
 
 ## APIs for printing BarCode
@@ -117,17 +117,17 @@ public void printQRCode(Context context,String errorLevel,int width,String conte
 
 context: Context. 
 
-errorLevel:Error correction level. 
+errorLevel: Error correction level. 
 Barcode2D.ErrorLevel.L.name(),
 Barcode2D.ErrorLevel.H.name(),
 Barcode2D.ErrorLevel.M.name(),
 Barcode2D.ErrorLevel.Q.name() 
 
-width:Set the size of the QR code block. 
+width: Set the size of the QR code block. 
 
-content:Set up the QR code block content. 
+content: Set up the QR code block content. 
 
-position:Set up the QR code block alignment. 
+position: Set up the QR code block alignment. 
 
 
 ## APIs for printing Bitmap
@@ -158,11 +158,11 @@ public void addTexts(String[] texts, int[] colsWidthArrs, int[] styles)
 
 **Parameter Description:** 
 
-texts:Each column to print, the array size is the number of columns. 
+texts: Each column to print, the array size is the number of columns. 
 
-colsWidthArrs:The proportion of each column in a row, such as int[] {1,1}, will print each column by 1:1. 
+colsWidthArrs: The proportion of each column in a row, such as int[] {1,1}, will print each column by 1:1. 
 
-styles:Set Text Position.
+styles: Set Text Position.
 
 
 ## APIs for Print
@@ -180,7 +180,7 @@ addText(),addTexts(),addBarCode(),addQRCode(),addBitmap().
 
 **Parameter Description:** 
 
-context:Context. 
+context: Context. 
 
 
 ## Stop Print
@@ -192,4 +192,16 @@ public void stopPrint()
 | Callback      | void printResult(boolean isSuccess, String status,int type)    | 
 | printer       | MP600                                                          |
 
+## Printer Status Getting Function
 
+### Get Printer Status
+
+### Get Print Density
+
+### Get Print Speed
+
+### Get Print Temperature
+
+### Get Print Voltage
+
+### 
