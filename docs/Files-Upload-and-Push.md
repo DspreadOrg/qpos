@@ -26,7 +26,7 @@ Please fill in the blanks as below(DSN, Model and System Version are mandatory),
 ![2-1](./_images/2-1.png)
 
 **2. Import a batch of devices**  
-Firstly, you need to download the "[Import Template](._images/Import-Template.xls)" and fill in the information according to the template format.  
+Firstly, you need to download the "[Import Template](https://docs.google.com/spreadsheets/d/1qqHzk0OK0GWtzOoSS5DS2NAH0pKn2rhh/edit?usp=sharing&ouid=113176383357556413114&rtpof=true&sd=true)" and fill in the information according to the template format.  
 Secondly, click the button and select the file of Import Templete.
 ![2-2](./_images/2-2.png)
 
