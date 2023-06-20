@@ -207,7 +207,7 @@ isSuccess: true/false.
 
 statue: Returns the printer status value. 
 
-type: 1 PRINT_RESULT;3 GET_DESITY;5 GET_SPEED;6 GET_TEMPERATURE
+type: 1 PRINT_RESULT;3 GET_DESITY;5 GET_SPEED;6 GET_TEMPERATURE;7 GET_VOLTAGE;8 GET_STATUS 
 
 
 ## Printer Setting
