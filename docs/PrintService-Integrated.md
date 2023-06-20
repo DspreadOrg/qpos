@@ -88,19 +88,13 @@ Width: Set the block width.
 
 Symbology: 
           Barcode1D.CODE_128.name(); 
-
           Barcode1D.CODABAR.name(); 
-
           Barcode1D.CODE_39.name(); 
-
           Barcode1D.EAN_8.name(); 
-
           Barcode1D.EAN_13.name(); 
-
           Barcode1D.UPC_A.name(); 
-
           Barcode1D.UPC_E.name(); 
-
+          
 Height: Set barcode height. 
 
 Content: Set barcode content. 
