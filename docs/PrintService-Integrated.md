@@ -65,8 +65,10 @@ public void printText(String text)
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
 | printer       | D30/MP600                                                  |
 
-Parameter Description:
-String text:Specify the printed text content
+
+Parameter Description: 
+
+String text:Specify the printed text content 
 
 
 ## APIs for printing BarCode
@@ -79,18 +81,30 @@ public void printBarCode(Context context,String symbology, int width, int height
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
 | printer       | D30/MP600                                                  |
 
-Parameter Description:
+
+Parameter Description: 
+
 Width: Set the block width.
-Symbology:
-          Barcode1D.CODE_128.name();
-          Barcode1D.CODABAR.name();
-          Barcode1D.CODE_39.name();
-          Barcode1D.EAN_8.name();
-          Barcode1D.EAN_13.name();
-          Barcode1D.UPC_A.name();
-          Barcode1D.UPC_E.name();
-Height: Set barcode height.
-Content: Set barcode content.
+
+Symbology: 
+          Barcode1D.CODE_128.name(); 
+
+          Barcode1D.CODABAR.name(); 
+
+          Barcode1D.CODE_39.name(); 
+
+          Barcode1D.EAN_8.name(); 
+
+          Barcode1D.EAN_13.name(); 
+
+          Barcode1D.UPC_A.name(); 
+
+          Barcode1D.UPC_E.name(); 
+
+Height: Set barcode height. 
+
+Content: Set barcode content. 
+
 Position: Set barcode alignment.
 
 ## APIs for printing QRCode
