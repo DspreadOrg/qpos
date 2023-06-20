@@ -56,7 +56,7 @@ public void printResult(boolean b, String status, int type){
 
 ## APIs for printing text
 
-public void printText(String text)
+**public void printText(String text)**
 
 
 | API           | public void printText(String text)                         |
@@ -73,7 +73,7 @@ String text: Specify the printed text content
 
 ## APIs for printing BarCode
 
-public void printBarCode(Context context,String symbology, int width, int height, String content,int position)
+**public void printBarCode(Context context,String symbology, int width, int height, String content,int position)**
 
 | API           | public void printBarCode(Context context,String symbology,int width,int height,String content,int position)|
 | --------      | ---------------------------------------------------------- |
@@ -105,7 +105,7 @@ position: Set barcode alignment.
 
 ## APIs for printing QRCode
 
-public void printQRCode(Context context,String errorLevel,int width,String content,int position) 
+**public void printQRCode(Context context,String errorLevel,int width,String content,int position)** 
 
 | API           | public void printQRCode(Context context,String errorLevel,int width,String content,int position)|
 | --------      | ---------------------------------------------------------- |
@@ -132,7 +132,7 @@ position: Set up the QR code block alignment.
 
 ## APIs for printing Bitmap
 
-public void printBitmap(Context context, Bitmap bitmap)
+**public void printBitmap(Context context, Bitmap bitmap)**
 
 | API           | public void printBitmap(Context context, Bitmap bitmap)    |
 | --------      | ---------------------------------------------------------- |
@@ -148,7 +148,7 @@ bitmap: Image bitmap data.
 
 ## APIs for printing Multiple Columns
 
-public void addTexts(String[] texts, int[] colsWidthArrs, int[] styles) 
+**public void addTexts(String[] texts, int[] colsWidthArrs, int[] styles)** 
 
 | API           | public void addTexts(String[] texts, int[] colsWidthArrs, int[] styles)      |
 | --------      | --------------------------------------------------------------------         |
@@ -167,7 +167,7 @@ styles: Set Text Position.
 
 ## APIs for Print
 
-public void print(Context context)
+**public void print(Context context)**
 
 Before calling the method, you can call the following method to add content: 
 addText(),addTexts(),addBarCode(),addQRCode(),addBitmap(). 
@@ -184,7 +184,7 @@ context: Context.
 
 
 ## Stop Print
-public void stopPrint()
+**public void stopPrint()**
 
 | API           | public void stopPrint()                                        |
 | --------      | ------------------------------------------------------------   |
@@ -194,7 +194,7 @@ public void stopPrint()
 
 ## APIs for Print CallBack
 
-public void printResult(boolean isSuccess, String status,int type).
+**public void printResult(boolean isSuccess, String status,int type)**
 
 | API           | public void printResult(boolean isSuccess, String status,int type) |
 | --------      | ------------------------------------------------------------       |
@@ -202,6 +202,7 @@ public void printResult(boolean isSuccess, String status,int type).
 | printer       | D30/MP600                                                          |
 
 **Parameter Description:** 
+
 isSuccess: true/false. 
 
 statue: Returns the printer status value. 
@@ -213,7 +214,7 @@ type: 1 PRINT_RESULT;3 GET_DESITY;5 GET_SPEED;6 GET_TEMPERATURE
 
 ### Set Print Density
 
-public void setPrintDensity(int printDensityLevel) 
+**public void setPrintDensity(int printDensityLevel)** 
 
 | API           | public void setPrintDensity(int printDensityLevel)             |
 | --------      | ------------------------------------------------------------   |
@@ -229,7 +230,7 @@ Concentration level: 1 to 5 (5 is the highest).
 
 ### Set Print Speed
 
-public void setPrintSpeed(int printDensityLevel). 
+**public void setPrintSpeed(int printDensityLevel)** 
 
 | API           | public void setPrintSpeed(int printDensityLevel)               |
 | --------      | ------------------------------------------------------------   |
@@ -245,7 +246,7 @@ Speed level: 1 to 5 (5 is the highest).
 
 ### Set Text Print Style
 
-public void setPrintStyle(PrintLineStyle style). 
+**public void setPrintStyle(PrintLineStyle style)** 
 
 | API           | public void setPrintStyle(PrintLineStyle style)                |
 | --------      | ------------------------------------------------------------   |
@@ -273,7 +274,7 @@ public void setPrintStyle(PrintLineStyle style).
 
 Call the API getPrinterStatus() to get the status of the printer.
 
-public void getPrinterStatus().
+**public void getPrinterStatus()** 
 
 status: Normal; Printing; NoPaper; Overheated; Undefined
 
@@ -287,7 +288,7 @@ status: Normal; Printing; NoPaper; Overheated; Undefined
 
 Call the API getPrintDensity() to get the density of the printer. 
 
-public void getPrintDensity(). 
+**public void getPrintDensity()** 
 
 status: 1 to 5,5 is the highest. 
 
@@ -301,7 +302,7 @@ status: 1 to 5,5 is the highest.
 
 Call the API getPrintSpeed() to get the density of the printer. 
 
-public void getPrintSpeed(). 
+**public void getPrintSpeed()** 
 
 statue: 1 to 5,5 is the highest.
 
@@ -315,7 +316,7 @@ statue: 1 to 5,5 is the highest.
 
 Call the API getPrintTemperature() to get the density of the printer. 
 
-public void getTemperature(). 
+**public void getTemperature()**  
 
 statue: Printer temperature value.
 
@@ -329,7 +330,7 @@ statue: Printer temperature value.
 
 Call the API getPrintVoltage() to get the density of the printer. 
 
-public void getPrintVoltage(). 
+**public void getPrintVoltage()** 
 
 statue: Printer Voltage value.
 
