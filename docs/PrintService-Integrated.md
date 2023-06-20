@@ -52,7 +52,7 @@ public void printResult(boolean b, String status, int type){
 ```
  4. SDK exceptions
 
- ?>Dspread printing SDK basically is applicable to all Dspread devices. For some models, the APIs may not be supported since the system version is too old. In this case, please contact Dspread technical support to upgrade the device to the latest version.
+ > Dspread printing SDK basically is applicable to all Dspread devices. For some models, the APIs may not be supported since the system version is too old. In this case, please contact Dspread technical support to upgrade the device to the latest version.
 
 ## APIs for printing text
 
