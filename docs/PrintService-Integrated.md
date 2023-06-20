@@ -59,23 +59,35 @@ public void printResult(boolean b, String status, int type){
 public void printText(String text)
 
 
-| API           | public void printText(String text)            |
-| --------      | --------------------------------------------- |
-| Inputs        |text: Text that needs to be printed            |
-| Description   |Print text.                                    |
-| Callback      | void printResult(boolean isSuccess, String status,int type)
-                 isSuccess:true/false
-                 status: Normal; Printing; NoPaper; Overheated; Undefined
-                 type: 1 PRINT_RESULT;
-                       3 GET_DESITY
-                       5 GET_SPEED
-                       6 GET_TEMPERATURE
-                       7 GET_VOLTAGE
-                       8 GET_STATUS                              | 
-| printer       | D30/MP600                                      |
+| API           | public void printText(String text)                         |
+| --------      | ---------------------------------------------------------- |
+| Inputs        | text: Text that needs to be printed                        |
+| Description   | Print text.                                                |
+| Callback      | void printResult(boolean isSuccess, String status,int type)| 
+| printer       | D30/MP600                                                  |
 
 
 ## APIs for printing BarCode
+
+public void printBarCode(Context context,String symbology, int width, int height, String content,int position)
+
+| API           | public void printBarCode(Context context,String symbology,int width,int height,String content,int position)|
+| --------      | ---------------------------------------------------------- |
+| Inputs        |Width: Set the block width
+Symbology:
+Barcode1D.CODE_128.name();
+Barcode1D.CODABAR.name();
+Barcode1D.CODE_39.name();
+Barcode1D.EAN_8.name();
+Barcode1D.EAN_13.name();
+Barcode1D.UPC_A.name();
+Barcode1D.UPC_E.name();
+Height: Set barcode height
+Content: Set barcode content
+Position: Set barcode alignment                                              |
+| Description   |Print BarCode.                                              |
+| Callback      | void printResult(boolean isSuccess, String status,int type)| 
+| printer       | D30/MP600                                                  |
 
 ## APIs for printing QRCode
 
