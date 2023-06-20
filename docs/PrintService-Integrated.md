@@ -300,7 +300,7 @@ status: 1 to 5,5 is the highest.
 
 ### Get Print Speed
 
-Call the API getPrintSpeed() to get the density of the printer. 
+Call the API getPrintSpeed() to get the speed of the printer. 
 
 **public void getPrintSpeed()** 
 
@@ -314,7 +314,7 @@ statue: 1 to 5,5 is the highest.
 
 ### Get Print Temperature
 
-Call the API getPrintTemperature() to get the density of the printer. 
+Call the API getPrintTemperature() to get the temperature of the printer. 
 
 **public void getTemperature()**  
 
@@ -328,7 +328,7 @@ statue: Printer temperature value.
 
 ### Get Print Voltage
 
-Call the API getPrintVoltage() to get the density of the printer. 
+Call the API getPrintVoltage() to get the voltage of the printer. 
 
 **public void getPrintVoltage()** 
 
