@@ -31,6 +31,7 @@ Click the links below to download the Demos.
 </div>
 
  3. How to use the SDK
+
 After integrating the SDK, firstly you can use the getPrinter() method to get the printer,The initialization code is as follows:
 
 ``` java
@@ -50,9 +51,10 @@ public void printResult(boolean b, String status, int type){
 ```
  4. SDK exceptions
 
- Dspread printing SDK basically is applicable to all Dspread devices. For some models, the APIs may not be supported since the system version is too old. In this case, please contact Dspread technical support to upgrade the device to the latest version.
+ ?>Dspread printing SDK basically is applicable to all Dspread devices. For some models, the APIs may not be supported since the system version is too old. In this case, please contact Dspread technical support to upgrade the device to the latest version.
 
 ## Print Text
+
 
 ## Print BarCode
 
