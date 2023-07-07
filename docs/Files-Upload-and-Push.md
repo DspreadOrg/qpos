@@ -91,3 +91,22 @@ After clicking confirm button, the device will pop up a prompt about force downl
 You can see the download progress from the drop-down menu bar, see as below.
 <img src="./_images/5-4.png" width = "400" />
 
+## 6.Sub account correlation
+
+This part mainly for describe how to open sub accounts and add devices.
+
+### 6.1 Add sub account
+Find Account information > Organization then click add button fill in the blank which marked by asterisk (*).
+Pay attention that code can be same with account.
+![6.1](./_images/6.1.png)
+
+### 6.2 Distribution Devices
+Find the corresponding subaccount,click "devices" as below shown.
+![6.2.1](./_images/6.2.1.png)
+Click "Distribution Devices" button.
+![6.2.2](./_images/6.2.2.png)
+Next you can input the POSID then search it then click "add" button as below shown,this device will be added successfully.
+![6.2.3](./_images/6.2.3.png)
+
+### 6.3 Other supplement
+For OTA package and appliction,uploading and pushing are same with primary account.Details can refer to part 4 and 5.
