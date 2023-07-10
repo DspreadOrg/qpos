@@ -105,7 +105,7 @@ Find the corresponding subaccount,click "devices" as below shown.
 ![6.2.1](./_images/6.2.1.png)
 Click "Distribution Devices" button.
 ![6.2.2](./_images/6.2.2.png)
-Next you can input the POSID then search it then click "add" button as below shown,this device will be added successfully.
+Next you can input the POSID then search it and click "add" button as below shown,this device will be added successfully.
 ![6.2.3](./_images/6.2.3.png)
 
 ### 6.3 Other supplement
