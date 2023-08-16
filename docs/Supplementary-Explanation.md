@@ -1,4 +1,3 @@
-## Supplementary Explanation
 
 ### 1. Check Device Information
 After adding the device successfully, click the DSN to view the device information.  

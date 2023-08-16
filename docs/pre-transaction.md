@@ -15,21 +15,22 @@ The application use the init method to init the EMV card reader hardware and get
 
 To avoid the application block and improve the speed of  data interaction between the smart terminal and QPOS, the SDK framework is designed to work under asynchronous mode.
 
-The Class named ‘QPOSService’ is the core of SDK library. Before the APP create this core instance with the parameter of “CommunicationMode mode”, the APP must register all the sub-functions in ‘QPOSServiceListener’. Below code snipplet shows how to init the SDK.
+The Class named ‘QPOSService’ is the core of SDK library. Before the APP create this core instance with the parameter of “CommunicationMode mode”, the APP must register all the sub-functions in ‘QPOSServiceListener’. 
+The below code shows initializing the SDK while binding the serial port service.
 
 ```java
 	private void open(CommunicationMode mode) {
 		listener = new MyPosListener();
-		pos = QPOSService.getInstance(mode);
+		pos = QPOSService.getInstance(OtherActivity.this, mode);
 		if (pos == null) {
 			statusEditText.setText("CommunicationMode unknow");
 			return;
 		}
-		pos.setConext(getApplicationContext());
 		Handler handler = new Handler(Looper.myLooper());
 		pos.initListener(handler, listener);
 	}
 ```
+
 
 The CommunicaitonMode can be 
 
@@ -38,7 +39,8 @@ The CommunicaitonMode can be
 		AUDIO,
 		BLUETOOTH,
 		BLUETOOTH_BLE,
-		UART,
+		UART, 
+		UART_SERVICE,
         USB
 	}
 ```
@@ -60,6 +62,10 @@ The code below shows how to open the communication bridge with the open() method
 				open(CommunicationMode.UART);
 				posType = POS_TYPE.UART;
 				pos.openUart();
+			}else {
+				open(CommunicationMode.UART_SERVICE);
+				posType = POS_TYPE.UART;
+				pos.openUart();
 			}
 			
 		} else {   //We will use Bluetooth
@@ -69,13 +75,36 @@ The code below shows how to open the communication bridge with the open() method
 		}
 ```
 
+Note: The reason why the CommunicationMode is specified as UART_SERVICE in the above code.  
+Serial ports, like cameras, belong to public resources and only have one. Multiple apps accessing the serial port simultaneously can lead to the issue of serial port occupation. This problem can be effectively solved by the serial port service(UART_SERVICE), which stipulates that only one app can access the serial port at the same time.
+
+
 ## Start Transaction
+
+Before initiating a transaction, you can set the card trade mode to set the card reading mode allowed by the device, by below method:
+```java
+		pos.setCardTradeMode(CardTradeMode.SWIPE_TAP_INSERT_CARD);
+```  
+Below table describes the meaning of each enumerate variables of CardTradeMode:  
+
+| Card Trade Mode                                | Description                              |
+| ---------------------------------------------- | ---------------------------------------- |
+| SWIPE_TAP_INSERT_CARD (default)                | Allow MAG/ICC/NFC transactions, press the UP button "▲" to start NFC mode.|
+| ONLY_SWIPE_CARD                                | Only allow MAG transactions.|
+| ONLY_INSERT_CARD                               | Only allow ICC transactions.|
+| ONLY_TAP_CARD                                  | Only allow NFC transactions.|
+| SWIPE_INSERT_CARD                              | Allow MAG and ICC transactions.|
+| SWIPE_INSERT_CARD_UNALLOWED_LOW_TRADE          | Allow MAG/ICC transactions, press the UP button "▲" to start NFC mode. Downgrading transactions not allowed. (Downgrading transactions not allowed: If the card support ICC transaction, the MAG transaction is not allow.)|
+| TAP_INSERT_CARD_NOTUP                          | Allow ICC and NFC transactions.|
+| TAP_INSERT_CARD                                | Allow ICC and NFC transactions, press the UP button "▲" to start NFC mode.|
+| SWIPE_TAP_INSERT_CARD_NOTUP                    | Allow MAG/ICC/NFC transactions.|
+| SWIPE_TAP_INSERT_CARD_NOTUP_UNALLOWED_LOW_TRADE| Allow MAG/ICC/NFC transactions. Downgrading transactions not allowed.|
 
 The app can start a magnatic swipe card transaction, or an EMV chip card transaction, by below method:
 ```java
 		pos.doTrade(60);
 ```
-The only paramter is the time out value in second. If the user is using magnatic swipe card, after timeout seconds, the transaction will be timed out.
+The only paramter is the time out value in second. If the user is using magnatic swipe card, after timeout seconds, the transaction will be timed out.  
 
 ## Set Transaction Amount
 

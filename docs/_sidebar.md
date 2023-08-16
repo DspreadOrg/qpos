@@ -19,6 +19,8 @@
       - [MKSK](mksk-scheme.md)
   - [EMV Configuration](emv-config.md)
   - [Firmware Upgrade](firmware-ota.md)
+  - [LED Indicator](led-indicator.md)
+  - [Driver & Flash Tool](Update_ROM.md)
 
 - TMS Service
 
@@ -41,10 +43,11 @@
 
 - Testing & Certification 
 
-  - [EMV L3](emv_l3.md)
+  - [Certification](emv_l3.md)
 
 - [**API Reference**](https://dspread.gitlab.io/qpos/api/index.html)
   - [Android](https://gitlab.com/dspread/android/-/blob/master/QPOS-Android-SDK-Userguid-en-detail.pdf)
   - [iOS](https://gitlab.com/dspread/ios/-/blob/master/QPOS-iOS-SDK-Userguid-en-detail.pdf)
 
 - [**Web Demo**](https://dspread.gitlab.io/qpos/webdemo/checkout.html)
+- [**FAQs**](FAQs.md)

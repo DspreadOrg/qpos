@@ -1,0 +1,1 @@
+- [LED Indicator Description](https://drive.google.com/file/d/1Jo2JSLYU-R5DFaZDq4nrk1LE42d3G5yV/view?usp=sharing)

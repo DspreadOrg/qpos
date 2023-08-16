@@ -16,13 +16,19 @@ Configure the model of the device you purchased.
 ### 2.2 Add Devices
 There are two ways: 
 1. Add a single device;
-2. Import a batch of devices: download the import template and fill in the information according to the template format;
+2. Import a batch of devices. download the import template and fill in the information according to the template format;
 
+**1. Add a single device**  
 Please fill in the blanks as below(DSN, Model and System Version are mandatory), then click the button “OK”.  
 > Note:   
 > After adding the device, turn on the power to start TMS normally. If the device is already turned on, a reboot is required.  
 
 ![2-1](./_images/2-1.png)
+
+**2. Import a batch of devices**  
+Firstly, you need to download the "[Import Template](https://docs.google.com/spreadsheets/d/1qqHzk0OK0GWtzOoSS5DS2NAH0pKn2rhh/edit?usp=sharing&ouid=113176383357556413114&rtpof=true&sd=true)" and fill in the information according to the template format.  
+Secondly, click the button and select the file of Import Templete.
+![2-2](./_images/2-2.png)
 
 ## 3.Upload ROM/Firmware Files
 
@@ -65,21 +71,42 @@ You can see the status change from “Off the shelf” to “On the shelf”.
 
 This part is about how to push the files that already uploaded on TMS to the devices.
 
-1.Click the “Push task” menu on the left and click the Add button.
+### 5.1 Add file
+Click the “Push task” menu on the left and click the Add button.
 ![5-1](./_images/5-1.png)
 
-2.Select file to push.
+### 5.2 Select file to push
 > Note: “Message Type”  
 If the file is firmware(.asc file), select “Firmware Update”;  
-If the file is ROM(.zip file), select “File Push”;  
+If the file is ROM(.zip file), select “Firmware Update”;  
 If the file is APP(.apk file), select “App Install”.
+
 ![5-2](./_images/5-2.png)
 
-3.After clicking confirm button, the device will pop up a prompt about force downloading the upgrade package.
-
+### 5.3 Pop up
+After clicking confirm button, the device will pop up a prompt about force downloading the upgrade package.
 <img src="./_images/5-3.png" width = "400" />
 
-4.You can see the download progress from the drop-down menu bar, see as below.
-
+### 5.4 Download
+You can see the download progress from the drop-down menu bar, see as below.
 <img src="./_images/5-4.png" width = "400" />
 
+## 6.Sub account correlation
+
+This part mainly for describe how to open sub accounts and add devices.
+
+### 6.1 Add sub account
+Find Account information > Organization then click add button fill in the blank which marked by asterisk (*).
+Pay attention that code can be same with account.
+![6.1](./_images/6.1.png)
+
+### 6.2 Distribution Devices
+Find the corresponding subaccount,click "devices" as below shown.
+![6.2.1](./_images/6.2.1.png)
+Click "Distribution Devices" button.
+![6.2.2](./_images/6.2.2.png)
+Next you can input the POSID then search it and click "add" button as below shown,this device will be added successfully.
+![6.2.3](./_images/6.2.3.png)
+
+### 6.3 Other supplement
+For OTA package and appliction,uploading and pushing are same with primary account.Details can refer to part 4 and 5.
