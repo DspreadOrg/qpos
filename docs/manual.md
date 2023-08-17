@@ -1,6 +1,6 @@
 ## Introduction
 
-<iframe width="800" height="605" src="./products/productsGallery.html" frameborder="0"  scrolling="no" allowfullscreen></iframe>
+<iframe width="800" height="620" src="./products/productsGallery.html" frameborder="0"  scrolling="no" allowfullscreen></iframe>
 
 
 CR100 and QPOS Cute allows you to make secure payments anytime and anywhere with Smartphones and Tablets.
