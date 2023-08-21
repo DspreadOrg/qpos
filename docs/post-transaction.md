@@ -1,7 +1,7 @@
-## Magstripe Card Transaction
+## MSR&NFC Card Transaction
 
-Magstripe card transaction is pretty simple. 
-After the app start a transaction, if the user use a magnatic card, below callback will be called feeding the app magnatic card related information. The app then use the information returned for further processing.
+Magstripe and NFC card transaction is pretty simple. 
+After the app start a transaction, if the user use a magnatic card or a NFC card, below callback will be called feeding the app magnatic card related information. The app then use the information returned for further processing.
 
 ```java
 		@Override
@@ -39,12 +39,35 @@ After the app start a transaction, if the user use a magnatic card, below callba
                         .get("trackRandomNumber");
                 String pinRandomNumber = decodeData.get("pinRandomNumber");
 							+ "\n";
-				}
-			} else if (result == DoTradeResult.NO_RESPONSE) {
-				statusEditText.setText(getString(R.string.card_no_response));
+			} else if ((result == DoTradeResult.NFC_ONLINE) || (result == DoTradeResult.NFC_OFFLINE)) {
+                nfcLog = decodeData.get("nfcLog");
+                String content = getString(R.string.tap_card);
+                String formatID = decodeData.get("formatID");
+                String maskedPAN = decodeData.get("maskedPAN");
+                String expiryDate = decodeData.get("expiryDate");
+                String cardHolderName = decodeData.get("cardholderName");
+                String serviceCode = decodeData.get("serviceCode");
+                String track1Length = decodeData.get("track1Length");
+                String track2Length = decodeData.get("track2Length");
+                String track3Length = decodeData.get("track3Length");
+                String encTracks = decodeData.get("encTracks");
+                String encTrack1 = decodeData.get("encTrack1");
+                String encTrack2 = decodeData.get("encTrack2");
+                String encTrack3 = decodeData.get("encTrack3");
+                String partialTrack = decodeData.get("partialTrack");
+                String pinKsn = decodeData.get("pinKsn");
+                String trackksn = decodeData.get("trackksn");
+                String pinBlock = decodeData.get("pinBlock");
+                String encPAN = decodeData.get("encPAN");
+                String trackRandomNumber = decodeData.get("trackRandomNumber");
+                String pinRandomNumber = decodeData.get("pinRandomNumber");
+            } else if ((result == DoTradeResult.NFC_DECLINED)) {
+                statusEditText.setText(getString(R.string.transaction_declined));
+            } else if (result == DoTradeResult.NO_RESPONSE) {
+                statusEditText.setText(getString(R.string.card_no_response));
 			} else if (result == DoTradeResult.NO_UPDATE_WORK_KEY) {
 				statusEditText.setText("not update work key");
-			}
+			} 
 		}
 ```
 
@@ -257,6 +280,12 @@ The real PIN value can be caculated using formated pin data and PAN as inputs, a
 > XOR (0000365212501000, 041127ADEDAFEFFF) = 041111FFFFFFFFFF
 > In our example, the plain PIN is 4 bytes in length with data "1111"
 
+### Get NFC Batch Data
+
+```java
+    Hashtable<String, String> h = pos.getNFCBatchData();
+
+```
 
 ## Chip Card Transaction
 
