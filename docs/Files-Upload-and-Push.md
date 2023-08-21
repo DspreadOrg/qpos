@@ -63,9 +63,11 @@ Fill in the information as below(APK, Icon, App Name, Application classification
 ### 4.2 Hit the shelves
 After all of the file information has been confirmed, click the button “Back on” to put the app on the app store.  
 ![4-2-1](./_images/4-2-1.png)  
-
 You can see the status change from “Off the shelf” to “On the shelf”.  
 ![4-2-2](./_images/4-2-2.png)
+### 4.3 App version upgrade
+If your app have new version,please click this button for "Upgrade" as below.It is worth noting that you must change the version then can finish it or you will have to delete this and upload again.
+![4-3](./_images/4-3.png)
 
 ## 5.File Push
 
