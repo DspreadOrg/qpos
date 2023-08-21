@@ -14,4 +14,4 @@
 <iframe width="800" height="450" src="https://www.youtube.com/embed/HMOHm61e7ZE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### D60 Support
-<iframe width="800" height="450" src="https://www.youtube.com/watch?v=W1Ys0OJa6F0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/W1Ys0OJa6F0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
