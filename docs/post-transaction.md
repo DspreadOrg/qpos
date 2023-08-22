@@ -40,8 +40,6 @@ After the app start a transaction, if the user use a magnatic card or a NFC card
                 String pinRandomNumber = decodeData.get("pinRandomNumber");
 							+ "\n";
 			} else if ((result == DoTradeResult.NFC_ONLINE) || (result == DoTradeResult.NFC_OFFLINE)) {
-                nfcLog = decodeData.get("nfcLog");
-                String content = getString(R.string.tap_card);
                 String formatID = decodeData.get("formatID");
                 String maskedPAN = decodeData.get("maskedPAN");
                 String expiryDate = decodeData.get("expiryDate");
