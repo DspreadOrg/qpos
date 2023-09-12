@@ -40,7 +40,7 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
 
   PrinterManager instance = PrinterManager.getInstance();
   mPrinter = instance.getPrinter();
-  mPrinter.initPrinter(this);
+  mPrinter.initPrinter(context);
   MyPrinterListener myPrinterListener = new MyPrinterListener();
   mPrinter.setPrintListener(myPrinterListener);
 
