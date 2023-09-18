@@ -324,14 +324,77 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 ### Input PIN 
 
 CR100：The PIN information can be sent to the EMV kernel by:
+1. input the plaintext pin
 ```java
 		@Override
 		public void onRequestSetPin() {
-				pos.sendPin("123456");
+				pos.sendPin("123456"); 
 				//pos.bypassPin();    //Bypass PIN Entry
 				//pos.cancelPin();   //Cancel the transaction
 		}
 ```
+2. input the cipher pinblock on the client app side
+```java
+
+        String newPin = "";
+        //this part is used to enctypt the plaintext pin with random seed
+        if (getCvmKeyList() != null && !getCvmKeyList().equals("")) {
+            Tip.i("cvm key list = " + getCvmKeyList());
+            String keyList = Util.convertHexToString(getCvmKeyList());
+            Tip.i("keyList = " + keyList);
+            for (int i = 0; i < pin.length(); i++) {
+                for (int j = 0; j < keyList.length(); j++) {
+                    if (keyList.charAt(j) == pin.charAt(i)) {
+                        newPin = newPin + Integer.toHexString(j) + "";
+                        Tip.i("newPin111 = " + newPin);
+                        break;
+                    }
+                }
+            }
+        } else {
+            newPin = pin;
+        }
+        String pinBlock = buildCvmPinBlock(encryptData, newPin);// build the ISO format4 pin block
+        sendCvmPin(pinBlock, true);
+```
+The below method is used to build the ISO format4 pinblock
+```java
+private String buildCvmPinBlock(Hashtable<String, String> value, String pin) {
+        String randomData = value.get("RandomData") == null ? "" : value.get("RandomData");
+        String pan = value.get("PAN") == null ? "" : value.get("PAN");
+        String AESKey = value.get("AESKey") == null ? "" : value.get("AESKey");
+        String isOnline = value.get("isOnlinePin") == null ? "" : value.get("isOnlinePin");
+        String pinTryLimit = value.get("pinTryLimit") == null ? "" : value.get("pinTryLimit");
+        //iso-format4 pinblock
+        int pinLen = pin.length();
+        pin = "4" + Integer.toHexString(pinLen) + pin;
+        for (int i = 0; i < 14 - pinLen; i++) {
+            pin = pin + "A";
+        }
+        pin += randomData.substring(0, 16);
+        String panBlock = "";
+        int panLen = pan.length();
+        int m = 0;
+        if (panLen < 12) {
+            panBlock = "0";
+            for (int i = 0; i < 12 - panLen; i++) {
+                panBlock += "0";
+            }
+            panBlock = panBlock + pan + "0000000000000000000";
+        } else {
+            m = pan.length() - 12;
+            panBlock = m + pan;
+            for (int i = 0; i < 31 - panLen; i++) {
+                panBlock += "0";
+            }
+        }
+        String pinBlock1 = AESUtil.encrypt(AESKey, pin);
+        pin = Util.xor16(HexStringToByteArray(pinBlock1), HexStringToByteArray(panBlock));
+        String pinBlock2 = AESUtil.encrypt(AESKey, pin);
+        return pinBlock2;
+    }
+```
+
 Note, the kernel will not call the callback if PIN is not required for the transaction, or if the QPOS itself is with an embedded PINPAD.
 
 If the user do not want to input PIN, the applicaiton can bypass PIN entry by calling 
