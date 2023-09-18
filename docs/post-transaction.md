@@ -357,7 +357,7 @@ CR100：The PIN information can be sent to the EMV kernel by:
         String pinBlock = buildCvmPinBlock(encryptData, newPin);// build the ISO format4 pin block
         sendCvmPin(pinBlock, true);
 ```
-The below method is used to build the ISO format4 pinblock
+The below method is used to build the ISO format-4 pinblock which meet the SPOC protocol
 ```java
 private String buildCvmPinBlock(Hashtable<String, String> value, String pin) {
         String randomData = value.get("RandomData") == null ? "" : value.get("RandomData");
