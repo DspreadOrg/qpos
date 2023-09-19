@@ -338,23 +338,18 @@ CR100：The PIN information can be sent to the EMV kernel by:
 
         String newPin = "";
         //this part is used to enctypt the plaintext pin with random seed
-        if (getCvmKeyList() != null && !getCvmKeyList().equals("")) {
-            Tip.i("cvm key list = " + getCvmKeyList());
+        if (pos.getCvmKeyList() != null && !("").equals.pos.getCvmKeyList()) {
             String keyList = Util.convertHexToString(getCvmKeyList());
-            Tip.i("keyList = " + keyList);
             for (int i = 0; i < pin.length(); i++) {
                 for (int j = 0; j < keyList.length(); j++) {
                     if (keyList.charAt(j) == pin.charAt(i)) {
                         newPin = newPin + Integer.toHexString(j) + "";
-                        Tip.i("newPin111 = " + newPin);
                         break;
                     }
                 }
             }
-        } else {
-            newPin = pin;
         }
-        String pinBlock = buildCvmPinBlock(encryptData, newPin);// build the ISO format4 pin block
+        String pinBlock = buildCvmPinBlock(pos.getEncryptData(), newPin);// build the ISO format4 pin block
         sendCvmPin(pinBlock, true);
 ```
 The below method is used to build the ISO format-4 pinblock which meet the SPOC protocol
