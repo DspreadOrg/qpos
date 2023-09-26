@@ -18,4 +18,4 @@ The following is the emv configuration we generated based on the test cases of e
 
 For CR100, we provide you some solution to help you pass SPOC, please check the below document for detail. 
 
-- [CR100 SPOC CVM PIN](https://drive.google.com/file/d/1eozY20BrMsTvCYfW0euDf4ylz8LSls05/view?usp=sharing)
+- [CR100 SPOC CVM PIN](https://gitlab.com/dspread/FAQs_Document/-/blob/master/documents/dspread%20cvm%20pin.pdf?ref_type=heads)
