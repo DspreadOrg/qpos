@@ -11,7 +11,7 @@ Dspread printing SDK can be obtained through remote repository, and you only nee
 
 Gradle Groovy DSL install command.
 
-implementation 'com.dspread.print:dspread_print_sdk:1.2.0'
+implementation 'com.dspread.print:dspread_print_sdk:1.2.2'
 
 Add Gradle Groovy DSL repository command.
 
@@ -36,19 +36,52 @@ Click the links below to download the Demos.
 
 After integrating the SDK, firstly you can use the getPrinter() method to get the printer,The initialization code is as follows:
 
+ 1、If D60/MP600 device integration SDK. Please refer to the below code to initialize.
 ``` java
+   PrinterManager instance = PrinterManager.getInstance();
+   mPrinter = instance.getPrinter();
+   mPrinter.initPrinter(context);
+   MyPrinterListener myPrinterListener = new MyPrinterListener();
+   mPrinter.setPrintListener(myPrinterListener);
+   class MyPrinterListener implements PrinterListener{
 
-  PrinterManager instance = PrinterManager.getInstance();
-  mPrinter = instance.getPrinter();
-  mPrinter.initPrinter(context);
-  MyPrinterListener myPrinterListener = new MyPrinterListener();
-  mPrinter.setPrintListener(myPrinterListener);
+    @Override
+    public void printResult(boolean b, String status, int type){
 
-class MyPrinterListener implements PrinterListener{
-@Override
-public void printResult(boolean b, String status, int type){
+     }
+   }
+```
+ 2、If D30 device integration SDK. Please refer to the below code to initialize.
+```java
+   PrinterManager instance = PrinterManager.getInstance();
+   mPrinter = instance.getPrinter();
+   mPrinter.initPrinter(context, new PrinterInitListener() {
+
+    @Override
+    public void connected() { 
+
+   mPrinter.setPrinterTerminatedState(PrinterDevice.PrintTerminationState.PRINT_STOP); 
+
+  //PrinterDevice.PrintTerminationState.PRINT_STOP    When no paper, the printer terminates printing and cancels the printing task.
+  //PrinterDevice.PrintTerminationState. PRINT_NORMAL  When no paper, the printer will prompt that no paper. After loading the paper, the printer will continue to restart printing.
+
+            } 
+    @Override
+    public void disconnected() {
+
+            }
+        });
+    MyPrinterListener myPrinterListener = new MyPrinterListener();
+
+    mPrinter.setPrintListener(myPrinterListener);
+
+    class MyPrinterListener implements PrinterListener{
+
+           @Override
+    public void printResult(boolean b, String status, int type){
+
+    }
 }
-  }
 ```
  4. SDK exceptions
 
@@ -63,7 +96,7 @@ public void printResult(boolean b, String status, int type){
 | --------      | ---------------------------------------------------------- |
 | Description   | Print text.                                                |
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
-| printer       | D30/MP600                                                  |
+| printer       | D30/D60/MP600                                              |
 
 
 **Parameter Description:** 
@@ -79,7 +112,7 @@ String text: Specify the printed text content
 | --------      | ---------------------------------------------------------- |
 | Description   |Print BarCode.                                              |
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
-| printer       | D30/MP600                                                  |
+| printer       | D30/D60/MP600                                              |
 
 
 **Parameter Description:** 
@@ -111,7 +144,7 @@ position: Set barcode alignment.
 | --------      | ---------------------------------------------------------- |
 | Description   |Print QRCode.                                               |
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
-| printer       | D30/MP600                                                  | 
+| printer       | D30/D60/MP600                                              | 
 
 **Parameter Description:** 
 
@@ -138,7 +171,7 @@ position: Set up the QR code block alignment.
 | --------      | ---------------------------------------------------------- |
 | Description   |Print Bitmap                                                |
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
-| printer       | D30/MP600                                                  | 
+| printer       | D30/D60/MP600                                              | 
 
 **Parameter Description:** 
 
@@ -154,7 +187,7 @@ bitmap: Image bitmap data.
 | --------      | --------------------------------------------------------------------         |
 | Description   |Send print content to the printer in a row with fixed size fixed style content|
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
-| printer       | D30/MP600                                                                    |
+| printer       | D30/D60/MP600                                                                |
 
 **Parameter Description:** 
 
@@ -165,7 +198,7 @@ colsWidthArrs: The proportion of each column in a row, such as int[] {1,1}, will
 styles: Set Text Position.
 
 
-## APIs for Print
+## APIs for Printing all types display
 
 **public void print(Context context)**
 
@@ -176,22 +209,12 @@ addText(),addTexts(),addBarCode(),addQRCode(),addBitmap().
 | --------      | --------------------------------------------------------------------         |
 | Description   |Print composite type files,First add the different types of files. Then call this interface to print|
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
-| printer       | D30/MP600                                                                    |
+| printer       | D30/D60/MP600                                                                |
 
 **Parameter Description:** 
 
 context: Context. 
-
-
-## Stop Print
-**public void stopPrint()**
-
-| API           | public void stopPrint()                                        |
-| --------      | ------------------------------------------------------------   |
-| Description   |Stop Print                                                      |
-| Callback      | void printResult(boolean isSuccess, String status,int type)    | 
-| printer       | MP600                                                          |
-
+                                                        |
 ## APIs for Print CallBack
 
 **public void printResult(boolean isSuccess, String status,int type)**
@@ -199,7 +222,7 @@ context: Context.
 | API           | public void printResult(boolean isSuccess, String status,int type) |
 | --------      | ------------------------------------------------------------       |
 | Description   |Callback interface                                                  |
-| printer       | D30/MP600                                                          |
+| printer       | D30/D60/MP600                                                      |
 
 **Parameter Description:** 
 
@@ -212,35 +235,35 @@ type: 1 PRINT_RESULT;3 GET_DESITY;5 GET_SPEED;6 GET_TEMPERATURE;7 GET_VOLTAGE;8 
 
 ## Printer Setting
 
-### Set Print Density
+### Set Printer Density
 
-**public void setPrintDensity(int printDensityLevel)** 
+**public void setPrinterDensity(int printerDensityLevel)** 
 
-| API           | public void setPrintDensity(int printDensityLevel)             |
+| API           | public void setPrinterDensity(int printerDensityLevel)             |
 | --------      | ------------------------------------------------------------   |
-| Description   | Set print Density.                                             |
+| Description   | Set printer Density.                                             |
 | Callback      | void printResult(boolean isSuccess, String status,int type)    | 
 | printer       | MP600                                                          |
 
 **Parameter Description:** 
 
-printDensityLevel: Print concentration levels. 
+printerDensityLevel: Printer concentration levels. 
 
 Concentration level: 1 to 5 (5 is the highest). 
 
-### Set Print Speed
+### Set Printer Speed
 
-**public void setPrintSpeed(int printDensityLevel)** 
+**public void setPrinterSpeed(int printerSpeedLevel)** 
 
-| API           | public void setPrintSpeed(int printDensityLevel)               |
+| API           | public void setPrinterSpeed(int printerSpeedLevel)               |
 | --------      | ------------------------------------------------------------   |
-| Description   | Set print Speed.                                               |
+| Description   | Set printer Speed.                                               |
 | Callback      | void printResult(boolean isSuccess, String status,int type)    | 
 | printer       | MP600                                                          |
 
 **Parameter Description:** 
 
-printSpeedLevel: Print speed levels. 
+printerSpeedLevel: Printer speed levels. 
 
 Speed level: 1 to 5 (5 is the highest). 
 
@@ -280,47 +303,47 @@ status: Normal; Printing; NoPaper; Overheated; Undefined
 
 | API           | public void getPrinterStatus()                                               |
 | --------      | --------------------------------------------------------------------         |
-| Description   | get print status                                                              |
+| Description   | get printer status                                                              |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
 | printer       | MP600                                                                        |
 
-### Get Print Density
+### Get Printer Density
 
-Call the API getPrintDensity() to get the density of the printer. 
+Call the API getPrinterDensity() to get the density of the printer. 
 
-**public void getPrintDensity()** 
+**public void getPrinterDensity()** 
 
 status: 1 to 5,5 is the highest. 
 
-| API           | public void  getPrintDensity()                                               |
+| API           | public void  getPrinterDensity()                                               |
 | --------      | --------------------------------------------------------------------         |
-| Description   | get Print Density                                                            |
+| Description   | get Printer Density                                                            |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
 | printer       | MP600                                                                        |
 
-### Get Print Speed
+### Get Printer Speed
 
-Call the API getPrintSpeed() to get the speed of the printer. 
+Call the API getPrinterSpeed() to get the speed of the printer. 
 
-**public void getPrintSpeed()** 
+**public void getPrinterSpeed()** 
 
 statue: 1 to 5,5 is the highest.
 
-| API           | public void  getPrintSpeed()                                               |
+| API           | public void  getPrinterSpeed()                                               |
 | --------      | --------------------------------------------------------------------       |
-| Description   | get Print Speed                                                            |
+| Description   | get Printer Speed                                                            |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                | 
 | printer       | MP600                                                                      |
 
-### Get Print Temperature
+### Get Printer Temperature
 
-Call the API getPrintTemperature() to get the temperature of the printer. 
+Call the API getPrinterTemperature() to get the temperature of the printer. 
 
 **public void getTemperature()**  
 
 statue: Printer temperature value.
 
-| API           | public void  getPrintTemperature()                                         |
+| API           | public void  getPrinterTemperature()                                         |
 | --------      | --------------------------------------------------------------------       |
 | Description   | get Printer temperature value                                              |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                | 
@@ -328,13 +351,13 @@ statue: Printer temperature value.
 
 ### Get Print Voltage
 
-Call the API getPrintVoltage() to get the voltage of the printer. 
+Call the API getPrinterVoltage() to get the voltage of the printer. 
 
-**public void getPrintVoltage()** 
+**public void getPrinterVoltage()** 
 
 statue: Printer Voltage value.
 
-| API           | public void  getPrintVoltage()                                         |
+| API           | public void  getPrinterVoltage()                                         |
 | --------      | --------------------------------------------------------------------   |
 | Description   | get Printer Voltage value                                              |
 | Callback      | void printResult(boolean isSuccess, String status,int type)            | 
