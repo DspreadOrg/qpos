@@ -2,7 +2,7 @@
 ## Dspread Printing SDK Overview
 
 Please follow the below printer sdk document to integrate printer functions
-- [Printer SDK Guide](https://drive.google.com/file/d/1jMC2SaQmhXowDwHaxdhlpyiCnSY64p59/view?usp=sharing)
+- [Printer SDK Guide](https://drive.google.com/file/d/1whNFrWa69OddbrFQi6FCu6zOjlxvFTsk/view?usp=sharing)
 
  1. How to integrate SDK
 
@@ -243,7 +243,7 @@ type: 1 PRINT_RESULT;3 GET_DESITY;5 GET_SPEED;6 GET_TEMPERATURE;7 GET_VOLTAGE;8 
 | --------      | ------------------------------------------------------------   |
 | Description   | Set printer Density.                                             |
 | Callback      | void printResult(boolean isSuccess, String status,int type)    | 
-| printer       | MP600                                                          |
+| printer       | MP600/D60                                                          |
 
 **Parameter Description:** 
 
@@ -259,7 +259,7 @@ Concentration level: 1 to 5 (5 is the highest).
 | --------      | ------------------------------------------------------------   |
 | Description   | Set printer Speed.                                               |
 | Callback      | void printResult(boolean isSuccess, String status,int type)    | 
-| printer       | MP600                                                          |
+| printer       | MP600/D60                                                         |
 
 **Parameter Description:** 
 
@@ -275,7 +275,7 @@ Speed level: 1 to 5 (5 is the highest).
 | --------      | ------------------------------------------------------------   |
 | Description   | Set the text alignment and font effect.                                              |
 | Callback      | null                                                           | 
-| printer       | D30/MP600                                                      |
+| printer       | D30/MP600/D60                                                     |
 
 **Parameter Description:** 
 
@@ -305,7 +305,7 @@ status: Normal; Printing; NoPaper; Overheated; Undefined
 | --------      | --------------------------------------------------------------------         |
 | Description   | get printer status                                                              |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
-| printer       | MP600                                                                        |
+| printer       | MP600/D60                                                                        |
 
 ### Get Printer Density
 
@@ -319,7 +319,7 @@ status: 1 to 5,5 is the highest.
 | --------      | --------------------------------------------------------------------         |
 | Description   | get Printer Density                                                            |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
-| printer       | MP600                                                                        |
+| printer       | MP600/D60                                                                       |
 
 ### Get Printer Speed
 
@@ -333,7 +333,7 @@ statue: 1 to 5,5 is the highest.
 | --------      | --------------------------------------------------------------------       |
 | Description   | get Printer Speed                                                            |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                | 
-| printer       | MP600                                                                      |
+| printer       | MP600/D60                                                                      |
 
 ### Get Printer Temperature
 
@@ -347,7 +347,7 @@ statue: Printer temperature value.
 | --------      | --------------------------------------------------------------------       |
 | Description   | get Printer temperature value                                              |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                | 
-| printer       | MP600                                                                      |
+| printer       | MP600/D60                                                                      |
 
 ### Get Print Voltage
 
@@ -361,5 +361,5 @@ statue: Printer Voltage value.
 | --------      | --------------------------------------------------------------------   |
 | Description   | get Printer Voltage value                                              |
 | Callback      | void printResult(boolean isSuccess, String status,int type)            | 
-| printer       | MP600                                                                  |
+| printer       | MP600/D60                                                                  |
 
