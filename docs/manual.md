@@ -34,3 +34,19 @@ You can download to install our [android-demo-app][android-app]
     
 </div>
 
+<!-- tabs:start -->
+
+#### **Windows**
+
+Hello!
+
+#### **MacOS**
+
+Bonjour!
+
+#### **Linux**
+
+Ciao!
+
+<!-- tabs:end -->
+
