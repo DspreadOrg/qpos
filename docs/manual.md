@@ -21,32 +21,36 @@ You can download to install our [android-demo-app][android-app]
 [ios-app]: http://d.maps9.com/posDemo
 
 
-<div style='color: blue'>
+<!-- tabs:start -->
+
+#### **Android**
 
 - [x] [Android SDK](https://gitlab.com/dspread/android) 
-- [x] [IOS SDK](https://gitlab.com/dspread/ios)
-- [x] [Windows SDK](https://gitlab.com/dspread/windows)
-- [x] [Hybrid](https://gitlab.com/dspread/cordova-plugin)
-    - [x] [cordava](https://gitlab.com/dspread/cordova-plugin)
-    - [x] [ionic](https://gitlab.com/dspread/ionic-demo)
-    - [x] [Flutter](https://gitlab.com/dspread/flutter_demo)
-    - [x] [React Native](https://gitlab.com/dspread/react-native)
-    
-</div>
 
-<!-- tabs:start -->
+#### **IOS**
+
+- [x] [IOS SDK](https://gitlab.com/dspread/ios)
 
 #### **Windows**
 
-Hello!
+- [x] [Windows SDK](https://gitlab.com/dspread/windows)
 
-#### **MacOS**
+#### **Flutter**
 
-Bonjour!
+- [x] [Flutter](https://gitlab.com/dspread/flutter_demo)
 
-#### **Linux**
+#### **React Native**
 
-Ciao!
+- [x] [React Native](https://gitlab.com/dspread/react-native)
+    
+#### **Ionic**
+
+- [x] [ionic](https://gitlab.com/dspread/ionic-demo)
+    
+#### **Cordova**
+
+- [x] [cordava](https://gitlab.com/dspread/cordova-plugin)
+
 
 <!-- tabs:end -->
 
