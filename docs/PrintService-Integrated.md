@@ -1,5 +1,5 @@
 
-## Dspread Printing SDK Overview
+## Dspread Printer SDK Overview
 
 Please follow the below printer sdk document to integrate printer functions
 - [Printer SDK Guide](https://drive.google.com/file/d/1cJgq6WN4Ocnrsdp6XlFPVENoIiSdjesU/view?usp=sharing)
