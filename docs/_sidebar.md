@@ -12,7 +12,7 @@
 
   - [D20 & D30](D20&D30.md)
       - [Sign and install App](Sign-and-install-App.md)
-      - [PrintService Integrated](PrintService-Integrated.md)
+      - [Printer SDK Integrated](PrintService-Integrated.md)
       - [Draw the keyboard ](Draw_the_keyboard.md)
   - [Key Management](key-management.md)
       - [DUKPT](dukpt-scheme.md)
