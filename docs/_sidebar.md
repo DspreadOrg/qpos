@@ -27,9 +27,9 @@
   - [Operation Video](Operation-Video.md)
   - [Supplementary Explanation](Supplementary-Explanation.md)
 
-- Printer Service
+- Printer SDK
   
-  - [PrinterService Integrated](PrintService-Integrated.md)   
+  - [Printer SDK Integrated](PrintService-Integrated.md)   
 
 - Mifare Card 
 
