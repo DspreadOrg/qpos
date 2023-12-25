@@ -84,6 +84,7 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
  3. SDK exceptions
 
  > Dspread printing SDK basically is applicable to all Dspread devices. For some models, the APIs may not be supported since the system version is too old. In this case, please contact Dspread technical support to upgrade the device to the latest version.
+ 
 ## 2. Printer SDK API
 
 ### 2.1 Set Print Text Align
@@ -93,6 +94,7 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
 | Description   | please new a PrintLineStyle object and set print text align.  |
 | Callback      | N/A                                                        | 
 | printer       | D30/D60/MP600                                              |
+
 **Parameter Description:** 
 - align: 
    - PrintLine.LEFT
@@ -106,6 +108,7 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
 | Description   | please new a PrintLineStyle object and set print text font size.|
 | Callback      | N/A                                                       | 
 | printer       | D30/D60/MP600                                             |
+
 **Parameter Description:** 
 - fontSize: custom text size (recommended 14 ~ 18)
 
@@ -116,6 +119,7 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
 | Description   | please new a PrintLineStyle object and set print text font style.|
 | Callback      | N/A                                                       | 
 | printer       | D30/D60/MP600                                             |
+
 **Parameter Description:** 
 - bold:
    - PrintStyle.FontStyle.NORMAL
@@ -131,7 +135,6 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
 | printer       | D30/D60/MP600                                              |
 
-
 **Parameter Description:** 
 
 - text: specify printing text content
@@ -143,7 +146,6 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
 | Description   | Print BarCode.                                             |
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
 | printer       | D30/D60/MP600                                              |
-
 
 **Parameter Description:** 
 - context: Context. 
@@ -198,6 +200,7 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
 | Description   |Send print content to the printer in a row with fixed size fixed style content|
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
 | printer       | D30/D60/MP600                                                                |
+
 **Parameter Description:** 
 - texts: Each column to print, the array size is the number of columns.
 - colsWidthArrs: The proportion of each column in a row, such as int[] {1,1}, will print each column by 1:1.
@@ -268,7 +271,7 @@ Before calling the method, you can call the following method to add content:
 | API           | public void setPrintStyle(PrintLineStyle style)                |
 | --------      | ------------------------------------------------------------   |
 | Description   | Set the text alignment and font effect.                        |
-| Callback      | N/A                                                           | 
+| Callback      | N/A                                                            | 
 | printer       | D30/MP600/D60                                                  |
 
 **Parameter Description:** 
@@ -287,6 +290,7 @@ Before calling the method, you can call the following method to add content:
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
 | printer       | MP600/D60                                                                    |
 
+**Callback method parameter Description:** 
 - status: 
    - Normal
    - Printing
@@ -301,6 +305,7 @@ Before calling the method, you can call the following method to add content:
 | Callback      | void printResult(boolean isSuccess, String status,int type)                    | 
 | printer       | MP600/D60                                                                      |
 
+**Callback method parameter Description:** 
 - status: 1 to 5,5 is the highest. 
 
 ### 4.3 Get Printer Speed
@@ -310,6 +315,7 @@ Before calling the method, you can call the following method to add content:
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
 | printer       | MP600/D60                                                                    |
 
+**Callback method parameter Description:** 
 - status: 1 to 5,5 is the highest.
 
 ### 4.4 Get Printer Temperature
@@ -319,6 +325,7 @@ Before calling the method, you can call the following method to add content:
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
 | printer       | MP600/D60                                                                    |
 
+**Callback method parameter Description:** 
 - statue: printer temperature value.
 
 ### 4.5 Get Print Voltage
@@ -327,4 +334,6 @@ Before calling the method, you can call the following method to add content:
 | Description   | get Printer Voltage value                                                |
 | Callback      | void printResult(boolean isSuccess, String status,int type)              | 
 | printer       | MP600/D60                                                                |
+
+**Callback method parameter Description:**                                                              
 - statue: printer voltage value.
