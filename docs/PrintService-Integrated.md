@@ -1,4 +1,3 @@
-
 ## 1. Dspread Printing SDK Overview
 
 Please follow the below printer sdk document to integrate printer functions
@@ -84,8 +83,7 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
  3. SDK exceptions
 
  > Dspread printing SDK basically is applicable to all Dspread devices. For some models, the APIs may not be supported since the system version is too old. In this case, please contact Dspread technical support to upgrade the device to the latest version.
- 
- 
+
 ## 2. Printer SDK API
 
 ### 2.1 Set Print Text Align
