@@ -12,7 +12,6 @@
 
   - [D20 & D30](D20&D30.md)
       - [Sign and install App](Sign-and-install-App.md)
-      - [PrintService Integrated](PrintService-Integrated.md)
       - [Draw the keyboard ](Draw_the_keyboard.md)
   - [Key Management](key-management.md)
       - [DUKPT](dukpt-scheme.md)
@@ -27,6 +26,10 @@
   - [Files Upload and Push](Files-Upload-and-Push.md)
   - [Operation Video](Operation-Video.md)
   - [Supplementary Explanation](Supplementary-Explanation.md)
+
+- Printer Service
+  
+  - [PrinterService Integrated](PrintService-Integrated.md)   
 
 - Mifare Card 
 
