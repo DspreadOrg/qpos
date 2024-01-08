@@ -19,7 +19,6 @@
   - [EMV Configuration](emv-config.md)
   - [Firmware Upgrade](firmware-ota.md)
   - [LED Indicator](led-indicator.md)
-  - [Driver & Flash Tool](Update_ROM.md)
 
 - TMS Service
 
@@ -29,7 +28,10 @@
 
 - Printer SDK
   
-  - [Printer SDK Integrated](PrintService-Integrated.md)   
+  - [Printer Overview](Printer_SDK_Overview.md)
+  - [Printer API](Printer_API.md)
+  - [Printer Setting](Printer_Setting.md)
+  - [Printer Status](Printer_Status.md)   
 
 - Mifare Card 
 
@@ -43,7 +45,8 @@
   - [Dukpt Tool](encryption-decryption.md)
   - [TLV Parser](emv-tool.md)
   - [ISO8583 Parser](emv-iso8583.md)
-
+  - [Driver & Flash Tool](Update_ROM.md)
+  
 - Testing & Certification 
 
   - [Certification](emv_l3.md)
