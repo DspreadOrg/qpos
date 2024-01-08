@@ -1,9 +1,9 @@
-## 1. Dspread Printing SDK Overview
+### 1. Dspread Printing SDK Overview
 
 Please follow the below printer sdk document to integrate printer functions
 - [Printer SDK Guide](https://drive.google.com/file/d/1whNFrWa69OddbrFQi6FCu6zOjlxvFTsk/view?usp=sharing)
 
-### 1.1 How to integrate SDK
+### 2. How to integrate SDK
 
 Dspread printing SDK can be obtained through remote repository, and you only need to add the dependency to the build.gradle of the module.
 ``` java
@@ -29,11 +29,11 @@ You can click the links below to download the printer demo.
     
 </div>
 
-### 1.2 How to use the SDK
+### 3. How to use the SDK
 
 After integrating the SDK, firstly you can use the getPrinter() method to get the printer,The initialization code is as follows:
 
- 1、If D60/MP600 device integration SDK. Please refer to the below code to initialize.
+ 1. If D60/MP600 device integration SDK. Please refer to the below code to initialize.
 ``` java
    PrinterManager instance = PrinterManager.getInstance();
    mPrinter = instance.getPrinter();
@@ -48,7 +48,7 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
      }
    }
 ```
- 2、If D30 device integration SDK. Please refer to the below code to initialize.
+ 2. If D30 device integration SDK. Please refer to the below code to initialize.
 ```java
    PrinterManager instance = PrinterManager.getInstance();
    mPrinter = instance.getPrinter();

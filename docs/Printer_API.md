@@ -1,6 +1,4 @@
-## 1. Printer API
-
-### 1.1 Set Print Text Align
+### 1. Set Print Text Align
 
 | API           | public void setAlign(int align)                            |
 | --------      | ---------------------------------------------------------- |
@@ -14,7 +12,7 @@
    - PrintLine.CENTER
    - PrintLine.RIGHT
 
-### 1.2 Set Print Text Font Size
+### 2. Set Print Text Font Size
 
 | API           | void setFontSize(int fontSize)                            |
 | --------      | ----------------------------------------------------------|
@@ -25,7 +23,7 @@
 **Parameter Description:** 
 - fontSize: custom text size (recommended 14 ~ 18)
 
-### 1.3 Set Print Text Font Style
+### 3. Set Print Text Font Style
 
 | API           | void setFontStyle(int bold)                               |
 | --------      | ----------------------------------------------------------|
@@ -40,7 +38,7 @@
    - PrintStyle.FontStyle.ITALIC 
    - PrintStyle.FontStyle.BOLD_ITALIC 
 
-### 1.4 Print Text
+### 4. Print Text
 
 | API           | public void printText(String text)                         |
 | --------      | ---------------------------------------------------------- |
@@ -52,7 +50,7 @@
 
 - text: specify printing text content
 
-### 1.5 Print BarCode
+### 5. Print BarCode
 
 | API           | public void printBarCode(Context context,String symbology,int width,int height,String content,int position)|
 | --------      | ---------------------------------------------------------- |
@@ -75,7 +73,7 @@
 - content: Set barcode content. 
 - position: Set barcode alignment.
 
-### 1.6 Print QRCode
+### 6. Print QRCode
 
 | API           | public void printQRCode(Context context,String errorLevel,int width,String content,int position)|
 | --------      | ---------------------------------------------------------- |
@@ -94,7 +92,7 @@
 - content: Set up the QR code block content.
 - position: Set up the QR code block alignment.
 
-### 1.7 Print Bitmap
+### 7. Print Bitmap
 
 | API           | public void printBitmap(Context context, Bitmap bitmap)    |
 | --------      | ---------------------------------------------------------- |
@@ -106,7 +104,7 @@
 - cotext: Context.
 - bitmap: Image bitmap data. 
 
-### 1.8 Print Multiple Columns
+### 8. Print Multiple Columns
 
 | API           | public void addTexts(String[] texts, int[] colsWidthArrs, int[] styles)      |
 | --------      | --------------------------------------------------------------------         |
@@ -119,7 +117,7 @@
 - colsWidthArrs: The proportion of each column in a row, such as int[] {1,1}, will print each column by 1:1.
 - styles: Set Text Position.
 
-### 1.9 Print All Types Display
+### 9. Print All Types Display
 
 Before calling the method, you can call the following method to add content: 
 - addText()
@@ -137,7 +135,7 @@ Before calling the method, you can call the following method to add content:
 **Parameter Description:** 
 - context: Context.
 
-### 1.10 Print CallBack Method
+### 10. Print CallBack Method
 
 | API           | public void printResult(boolean isSuccess, String status,int type) |
 | --------      | ------------------------------------------------------------       |

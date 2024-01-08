@@ -1,6 +1,4 @@
-## 1. Printer Setting
-
-### 1.1 Set Printer Density
+### 1. Set Printer Density
 
 | API           | public void setPrinterDensity(int printerDensityLevel)             |
 | --------      | ------------------------------------------------------------       |
@@ -11,7 +9,7 @@
 **Parameter Description:** 
 - printerDensityLevel: Printer concentration levels (1 to 5 5 is the highest).
 
-### 1.2 Set Printer Speed
+### 2. Set Printer Speed
 
 | API           | public void setPrinterSpeed(int printerSpeedLevel)               |
 | --------      | ------------------------------------------------------------     |
@@ -22,7 +20,7 @@
 **Parameter Description:** 
 - printerSpeedLevel: Printer speed levels (1 to 5，5 is the highest).
 
-### 1.3 Set Text Print Style
+### 3. Set Text Print Style
 
 | API           | public void setPrintStyle(PrintLineStyle style)                |
 | --------      | ------------------------------------------------------------   |
