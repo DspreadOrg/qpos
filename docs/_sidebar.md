@@ -13,9 +13,7 @@
   - [D20 & D30](D20&D30.md)
       - [Sign and install App](Sign-and-install-App.md)
       - [Draw the keyboard ](Draw_the_keyboard.md)
-  - [Key Management](key-management.md)
-      - [DUKPT](dukpt-scheme.md)
-      - [MKSK](mksk-scheme.md)
+  - [Key Management](dukpt-scheme.md)
   - [EMV Configuration](emv-config.md)
   - [Firmware Upgrade](firmware-ota.md)
   - [LED Indicator](led-indicator.md)
@@ -46,7 +44,7 @@
   - [TLV Parser](emv-tool.md)
   - [ISO8583 Parser](emv-iso8583.md)
   - [Driver & Flash Tool](Update_ROM.md)
-  
+
 - Testing & Certification 
 
   - [Certification](emv_l3.md)

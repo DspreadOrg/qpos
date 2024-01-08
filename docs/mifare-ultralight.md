@@ -9,5 +9,5 @@ The Ultralight card most operate is same with the classic card, except some part
 3. It have a special method to read data.
  	
 ```java
-	pos.faseReadMifareCardData(String startBlock,String endBlock,int timeout)
+	pos.fastReadMifareCardData(String startBlock,String endBlock,int timeout)
 ```
