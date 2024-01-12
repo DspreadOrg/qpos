@@ -30,6 +30,6 @@
 
 **Parameter Description:** 
 - style: Please call the below methods to set print line style.
-    - void setAlign(int align); 
+    - void setAlign(int align);
     - void setFontSize(int fontSize); 
     - void setFontStyle (int bold);
