@@ -25,7 +25,7 @@
   - [Supplementary Explanation](Supplementary-Explanation.md)
 
 - Customized OS Service
-  - [Customized OS Service](Customized_OS_Services.md) 
+  - [Customized OS List](Customized_OS_Services.md) 
 
 - Printer SDK
   

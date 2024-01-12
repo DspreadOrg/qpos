@@ -29,7 +29,7 @@
 | printer       | D30/MP600/D60                                                  |
 
 **Parameter Description:** 
- - style: Please call the below methods to set print line style.
+- style: Please call the below methods to set print line style.
     - void setAlign(int align); 
     - void setFontSize(int fontSize); 
     - void setFontStyle (int bold);

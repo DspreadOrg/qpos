@@ -1,4 +1,5 @@
 ### 1. Get Printer Status
+
 | API           | public void getPrinterStatus()                                               |
 | --------      | --------------------------------------------------------------------         |
 | Description   | get printer status                                                           |
@@ -14,6 +15,7 @@
    - Undefined
 
 ### 2. Get Printer Density
+
 | API           | public void  getPrinterDensity()                                               |
 | --------      | --------------------------------------------------------------------           |
 | Description   | get Printer Density                                                            |
@@ -24,6 +26,7 @@
 - status: 1 to 5,5 is the highest. 
 
 ### 3. Get Printer Speed
+
 | API           | public void  getPrinterSpeed()                                               |
 | --------      | --------------------------------------------------------------------         |
 | Description   | get printer speed                                                            |
@@ -34,6 +37,7 @@
 - status: 1 to 5,5 is the highest.
 
 ### 4. Get Printer Temperature
+
 | API           | public void  getPrinterTemperature()                                         |
 | --------      | --------------------------------------------------------------------         |
 | Description   | get printer temperature value                                                |
@@ -44,6 +48,7 @@
 - statue: printer temperature value.
 
 ### 5. Get Print Voltage
+
 | API           | public void  getPrinterVoltage()                                         |
 | --------      | --------------------------------------------------------------------     |
 | Description   | get Printer Voltage value                                                |
