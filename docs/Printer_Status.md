@@ -52,3 +52,5 @@
 
 **Callback method parameter Description:**                                                              
 - statue: printer voltage value.
+
+

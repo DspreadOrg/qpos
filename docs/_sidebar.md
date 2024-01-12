@@ -24,6 +24,9 @@
   - [Operation Video](Operation-Video.md)
   - [Supplementary Explanation](Supplementary-Explanation.md)
 
+- Customized OS Service
+  - [Customized OS Service](Customized_OS_Services.md) 
+
 - Printer SDK
   
   - [Printer Overview](Printer_SDK_Overview.md)
