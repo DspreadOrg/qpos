@@ -32,7 +32,8 @@
   - [Printer Overview](Printer_SDK_Overview.md)
   - [Printer API](Printer_API.md)
   - [Printer Setting](Printer_Setting.md)
-  - [Printer Status](Printer_Status.md)   
+  - [Printer Status](Printer_Status.md)
+  - [Printer List](Printer_List.md)    
 
 - Mifare Card 
 
