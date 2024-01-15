@@ -55,7 +55,7 @@ Please tell me your favorite language,English,Spanish,Chinese,etc
 - Keyboard (Please tell me your favorite keyboard type)
 
 
-### APN list
+### APN List
 
 If you want to add new APN, please follow the below template to provide us new APN parameters, you can insert the SIM card into your phone to find these APN parameters or consult SIM card carrier
 
