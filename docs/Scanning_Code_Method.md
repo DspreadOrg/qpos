@@ -1,5 +1,3 @@
-### Scanning Code Method
-
 Currently we provide the QR/Bar code payment function in the form of a service for customers to use. You can call the following method to start the code scanning service.
 
 ```java

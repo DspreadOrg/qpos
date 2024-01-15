@@ -30,7 +30,7 @@
 
 - Scanning Code Service
 
-  - [Scanning Code Method](Scanning_Code_Method.md)  
+  - [Scanning Code Method](Scanning_Code_Method.md)
 
 - Printer SDK
 
