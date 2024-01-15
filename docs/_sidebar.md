@@ -25,15 +25,15 @@
   - [Supplementary Explanation](Supplementary-Explanation.md)
 
 - Customized OS Service
-  - [Customized OS List](Customized_OS_Services.md) 
+  - [Customized OS List](Customized_OS_Services.md)
 
 - Printer SDK
-  
+
   - [Printer Overview](Printer_SDK_Overview.md)
   - [Printer API](Printer_API.md)
   - [Printer Setting](Printer_Setting.md)
   - [Printer Status](Printer_Status.md)
-  - [Printer List](Printer_List.md)    
+  - [Printer List](Printer_List.md)
 
 - Mifare Card 
 
