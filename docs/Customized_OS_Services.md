@@ -1,5 +1,3 @@
-### Overview
-
 In order to enhance the brand effect of our customers, we provide the following customized OS services. If you need it, please tell us all your customization needs through [Gitlab Issue](https://gitlab.com/dspread/android/-/issues/new#) at one time, which is more efficient and saves time.
 
 ### BOOT Logo
