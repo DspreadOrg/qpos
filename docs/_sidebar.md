@@ -25,7 +25,12 @@
   - [Supplementary Explanation](Supplementary-Explanation.md)
 
 - Customized OS Service
+
   - [Customized OS List](Customized_OS_Services.md)
+
+- Scanning Code Service
+
+  - [Scanning Code Method](Scanning_Code_Method.md)  
 
 - Printer SDK
 
