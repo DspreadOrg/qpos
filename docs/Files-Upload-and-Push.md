@@ -18,7 +18,7 @@ There are two ways:
 1. Add a single device;
 2. Import a batch of devices. download the import template and fill in the information according to the template format;
 
-**1. Add a single device**  
+Fir**1. Add a single device**  
 Please fill in the blanks as below(DSN, Model and System Version are mandatory), then click the button “OK”.  
 > Note:   
 > After adding the device, turn on the power to start TMS normally. If the device is already turned on, a reboot is required.  
@@ -44,10 +44,10 @@ If the file is ROM(.zip file), select “System”.
 ![3-1](./_images/3-1.png)
 
 ### 3.2 Hit the shelves
-After all of the file information has been confirmed, click the button “Back on” to put the file on the app store.  
+After all of the file information has been confirmed, click the button “Publish” to put the file on the app store.  
 ![3-2-1](./_images/3-2-1.png)  
 
-You can see the status change from “Initial state(ROM)”/“Off the shelf(firmware)” to “On the shelf”.  
+You can see the status change from “Unpublished” to “Published”.  
 ![3-2-2](./_images/3-2-2.png)
 
 ## 4.Upload APP Files
@@ -55,15 +55,15 @@ Similar as the previous part, this part is about how to upload files of APP.
 
 ### 4.1 Upload APP
 Click the Application menu on the left and click the Add button.
-Fill in the information as below(APK, Icon, App Name, Application classification, Visual Range and Visual Object are mandatory).  
+Fill in the information as below(APK, Icon, App Name, App Category are mandatory).  
 
 ![4-1-1](./_images/4-1-1.png)  
 ![4-1-2](./_images/4-1-2.png)
 
 ### 4.2 Hit the shelves
-After all of the file information has been confirmed, click the button “Back on” to put the app on the app store.  
+After all of the file information has been confirmed, click the button “Publish” to put the app on the app store.  
 ![4-2-1](./_images/4-2-1.png)  
-You can see the status change from “Off the shelf” to “On the shelf”.  
+You can see the status change from “Unpublished” to “Published”.  
 ![4-2-2](./_images/4-2-2.png)
 ### 4.3 App version upgrade
 If your app have new version,please click this button for "Upgrade" as below.It is worth noting that you must change the version then can finish it or you will have to delete this and upload again.
@@ -86,7 +86,7 @@ If the file is APP(.apk file), select “App Install”.
 ![5-2](./_images/5-2.png)
 
 ### 5.3 Pop up
-After clicking confirm button, the device will pop up a prompt about force downloading the upgrade package.
+After clicking confirm button, the device will pop up a prompt about optional downloading the upgrade package.
 <img src="./_images/5-3.png" width = "400" />
 
 ### 5.4 Download
@@ -103,7 +103,7 @@ Pay attention that code can be same with account.
 ![6.1](./_images/6.1.png)
 
 ### 6.2 Distribution Devices
-Find the corresponding subaccount,click "devices" as below shown.
+Find the corresponding subaccount,click "Devices" as below shown.
 ![6.2.1](./_images/6.2.1.png)
 Click "Distribution Devices" button.
 ![6.2.2](./_images/6.2.2.png)
