@@ -5,18 +5,18 @@ After adding the device successfully, click the DSN to view the device informati
 ![6-1](./_images/6-1.png)
 
 ### 2. Off the Shelves
-Click the “Off the shelf” button to remove the file from the app store. After being removed from the shelves, the file information can be edited as mentioned above, or the file can be hit the shelf again.
+Click the “Unpbulished” button to remove the file from the app store. After being removed from the shelves, the file information can be edited as mentioned above, or the file can be publish again.
 
 ![6-2](./_images/6-2.png)
 
 ### 3. Download
-Click the button “History” and download the file, see as below.
+Click the button “Version History” and download the file, see as below.
 
 ![6-3-1](./_images/6-3-1.png)
 ![6-3-2](./_images/6-3-2.png)
 
 ### 4. Edit
-Click the “Edit” option to change Visual Range and Visual Object.
+Click the “Edit” option to change Remark.
 
 ![6-4](./_images/6-4.png)
 
