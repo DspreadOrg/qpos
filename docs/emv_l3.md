@@ -15,10 +15,13 @@ The following is the emv configuration we generated based on the test cases of e
 |    COLUMBIA      |       [COLUMBIA-QPOS mini.xml](https://drive.google.com/file/d/10BE7KojYN8xr1mpENrCY4QSKHFE3BHbN/view?usp=sharing)  |            [COLUMBIA-QPOS cute,CR100,D20,D30,D60.xml](https://drive.google.com/file/d/1jTnsSF-6bDEa4DaQUGfFDFIk81RoLj96/view?usp=sharing)      |       [COLUMBIA-Certification.tpp](https://drive.google.com/file/d/1hckep5SLOcBM2y3Gr0xG74wDv3uBIqgz/view?usp=sharing)          |
 
 For first line which include mexico emv file we generate different firmware based on pos type. Details as below:
+
+
+
 |     Number     |        QPOS mini         |            QPOS cute              |        CR100       |
-|      :--:       |          :---:           |               :---:                             |        :---:         |
-|     1      |       [Qposmini_debug](https://drive.google.com/file/d/17Sr9c9EmlRpssmHNwuzSvdr5eusOxdnt/view?usp=sharing)   |            [Qposcute_debugc](https://drive.google.com/drive/folders/18RsNcpTyTigng0UtkS7zGRPxBtJd4mLU?usp=sharing)       |         [CR100_debug](https://drive.google.com/drive/folders/1CrZNdgZuZhFeJz4cSzUfYqSE4Rlt_CQ4?usp=sharing)            |
-|     2      |       [Qposmini_release](https://drive.google.com/file/d/1X8s__tEi5ZW6hdWZUktznOvKkfpHi4cl/view?usp=sharing)   |            [Qposcute_release](https://drive.google.com/drive/folders/1igQy3NwnMuvcEmiwAkbcFVQIm7Z4t2Io?usp=sharing)       |         [CR100_release](https://drive.google.com/drive/folders/1ZVQsZhJMm797_gQVXlD1SuF5EmGbJ29e?usp=sharing)            |
+|      :--:      |          :---:           |               :---:               |        :---:         |
+|     1          |       [Qposmini_debug](https://drive.google.com/file/d/17Sr9c9EmlRpssmHNwuzSvdr5eusOxdnt/view?usp=sharing)   |            [Qposcute_debugc](https://drive.google.com/drive/folders/18RsNcpTyTigng0UtkS7zGRPxBtJd4mLU?usp=sharing)       |         [CR100_debug](https://drive.google.com/drive/folders/1CrZNdgZuZhFeJz4cSzUfYqSE4Rlt_CQ4?usp=sharing)            |
+|     2         |       [Qposmini_release](https://drive.google.com/file/d/1X8s__tEi5ZW6hdWZUktznOvKkfpHi4cl/view?usp=sharing)   |            [Qposcute_release](https://drive.google.com/drive/folders/1igQy3NwnMuvcEmiwAkbcFVQIm7Z4t2Io?usp=sharing)       |         [CR100_release](https://drive.google.com/drive/folders/1ZVQsZhJMm797_gQVXlD1SuF5EmGbJ29e?usp=sharing)            |
 |  
 
 ## SPOC certification
