@@ -4,9 +4,9 @@ The following is the emv configuration we generated based on the test cases of e
 
 
 
-|     Country     |        QPOS mini         |            QPOS cute,CR100,D20,D30,D60              |       TPP File       |
-|      :--:       |          :---:           |               :---:                             |        :---:         |
-|     MEXICO      |       [MEXICO-QPOS mini.xml](https://drive.google.com/file/d/1pYeE2yHs-67nTJKPergXZlZweBz3Mhmb/view?usp=sharing)   |            [MEXICO-QPOS cute,CR100,D20,D30,D60.xml](https://drive.google.com/file/d/1ErlMSghZBJASHXwQq5ah9GMfn4p5k-HG/view?usp=sharing)       |         [MEXICO-Certification.tpp](https://drive.google.com/file/d/1DFF99eeCqj-X8OQoIXU-Tb1PYXNJ8BAS/view?usp=sharing)            |
+|     Country     |        QPOS mini         |            QPOS cute,CR100,D20,D30,D60              |       TPP File       |  
+|      :--:       |          :---:           |               :---:                             |        :---:         |     
+|     MEXICO      |       [MEXICO-QPOS mini.xml](https://drive.google.com/file/d/1pYeE2yHs-67nTJKPergXZlZweBz3Mhmb/view?usp=sharing)   |            [MEXICO-QPOS cute,CR100,D20,D30,D60.xml](https://drive.google.com/file/d/1ErlMSghZBJASHXwQq5ah9GMfn4p5k-HG/view?usp=sharing)       |         [MEXICO-Certification.tpp](https://drive.google.com/file/d/1DFF99eeCqj-X8OQoIXU-Tb1PYXNJ8BAS/view?usp=sharing)  |         
 |    INDIA      |       [INDIA-QPOS mini.xml](https://drive.google.com/file/d/1wK-lsDrR6Czl4Et6jKFp-zoJEK_ogtsH/view?usp=sharing)  |            [INDIA-QPOS cute,CR100,D20,D30,D60.xml](https://drive.google.com/file/d/1X6G8qjv3Yfxdid31SgV4MKt-PyhlssRq/view?usp=sharing)      |       [INDIA-Certification.tpp](https://drive.google.com/file/d/1PDvUkz2KIzj2lZPBNSHF6NodpLZCdlfX/view?usp=sharing)          |
 |    NIGERIA      |       [NIGERIA-QPOS mini.xml](https://drive.google.com/file/d/1CCkr10VhdsxJIKXdGeI2ZNhOU3wyouZx/view?usp=sharing)  |            [NIGERIA-QPOS cute,CR100,D20,D30,D60.xml](https://drive.google.com/file/d/17ICePh4n4nKlvQv4vfIdtCDIvuZ8TpMX/view?usp=sharing)      |       [NIGERIA-Certification.tpp](https://drive.google.com/file/d/1vuCC6YxdqM2Xf4uNsNMauQiZGkdlGRSX/view?usp=sharing)          |
 |    USA      |       [USA-QPOS mini.xml](https://drive.google.com/file/d/1J_aEnQIDyaeGGv7Ql3jCVxv811p_9ID2/view?usp=sharing)  |            [USA-QPOS cute,CR100,D20,D30,D60.xml](https://drive.google.com/file/d/16sKNysCJEuhP7tstGKK48mmVZ-1XSJFT/view?usp=sharing)      |       [USA-Certification.tpp](https://drive.google.com/file/d/1LwN3uAK8Tp67qBApLNgZRqg50-lzhdJO/view?usp=sharing)          |
@@ -17,10 +17,9 @@ The following is the emv configuration we generated based on the test cases of e
 For first line which include mexico emv file we generate different firmware based on pos type. Details as below:
 |     Number     |        QPOS mini         |            QPOS cute              |        CR100       |
 |      :--:       |          :---:           |               :---:                             |        :---:         |
-|     1      |       [Qposmini_debug_AAAAAA.asc](https://drive.google.com/file/d/17Sr9c9EmlRpssmHNwuzSvdr5eusOxdnt/view?usp=sharing)   |            [Qposcute_debug_43CB50F.asc](https://drive.google.com/file/d/1R6GPbjwF8ZcD8EBnFO_tzLFd5kz4aM2z/view?usp=sharing)       |         [CR100_debug_5A455B6F.asc](https://drive.google.com/file/d/1xcGzLoEXpNpjm7h-4-MAoRhNyrMwlzMj/view?usp=sharing)            |
-|     2      |       [Qposmini_release_AAAAAA.asc](https://drive.google.com/file/d/1X8s__tEi5ZW6hdWZUktznOvKkfpHi4cl/view?usp=sharing)   |            [Qposcute_release_43CB50F.asc](https://drive.google.com/file/d/1G5HvPxumH9XfYXl9k9ASfO_fdu0U7FC8/view?usp=sharing)       |         [CR100_release_5A455B6F.asc](https://drive.google.com/file/d/1HrKQYLUM972Kc8ca57UsWzX-mHQzKXzc/view?usp=sharing)            |
-|     3      |       []()   |            [Qposcute_debug_FFFFFFFFF.asc](https://drive.google.com/file/d/1MmRcEeKkuBiRSmC_rnLaG3lGeMkGIDCh/view?usp=sharing)       |         [CR100_debug_700FE78.asc](https://drive.google.com/file/d/1g6LPIudyssxRIyJ0Crri9YX2TCFywGeZ/view?usp=sharing)            |
-|     4      |       []()   |            [Qposcute_release_FFFFFFFFF.asc](https://drive.google.com/file/d/10hPm8AHIN-CLV2_rEencu18CxT6Um5mF/view?usp=sharing)       |         [CR100_release_700FE78.asc](https://drive.google.com/file/d/1tmPguk-K9Hx2C2hPAoZmjx8ZASPCqdu7/view?usp=sharing)            |
+|     1      |       [Qposmini_debug](https://drive.google.com/file/d/17Sr9c9EmlRpssmHNwuzSvdr5eusOxdnt/view?usp=sharing)   |            [Qposcute_debugc](https://drive.google.com/drive/folders/18RsNcpTyTigng0UtkS7zGRPxBtJd4mLU?usp=sharing)       |         [CR100_debug](https://drive.google.com/drive/folders/1CrZNdgZuZhFeJz4cSzUfYqSE4Rlt_CQ4?usp=sharing)            |
+|     2      |       [Qposmini_release](https://drive.google.com/file/d/1X8s__tEi5ZW6hdWZUktznOvKkfpHi4cl/view?usp=sharing)   |            [Qposcute_release](https://drive.google.com/drive/folders/1igQy3NwnMuvcEmiwAkbcFVQIm7Z4t2Io?usp=sharing)       |         [CR100_release](https://drive.google.com/drive/folders/1ZVQsZhJMm797_gQVXlD1SuF5EmGbJ29e?usp=sharing)            |
+|  
 
 ## SPOC certification
 
