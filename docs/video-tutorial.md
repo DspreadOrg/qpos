@@ -1,11 +1,11 @@
 ### QPOS Mini Support
-<iframe width="800" height="450" src="https://youtu.be/hjEGLkQVw1M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+<iframe width="800" height="450" src="https://www.youtube.com/embed/hjEGLkQVw1M?si=L6u-bDdomONo5qdd"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### QPOS Cute Support
-<iframe width="800" height="450" src="https://youtu.be/NXjIioQUrlc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/NXjIioQUrlc?si=pKfPMRd2iubDYuMU"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### CR100 Support
-<iframe width="800" height="450" src="https://youtu.be/B1FSnUImNZE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+<iframe width="800" height="450" src="https://www.youtube.com/embed/B1FSnUImNZE?si=PL1aVJMN-Ygn_PuU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### D20 Support
 <iframe width="800" height="450" src="https://www.youtube.com/embed/y0ctlyeDOeg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
