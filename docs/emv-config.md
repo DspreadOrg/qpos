@@ -19,8 +19,16 @@ onReturnCustomConfigResult(boolean isSuccess,String result)
 ```
 ## L3 certification
 
-The following is the emv configuration we generated based on the test cases of each country, it will help you pass L3 certification successfully, please use it.
+Please install the below firmware and corresponding emv configuration，it will help you pass L3 certification successfully, please use it.
 
+- The following is the firmware for L3 certification，please use [posloader_v5.exe](https://gitlab.com/dspread/FAQs_Document/-/blob/master/tools/posloader_v5.exe?ref_type=heads) tool to install it:
+
+|        QPOS mini         |            QPOS cute              |        CR100       |
+|          :---:           |               :---:               |        :---:       |
+|       [Qposmini_debug](https://drive.google.com/file/d/17Sr9c9EmlRpssmHNwuzSvdr5eusOxdnt/view?usp=sharing)   |            [Qposcute_debug](https://drive.google.com/drive/folders/18RsNcpTyTigng0UtkS7zGRPxBtJd4mLU?usp=sharing)       |         [CR100_debug](https://drive.google.com/drive/folders/1CrZNdgZuZhFeJz4cSzUfYqSE4Rlt_CQ4?usp=sharing)            |
+|       [Qposmini_release](https://drive.google.com/file/d/1X8s__tEi5ZW6hdWZUktznOvKkfpHi4cl/view?usp=sharing)   |            [Qposcute_release](https://drive.google.com/drive/folders/1igQy3NwnMuvcEmiwAkbcFVQIm7Z4t2Io?usp=sharing)       |         [CR100_release](https://drive.google.com/drive/folders/1ZVQsZhJMm797_gQVXlD1SuF5EmGbJ29e?usp=sharing)          |
+
+- The following is the emv configuration we generated based on the test cases of each country for L3 certification.
 
 | Country  |                QPOS mini                 |       QPOS cute,CR100,D20,D30,D60        |                 TPP File                 |
 | :------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
@@ -32,11 +40,3 @@ The following is the emv configuration we generated based on the test cases of e
 |  JAPAN   | [JAPAN-QPOS mini.xml](https://drive.google.com/file/d/1yqH8Yw1IewfuzoV3B_tjc7OqCLW_di7y/view?usp=sharing) | [JAPAN-QPOS cute,CR100,D20,D30,D60.xml](https://drive.google.com/file/d/1ue9RNMKHhOgYMbUeiPrkNgQ1VGINMV8e/view?usp=sharing) | [JAPAN-Certification.tpp](https://drive.google.com/file/d/1ZW_6LqFkFkX4XDjSwavGrJTEHFKfwJir/view?usp=sharing) |
 | COLUMBIA | [COLUMBIA-QPOS mini.xml](https://drive.google.com/file/d/10BE7KojYN8xr1mpENrCY4QSKHFE3BHbN/view?usp=sharing) | [COLUMBIA-QPOS cute,CR100,D20,D30,D60.xml](https://drive.google.com/file/d/1jTnsSF-6bDEa4DaQUGfFDFIk81RoLj96/view?usp=sharing) | [COLUMBIA-Certification.tpp](https://drive.google.com/file/d/1hckep5SLOcBM2y3Gr0xG74wDv3uBIqgz/view?usp=sharing) |
 
-For above first line that include mexico emv file we generate different firmware based on pos type. Details as below:
-
-
-
-|     Number     |        QPOS mini         |            QPOS cute              |        CR100       |
-|      :--:      |          :---:           |               :---:               |        :---:         |
-|     1          |       [Qposmini_debug](https://drive.google.com/file/d/17Sr9c9EmlRpssmHNwuzSvdr5eusOxdnt/view?usp=sharing)   |            [Qposcute_debug](https://drive.google.com/drive/folders/18RsNcpTyTigng0UtkS7zGRPxBtJd4mLU?usp=sharing)       |         [CR100_debug](https://drive.google.com/drive/folders/1CrZNdgZuZhFeJz4cSzUfYqSE4Rlt_CQ4?usp=sharing)            |
-|     2         |       [Qposmini_release](https://drive.google.com/file/d/1X8s__tEi5ZW6hdWZUktznOvKkfpHi4cl/view?usp=sharing)   |            [Qposcute_release](https://drive.google.com/drive/folders/1igQy3NwnMuvcEmiwAkbcFVQIm7Z4t2Io?usp=sharing)       |         [CR100_release](https://drive.google.com/drive/folders/1ZVQsZhJMm797_gQVXlD1SuF5EmGbJ29e?usp=sharing)            |
