@@ -19,7 +19,7 @@ onReturnCustomConfigResult(boolean isSuccess,String result)
 ```
 ## L3 certification
        
-- The following is the emv configuration we generated based on the test cases of each country for L3 certification.
+- The following are the emv configuration and firmware we generated based on the test cases of each country for L3 certification.
 
 | Country  |                QPOS mini                 |       QPOS cute,CR100,D20,D30,D60        |                 TPP File                 |          Firmware                 |
 | :------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |:--------------------------------------: |
