@@ -59,5 +59,9 @@ You can download to install our [android-demo-app][android-app]
 
 - [x] [Swift](https://gitlab.com/dspread/ios/-/tree/Swift-Demo) 
 
+#### **JavaScript**
+
+- [x] [JavaScript](https://gitlab.com/dspread/web-js-demo) 
+
 <!-- tabs:end -->
 
