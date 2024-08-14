@@ -3,7 +3,7 @@
 You can download to install our [android-demo-app][android-app]
  and [ios-demo-app][ios-app] .
 
-[android-app]: http://d.maps9.com/AndroidDemo
+[android-app]: https://www.pgyer.com/6GtstDbT
 [ios-app]: http://d.maps9.com/posDemo
 
 
