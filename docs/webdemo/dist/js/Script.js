@@ -41,6 +41,17 @@ var trasactionData = document.getElementById("result_div");
 var infoData = document.getElementById("div_infoResult");
 var updateResult = document.getElementById("div_updateResult");
 
+const divUpdate = document.getElementById("div_header_update");
+
+// 获取模态框  
+var modal = document.getElementById("myModal");  
+  
+// 获取 <span> 元素，用于关闭模态框  
+var span = document.getElementsByClassName("close")[0];  
+
+const progressBar = document.getElementById("progressBar");  
+
+
 var mService = new QPOSService();
 function QPOSServiceListenerImpl() {}
 var qPOSServiceListenerImpl = new QPOSServiceListenerImpl();
@@ -205,6 +216,7 @@ QPOSServiceListenerImpl.prototype.onReturnGetEMVListResult = function (aidString
 }
 QPOSServiceListenerImpl.prototype.onReturnUpdateEMVResult = function (flag) {
     console.log("onReturnUpdateEMVResult: " + flag);
+    loadingToggle("none");
     if (flag) {
         updateResult.innerText = "onReturnUpdateEMVResult: Success"; 
     }else{
@@ -228,6 +240,8 @@ QPOSServiceListenerImpl.prototype.onReturnCustomConfigResult = function (flag, m
         updateResult.innerText = "onReturnCustomConfigResult: Fail\n"+msg;
     } 
     contiUpdateEmvBtn.style.display = "none";
+    loadingToggle("none");
+
 }
 QPOSServiceListenerImpl.prototype.onReturnSetMasterKeyResult = function (flag) {
     console.log("onReturnSetMasterKeyResult: " + flag);
@@ -309,6 +323,7 @@ QPOSServiceListenerImpl.prototype.onSetBuzzerResult = function(result){
 
 QPOSServiceListenerImpl.prototype.onUpdatePosFirmwareResult = function(result,str){
     console.log("onUpdatePosFirmwareResult:"+result+"\n"+str);
+    modal.style.display = "none"; // 加载完成后隐藏模态框  
     updateResult.innerText = "onUpdatePosFirmwareResult:"+result+"\n"+str;
 }
 
@@ -318,7 +333,11 @@ QPOSServiceListenerImpl.prototype.onRturnSwitchWinusbResult = function (isSucces
 }
 
 QPOSServiceListenerImpl.prototype.onReturnShowEMVOfXml = function(list){
+    console.log("onReturnShowEMVOfXml");
+
     updateResult.innerHTML = "";
+    contiUpdateEmvBtn.style.display = "block";
+
     for(x in list){
         // console.log(list[x]);
         if(list[x].type == "APP")
@@ -326,14 +345,19 @@ QPOSServiceListenerImpl.prototype.onReturnShowEMVOfXml = function(list){
         else
             updateResult.innerHTML =updateResult.innerHTML+"type:"+list[x].type+" Rid:"+list[x].id+" index:"+list[x].index+"</br>";
     }
-    contiUpdateEmvBtn.style.display = "block";
+    divUpdate.scrollIntoView();
 }
 
 function getProgress(progress){
+    modal.style.display = "block"; // 加载完成后隐藏模态框  
     if(progress == "100"){
-        updateResult.innerHTML = "update successfully";
+        // updateResult.innerHTML = "update successfully";
+        modal.style.display = "none"; // 加载完成后隐藏模态框  
     } else{
-        updateResult.innerHTML = "update process:"+parseInt(progress)+"%";
+        progressBar.style.width = parseInt(progress) + '%';  
+        progressBar.textContent = parseInt(progress) + '%'; 
+        updateResult.innerHTML = "update process:"+parseInt(progress) + '%';
+ 
     }
 }
 
@@ -353,11 +377,16 @@ button.addEventListener('click', async () => {
     }
   });
 
+function loadingToggle(displayStr) {
+    // document.getElementsByClassName('loading')[0].classList.toggle('loading-none');
+    document.getElementById("loadingDiv").style.display=displayStr;
+}  
+
 contiUpdateEmvBtn.addEventListener('click',async()=>{
     updateResult.innerHTML ="updating...</br>"+updateResult.innerHTML;
     mService.updateEMVConfigByXml(mEMVConfigBuffer);
     contiUpdateEmvBtn.style.display = "none";
-
+    loadingToggle("block");
 });
 
 function dialog(){
@@ -393,15 +422,6 @@ function upload(input) {  //支持chrome IE10
 }
 
 function selectEmvFile(){
-    //$('#updateEmvFile').click();
-    // updateResult.innerHTML = "132456</br>123333";
-    // console.log(contiUpdateEmvBtn.style.display);
-
-    // if(contiUpdateEmvBtn.style.display=="none")
-    //     contiUpdateEmvBtn.style.display = "inline-block";
-    // else
-    // contiUpdateEmvBtn.style.display = "none";
-
     if(Connected){
         //mService.resetPosStatus();
         // mService.doSetBuzzerOperation(3);
@@ -421,7 +441,13 @@ function switchToSerial(){
         DiscoverDevice();
         UpdateUI();
     }
+
 }
+
+span.onclick = function() {  
+    console.log("click close span")
+    modal.style.display = "none";  
+  }  
 
 function dialog(){
     var str = prompt("Please input your pin","123456");
@@ -440,7 +466,8 @@ function dialog(){
           var reader = new FileReader();  
           reader.onload = function() {  
             //   alert(testChar(this.result).length); 
-              mService.updatePosFirmware(testChar(this.result),Connected_Device);
+            mService.updatePosFirmware(testChar(this.result),Connected_Device);
+
           }  
           reader.readAsArrayBuffer(file); 
           document.getElementById('updateFwFile').value = null;
@@ -455,7 +482,8 @@ function dialog(){
       if(Connected){
           //mService.resetPosStatus();
           // mService.doSetBuzzerOperation(3);
-          updateResult.innerText = "updating Firmware...";
+        updateResult.innerText = "updating Firmware...";
+
         document.getElementById("updateFwFile").click();
       } else{
           DiscoverDevice();
