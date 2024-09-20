@@ -30,6 +30,9 @@
 
   <link rel="stylesheet" href="dist/css/progresscomic.css">
 
+  <link rel="stylesheet" href="dist/css/emvconfiglist.css">
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -163,7 +166,7 @@
               <li class="nav-item">
                 <a href="#div_header_update" class="nav-link" onclick="selectEmvFile()">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Update EMV Config</p>
+                  <p>Update EMV Config By XML</p>
                   <input type="file" id="updateEmvFile" onchange="upload(this)" class="inputFile" hidden/>
                 </a>
               </li>
@@ -172,6 +175,12 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Update device Firmware</p>
                   <input type="file" id="updateFwFile" onchange="upload2(this)" class="inputFile" hidden/>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#div_header_update" class="nav-link" onclick="getEmvConfig()">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Get and Update Single EMV Config</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -368,7 +377,8 @@
             </div>
             <div class="card-body" id="div_infoResult">
               <h6>There will show the terminal info</h6>
-            </div>
+            </div>  
+            
           </div>
         </section>
 
@@ -394,6 +404,7 @@
                 </button>
               </div>
             </div>
+
             <!--loading comic-->
             <div class="loading" id="loadingDiv" style="display: none;">
               <div class="loading-img">
@@ -411,14 +422,29 @@
                   <div class="progress-bar" id="progressBar" style="width: 0%;"></div>  
                 </div>  
               </div>  
-            </div>  
+            </div>
+
             <button class="form-control btn btn-primary" id = "continue-updateEmv" style="display: none; width: 25%; position: relative; top: 10px; left: 5px; ">Update EMV Continue</button>
             <div class="card-body" id="div_updateResult">
-              <h6>There will show the terminal update process and result</h6>
+              <h6>There will show the terminal update process and result</h6> 
+            </div> 
+                        
+            <div class="emv-container" id="emvContainerDiv" style="display: none;">  
+              <div class="left-panel">  
+                <h2>AID List</h2>  
+                <ul id="aid-list">  
+                    <!-- AID项将在这里动态添加 -->  
+                </ul>  
+                <!-- <button id="add-aid">添加AID</button>   -->
+              </div>  
+              <div class="right-panel">  
+                <h2>TAG details</h2>  
+                <div id="tag-details">  
+                    <!-- TAG内容将在这里动态显示 -->  
                 </div>  
-            </div>
-            
-            
+              </div>  
+            </div>      
+    
           </div>
         </section>
 
@@ -426,11 +452,12 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+   
   <footer class="main-footer">
     <strong>Copyright &copy; 2009-2022 Dspread Technology (Beijing) Inc.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 4.1.3
+      <b>Version</b> 4.1.4
     </div>
   </footer>
 
@@ -476,5 +503,7 @@
 <script src="./dist/js/pages/dashboard.js"></script>
 <script src="./dist/js/main.js"></script>
 <script src="./dist/js/Script.js"></script>
+<script src="./dist/js/TLV_Parse.js"></script>
+
 </body>
 </html>
