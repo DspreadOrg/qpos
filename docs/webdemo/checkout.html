@@ -119,10 +119,10 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" id="sidebar-list">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
+          <li class="nav-item" id="transaction-card-side">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-credit-card"></i>
               <p>
@@ -131,7 +131,7 @@
             </a>
 
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="info-card-side">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -154,7 +154,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="update-card-side">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -227,147 +227,25 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Transactions</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-        <!-- Transaction content -->
-        <section class="content">
-          <div class="container-fluid">
-            <!-- transactions -->
-            <div class="card card-default">
-              <div class="card-header">
-                <h3 class="card-title">Start to do trade</h3>
-    
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-            
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <!-- /.row -->
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label>Currency</label>
-                          <select id="currency_code" class="form-control select2" style="width: 100%;">
-                            <option value="0156" selected="selected">CNY</option>
-                            <option value="0840">USD</option>
-                            <option value="0978">EUR</option>
-                            <option value="0036">AUD</option>
-                            <option value="0860">UZS</option>
-                            <option value="0704">VND</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- /.row -->
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label>Transaction Type</label>
-                          <select id="TractionType" class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                            <option value="0" selected="selected">GOODS</option>
-                            <option value="1">SERVICES</option>
-                            <option value="2">CASH</option>
-                            <option value="3">CASHBACK</option>
-                            <option value="4">INQUIRY</option>
-                            <option value="5">TRANSFER</option>
-                            <option value="6">ADMIN</option>
-                            <option value="7">CASHDEPOSIT</option>
-                            <option value="8">PAYMENT</option>
-                            <option value="9">PBOCLOG||ECQ_INQUIRE_LOG</option>
-                            <option value="10">SALE</option>
-                            <option value="11">PREAUTH</option>
-                            <option value="12">ECQ_DESIGNATED_LOAD</option>
-                            <option value="13">ECQ_UNDESIGNATED_LOAD</option>
-                            <option value="14">ECQ_CASH_LOAD</option>
-                            <option value="15">ECQ_CASH_LOAD_VOID</option>
-                            <option value="16">CHANGE_PIN</option>
-                            <option value="17">REFOUND</option>
-                            <option value="18">SALES_NEW</option>
-                            <option value="19">LEGACY_MONEY_ADD</option>
-                            <option value="20">NON_LEGACY_MONEY_ADD</option>
-                            <option value="21">BALANCE_UPDATE</option>
-                          </select>
-                        </div>
-                        <!-- /.form-group -->
-                      </div>
-                    </div>
-
-                    <!-- /.row amount -->
-                    <div class="row">
-                      <div class="col-12">
-                        <label>Transaction Amount</label>
-                        <input type="number" class="form-control" id="Amount" placeholder="Enter Amount">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-12 ">
-                        <label></label>
-                        <button type="submit" class="form-control btn btn-primary" onclick="startTrade()">Payment</button>
-                      </div>
-                    </div>
-                  
-                  </div>
-                  <div class="col-md-6">
-                  <!-- /.card-header -->
-                    <div class="card-body">
-                      <div class="card card-primary" >
-                        <div class="card-body">
-                          <div class="card-header">
-                            <h4 class="card-title w-100">
-                              <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
-                                Transaction Result
-                              </a>
-                            </h4>
-                          </div>
-                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                            <div class="card-body" id="result_div">
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-          <!-- /.container-fluid -->
-
-      
-        </section>
-
-        <div class="content-header" id="div_header_info">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <h1 class="m-0">Terminal Info</h1>
-              </div><!-- /.col -->
-            </div><!-- /.row -->
-          </div><!-- /.container-fluid -->
-        </div>
-        <!-- Info contant -->
-        <section class="content">
-          <div class="card card-default" id="div_terminalInfo">
+    <div class="content-wrapper" id="transaction-card">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Transactions</h1>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+          <!-- Transaction content -->
+      <section class="content">
+        <div class="container-fluid">
+          <!-- transactions -->
+          <div class="card card-default">
             <div class="card-header">
-              <h3 class="card-title">Terminal Info</h3>
+              <h3 class="card-title">Start to do trade</h3>
   
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -375,79 +253,202 @@
                 </button>
               </div>
             </div>
-            <div class="card-body" id="div_infoResult">
-              <h6>There will show the terminal info</h6>
-            </div>  
+          
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- /.row -->
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label>Currency</label>
+                        <select id="currency_code" class="form-control select2" style="width: 100%;">
+                          <option value="0156" selected="selected">CNY</option>
+                          <option value="0840">USD</option>
+                          <option value="0978">EUR</option>
+                          <option value="0036">AUD</option>
+                          <option value="0860">UZS</option>
+                          <option value="0704">VND</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- /.row -->
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label>Transaction Type</label>
+                        <select id="TractionType" class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                          <option value="0" selected="selected">GOODS</option>
+                          <option value="1">SERVICES</option>
+                          <option value="2">CASH</option>
+                          <option value="3">CASHBACK</option>
+                          <option value="4">INQUIRY</option>
+                          <option value="5">TRANSFER</option>
+                          <option value="6">ADMIN</option>
+                          <option value="7">CASHDEPOSIT</option>
+                          <option value="8">PAYMENT</option>
+                          <option value="9">PBOCLOG||ECQ_INQUIRE_LOG</option>
+                          <option value="10">SALE</option>
+                          <option value="11">PREAUTH</option>
+                          <option value="12">ECQ_DESIGNATED_LOAD</option>
+                          <option value="13">ECQ_UNDESIGNATED_LOAD</option>
+                          <option value="14">ECQ_CASH_LOAD</option>
+                          <option value="15">ECQ_CASH_LOAD_VOID</option>
+                          <option value="16">CHANGE_PIN</option>
+                          <option value="17">REFOUND</option>
+                          <option value="18">SALES_NEW</option>
+                          <option value="19">LEGACY_MONEY_ADD</option>
+                          <option value="20">NON_LEGACY_MONEY_ADD</option>
+                          <option value="21">BALANCE_UPDATE</option>
+                        </select>
+                      </div>
+                      <!-- /.form-group -->
+                    </div>
+                  </div>
+
+                  <!-- /.row amount -->
+                  <div class="row">
+                    <div class="col-12">
+                      <label>Transaction Amount</label>
+                      <input type="number" class="form-control" id="Amount" placeholder="Enter Amount">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12 ">
+                      <label></label>
+                      <button type="submit" class="form-control btn btn-primary" onclick="startTrade()">Payment</button>
+                    </div>
+                  </div>
+                
+                </div>
+                <div class="col-md-6">
+                <!-- /.card-header -->
+                  <div class="card-body">
+                    <div class="card card-primary" >
+                      <div class="card-body">
+                        <div class="card-header">
+                          <h4 class="card-title w-100">
+                            <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
+                              Transaction Result
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                          <div class="card-body" id="result_div">
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
             
           </div>
-        </section>
-
-
-       <div class="content-header" id="div_header_update">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <h1 class="m-0">Terminal Management</h1>
-              </div><!-- /.col -->
-            </div><!-- /.row -->
-          </div><!-- /.container-fluid -->
         </div>
-         <!-- update contant -->
-         <section class="content">
-          <div class="card card-default" id="div_terminalInfo">
-            <div class="card-header">
-              <h3 class="card-title">Terminal Management</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                  <i class="fas fa-minus"></i>
+        <!-- /.container-fluid -->
+      </section>
+    </div>
 
-                </button>
-              </div>
+    <div class="content-wrapper" id="info-card">
+      <div class="content-header" id="div_header_info">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Terminal Info</h1>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- Info contant -->
+      <section class="content">
+        <div class="card card-default" id="div_terminalInfo">
+          <div class="card-header">
+            <h3 class="card-title">Terminal Info</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
             </div>
-
-            <!--loading comic-->
-            <div class="loading" id="loadingDiv" style="display: none;">
-              <div class="loading-img">
-                  <img src="dist/img/loading.png" />
-              </div>
-            </div>
-
-            <!-- 进度条模态框 -->  
-            <div id="myModal" class="modal" style="display: none;">  
-              <!-- 模态框内容 -->  
-              <div class="modal-content">  
-                <span class="close" style="display: none;">&times;</span>  
-                <p>Firmware updating...</p>  
-                <div class="progress-container">  
-                  <div class="progress-bar" id="progressBar" style="width: 0%;"></div>  
-                </div>  
-              </div>  
-            </div>
-
-            <button class="form-control btn btn-primary" id = "continue-updateEmv" style="display: none; width: 25%; position: relative; top: 10px; left: 5px; ">Update EMV Continue</button>
-            <div class="card-body" id="div_updateResult">
-              <h6>There will show the terminal update process and result</h6> 
-            </div> 
-                        
-            <div class="emv-container" id="emvContainerDiv" style="display: none;">  
-              <div class="left-panel">  
-                <h2>AID List</h2>  
-                <ul id="aid-list">  
-                    <!-- AID项将在这里动态添加 -->  
-                </ul>  
-                <!-- <button id="add-aid">添加AID</button>   -->
-              </div>  
-              <div class="right-panel">  
-                <h2>TAG details</h2>  
-                <div id="tag-details">  
-                    <!-- TAG内容将在这里动态显示 -->  
-                </div>  
-              </div>  
-            </div>      
-    
           </div>
-        </section>
+          <div class="card-body" id="div_infoResult">
+            <h6>There will show the terminal info</h6>
+          </div>  
+          
+        </div>
+      </section>
+    </div>  
 
+    <div class="content-wrapper" id="update-card">
+      <div class="content-header" id="div_header_update">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Terminal Management</h1>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+        <!-- update contant -->
+        <section class="content">
+        <div class="card card-default" id="div_terminalInfo">
+          <div class="card-header">
+            <h3 class="card-title">Terminal Management</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+
+              </button>
+            </div>
+          </div>
+
+          <!--loading comic-->
+          <div class="loading" id="loadingDiv" style="display: none;">
+            <div class="loading-img">
+                <img src="dist/img/loading.png" />
+            </div>
+          </div>
+
+          <!-- 进度条模态框 -->  
+          <div id="myModal" class="modal" style="display: none;">  
+            <!-- 模态框内容 -->  
+            <div class="modal-content">  
+              <span class="close" style="display: none;">&times;</span>  
+              <p>Firmware updating...</p>  
+              <div class="progress-container">  
+                <div class="progress-bar" id="progressBar" style="width: 0%;"></div>  
+              </div>  
+            </div>  
+          </div>
+
+          <button class="form-control btn btn-primary" id = "continue-updateEmv" style="display: none; width: 25%; position: relative; top: 10px; left: 5px; ">Update EMV Continue</button>
+          <div class="card-body" id="div_updateResult">
+            <h6>There will show the terminal update process and result</h6> 
+          </div> 
+                      
+          <div class="emv-container" id="emvContainerDiv" style="display: none;">  
+            <div class="left-panel">  
+              <h2>AID List</h2>  
+              <ul id="aid-list">  
+                  <!-- AID项将在这里动态添加 -->  
+              </ul>  
+              <!-- <button id="add-aid">添加AID</button>   -->
+            </div>  
+            <div class="right-panel">  
+              <h2>TAG details</h2>  
+              <div id="tag-details">  
+                  <!-- TAG内容将在这里动态显示 -->  
+              </div>  
+            </div>  
+          </div>      
+  
+        </div>
+      </section>
+    </div>
 
     <!-- /.content -->
   </div>
@@ -457,7 +458,7 @@
     <strong>Copyright &copy; 2009-2022 Dspread Technology (Beijing) Inc.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 4.1.4
+      <b>Version</b> 4.1.5
     </div>
   </footer>
 

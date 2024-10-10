@@ -37,6 +37,10 @@ navigator.usb.addEventListener('disconnect', event => {
 let button = document.getElementById('request-device');
 let contiUpdateEmvBtn = document.getElementById('continue-updateEmv');
 
+var transactionCard = document.getElementById("transaction-card");
+var infoCard = document.getElementById("info-card");
+var updatecard = document.getElementById("update-card");
+
 var trasactionData = document.getElementById("result_div");
 var infoData = document.getElementById("div_infoResult");
 var updateResult = document.getElementById("div_updateResult");
@@ -575,8 +579,6 @@ function dialog(){
       if(Connected){
           //mService.resetPosStatus();
           // mService.doSetBuzzerOperation(3);
-        updateResult.innerText = "updating Firmware...";
-
         document.getElementById("updateFwFile").click();
       } else{
           DiscoverDevice();
@@ -905,7 +907,49 @@ function powerOffNFC(){
     }
 }
 //InitUI();
+
+function showAndHideCardContent(cardName){
+
+    // const listItems = document.querySelectorAll('#sidebar-list li');  
+    // listItems.forEach(li => {li.classList.remove('nav-link active');li.classList.add('nav-link')}); 
+
+    // document.querySelector(cardName).classList.add('nav-link active');
+
+    transactionCard.style.display = "none";
+    infoCard.style.display = "none";
+    updatecard.style.display = "none";
+
+    // item.querySelector('a').class="nav-link active";
+    if(cardName == "transaction-card-side") {
+        transactionCard.style.display="";
+    } else if(cardName == "info-card-side") {
+        infoCard.style.display = "";
+    } else if(cardName == "update-card-side") {
+        updatecard.style.display = "";
+    }
+}
+
+document.getElementById("transaction-card-side").addEventListener('click', async () =>{
+    console.log("tra");
+    showAndHideCardContent("transaction-card-side");
+}); 
+
+document.getElementById("info-card-side").addEventListener('click', async () =>{
+    console.log("info");
+
+    showAndHideCardContent("info-card-side");
+}); 
+
+document.getElementById("update-card-side").addEventListener('click', async () =>{
+    console.log("update");
+
+    showAndHideCardContent("update-card-side");
+}); 
+
+
+
 UpdateUI();
+showAndHideCardContent("transaction-card-side");
 
 
 const aidList = document.getElementById('aid-list');  
