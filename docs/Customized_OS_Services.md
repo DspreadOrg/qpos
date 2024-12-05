@@ -77,7 +77,17 @@ If you want to add new APN, please follow the below template to provide us new A
 
 ### Launcher App
 
-If you want to set your app as launcher app, please share me your app
+If you want to set your app as launcher app, please share me your app。
+And you need to update your app AndroidManifest.xml code as beolw showed:  
+
+```java
+  <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+   </intent-filter>
+```
 
 ### App Signature Restrictions
 

@@ -37,9 +37,27 @@ navigator.usb.addEventListener('disconnect', event => {
 let button = document.getElementById('request-device');
 let contiUpdateEmvBtn = document.getElementById('continue-updateEmv');
 
+var transactionCard = document.getElementById("transaction-card");
+var infoCard = document.getElementById("info-card");
+var updatecard = document.getElementById("update-card");
+
 var trasactionData = document.getElementById("result_div");
 var infoData = document.getElementById("div_infoResult");
 var updateResult = document.getElementById("div_updateResult");
+
+const divUpdate = document.getElementById("div_header_update");
+
+// 获取模态框  
+var modal = document.getElementById("myModal");  
+
+// 获取emv配置div
+var emvContainerDiv = document.getElementById("emvContainerDiv");
+  
+// 获取 <span> 元素，用于关闭模态框  
+var span = document.getElementsByClassName("close")[0];  
+
+const progressBar = document.getElementById("progressBar");  
+
 
 var mService = new QPOSService();
 function QPOSServiceListenerImpl() {}
@@ -201,18 +219,140 @@ QPOSServiceListenerImpl.prototype.onReturnReversalData = function (iccData) {
 
 QPOSServiceListenerImpl.prototype.onReturnGetEMVListResult = function (aidString) {
     console.log("onReturnGetEMVListResult(aidString)" + aidString);
-    updateResult.innerText = "onReturnGetEMVListResult: " + aidString;
+    // updateResult.innerText = "onReturnGetEMVListResult: " + aidString;
+    emvContainerDiv.style.display="flex";
+
+    if(aidString.startsWith("0")){
+        var AIDList = [];
+        var length;
+        var index = 0;
+        var aidSum = aidString.slice(index, index + 2);
+        index += 2;
+        while (index < aidString.length) {
+            length = aidString.slice(index, index + 2);
+            index += 2;
+            length = parseInt(length, 16) * 2;
+            aid = aidString.slice(index, index + length);
+            console.log("aid:" + aid);
+            AIDList.push(aid);
+            index += length;
+        
+        }
+        console.log("aidlist:" + AIDList+"\n num:"+AIDList.length+" "+aidSum);
+
+
+        for(i in AIDList){
+            var newAid = toUpperCaseStr(AIDList[i]);
+            const newLi = document.createElement('li');  
+            newLi.textContent = newAid;  
+            newLi.setAttribute('data-aid', newAid);  
+            newLi.style.cursor = 'pointer';  
+            aidList.appendChild(newLi);  
+        }
+
+        const listItems = document.querySelectorAll('#aid-list li'); 
+
+        listItems.forEach(item => {  
+            item.addEventListener('click', () => {  
+                // 移除所有项的选中类  
+                listItems.forEach(i => i.classList.remove('selected'));  
+
+                // 添加选中类到当前点击的项  
+                item.classList.add('selected');  
+
+                // console.log("click:"+e.target.getAttribute('data-aid'));
+                console.log("click:"+item.getAttribute('data-aid'));
+
+                // var aidstr = toUpperCaseStr(e.target.getAttribute('data-aid'));
+                var aidstr = toUpperCaseStr(item.getAttribute('data-aid'));
+
+                aidstr = (aidstr.length/2).toString(16) + aidstr;
+                if (aidstr.length % 2 != 0) {
+                    aidstr = "9F06" + "0" + aidstr;
+                } else {
+                    aidstr = "9F06" + aidstr;
+                }
+                selectedAIDstr = aidstr;
+
+                console.log("getemv:"+aidstr)
+                mService.updateEmvAPP(EMVDataOperation.GETEMV,aidstr);
+
+            });  
+        }); 
+
+        // aidList.addEventListener('click', function(e) { 
+        //     if (e.target.tagName === 'LI') {  
+        //         console.log("click:"+e.target.getAttribute('data-aid'));
+
+        //         aidList.forEach(i => i.classList.remove('selected'));  
+  
+        //         // 添加选中类到当前点击的项  
+        //         e.classList.add('selected');  
+
+        //         var aidstr = toUpperCaseStr(e.target.getAttribute('data-aid'));
+        //         aidstr = (aidstr.length/2).toString(16) + aidstr;
+        //         if (aidstr.length % 2 != 0) {
+        //             aidstr = "9F06" + "0" + aidstr;
+        //         } else {
+        //             aidstr = "9F06" + aidstr;
+        //         }
+        //         selectedAIDstr = aidstr;
+
+        //         console.log("getemv:"+aidstr)
+        //         mService.updateEmvAPP(EMVDataOperation.GETEMV,aidstr);
+        //     } 
+        // });
+
+                // 获取第一个AID的详细配置
+
+        var defaultAidstr = toUpperCaseStr(AIDList[0]);
+        defaultAidstr = (defaultAidstr.length/2).toString(16) + defaultAidstr;
+        if (defaultAidstr.length % 2 != 0) {
+            defaultAidstr = "9F06" + "0" + defaultAidstr;
+        } else {
+            defaultAidstr = "9F06" + defaultAidstr;
+        }
+        console.log("getdefaultemv:"+defaultAidstr);
+        //间隔一段时间再调用，不然SDK没有正确置位操作类型
+        setTimeout(function() {  
+            mService.updateEmvAPP(EMVDataOperation.GETEMV,defaultAidstr);
+        }, 500);
+
+
+
+    } else {
+
+        tagDetails.innerHTML = ''; // 清空当前内容  
+
+        // 假设新添加的AID也有一个默认的TAG  
+        // messageStr = "9F0607A0000000031010DF0101009F090200969F1B04000000009F660436E040009F8125039F37049F812701009F812801009F812904000000009F812A05DC4000A8009F812B0500100000009F812C05DC4004F8009F92810004050100009F92810101009F92810A02FE009F92810D069999999999999F92810E060000000000009F92810F06000000001388";
+
+        var tagDict = parseTLV(aidString);  
+        var i = 0;
+        for(key in tagDict)  {
+            tagsData[i] = [{ name: toUpperCaseStr(key), value: toUpperCaseStr(tagDict[key]) }];  
+            updateTagDetails(i);  
+            i++;
+
+        }
+    }  
+    divUpdate.scrollIntoView();
+
 }
 QPOSServiceListenerImpl.prototype.onReturnUpdateEMVResult = function (flag) {
     console.log("onReturnUpdateEMVResult: " + flag);
+    loadingToggle("none");
     if (flag) {
         updateResult.innerText = "onReturnUpdateEMVResult: Success"; 
     }else{
         updateResult.innerText = "onReturnUpdateEMVResult: Fail";
     }
+    alert("onReturnUpdateEMVResult:"+flag);
 }
 QPOSServiceListenerImpl.prototype.onReturnUpdateEMVRIDResult = function (flag) {
     console.log("onReturnUpdateEMVRIDResult: " + flag);
+    emvContainerDiv.style.display="none";
+
     if (flag) {
         updateResult.innerText = "onReturnUpdateEMVRIDResult: Success"; 
     }else{
@@ -228,6 +368,9 @@ QPOSServiceListenerImpl.prototype.onReturnCustomConfigResult = function (flag, m
         updateResult.innerText = "onReturnCustomConfigResult: Fail\n"+msg;
     } 
     contiUpdateEmvBtn.style.display = "none";
+    emvContainerDiv.style.display = "none";
+    loadingToggle("none");
+
 }
 QPOSServiceListenerImpl.prototype.onReturnSetMasterKeyResult = function (flag) {
     console.log("onReturnSetMasterKeyResult: " + flag);
@@ -309,7 +452,21 @@ QPOSServiceListenerImpl.prototype.onSetBuzzerResult = function(result){
 
 QPOSServiceListenerImpl.prototype.onUpdatePosFirmwareResult = function(result,str){
     console.log("onUpdatePosFirmwareResult:"+result+"\n"+str);
-    updateResult.innerText = "onUpdatePosFirmwareResult:"+result+"\n"+str;
+    modal.style.display = "none"; // 加载完成后隐藏模态框  
+    emvContainerDiv.style.display="none";
+
+    var updateFWResult = "onUpdatePosFirmwareResult:"+result+'<br>';
+
+
+    if(result) {
+        updateFWResult = updateFWResult + str;
+    } else {
+        updateFWResult = updateFWResult +'<span style="color: red;">'+str;
+    }
+
+
+
+    updateResult.innerHTML = updateFWResult;
 }
 
 QPOSServiceListenerImpl.prototype.onRturnSwitchWinusbResult = function (isSuccess) {
@@ -318,22 +475,32 @@ QPOSServiceListenerImpl.prototype.onRturnSwitchWinusbResult = function (isSucces
 }
 
 QPOSServiceListenerImpl.prototype.onReturnShowEMVOfXml = function(list){
+    console.log("onReturnShowEMVOfXml");
+
     updateResult.innerHTML = "";
+    emvContainerDiv.style.display="none";
+    contiUpdateEmvBtn.style.display = "block";
+
     for(x in list){
         // console.log(list[x]);
         if(list[x].type == "APP")
-            updateResult.innerHTML =updateResult.innerHTML+"type:"+list[x].type+" Aid:"+list[x].id+" index:"+list[x].index+"</br>";
+            updateResult.innerHTML =updateResult.innerHTML+"type:"+list[x].type+" Aid:"+list[x].id+"</br>";
         else
             updateResult.innerHTML =updateResult.innerHTML+"type:"+list[x].type+" Rid:"+list[x].id+" index:"+list[x].index+"</br>";
     }
-    contiUpdateEmvBtn.style.display = "block";
+    divUpdate.scrollIntoView();
 }
 
 function getProgress(progress){
+    modal.style.display = "block"; // 加载完成后隐藏模态框  
     if(progress == "100"){
-        updateResult.innerHTML = "update successfully";
+        // updateResult.innerHTML = "update successfully";
+        modal.style.display = "none"; // 加载完成后隐藏模态框  
     } else{
-        updateResult.innerHTML = "update process:"+parseInt(progress)+"%";
+        progressBar.style.width = parseInt(progress) + '%';  
+        progressBar.textContent = parseInt(progress) + '%'; 
+        updateResult.innerHTML = "update process:"+parseInt(progress) + '%';
+ 
     }
 }
 
@@ -353,11 +520,16 @@ button.addEventListener('click', async () => {
     }
   });
 
+function loadingToggle(displayStr) {
+    // document.getElementsByClassName('loading')[0].classList.toggle('loading-none');
+    document.getElementById("loadingDiv").style.display=displayStr;
+}  
+
 contiUpdateEmvBtn.addEventListener('click',async()=>{
     updateResult.innerHTML ="updating...</br>"+updateResult.innerHTML;
     mService.updateEMVConfigByXml(mEMVConfigBuffer);
     contiUpdateEmvBtn.style.display = "none";
-
+    loadingToggle("block");
 });
 
 function dialog(){
@@ -393,19 +565,9 @@ function upload(input) {  //支持chrome IE10
 }
 
 function selectEmvFile(){
-    //$('#updateEmvFile').click();
-    // updateResult.innerHTML = "132456</br>123333";
-    // console.log(contiUpdateEmvBtn.style.display);
-
-    // if(contiUpdateEmvBtn.style.display=="none")
-    //     contiUpdateEmvBtn.style.display = "inline-block";
-    // else
-    // contiUpdateEmvBtn.style.display = "none";
-
     if(Connected){
         //mService.resetPosStatus();
         // mService.doSetBuzzerOperation(3);
-        updateResult.innerText = "updating EMV..."
         document.getElementById("updateEmvFile").click();
     } else{
         DiscoverDevice();
@@ -421,7 +583,13 @@ function switchToSerial(){
         DiscoverDevice();
         UpdateUI();
     }
+
 }
+
+span.onclick = function() {  
+    console.log("click close span")
+    modal.style.display = "none";  
+  }  
 
 function dialog(){
     var str = prompt("Please input your pin","123456");
@@ -440,7 +608,9 @@ function dialog(){
           var reader = new FileReader();  
           reader.onload = function() {  
             //   alert(testChar(this.result).length); 
-              mService.updatePosFirmware(testChar(this.result),Connected_Device);
+            emvContainerDiv.style.display="none";
+            mService.updatePosFirmware(testChar(this.result),Connected_Device);
+
           }  
           reader.readAsArrayBuffer(file); 
           document.getElementById('updateFwFile').value = null;
@@ -455,7 +625,8 @@ function dialog(){
       if(Connected){
           //mService.resetPosStatus();
           // mService.doSetBuzzerOperation(3);
-          updateResult.innerText = "updating Firmware...";
+        contiUpdateEmvBtn.style.display = "none";
+        updateResult.innerHTML = "";
         document.getElementById("updateFwFile").click();
       } else{
           DiscoverDevice();
@@ -506,11 +677,34 @@ function startTrade(){
 }
 
 function getQPosInfo(){
-    mService.getQPosInfo();
+    if(Connected){
+        mService.getQPosInfo();
+    }else{
+        DiscoverDevice();
+        UpdateUI();
+    }
 }
 
 function getQPosId(){
-    mService.getQPosId();
+    if(Connected){
+        mService.getQPosId();
+    }else{
+        DiscoverDevice();
+        UpdateUI();
+    }
+}
+
+function getEmvConfig(){
+    contiUpdateEmvBtn.style.display = "none";
+    updateResult.innerHTML = "";
+    aidList.innerHTML = ''; 
+    if(Connected){
+        mService.updateEmvAPP(EMVDataOperation.ATTAINLIST,null);
+    }else{
+        DiscoverDevice();
+        UpdateUI();
+    }
+    // mService.updateEmvAPP(EMVDataOperation.GETEMV,"9F0607A0000000031010");
 }
 
 
@@ -597,7 +791,8 @@ function DiscoverDevice() {
     //过滤出我们需要的蓝牙设备
     //过滤器
     var options = {
-        filters: [{ namePrefix: 'MPOS' },{ namePrefix: 'QPOS' },{ namePrefix: 'VEL' },{ namePrefix: 'MIPS' },{ namePrefix: 'watu' },{ namePrefix: 'POINT' }],
+        acceptAllDevices:true,
+        // filters: [{ namePrefix: 'MPOS' },{ namePrefix: 'QPOS' },{ namePrefix: 'VEL' },{ namePrefix: 'MIPS' },{ namePrefix: 'watu' },{ namePrefix: 'POINT' }],
         optionalServices: [MPOS_SERVICE]
     };
 
@@ -779,4 +974,131 @@ function powerOffNFC(){
     }
 }
 //InitUI();
+
+function showAndHideCardContent(cardName){
+
+    // const listItems = document.querySelectorAll('#sidebar-list li');  
+    // listItems.forEach(li => {li.classList.remove('nav-link active');li.classList.add('nav-link')}); 
+
+    // document.querySelector(cardName).classList.add('nav-link active');
+
+    transactionCard.style.display = "none";
+    infoCard.style.display = "none";
+    updatecard.style.display = "none";
+
+    // item.querySelector('a').class="nav-link active";
+    if(cardName == "transaction-card-side") {
+        transactionCard.style.display="";
+    } else if(cardName == "info-card-side") {
+        infoCard.style.display = "";
+    } else if(cardName == "update-card-side") {
+        updatecard.style.display = "";
+    }
+}
+
+document.getElementById("transaction-card-side").addEventListener('click', async () =>{
+    console.log("tra");
+    showAndHideCardContent("transaction-card-side");
+}); 
+
+document.getElementById("info-card-side").addEventListener('click', async () =>{
+    console.log("info");
+
+    showAndHideCardContent("info-card-side");
+}); 
+
+document.getElementById("update-card-side").addEventListener('click', async () =>{
+    console.log("update");
+
+    showAndHideCardContent("update-card-side");
+}); 
+
+
+
 UpdateUI();
+showAndHideCardContent("transaction-card-side");
+
+
+const aidList = document.getElementById('aid-list');  
+const tagDetails = document.getElementById('tag-details');  
+const addAidBtn = document.getElementById('add-aid');  
+
+// 示例数据  
+let nextAid = 4; // 假设已经有AID 1, 2, 3  
+const tagsData = {  
+    '1': [{ name: 'Tag1', value: 'Value1' }],  
+    '2': [{ name: 'Tag2', value: 'Value2' }],  
+    // ... 可以继续添加  
+};  
+
+var selectedAIDstr = "";
+// 更新TAG详情  
+function updateTagDetails(aid) {  
+    // tagDetails.innerHTML = ''; // 清空当前内容  
+    const tags = tagsData[aid] || [];  
+
+    tags.forEach(tag => {  
+        const tagItem = document.createElement('div');  
+        tagItem.classList.add('tag-item');  
+
+        const tagName = document.createElement('div');  
+        tagName.classList.add('tag-name');  
+        tagName.textContent = tag.name;  
+
+        const tagValueInput = document.createElement('input');  
+        tagValueInput.type = 'text';  
+        tagValueInput.value = tag.value;  
+        tagValueInput.style.width = '100%'; // 注意：这里可能需要额外的CSS调整  
+
+        const tagValueDiv = document.createElement('div');  
+        tagValueDiv.classList.add('tag-value');  
+        tagValueDiv.appendChild(tagValueInput);  
+
+        const confirmBtn = document.createElement('button');  
+        confirmBtn.classList.add('confirm-btn');  
+        confirmBtn.textContent = 'CONFIRM';
+
+
+        confirmBtn.onclick = function() {  
+            // 这里可以添加代码来处理确认后的逻辑，比如更新tagsData中的值  
+            // tag.value = tagValueInput.value; // 示例：直接更新对象中的值  
+            // console.log('TAG值已更新：', tag);  
+
+            var newConfigStr = selectedAIDstr + tag.name;
+            var newValue = tagValueInput.value;
+    
+            newValue = (newValue.length/2).toString(16) + newValue;
+            if (newValue.length % 2 != 0) {
+                newValue = "0" + newValue;
+            } 
+            newConfigStr = newConfigStr + newValue;
+            console.log("newConfigStr:"+newConfigStr);
+
+            mService.updateEmvAPP(EMVDataOperation.UPDATE,newConfigStr);
+        };  
+
+        tagItem.appendChild(tagName);  
+        tagItem.appendChild(tagValueDiv);  
+        tagItem.appendChild(confirmBtn);  
+
+        tagDetails.appendChild(tagItem);  
+    });  
+}  
+
+// 初始加载（可选）  
+// updateTagDetails('1'); // 例如，默认加载AID为1的TAG详情  
+
+function toUpperCaseStr(str) {  
+    // 初始化一个空字符串用于存储转换后的结果  
+    let result = '';  
+      
+    // 遍历输入字符串的每个字符  
+    for (let i = 0; i < str.length; i++) {  
+      // 如果当前字符是小写字母，则转换为大写  
+      // 否则，直接添加到结果字符串中  
+      result += str[i].toUpperCase();  
+    }  
+      
+    // 返回转换后的字符串  
+    return result;  
+  }  

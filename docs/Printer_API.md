@@ -102,7 +102,7 @@
 
 **Parameter Description:** 
 - cotext: Context.
-- bitmap: Image bitmap data. 
+- bitmap: Image bitmap data (Format: PNG/JPG convert to bitmap, Size: width within 384 px, height undefined). 
 
 ### 8. Print Multiple Columns
 

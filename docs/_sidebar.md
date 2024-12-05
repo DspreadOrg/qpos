@@ -1,6 +1,8 @@
 - Get Started
 
-  - [SDK Installation](manual.md)
+  <!-- - [SDK Installation](manual.md) -->
+  - [Introduction](introduction.md)
+  - [Download](download.md)
   - [Tutorial Video](video-tutorial.md)
 
 - Transaction Flow
