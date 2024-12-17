@@ -4,7 +4,7 @@ You can download to install our [android-demo-app][android-app]
  and [ios-demo-app][ios-app] .
 
 [android-app]: https://www.pgyer.com/6GtstDbT
-[ios-app]: http://d.maps9.com/posDemo
+[ios-app]: https://apps.apple.com/us/app/mpos-reader/id6737266942
 
 
 <!-- tabs:start -->
