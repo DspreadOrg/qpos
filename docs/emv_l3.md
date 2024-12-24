@@ -12,9 +12,9 @@
 |  JAPAN   | [JAPAN-QPOS mini.xml](https://drive.google.com/file/d/1yqH8Yw1IewfuzoV3B_tjc7OqCLW_di7y/view?usp=sharing) | [JAPAN-QPOS cute,CR100,D20,D30,D60.xml](https://drive.google.com/file/d/1ue9RNMKHhOgYMbUeiPrkNgQ1VGINMV8e/view?usp=sharing) | [JAPAN-Certification.tpp](https://drive.google.com/file/d/1ZW_6LqFkFkX4XDjSwavGrJTEHFKfwJir/view?usp=sharing) |[JAPAN-Firmware](https://drive.google.com/drive/folders/1qPLobdOOjJ-FcgT3SUiVs7lq86VKZxxI?usp=sharing)|
 | COLUMBIA | [COLUMBIA-QPOS mini.xml](https://drive.google.com/file/d/10BE7KojYN8xr1mpENrCY4QSKHFE3BHbN/view?usp=sharing) | [COLUMBIA-QPOS cute,CR100,D20,D30,D60.xml](https://drive.google.com/file/d/1jTnsSF-6bDEa4DaQUGfFDFIk81RoLj96/view?usp=sharing) | [COLUMBIA-Certification.tpp](https://drive.google.com/file/d/1hckep5SLOcBM2y3Gr0xG74wDv3uBIqgz/view?usp=sharing) |[COLUMBIA-Firmware](https://drive.google.com/drive/folders/1NG9WfmWptle3CsaEIvVOa_OVwvdZmBDO?usp=sharing)|
 
-## SPOC certification
+## MPOC certification
 
 For CR100, we provide you some solution to help you pass SPOC, please check the below document for detail. 
 
-- [CR100 SPOC CVM PIN](https://gitlab.com/dspread/FAQs_Document/-/blob/master/documents/dspread%20cvm%20pin.pdf?ref_type=heads)
+- [CR100 MPOC CVM PIN](https://gitlab.com/dspread/FAQs_Document/-/blob/master/documents/dspread%20cvm%20pin.pdf?ref_type=heads)
 ( [code sample](https://drive.google.com/file/d/13MO8Y9h8wOk7udPOQtbweYkDaO9MY5cT/view?usp=sharing) )
