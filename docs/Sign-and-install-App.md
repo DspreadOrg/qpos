@@ -1,6 +1,6 @@
 ## Signing your App
 
-1. Add the “app.keystore” file to your app project. ([The link ](https://gitlab.com/dspread/android/-/blob/master/pos_android_studio_demo/pos_android_studio_app/app.keystore))
+1. Add the “app.keystore” file to your app project. ([The link ](https://github.com/DspreadOrg/android/blob/master/pos_android_studio_demo/pos_android_studio_app/app.keystore))
 
    ![](./_images/sign1.jpg)
 
