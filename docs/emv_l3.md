@@ -16,5 +16,5 @@
 
 For CR100, we provide you some solution to help you pass MPOC, please check below document for detail. 
 
-- [CR100 MPOC CVM PIN](https://gitlab.com/dspread/FAQs_Document/-/blob/master/documents/dspread%20cvm%20pin.pdf?ref_type=heads)
+- [CR100 MPOC CVM PIN](https://github.com/DspreadOrg/FAQs_Document/blob/master/documents/dspread%20cvm%20pin.pdf)
 ( [code sample](https://drive.google.com/file/d/13MO8Y9h8wOk7udPOQtbweYkDaO9MY5cT/view?usp=sharing) )
