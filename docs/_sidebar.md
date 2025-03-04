@@ -59,9 +59,9 @@
 
   - [Certification](emv_l3.md)
 
-- [**API Reference**](https://dspread.gitlab.io/qpos/api/index.html)
-  - [Android](https://gitlab.com/dspread/android/-/blob/master/QPOS-Android-SDK-Userguid-en-detail.pdf)
-  - [iOS](https://gitlab.com/dspread/ios/-/blob/master/QPOS-iOS-SDK-Userguid-en-detail.pdf)
+- [**API Reference**](https://github.com/DspreadOrg/qpos/blob/master/docs/api/index.html)
+  - [Android](https://github.com/DspreadOrg/android/blob/master/QPOS-Android-SDK-Userguid-en-detail.pdf)
+  - [iOS](https://github.com/DspreadOrg/ios/blob/master/QPOS-iOS-SDK-Userguid-en-detail.pdf)
 
-- [**Web Demo**](https://dspread.gitlab.io/qpos/webdemo/checkout.html)
+- [**Web Demo**](https://github.com/DspreadOrg/qpos/blob/master/docs/webdemo/checkout.html)
 - [**FAQs**](FAQs.md)
