@@ -63,5 +63,5 @@
   - [Android](https://github.com/DspreadOrg/android/blob/master/QPOS-Android-SDK-Userguid-en-detail.pdf)
   - [iOS](https://github.com/DspreadOrg/ios/blob/master/QPOS-iOS-SDK-Userguid-en-detail.pdf)
 
-- [**Web Demo**](https://github.com/DspreadOrg/qpos/blob/master/docs/webdemo/checkout.html)
+- [**Web Demo**](https://dspreadorg.github.io/qpos/webdemo/checkout.html)
 - [**FAQs**](FAQs.md)
