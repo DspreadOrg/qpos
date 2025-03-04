@@ -25,7 +25,7 @@ You can click the links below to download the printer demo.
 
 <div style='color: blue'>
 
-- [x] [Android Printer Demo](https://gitlab.com/dspread/android) 
+- [x] [Android Printer Demo](https://github.com/DspreadOrg/android) 
     
 </div>
 
