@@ -20,23 +20,23 @@ You can download and install our [android-demo-app](https://www.pgyer.com/6GtstD
 
 #### **Android**
 
-- [x] [Android SDK](https://gitlab.com/dspread/android) 
+- [x] [Android SDK](https://github.com/DspreadOrg/android) 
 
 #### **IOS**
 
-- [x] [IOS SDK](https://gitlab.com/dspread/ios)
+- [x] [IOS SDK](https://github.com/DspreadOrg/ios)
 
 #### **Windows**
 
-- [x] [Windows SDK](https://gitlab.com/dspread/windows)
+- [x] [Windows SDK](https://github.com/DspreadOrg/windows)
 
 #### **Flutter**
 
-- [x] [Flutter](https://gitlab.com/dspread/flutter_demo)
+- [x] [Flutter](https://github.com/DspreadOrg/flutterDemo)
 
 #### **React Native**
 
-- [x] [React Native](https://gitlab.com/dspread/react-native)
+- [x] [React Native](https://github.com/DspreadOrg/react-native)
     
 #### **Ionic**
 
@@ -44,19 +44,19 @@ You can download and install our [android-demo-app](https://www.pgyer.com/6GtstD
     
 #### **Cordova**
 
-- [x] [cordava](https://gitlab.com/dspread/cordova-plugin)
+- [x] [cordava](https://github.com/DspreadOrg/cordova-plugin)
 
 #### **Kotlin**
 
-- [x] [Kotlin](https://gitlab.com/dspread/kotlin) 
+- [x] [Kotlin](https://github.com/DspreadOrg/kotlin) 
 
 #### **Swift**
 
-- [x] [Swift](https://gitlab.com/dspread/ios/-/tree/Swift-Demo) 
+- [x] [Swift](https://github.com/DspreadOrg/ios/tree/Swift-Demo) 
 
 #### **JavaScript**
 
-- [x] [JavaScript](https://gitlab.com/dspread/web-js-demo) 
+- [x] [JavaScript](https://github.com/DspreadOrg/Web-js-Demo) 
 
 <!-- tabs:end -->
 
