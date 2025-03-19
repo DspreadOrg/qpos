@@ -1,12 +1,12 @@
 - Help&Feedback
 
-  - [Help&Feedback](https://gitlab.com/dspread/android/-/issues/new)
+  - [Help&Feedback](https://github.com/DspreadOrg/android/issues/new?template=Bug.yml)
 
 - Download
 
-  - [Android](https://gitlab.com/dspread/android)
-  - [IOS](https://gitlab.com/dspread/ios)
-  - [Windows](https://gitlab.com/dspread/windows)
+  - [Android](https://github.com/DspreadOrg/android)
+  - [iOS](https://github.com/DspreadOrg/ios)
+  - [Windows](https://github.com/DspreadOrg/windows)
 
 - Products
   - [Products](http://dspread.com/pos_products/)
