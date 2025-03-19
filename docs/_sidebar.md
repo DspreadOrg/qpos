@@ -59,7 +59,7 @@
 
   - [Certification](emv_l3.md)
 
-- [**API Reference**](https://github.com/DspreadOrg/qpos/blob/master/docs/api/index.html)
+- [**API Reference**](https://dspreadorg.github.io/qpos/api/index.html)
   - [Android](https://github.com/DspreadOrg/android/blob/master/QPOS-Android-SDK-Userguid-en-detail.pdf)
   - [iOS](https://github.com/DspreadOrg/ios/blob/master/QPOS-iOS-SDK-Userguid-en-detail.pdf)
 
