@@ -6,6 +6,6 @@ If you want to test the functionality of TMS, please contact us. We will provide
 
 ## 2. Manual
 
-If you want to check more infomwation about Lark TMS, please check this manual link as below:
+If you want to check more information about Lark TMS, please check this manual link as below:
 
 https://www.dspreadser.net:9010/userManual
