@@ -13,7 +13,8 @@ We have provided you with some push operation videos for your reference.
   
  ## Install app by AppStore
 
- <iframe width="800" height="450" src="https://www.youtube.com/embed/lMqeIO7xKBQ?si=y2qxxJwz2uoq3o1R" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ <iframe width="800" height="450" src="https://www.youtube.com/embed/lMqeIO7xKBQ?si=y2qxxJwz2uoq3o1R" frameborder="0" allow="accelerometer; autoplay; 
+   clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 
