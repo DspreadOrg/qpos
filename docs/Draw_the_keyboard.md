@@ -1,6 +1,6 @@
 #### Effect picture
 
-Please check our demo about draw the keyboard : [link](https://github.com/DspreadOrg/android/tree/master/pos_android_studio_demo/pos_android_studio_app/src/main/java/com/dspread/demoui/widget/pinpad/keyboard)
+Please check our demo about draw the keyboard : [link](https://github.com/DspreadOrg/android/tree/master/pos_android_studio_demo/pos_android_app/src/main/java/com/dspread/pos/ui/payment/pinkeyboard)
 
 ![keyboard](./_images/keyboard.png)
 
