@@ -26,7 +26,7 @@ The below code shows initializing the SDK while binding the serial port service.
 			statusEditText.setText("CommunicationMode unknow");
 			return;
 		}
-		pos.initListener(handler, listener);
+		pos.initListener(listener);
 	}
 ```
 
