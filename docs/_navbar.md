@@ -9,7 +9,7 @@
   - [Windows](https://github.com/DspreadOrg/windows)
 
 - Products
-  - [Products](http://dspread.com/pos_products/)
+  - [Products](https://www.dspread.com/products)
 
 - Translations
   - [:uk: English](/)
