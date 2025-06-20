@@ -20,9 +20,9 @@ overdischarge
 
 **Please follow the below steps to pass this case.**
 - Please add a "QUICK CHIP" button in your app to execute the "M/Chip Fast" case.
-- When you click "QUICK CHIP" button, please call **pos.setQuickEmv(true)** function before **pos.doTrade()/pos.doCheckCard()** function to start transaction.
-- When you received REMOVE_CARD from **onRequestDisplay()** callback, please remind the customer to remove the card.
-- When you received transaction data from **onRequestOnlineProcess()** callback, please transform transaction data into ISO 8583 financial messages and send them to the issuer
+- When you click "QUICK CHIP" button, please call **pos.setQuickEmv(true)** function before **pos.doTrade()/pos.doCheckCard()** function to start transaction in your app.
+- When your app received REMOVE_CARD from **onRequestDisplay()** callback, please remind the customer to remove the card.
+- When your app received transaction data from **onRequestOnlineProcess()** callback, please transform transaction data into ISO 8583 financial messages and send them to the issuer
 
 ### 4、How to process "Single Tap and PIN Request" case for mastercard L3 certification ?
  Once exemption counter or accumulator reaches its limit during a contactless low value transactions (LVT), issuers require an SCA(Strong Customer Authentication) and send Response Code "65 Exceeds Withdrawal Count Limit" to you, the cardholder only needs to subsequently enter an Online PIN at the terminal PIN pad without the need to tap again or perform a Chip and PIN transaction.
