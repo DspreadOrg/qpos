@@ -4,7 +4,7 @@
 | --------      | --------------------------------------------------------------------         |
 | Description   | get printer status                                                           |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  |
-| printer       | MP600/D60                                                                    |
+| printer       | D60                                                                    |
 
 **Callback method parameter Description:**
 - status:
@@ -20,7 +20,7 @@
 | --------      | --------------------------------------------------------------------           |
 | Description   | get Printer Density                                                            |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                    |
-| printer       | MP600/D60                                                                      |
+| printer       | D60                                                                      |
 
 **Callback method parameter Description:**
 - status: 1 to 5,5 is the highest.
@@ -31,7 +31,7 @@
 | --------      | --------------------------------------------------------------------         |
 | Description   | get printer speed                                                            |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  |
-| printer       | MP600/D60                                                                    |
+| printer       | D60                                                                    |
 
 **Callback method parameter Description:**
 - status: 1 to 5,5 is the highest.
@@ -42,7 +42,7 @@
 | --------      | --------------------------------------------------------------------         |
 | Description   | get printer temperature value                                                |
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  |
-| printer       | MP600/D60                                                                    |
+| printer       | D60                                                                    |
 
 **Callback method parameter Description:**
 - statue: printer temperature value.
@@ -53,7 +53,7 @@
 | --------      | --------------------------------------------------------------------     |
 | Description   | get Printer Voltage value                                                |
 | Callback      | void printResult(boolean isSuccess, String status,int type)              |
-| printer       | MP600/D60                                                                |
+| printer       | D60                                                                |
 
 **Callback method parameter Description:**                                                             
 - statue: printer voltage value.
