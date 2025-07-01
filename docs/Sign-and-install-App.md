@@ -3,7 +3,7 @@
 1. Add the “app.keystore” file to your app project. [The link ]( https://github.com/DspreadOrg/android/blob/master/pos_android_studio_demo/pos_android_app/app.keystore)
 
 
-   ![](./_images/sign1.jpg)
+   ![](./_images/sign1.png)
 
 3. Add the debug sign code in your app “build.gradle” file
 
