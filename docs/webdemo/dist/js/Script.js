@@ -491,6 +491,17 @@ QPOSServiceListenerImpl.prototype.onReturnShowEMVOfXml = function(list){
     divUpdate.scrollIntoView();
 }
 
+QPOSServiceListenerImpl.prototype.reOpen = function(){
+    isReOpen = true;
+    console.log("reOpen: "+isReOpen);
+    isRealUpdate = true;
+    button.innerHTML = 'USB Connect';
+    // var e = document.createEvent("MouseEvents");
+    // e.initEvent("click", true, true);
+    // document.getElementById("request-device").dispatchEvent(e);
+    alert("pls connect usb again!");
+}
+
 function getProgress(progress){
     modal.style.display = "block"; // 加载完成后隐藏模态框  
     if(progress == "100"){
@@ -579,6 +590,17 @@ function switchToSerial(){
     if(Connected){
         mService.setCommunicationMode(CommunicationMode.USB);
         mService.testCommand("00");
+    } else{
+        DiscoverDevice();
+        UpdateUI();
+    }
+
+}
+
+function switchToWinUSB(){
+    if(Connected){
+        mService.setCommunicationMode(CommunicationMode.BLUETOOTH);
+        mService.testCommand("EE");
     } else{
         DiscoverDevice();
         UpdateUI();
