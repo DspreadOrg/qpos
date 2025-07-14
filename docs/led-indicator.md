@@ -1,1 +1,1 @@
-- [LED Indicator Description](https://drive.google.com/file/d/1Jo2JSLYU-R5DFaZDq4nrk1LE42d3G5yV/view?usp=sharing)
+- [LED Indicator Description](https://github.com/DspreadOrg/FAQs_Document/blob/master/documents/POS%20LED%20Indicator%20Description%20.pdf)
