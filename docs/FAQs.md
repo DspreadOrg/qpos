@@ -32,4 +32,10 @@ overdischarge
 - Tap card and received transaction data in the onDoTradeResult() callback function
 - Transform transaction data into **first ISO 8583 financial messages** and send them to the issuer
 - When your app received Response Code "65 Exceeds Withdrawal Count Limit" from issuer，your app call **pos.getPin(1, 4, 6, "please input pin", maskedPAN, "", 20)** function to request the cardholder to enter the PIN without the need to tap again or perform a Chip and PIN transaction
-- Transform transaction data into **second ISO 8583 financial messages** and send them to the issuer  
+- Transform transaction data into **second ISO 8583 financial messages** and send them to the issuer
+
+### 5、How to detect "Phone Wallet" or "Physical Card" and distinguish between Apple Pay, Samsung Pay, and Google Pay?
+- For Visa and Mastercard, you can use **9F6E** tag to detect "Phone Wallet" or "Physical Card"
+- For Amex, you can use **5F30** tag to detect "Phone Wallet" or "Physical Card". If 5F30 value is 0702，it is physical card, if 5F30 value is 0701，it is Phone Wallet
+- For Apple Pay, Samsung Pay, and Google Pay, you can use **9F19** tag to distinguish them and get more details by [this link](https://stackoverflow.com/questions/51826215/contactless-payments-detect-mobile-device-or-card)
+  
