@@ -35,8 +35,8 @@ overdischarge
 - Transform transaction data into **second ISO 8583 financial messages** and send them to the issuer
 
 ### 5、How to detect "Phone Wallet" or "Physical Card" and distinguish between Apple Pay, Samsung Pay, and Google Pay?
-- For Visa and Mastercard, you can use **9F6E** tag to detect "Phone Wallet" or "Physical Card"
-- For Amex, you can use **5F30** tag to detect "Phone Wallet" or "Physical Card". If 5F30 value is 0702，it is physical card, if 5F30 value is 0701，it is Phone Wallet
+- For Visa and Mastercard, you can use **9F6E** tag to detect "Phone Wallet" or "Physical Card", please check the below screenshot for details
+- For Amex, you can use **5F30** tag to detect "Phone Wallet" or "Physical Card". If 5F30 value is 0702, it is physical card, if 5F30 value is 0701, it is Phone Wallet
 - For Apple Pay, Samsung Pay, and Google Pay, you can use **9F19** tag to distinguish them and get more details by [this link](https://stackoverflow.com/questions/51826215/contactless-payments-detect-mobile-device-or-card)
 ![9F6ETAG](./_images/9F6ETag.png)  
   
