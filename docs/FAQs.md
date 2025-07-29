@@ -40,3 +40,5 @@ overdischarge
 - For Apple Pay, Samsung Pay, and Google Pay, you can use **9F19** tag to distinguish them and get more details by [this link](https://stackoverflow.com/questions/51826215/contactless-payments-detect-mobile-device-or-card)
 ![9F6ETAG](./_images/9F6ETag.png)  
   
+### 6、How to share keys in secure way?
+- Please refer the document of [this link](https://github.com/DspreadOrg/FAQs_Document/blob/master/documents/Share%20Key%20.pdf)
