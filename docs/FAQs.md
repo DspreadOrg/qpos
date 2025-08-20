@@ -41,4 +41,4 @@ overdischarge
 ![9F6ETAG](./_images/9F6ETag.png)
 
 ### 6、How to share keys in secure way?
-- There are two ways to share keys that including express delivery and PGP keys, details please refer the document of [this link](https://github.com/DspreadOrg/FAQs_Document/blob/master/documents/Share%20Key%20.pdf)
+- There are two ways to share keys that including express delivery and PGP keys, please refer the [Share Keys](https://github.com/DspreadOrg/FAQs_Document/blob/master/documents/Share%20Keys.pdf) document for details.
