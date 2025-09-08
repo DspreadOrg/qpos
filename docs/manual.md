@@ -14,7 +14,7 @@ D20/D30/D60 is an elegantly designed and compact secure electronic payment termi
 This document aims to help readers for using the Android SDK of QPOS.
 
 ### Download
-You can download and install our [android-demo-app](https://www.pgyer.com/6GtstDbT) and [ios-demo-app](https://apps.apple.com/us/app/mpos-reader/id6737266942).
+You can download and install our [android-demo-app](https://www.pgyer.com/posandroiddemo) and [ios-demo-app](https://apps.apple.com/us/app/mpos-reader/id6737266942).
 
 <!-- tabs:start -->
 
