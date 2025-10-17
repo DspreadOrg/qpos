@@ -11,10 +11,13 @@
 <iframe width="800" height="450" src="https://www.youtube.com/embed/Ru2gYqXvGH8?si=aHgeheViiwHA91Zq"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
 
 ### D30 Support
-<iframe width="800" height="450" src="https://www.youtube.com/embed/EK2WSlqW4R0?si=takI-0Nre02K4pTV"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/56xTGdVUFrg?si=sTxMfnqUZ_Xkd-Kx"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
 
 ### D60 Support
 <iframe width="800" height="450" src="https://www.youtube.com/embed/VBGmPlES7nQ?si=dIuuvbm0P0O5iCZf"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
 
 ### D70 Support
 <iframe width="800" height="450" src="https://www.youtube.com/embed/bIFUebXzlPg?si=xydwRqdxJrzFlgUZ"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
+
+### D80 Support
+<iframe width="800" height="450" src="https://www.youtube.com/embed/oRIn_mbXVJ8?si=gCLl_fCc4oCtDsbS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
