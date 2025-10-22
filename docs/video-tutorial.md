@@ -14,7 +14,7 @@
 <iframe width="800" height="450" src="https://www.youtube.com/embed/56xTGdVUFrg?si=sTxMfnqUZ_Xkd-Kx"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
 
 ### D50 Support
-<iframe width="800" height="450" src="https://www.youtube.com/embed/JtRE-45nbTA?si=jNZTuZh0sDjUeVZf"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/FA2q9L4q0Ng?si=V3Di-RCMua_tTWnJ"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
 
 ### D60 Support
 <iframe width="800" height="450" src="https://www.youtube.com/embed/8v1UjA-CwS8?si=e2N0wzMqzH3JcYfi"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
