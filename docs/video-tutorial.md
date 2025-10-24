@@ -1,5 +1,5 @@
 ### QPOS Mini Support
-<iframe width="800" height="450" src=""https://www.youtube.com/embed/UPPo28C7WgA?si=mwKnMafpX-gvNzNd"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/UPPo28C7WgA?si=mwKnMafpX-gvNzNd"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### QPOS Cute Support
 <iframe width="800" height="450" src="https://www.youtube.com/embed/NXjIioQUrlc?si=pKfPMRd2iubDYuMU"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
