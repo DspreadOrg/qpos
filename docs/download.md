@@ -1,6 +1,6 @@
 
 ### Download
-You can download to install our [android-demo-app][android-app],[ios-demo-app][ios-app] and [windows-demo-app][windows-app].
+You can download to install our [android-demo-app][android-app], [ios-demo-app][ios-app] and [windows-demo-app][windows-app].
 
 [android-app]: https://www.pgyer.com/posandroiddemo
 [ios-app]: https://apps.apple.com/us/app/mpos-reader/id6737266942
@@ -49,6 +49,7 @@ You can download to install our [android-demo-app][android-app],[ios-demo-app][i
 - [x] [JavaScript](https://github.com/DspreadOrg/Web-js-Demo) 
 
 <!-- tabs:end -->
+
 
 
 
