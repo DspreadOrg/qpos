@@ -20,7 +20,7 @@
 <iframe width="800" height="450" src="https://www.youtube.com/embed/xtqGmuboF6c?si=vZu8aTRgk8Wr4hw9"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### D70 Support
-<iframe width="800" height="450" src="https://www.youtube.com/embed/bIFUebXzlPg?si=xydwRqdxJrzFlgUZ"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/lxwOJmLrBqw?si=iPaylVVkMMwr7cU7"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### D80 Support
 <iframe width="800" height="450" src="https://www.youtube.com/embed/oRIn_mbXVJ8?si=gCLl_fCc4oCtDsbS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
