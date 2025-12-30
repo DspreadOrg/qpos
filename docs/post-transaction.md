@@ -612,12 +612,19 @@ During the transaction, if there is anything abnormal happened, the onError call
 
 |   Enum Value          |         Description         |
 | --------------------- | --------------------------- |
-| TIMEOUT               | POS return result timed out |
-| COM_NOT_AVAILABLE     | Function is not supported by firmware |              
-| DEVICE_RESET          | Reset POS status |
-| DEVICE_BUSY           | Terminal is processing task，you need to wait for the callback result of this task before calling the new function |                
-| INPUT_OUT_OF_RANGE    | The length of the input data out of the range |      
-| INPUT_INVALID_FORMAT  | The length of the input data does not match the required length |      
-| INPUT_INVALID         | The length or format of the input data does not match the requirements |           
-| AMOUNT_OUT_OF_LIMIT   | The length of the input data out of the range |   
-| MAC_ERROR             | Data error in the sent instruction |       
+| TRY_ANOTHER_INTERFACE | For contactless transactions, please try other interfaces |
+| CARD_REMOVED          | The IC card was accidentally unplugged. This is only applicable to Qposmini |              
+| NO_UPDATE_WORK_KEY    | The IC card failed to power on |
+| DEVICE_ERROR          | When met Device self-destruct or Online data return value is empty will return|                
+| BAD_SWIPE             | The magnetic stripe card failed to be swiped |      
+| FALLBACK              | IC card transaction fallback, the kernel gac returned 6985 |      
+| NFC_TERMINATED        | NFC transaction was terminated|           
+| NONE                  | After 1620 issued the command, no magnetic stripe card was detected |   
+| AID_MISSING           | There was a problem with the IC card during the transaction or no EMV app was selected/selection of application failed |   
+| TRADE_LOG_FULL        | When the device log is full, it will return. This is only applicable to Qposmini | 
+| CONTACTLESS_TRANSACTION_NOT_ALLOW | Contactless transactions are not allowed and are only for specific customers| 
+| TRANS_TOKEN_INVALID               | The transaction token is invalid | 
+| CARD_BLOCKED_APDU_ERROR_6A81      | The card was locked, when selecting ppse or selecting aid, the return code is 6A81 | 
+| MULTIPLE_CARDS                    | Multiple contactless cards were detected | 
+| APP_BLOCKED_APDU_ERROR_6A83       | At final select, the return code is 6A83. This indicates that an application is locked | 
+| TRANSACTION_NOT_ALLOWED_AMOUNT_EXCEED | NFC transactions are not allowed to exceed the limit | 
