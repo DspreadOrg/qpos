@@ -32,6 +32,9 @@
 - Scanning Code Service
 
   - [Scanning Code Method](Scanning_Code_Method.md)
+ 
+- Customized OS Service
+    - [**OS Customization List**] (https://docs.google.com/forms/d/e/1FAIpQLSfyqP2JqnDwe7gpR4iaaUqvbFpjZu0OdLv3DuqLsn--FsFsew/viewform)
 
 - Printer SDK
 
@@ -57,8 +60,6 @@
 - Testing & Certification 
 
   - [Certification](emv_l3.md)
-
-- [**Customized OS Service**](https://docs.google.com/forms/d/e/1FAIpQLSfyqP2JqnDwe7gpR4iaaUqvbFpjZu0OdLv3DuqLsn--FsFsew/viewform)
 
 - [**API Reference**](https://dspreadorg.github.io/qpos/api/index.html)
   - [Android](https://github.com/DspreadOrg/android/blob/master/QPOS-Android-SDK-Userguid-en-detail.pdf)
