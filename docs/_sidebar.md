@@ -34,7 +34,7 @@
   - [Scanning Code Method](Scanning_Code_Method.md)
  
 - Customized OS Service
-    - [**OS Customization List**] (https://docs.google.com/forms/d/e/1FAIpQLSfyqP2JqnDwe7gpR4iaaUqvbFpjZu0OdLv3DuqLsn--FsFsew/viewform)
+    - [**OS Customization List**](https://docs.google.com/forms/d/e/1FAIpQLSfyqP2JqnDwe7gpR4iaaUqvbFpjZu0OdLv3DuqLsn--FsFsew/viewform)
 
 - Printer SDK
 
