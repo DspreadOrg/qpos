@@ -11,7 +11,7 @@ D20/D30/D35/D50/D60/D70/D80/D80K is an elegantly designed and compact secure ele
 This document aims to help readers for using the Android SDK of QPOS.
 
 ### Download
-You can download and install our [android-demo-app](https://www.pgyer.com/posandroiddemo) and [ios-demo-app](https://apps.apple.com/us/app/mpos-reader/id6737266942).
+You can download and install our [android-demo-app](https://www.pgyer.com/posandroiddemo), [ios-demo-app](https://apps.apple.com/us/app/mpos-reader/id6737266942) and [windows-demo-app](https://drive.google.com/file/d/1bB1tgXGzUQFDz8JoeXzbfWKJGpjlDKWd/view?usp=sharing).
 
 <!-- tabs:start -->
 
