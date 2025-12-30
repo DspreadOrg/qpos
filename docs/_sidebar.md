@@ -12,7 +12,7 @@
 
 - Terminal Management
 
-  - [D20 & D30](D20&D30.md)
+  - [Android Based POS](D20&D30.md)
       - [Sign and install App](Sign-and-install-App.md)
       - [Draw the keyboard ](Draw_the_keyboard.md)
   - [Key Management](dukpt-scheme.md)
@@ -28,10 +28,6 @@
   - [Lark TMS](Lark-TMS.md)
      - [Login and Manual](Login-and-manual.md)
      - [Operation Videos](Operation-Videos.md)
-
-- Customized OS Service
-
-  - [Customized OS List](Customized_OS_Services.md)
 
 - Scanning Code Service
 
@@ -61,6 +57,8 @@
 - Testing & Certification 
 
   - [Certification](emv_l3.md)
+
+- [**Customized OS Service**](https://docs.google.com/forms/d/e/1FAIpQLSfyqP2JqnDwe7gpR4iaaUqvbFpjZu0OdLv3DuqLsn--FsFsew/viewform)
 
 - [**API Reference**](https://dspreadorg.github.io/qpos/api/index.html)
   - [Android](https://github.com/DspreadOrg/android/blob/master/QPOS-Android-SDK-Userguid-en-detail.pdf)
