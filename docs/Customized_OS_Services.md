@@ -1,1 +1,2 @@
-<iframe width="800" height="800" src="https://forms.gle/91GLge8oemQARdXBA" frameborder="0"  scrolling="no" allowfullscreen></iframe>
+Please review the attached  **Customized OS List**  document, complete the required fields, and submit it to us so that we may assess your requirements. 
+- [Customized OS List](https://forms.gle/VbXXSFZwEtgSTSQx9)
