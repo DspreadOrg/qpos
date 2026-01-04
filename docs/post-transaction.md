@@ -7,11 +7,7 @@ After the app start a transaction, if the user use a magnatic card or a NFC card
 		@Override
 		public void onDoTradeResult(DoTradeResult result,
 				Hashtable<String, String> decodeData) {
-			if (result == DoTradeResult.PLS_SEE_PHONE) {
-					statusEditText.setText(getString(R.string.pls_see_phone));
-                }
-                viewModel.titleText.set(getString(R.string.pls_see_phone));
-			} else if (result == DoTradeResult.ICC) {
+			if (result == DoTradeResult.ICC) {
 				statusEditText.setText(getString(R.string.icc_card_inserted));
 				TRACE.d("EMV ICC Start");
 				pos.doEmvApp(EmvOption.START);
@@ -59,7 +55,9 @@ After the app start a transaction, if the user use a magnatic card or a NFC card
                 String pinRandomNumber = decodeData.get("pinRandomNumber");
             } else if ((result == DoTradeResult.NFC_DECLINED)) {
                 statusEditText.setText(getString(R.string.transaction_declined));
-            }
+            } else if (result == DoTradeResult.PLS_SEE_PHONE) {
+                statusEditText.setText(getString(R.string.pls_see_phone));
+			}  
 }
 ```
 
@@ -300,16 +298,17 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 		@Override
 		public void onDoTradeResult(DoTradeResult result,
 				Hashtable<String, String> decodeData) {
-			if (result == DoTradeResult.PLS_SEE_PHONE) {
-				statusEditText.setText(getString(R.string.pls_see_phone));
-			} else if (result == DoTradeResult.ICC) {
+			if (result == DoTradeResult.ICC) {
 				statusEditText.setText(getString(R.string.icc_card_inserted));
 				TRACE.d("EMV ICC Start")
 				pos.doEmvApp(EmvOption.START);
 			}  else if (result == DoTradeResult.MCR) {
                 //handling MSR transaction
-            }
-```
+            } else  if (result == DoTradeResult.PLS_SEE_PHONE) {
+				statusEditText.setText(getString(R.string.pls_see_phone));
+			}
+			                                       }  
+```    
 
 ### Input PIN 
 
@@ -627,8 +626,3 @@ During the transaction, if there is anything abnormal happened, the onError call
 | DECRYPT_FAIL_IN_ENCRYPTION_MODE     | Decryption failed for encrypted data sent to the device while in cipher mode  |
 | EXPIRED_CERT           | The server certificate has expired |
 | INVALID_TRUSTED_CERT   | The server certificate is invalid |
-| INPUT_OUT_OF_RANGE      | 
-| INPUT_INVALID_FORMAT    | 
-| INPUT_INVALID           | 
-| ICC_EXISTS_ERROR        | 
-| API_NOT_AVAILABLE      | 
