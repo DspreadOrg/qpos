@@ -609,3 +609,26 @@ During the transaction, if there is anything abnormal happened, the onError call
 | MULTIPLE_CARDS                    | Multiple contactless cards were detected | 
 | APP_BLOCKED_APDU_ERROR_6A83       | At final select, the return code is 6A83. This indicates that an application is locked | 
 | TRANSACTION_NOT_ALLOWED_AMOUNT_EXCEED | NFC transactions are not allowed to exceed the limit | 
+| NO_RESPONSE             | No response was received from the device after the SDK sent a command | 
+| MAC_ERROR               | The device reported a MAC verification failure for the command sent by the SDK |
+| TIMEOUT                 | The device returned a timeout due to prolonged inactivity after receiving a command from the SDK |
+| CMD_NOT_AVAILABLE       | The command sent by the SDK is not supported by the device |
+| DEVICE_RESET            | The device successfully reset after receiving a reset command from the SDK |
+| UNKNOWN                 | An internal exception occurred during SDK processing |
+| DEVICE_BUSY             | A new command was sent by the SDK before the device responded to the previous command |
+| DEVICE_IS_OCCUPIED      | The serial port is in use by another application and must be released before use |
+| APDU_ERROR              | An APDU communication error occurred between the device and the card |
+| APP_SELECT_TIMEOUT      | A timeout occurred during multi-application selection on the device |
+| ICC_ONLINE_TIMEOUT      | A timeout occurred while sending online data for a contact transaction |
+| DEVICE_IN_BOOT_STATE    | The firmware upgrade was interrupted, and the device entered BOOT mode |
+| REMOTE_SERVICE_EXCEPTION            | An error occurred while the SDK was accessing a remote service |
+| RECEIVE_PLAINT_IN_ENCRYPTION_MODE   | The device is in cipher mode, but the SDK sent plaintext data |
+| RECEIVE_CIPHER_IN_NONENCRYPTION_MODE| The device is in plaintext mode, but the SDK sent encrypted data |
+| DECRYPT_FAIL_IN_ENCRYPTION_MODE     | Decryption failed for encrypted data sent to the device while in cipher mode  |
+| EXPIRED_CERT           | The server certificate has expired |
+| INVALID_TRUSTED_CERT   | The server certificate is invalid |
+| INPUT_OUT_OF_RANGE      | 
+| INPUT_INVALID_FORMAT    | 
+| INPUT_INVALID           | 
+| ICC_EXISTS_ERROR        | 
+| API_NOT_AVAILABLE      | 
