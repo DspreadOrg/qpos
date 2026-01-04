@@ -7,17 +7,17 @@ After the app start a transaction, if the user use a magnatic card or a NFC card
 		@Override
 		public void onDoTradeResult(DoTradeResult result,
 				Hashtable<String, String> decodeData) {
-			if (result == DoTradeResult.NONE) {
-				statusEditText.setText(getString(R.string.no_card_detected));
+			if (result == DoTradeResult.PLS_SEE_PHONE) {
+			viewModel.showPinpad.set(false);
+                if (keyboardUtil != null) {
+                    keyboardUtil.hide();
+                }
+                viewModel.titleText.set(getString(R.string.pls_see_phone));
 			} else if (result == DoTradeResult.ICC) {
 				statusEditText.setText(getString(R.string.icc_card_inserted));
 				TRACE.d("EMV ICC Start");
 				pos.doEmvApp(EmvOption.START);
-			} else if (result == DoTradeResult.NOT_ICC) {
-				statusEditText.setText(getString(R.string.card_inserted));
-			} else if (result == DoTradeResult.BAD_SWIPE) {
-				statusEditText.setText(getString(R.string.bad_swipe));
-			} else if (result == DoTradeResult.MCR) {
+			}  else if (result == DoTradeResult.MCR) {
                 String maskedPAN = decodeData.get("maskedPAN");
                 String expiryDate = decodeData.get("expiryDate");
                 String cardHolderName = decodeData.get("cardholderName");
@@ -61,12 +61,8 @@ After the app start a transaction, if the user use a magnatic card or a NFC card
                 String pinRandomNumber = decodeData.get("pinRandomNumber");
             } else if ((result == DoTradeResult.NFC_DECLINED)) {
                 statusEditText.setText(getString(R.string.transaction_declined));
-            } else if (result == DoTradeResult.NO_RESPONSE) {
-                statusEditText.setText(getString(R.string.card_no_response));
-			} else if (result == DoTradeResult.NO_UPDATE_WORK_KEY) {
-				statusEditText.setText("not update work key");
-			} 
-		}
+            }
+}
 ```
 
 Below table describes the meaning of each data element SDK returned:
@@ -563,17 +559,8 @@ The application will be notified by the SDK regarding the transaction result by:
             } else if (transactionResult == TransactionResult.TERMINATED) {
 			} else if (transactionResult == TransactionResult.DECLINED) {
 			} else if (transactionResult == TransactionResult.CANCEL) {
-			} else if (transactionResult == TransactionResult.CAPK_FAIL) {
-			} else if (transactionResult == TransactionResult.NOT_ICC) {
-			} else if (transactionResult == TransactionResult.SELECT_APP_FAIL) {
-			} else if (transactionResult == TransactionResult.DEVICE_ERROR) {
-			} else if (transactionResult == TransactionResult.CARD_NOT_SUPPORTED) {
-			} else if (transactionResult == TransactionResult.MISSING_MANDATORY_DATA) {
-			} else if (transactionResult == TransactionResult.CARD_BLOCKED_OR_NO_EMV_APPS) {
-			} else if (transactionResult == TransactionResult.INVALID_ICC_DATA) {
 			}        
         }
-      }
 ```
 
 ### Batch Data Handling
