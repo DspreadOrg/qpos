@@ -8,9 +8,7 @@ After the app start a transaction, if the user use a magnatic card or a NFC card
 		public void onDoTradeResult(DoTradeResult result,
 				Hashtable<String, String> decodeData) {
 			if (result == DoTradeResult.PLS_SEE_PHONE) {
-			viewModel.showPinpad.set(false);
-                if (keyboardUtil != null) {
-                    keyboardUtil.hide();
+					statusEditText.setText(getString(R.string.pls_see_phone));
                 }
                 viewModel.titleText.set(getString(R.string.pls_see_phone));
 			} else if (result == DoTradeResult.ICC) {
@@ -302,17 +300,13 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 		@Override
 		public void onDoTradeResult(DoTradeResult result,
 				Hashtable<String, String> decodeData) {
-			if (result == DoTradeResult.NONE) {
-				statusEditText.setText(getString(R.string.no_card_detected));
+			if (result == DoTradeResult.PLS_SEE_PHONE) {
+				statusEditText.setText(getString(R.string.pls_see_phone));
 			} else if (result == DoTradeResult.ICC) {
 				statusEditText.setText(getString(R.string.icc_card_inserted));
 				TRACE.d("EMV ICC Start")
 				pos.doEmvApp(EmvOption.START);
-			} else if (result == DoTradeResult.NOT_ICC) {
-				statusEditText.setText(getString(R.string.card_inserted));
-			} else if (result == DoTradeResult.BAD_SWIPE) {
-				statusEditText.setText(getString(R.string.bad_swipe));
-			} else if (result == DoTradeResult.MCR) {
+			}  else if (result == DoTradeResult.MCR) {
                 //handling MSR transaction
             }
 ```
