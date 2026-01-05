@@ -51,25 +51,25 @@ Note, in the example above the app should realize the call back methods of MyPos
 
 The code below shows how to open the communication bridge with the open() method descripted above.
 ```java
-		if (//we want to use Audio Jack as communication mode) {
-			open(CommunicationMode.AUDIO);
-			posType = POS_TYPE.AUDIO;
-			pos.openAudio();
-		} else if (//we want to use UART as communication mode) {
-			if (isUsb) {
-				open(CommunicationMode.USB);
-				posType = POS_TYPE.UART;
-				pos.openUsb();
-			}else {
-				open(CommunicationMode.UART);
-				posType = POS_TYPE.UART;
-				pos.openUart();
-			}
-		} else {   //We will use Bluetooth
-			open(CommunicationMode.BLUETOOTH);
-			posType = POS_TYPE.BLUETOOTH;
-            //...
+    if (//we want to use Audio Jack as communication mode) {
+        open(CommunicationMode.AUDIO);
+		posType = POS_TYPE.AUDIO;
+		pos.openAudio();
+	} else if (//we want to use UART as communication mode) {
+		if (isUsb) {
+			open(CommunicationMode.USB);
+			posType = POS_TYPE.UART;
+			pos.openUsb();
+		}else {
+			open(CommunicationMode.UART);
+			posType = POS_TYPE.UART;
+			pos.openUart();
 		}
+	} else {   //We will use Bluetooth
+		open(CommunicationMode.BLUETOOTH);
+		posType = POS_TYPE.BLUETOOTH;
+        //...
+	}
 ```
 
 Note: The reason why the CommunicationMode is specified as UART_SERVICE in the above code.  
@@ -80,7 +80,7 @@ Serial ports, like cameras, belong to public resources and only have one. Multip
 
 Before initiating a transaction, you can set the card trade mode to set the card reading mode allowed by the device, by below method:
 ```java
-		pos.setCardTradeMode(CardTradeMode.SWIPE_TAP_INSERT_CARD);
+	pos.setCardTradeMode(CardTradeMode.SWIPE_TAP_INSERT_CARD);
 ```  
 Below table describes the meaning of each enumerate variables of CardTradeMode:  
 
@@ -99,7 +99,7 @@ Below table describes the meaning of each enumerate variables of CardTradeMode:
 
 The app can start a magnatic swipe card transaction, or an EMV chip card transaction, by below method:
 ```java
-		pos.doTrade(60);
+	pos.doTrade(60);
 ```
 The only paramter is the time out value in second. If the user is using magnatic swipe card, after timeout seconds, the transaction will be timed out.  
 
@@ -108,31 +108,30 @@ The only paramter is the time out value in second. If the user is using magnatic
 The transaction amount can be set by:
 
 ```java
-			pos.setAmount(amount, cashbackAmount, currencyCode,
+	pos.setAmount(amount, cashbackAmount, currencyCode,
 									TransactionType.GOODS);
 ```
 
 The transaction icon can be set by:
 
 ```java
-        	pos.setAmountIcon(AmountType.MONEY_TYPE_CUSTOM_STR, amountIcon);
+    pos.setAmountIcon(AmountType.MONEY_TYPE_CUSTOM_STR, amountIcon);
 
-			public static enum AmountType {
-        		MONEY_TYPE_NONE,
-        		MONEY_TYPE_RMB,
-        		MONEY_TYPE_DOLLAR,
-        		MONEY_TYPE_CUSTOM_STR
+	public static enum AmountType {
+        MONEY_TYPE_NONE,
+        MONEY_TYPE_RMB,
+        MONEY_TYPE_DOLLAR,
+        MONEY_TYPE_CUSTOM_STR
     }
 ```
 
 the setAmount method and setAmountIcon method can be called before starting a transaction. If setAmount was not called, a call back will be invoked by the SDK, giving app another chance to enter the transaction amount.
 
 ```java
-		@Override
-		public void onRequestSetAmount() {
-			pos.setAmount(amount, cashbackAmount, currencyCode,
-									TransactionType.GOODS);
-        }
+	@Override
+	public void onRequestSetAmount() {
+		pos.setAmount(amount, cashbackAmount, currencyCode, TransactionType.GOODS);
+    }
 ```
 
 The setAmount method has below parameters: 
