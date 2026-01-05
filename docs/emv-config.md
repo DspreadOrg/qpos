@@ -6,8 +6,8 @@ Download the below **emv tag book** document, it contain the meaning of each EMV
 ## Update emv config
 
 Download the below emv config template xml file,then put it into **Assets** folder, call below function to upgrade the config to terminal
-- [QPOS mini](https://drive.google.com/file/d/1Osicc8ta-RiveneFA0xBigxyt9c_EhuX/view?usp=sharing) 
-- [CR100,QPOS Cute,D20,D30,D50,D60,D70](https://drive.google.com/file/d/1HKFwP2qwL7nDXeLw7MxhG6_so1iHpU-S/view?usp=sharing)
+- [QPOS mini](https://github.com/DspreadOrg/FAQs_Document/blob/master/documents/QPOS%20mini.xml) 
+- [CR100,QPOS Cute,D20,D30,D50,D60,D70,D80](https://github.com/DspreadOrg/FAQs_Document/blob/master/documents/QPOS%20cute%2CCR100%2CD20%2CD30%2CD50%2CD60%2CD70%2CD80.xml)
 
 ``` java
 Overloaded function
