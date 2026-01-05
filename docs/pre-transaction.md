@@ -26,7 +26,10 @@ The below code shows initializing the SDK while binding the serial port service.
 			statusEditText.setText("CommunicationMode unknow");
 			return;
 		}
+        // This method will execute the callback method in a background thread. To update the UI in the callback method, you need to switch back to the main thread.
 		pos.initListener(listener);
+        // If you need to specify the thread on which the callback method will run, use below method. The first parameter allows you to designate the thread where the callback will be executed.
+        // pos.initListener(handler,listener); 
 	}
 ```
 
@@ -58,11 +61,10 @@ The code below shows how to open the communication bridge with the open() method
 				posType = POS_TYPE.UART;
 				pos.openUsb();
 			}else {
-				open(CommunicationMode.UART);//if want to use UART SERVICE, please use CommunicationMode.UART_SERVICE as communication mode 
+				open(CommunicationMode.UART);
 				posType = POS_TYPE.UART;
 				pos.openUart();
 			}
-			
 		} else {   //We will use Bluetooth
 			open(CommunicationMode.BLUETOOTH);
 			posType = POS_TYPE.BLUETOOTH;
@@ -106,7 +108,7 @@ The only paramter is the time out value in second. If the user is using magnatic
 The transaction amount can be set by:
 
 ```java
-			pos.setAmount(amount, cashbackAmount, "156",
+			pos.setAmount(amount, cashbackAmount, currencyCode,
 									TransactionType.GOODS);
 ```
 
@@ -128,7 +130,7 @@ the setAmount method and setAmountIcon method can be called before starting a tr
 ```java
 		@Override
 		public void onRequestSetAmount() {
-			pos.setAmount(amount, cashbackAmount, "156",
+			pos.setAmount(amount, cashbackAmount, currencyCode,
 									TransactionType.GOODS);
         }
 ```
