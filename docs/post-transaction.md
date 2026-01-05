@@ -375,20 +375,20 @@ if the user want to cancel the transaction, the app should call
 
 D20：
 ```java
-		@Override
-		public void onQposRequestPinResult(List<String> dataList, int offlinePinTimes) {
-				//draw the pin input keyboard,after finish the keyboard,then call the below api
-				pos.pinMapSync(value,30);//the value is the keyboard pin coordinate position
-		}
+    @Override
+    public void onQposRequestPinResult(List<String> dataList, int offlinePinTimes) {
+		//draw the pin input keyboard,after finish the keyboard,then call the below api
+		pos.pinMapSync(value,30);//the value is the keyboard pin coordinate position
+    }
 ```
 
 After sending the pin keyboard coordinate position to the D20 device, then you can click the pin keyboard, and you can get the input pin count on the callback method onReturnGetPinInputResult
 
 ```java
-		@Override
-		public void onReturnGetPinInputResult(int num) {
-				//the num is the counter of your pin input
-		}
+    @Override
+    public void onReturnGetPinInputResult(int num) {
+         //the num is the counter of your pin input
+    }
 ```
 
 ### Set Time
@@ -396,12 +396,11 @@ After sending the pin keyboard coordinate position to the D20 device, then you c
 The current time information can be sent to the EMV kernel by:
 
 ```java
-		@Override
-		public void onRequestTime() {
-			String terminalTime = new SimpleDateFormat("yyyyMMddHHmmss")
-				.format(Calendar.getInstance().getTime());
-			pos.sendTime(terminalTime);
-		}
+    @Override
+    public void onRequestTime() {
+         String terminalTime = new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime());
+         pos.sendTime(terminalTime);
+    }
 ```
 
 ### Select EMV Application
@@ -409,17 +408,16 @@ The current time information can be sent to the EMV kernel by:
 If there is multiple EMV applications inside one Chip card, the SDK will ask the user to choose one application from a list:
 
 ```java
-		@Override
-		public void onRequestSelectEmvApp(ArrayList<String> appList) {
-				pos.selectEmvApp(position);   //position is the index of the chosen application
-				//pos.cancelSelectEmvApp();   //Cancel the transaction
-		}
-
+    @Override
+    public void onRequestSelectEmvApp(ArrayList<String> appList) {
+         pos.selectEmvApp(position);   //position is the index of the chosen application
+         //pos.cancelSelectEmvApp();   //Cancel the transaction
+    }
 ```
 
 The chosen application is sending to the EMV kernel by 
 ```java
-		pos.selectEmvApp(position)
+    pos.selectEmvApp(position)
 ```
 
 ### Online Request
@@ -428,15 +426,15 @@ If the EMV kernel found the transaction need to go online, below call back will 
 
 
 ```java
-		@Override
-		public void onRequestOnlineProcess(String tlv) {
-             //sending online message tlv data to backend server
-			 response=sendTlvToServer()
-             ....
-             //send the received online processing result to POS
-			 //response should contain tag 8A (Authorisation Response Code) and tag 91 (Issuer Authentication Data) and tag 71/72 (Issuer Script)
-             pos.sendOnlineProcessResult(response);
-        }
+    @Override
+    public void onRequestOnlineProcess(String tlv) {
+         //sending online message tlv data to backend server
+         response=sendTlvToServer()
+         ....
+         //send the received online processing result to POS
+         //response should contain tag 8A (Authorisation Response Code) and tag 91 (Issuer Authentication Data) and tag 71/72 (Issuer Script)
+         pos.sendOnlineProcessResult(response);
+    }
 ```
 
 Below is an exmple of tlv data received by onRequestOnlineProcess:
@@ -525,15 +523,15 @@ All the online message in embedded inside tag 0x70, the ending 00 are paddings f
 The application will be notified by the SDK regarding the transaction result by:
 
 ```java
-		@Override
-		public void onRequestTransactionResult(
-			TransactionResult transactionResult) {
-        	if (transactionResult == TransactionResult.APPROVED) {
-            } else if (transactionResult == TransactionResult.TERMINATED) {
-			} else if (transactionResult == TransactionResult.DECLINED) {
-			} else if (transactionResult == TransactionResult.CANCEL) {
-			}        
-        }
+    @Override
+    public void onRequestTransactionResult(
+         TransactionResult transactionResult) {
+         if (transactionResult == TransactionResult.APPROVED) {
+         } else if (transactionResult == TransactionResult.TERMINATED) {
+         } else if (transactionResult == TransactionResult.DECLINED) {
+         } else if (transactionResult == TransactionResult.CANCEL) {
+         }        
+    }
 ```
 
 ### Batch Data Handling
@@ -541,9 +539,9 @@ The application will be notified by the SDK regarding the transaction result by:
 When the transaction is finished. The batch data will be returned to the application by below callback.
 
 ```java
-		@Override
-		public void onRequestBatchData(String tlv) {
-		}
+    @Override
+    public void onRequestBatchData(String tlv) {
+    }
 ```
 Note, if there is issuer's script result inside the tlv, the mobile app need to feedback it to the bank.
 Decoding the tlv inside onRequestBatchData is similar to decoding onRequestOnlineProcess. 
@@ -553,10 +551,10 @@ Decoding the tlv inside onRequestBatchData is similar to decoding onRequestOnlin
 If the EMV chip card refuse the transaction, but the transaction was approved by the issuer. A reversal procedure should be initiated by the mobile app. Below callback can get the required data for doing reversal:
 
 ```java
-		@Override
-		public void onReturnReversalData(String tlv) {
-			...
-		}
+    @Override
+    public void onReturnReversalData(String tlv) {
+         ...
+    }
 ```
 
 ## Error Notification
@@ -564,10 +562,9 @@ If the EMV chip card refuse the transaction, but the transaction was approved by
 During the transaction, if there is anything abnormal happened, the onError callback will be called.
 
 ```java
-		@Override
-		public void onError(Error errorState) {
-		}
-
+    @Override
+    public void onError(Error errorState) {
+    }
 ```
 
 |   Enum Value          |         Description         |
