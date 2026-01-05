@@ -154,3 +154,18 @@ The setAmount method has below parameters:
 	}
 ```
 Transaction type is used mainly by the EMV Chip card transaction, for magnetic card, app can always use GOODS.
+
+## Set APK Signing
+For security, D20 and D60 sample devices must use the default Dspread signature to install the APK.
+
+1. Add the “app.keystore” file to your app project. [The link ]( https://github.com/DspreadOrg/android/blob/master/pos_android_studio_demo/pos_android_app/app.keystore)
+
+   ![](./_images/sign1.png)
+
+2. Add the debug sign code in your app “build.gradle” file
+
+   ![](./_images/sign2.jpg)
+
+3. Open “File->project structure -> Modules”, to check the Signing Config
+
+   ![sign3](./_images/sign3.jpg)
