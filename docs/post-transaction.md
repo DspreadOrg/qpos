@@ -4,62 +4,59 @@ Magstripe and NFC card transaction is pretty simple.
 After the app start a transaction, if the user use a magnatic card or a NFC card, below callback will be called feeding the app magnatic card related information. The app then use the information returned for further processing.
 
 ```java
-		@Override
-		public void onDoTradeResult(DoTradeResult result,
-				Hashtable<String, String> decodeData) {
-			if (result == DoTradeResult.ICC) {
-				statusEditText.setText(getString(R.string.icc_card_inserted));
-				TRACE.d("EMV ICC Start");
-				pos.doEmvApp(EmvOption.START);
-			}  else if (result == DoTradeResult.MCR) {
-                String maskedPAN = decodeData.get("maskedPAN");
-                String expiryDate = decodeData.get("expiryDate");
-                String cardHolderName = decodeData.get("cardholderName");
-                String ksn = decodeData.get("ksn");
-                String serviceCode = decodeData.get("serviceCode");
-                String track1Length = decodeData.get("track1Length");
-                String track2Length = decodeData.get("track2Length");
-                String track3Length = decodeData.get("track3Length");
-                String encTracks = decodeData.get("encTracks");
-                String encTrack1 = decodeData.get("encTrack1");
-                String encTrack2 = decodeData.get("encTrack2");
-                String encTrack3 = decodeData.get("encTrack3");
-                String partialTrack = decodeData.get("partialTrack");
-                String pinKsn = decodeData.get("pinKsn");
-                String trackksn = decodeData.get("trackksn");
-                String pinBlock = decodeData.get("pinBlock");
-                String encPAN = decodeData.get("encPAN");
-                String trackRandomNumber = decodeData
-                        .get("trackRandomNumber");
-                String pinRandomNumber = decodeData.get("pinRandomNumber");
-							+ "\n";
-			} else if ((result == DoTradeResult.NFC_ONLINE) || (result == DoTradeResult.NFC_OFFLINE)) {
-                String formatID = decodeData.get("formatID");
-                String maskedPAN = decodeData.get("maskedPAN");
-                String expiryDate = decodeData.get("expiryDate");
-                String cardHolderName = decodeData.get("cardholderName");
-                String serviceCode = decodeData.get("serviceCode");
-                String track1Length = decodeData.get("track1Length");
-                String track2Length = decodeData.get("track2Length");
-                String track3Length = decodeData.get("track3Length");
-                String encTracks = decodeData.get("encTracks");
-                String encTrack1 = decodeData.get("encTrack1");
-                String encTrack2 = decodeData.get("encTrack2");
-                String encTrack3 = decodeData.get("encTrack3");
-                String partialTrack = decodeData.get("partialTrack");
-                String pinKsn = decodeData.get("pinKsn");
-                String trackksn = decodeData.get("trackksn");
-                String pinBlock = decodeData.get("pinBlock");
-                String encPAN = decodeData.get("encPAN");
-                String trackRandomNumber = decodeData.get("trackRandomNumber");
-                String pinRandomNumber = decodeData.get("pinRandomNumber");
-                Hashtable<String, String> h = pos.getNFCBatchData(); // By calling this method, you can obtain a list of NFC tags.  
-            } else if ((result == DoTradeResult.NFC_DECLINED)) {
-                statusEditText.setText(getString(R.string.transaction_declined));
-            } else if (result == DoTradeResult.PLS_SEE_PHONE) {
-                statusEditText.setText(getString(R.string.pls_see_phone));
-			}  
-}
+    @Override
+    public void onDoTradeResult(DoTradeResult result, Hashtable<String, String> decodeData) {
+         if (result == DoTradeResult.ICC) {
+            statusEditText.setText(getString(R.string.icc_card_inserted));
+            TRACE.d("EMV ICC Start");
+            pos.doEmvApp(EmvOption.START);
+         } else if (result == DoTradeResult.MCR) {
+            String maskedPAN = decodeData.get("maskedPAN");
+            String expiryDate = decodeData.get("expiryDate");
+            String cardHolderName = decodeData.get("cardholderName");
+            String ksn = decodeData.get("ksn");
+            String serviceCode = decodeData.get("serviceCode");
+            String track1Length = decodeData.get("track1Length");
+            String track2Length = decodeData.get("track2Length");
+            String track3Length = decodeData.get("track3Length");
+            String encTracks = decodeData.get("encTracks");
+            String encTrack1 = decodeData.get("encTrack1");
+            String encTrack2 = decodeData.get("encTrack2");
+            String encTrack3 = decodeData.get("encTrack3");
+            String partialTrack = decodeData.get("partialTrack");
+            String pinKsn = decodeData.get("pinKsn");
+            String trackksn = decodeData.get("trackksn");
+            String pinBlock = decodeData.get("pinBlock");
+            String encPAN = decodeData.get("encPAN");
+            String trackRandomNumber = decodeData.get("trackRandomNumber");
+            String pinRandomNumber = decodeData.get("pinRandomNumber");
+         } else if ((result == DoTradeResult.NFC_ONLINE) || (result == DoTradeResult.NFC_OFFLINE)) {
+            String formatID = decodeData.get("formatID");
+            String maskedPAN = decodeData.get("maskedPAN");
+            String expiryDate = decodeData.get("expiryDate");
+            String cardHolderName = decodeData.get("cardholderName");
+            String serviceCode = decodeData.get("serviceCode");
+            String track1Length = decodeData.get("track1Length");
+            String track2Length = decodeData.get("track2Length");
+            String track3Length = decodeData.get("track3Length");
+            String encTracks = decodeData.get("encTracks");
+            String encTrack1 = decodeData.get("encTrack1");
+            String encTrack2 = decodeData.get("encTrack2");
+            String encTrack3 = decodeData.get("encTrack3");
+            String partialTrack = decodeData.get("partialTrack");
+            String pinKsn = decodeData.get("pinKsn");
+            String trackksn = decodeData.get("trackksn");
+            String pinBlock = decodeData.get("pinBlock");
+            String encPAN = decodeData.get("encPAN");
+            String trackRandomNumber = decodeData.get("trackRandomNumber");
+            String pinRandomNumber = decodeData.get("pinRandomNumber");
+            Hashtable<String, String> h = pos.getNFCBatchData(); // By calling this method, you can obtain a list of NFC tags.  
+         } else if ((result == DoTradeResult.NFC_DECLINED)) {
+            statusEditText.setText(getString(R.string.transaction_declined));
+         } else if (result == DoTradeResult.PLS_SEE_PHONE) {
+            statusEditText.setText(getString(R.string.pls_see_phone));
+		 }  
+    }
 ```
 
 Below table describes the meaning of each data element SDK returned:
@@ -163,9 +160,8 @@ Each character in Track 1 is 6 bits in length, 4 characters are packed into 3 by
 Below java script demonstrate how to decode track1 data :
 
 ```java
-public static String decodeTrack1(String compressedTrack1) {
+    public static String decodeTrack1(String compressedTrack1) {
         String resultTrack1 = "" ;
-
         for(int i = 0; i<compressedTrack1.length()/6; i++) {
             //1. convert every 6chars(3bytes) to binary string
             String sub = compressedTrack1.substring(i * 6, (i + 1) * 6);
@@ -283,14 +279,14 @@ The app start the EMV transaction by calling
 This is usually happens inside the call back of onDoTradeResult(), as below demo code shows:
 
 ```java
-		@Override
-		public void onDoTradeResult(DoTradeResult result, Hashtable<String, String> decodeData) {
-			if (result == DoTradeResult.ICC) {
-				statusEditText.setText(getString(R.string.icc_card_inserted));
-				TRACE.d("EMV ICC Start")
-				pos.doEmvApp(EmvOption.START);
-			}
-		}	
+	@Override
+	public void onDoTradeResult(DoTradeResult result, Hashtable<String, String> decodeData) {
+		 if (result == DoTradeResult.ICC) {
+			 statusEditText.setText(getString(R.string.icc_card_inserted));
+			 TRACE.d("EMV ICC Start")
+			 pos.doEmvApp(EmvOption.START);
+		 }
+	}	
 ```    
 
 ### Input PIN 
@@ -298,34 +294,34 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 CR100：The PIN information can be sent to the EMV kernel by:
 1. input the plaintext pin
 ```java
-		@Override
-		public void onRequestSetPin() {
-				pos.sendPin("123456"); 
-				//pos.bypassPin();    //Bypass PIN Entry
-				//pos.cancelPin();   //Cancel the transaction
-		}
+	@Override
+	public void onRequestSetPin() {
+		 pos.sendPin("123456"); 
+		 //pos.bypassPin();    //Bypass PIN Entry
+		 //pos.cancelPin();   //Cancel the transaction
+	}
 ```
 2. input the cipher pinblock on the client app side
 ```java
-        String newPin = "";
-        //this part is used to enctypt the plaintext pin with random seed
-        if (pos.getCvmKeyList() != null && !("").equals.pos.getCvmKeyList()) {
-            String keyList = Util.convertHexToString(getCvmKeyList());
-            for (int i = 0; i < pin.length(); i++) {
-                for (int j = 0; j < keyList.length(); j++) {
-                    if (keyList.charAt(j) == pin.charAt(i)) {
-                        newPin = newPin + Integer.toHexString(j) + "";
-                        break;
-                    }
-                }
+    String newPin = "";
+    //this part is used to enctypt the plaintext pin with random seed
+    if (pos.getCvmKeyList() != null && !("").equals.pos.getCvmKeyList()) {
+        String keyList = Util.convertHexToString(getCvmKeyList());
+        for (int i = 0; i < pin.length(); i++) {
+            for (int j = 0; j < keyList.length(); j++) {
+                 if (keyList.charAt(j) == pin.charAt(i)) {
+                     newPin = newPin + Integer.toHexString(j) + "";
+                     break;
+                 }
             }
         }
-        String pinBlock = buildCvmPinBlock(pos.getEncryptData(), newPin);// build the ISO format4 pin block
-        sendCvmPin(pinBlock, true);
+    }
+    String pinBlock = buildCvmPinBlock(pos.getEncryptData(), newPin);// build the ISO format4 pin block
+    sendCvmPin(pinBlock, true);
 ```
 The below method is used to build the ISO format-4 pinblock which meet the SPOC protocol
 ```java
-private String buildCvmPinBlock(Hashtable<String, String> value, String pin) {
+    private String buildCvmPinBlock(Hashtable<String, String> value, String pin) {
         String randomData = value.get("RandomData") == null ? "" : value.get("RandomData");
         String pan = value.get("PAN") == null ? "" : value.get("PAN");
         String AESKey = value.get("AESKey") == null ? "" : value.get("AESKey");
