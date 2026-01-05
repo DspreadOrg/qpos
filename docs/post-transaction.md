@@ -290,13 +290,13 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 
 ```java
 		@Override
-		public void onDoTradeResult(DoTradeResult result,
-				Hashtable<String, String> decodeData) {
+		public void onDoTradeResult(DoTradeResult result, Hashtable<String, String> decodeData) {
 			if (result == DoTradeResult.ICC) {
 				statusEditText.setText(getString(R.string.icc_card_inserted));
 				TRACE.d("EMV ICC Start")
 				pos.doEmvApp(EmvOption.START);
-			} 	                          
+			}
+		}	
 ```    
 
 ### Input PIN 
