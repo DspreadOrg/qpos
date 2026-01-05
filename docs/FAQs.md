@@ -1,5 +1,3 @@
-## Frequently Asked Questions
-
 ### 1、Where is the path for “Android OS version” ?
 
 - D20&D60&D70：Settings > About device > Device Version Information
