@@ -170,10 +170,8 @@ public static String decodeTrack1(String compressedTrack1) {
             //1. convert every 6chars(3bytes) to binary string
             String sub = compressedTrack1.substring(i * 6, (i + 1) * 6);
             int threeByteInt = Integer.parseInt(sub, 16);
-
             BigInteger bigInter = BigInteger.valueOf(threeByteInt);
             String strBinary = bigInter.toString(2);
-
             //BigInteger.toString(radix) will miss leading 0s, so need padding 0 at the begging with length of 3byte(24 bits)
             String withLeadingZeros = String.format("%24s", strBinary).replace(' ', '0');
 
@@ -183,14 +181,10 @@ public static String decodeTrack1(String compressedTrack1) {
                 String byteStr = withLeadingZeros.substring(j * 6, (j + 1) * 6);
                 fourBytes[j] = Byte.parseByte(byteStr, 2);
                 fourBytes[j] += 0x20;
-
-//                System.out.println(byteStr + "->" + fourBytes[j]);
             }
-
             //3. append each 4bytes array to result string
             resultTrack1 += new String(fourBytes);
         }
-
         return resultTrack1;
     }
 ```
