@@ -42,3 +42,23 @@ overdischarge
 
 ### 6、How to share keys in secure way?
 - There are two ways to share keys that including express delivery and PGP keys, please refer the [Share Keys](https://github.com/DspreadOrg/FAQs_Document/blob/master/documents/Share%20Keys.pdf) document for details.
+
+### 7.  Sign the third-party App
+
+- Open your local Android SDK folder -> bulid-tools, select one version (in my instance, I choose 30.0.2); it has apksigner.bat in there. 
+
+   ![](./_images/signApp1.jpg)
+
+- Put the app.keystore and the app you want to sign into this folder
+
+![](./_images/signApp2.jpg)
+
+- Open cmd(windows)/Terminal(mac);  input
+
+   ```
+    apksigner sign --ks app.keystore QRscan.apk
+   ```
+- When you will see a new generated file (.idsig), it shows success. And the signed apk is the original name.
+
+![](./_images/signApp3.jpg)
+
