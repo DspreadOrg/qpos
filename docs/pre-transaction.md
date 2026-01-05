@@ -86,16 +86,16 @@ Below table describes the meaning of each enumerate variables of CardTradeMode:
 
 | Card Trade Mode                                | Description                              |
 | ---------------------------------------------- | ---------------------------------------- |
-| SWIPE_TAP_INSERT_CARD (default)                | Allow MAG/ICC/NFC transactions, press the UP button "▲" to start NFC mode.|
-| ONLY_SWIPE_CARD                                | Only allow MAG transactions.|
-| ONLY_INSERT_CARD                               | Only allow ICC transactions.|
-| ONLY_TAP_CARD                                  | Only allow NFC transactions.|
-| SWIPE_INSERT_CARD                              | Allow MAG and ICC transactions.|
-| SWIPE_TAP_INSERT_CARD_UNALLOWED_LOW_TRADE      | Allow MAG/ICC transactions, press the UP button "▲" to start NFC mode. Downgrading transactions not allowed. (Downgrading transactions not allowed: If the card support ICC transaction, the MAG transaction is not allow.)|
-| TAP_INSERT_CARD_NOTUP                          | Allow ICC and NFC transactions, don't need press the UP button "▲" to start NFC mode.|
-| TAP_INSERT_CARD                                | Allow ICC and NFC transactions, press the UP button "▲" to start NFC mode.|
-| SWIPE_TAP_INSERT_CARD_NOTUP                    | Allow MAG/ICC/NFC transactions, don't need press the UP button "▲" to start NFC mode.|
-| SWIPE_TAP_INSERT_CARD_NOTUP_UNALLOWED_LOW_TRADE| Allow MAG/ICC/NFC transactions, don't need press the UP button "▲" to start NFC mode. Downgrading transactions not allowed.|
+| SWIPE_TAP_INSERT_CARD (default)                | MAG/ICC is enabled by default, and NFC is activated by pressing the up arrow key "▲".|
+| SWIPE_TAP_INSERT_CARD_NOTUP                    | MAG/ICC/NFC is enabled by default.|
+| TAP_INSERT_CARD_NOTUP                          | ICC/NFC is only enabled by default.|
+| TAP_INSERT_CARD                                | ICC is only enabled by default, and NFC is activated by pressing the up arrow key "▲".|
+| SWIPE_INSERT_CARD                              | MAG/ICC is only enabled by default.|
+| ONLY_SWIPE_CARD                                | MAG is only enabled by default.|
+| ONLY_INSERT_CARD                               | ICC is only enabled by default.|
+| ONLY_TAP_CARD                                  | NFC is only enabled by default.|
+| SWIPE_TAP_INSERT_CARD_UNALLOWED_LOW_TRADE      | MAG/ICC is only enabled by default, and NFC is activated by pressing the up arrow key "▲". Downgrading transactions not allowed(If the card support ICC, the MAG is not allow)|
+| SWIPE_TAP_INSERT_CARD_NOTUP_UNALLOWED_LOW_TRADE| MAG/ICC/NFC is enabled by default. Downgrading transactions not allowed.|
 
 The app can start a magnatic swipe card transaction, or an EMV chip card transaction, by below method:
 ```java
