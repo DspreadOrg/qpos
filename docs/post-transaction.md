@@ -53,6 +53,7 @@ After the app start a transaction, if the user use a magnatic card or a NFC card
                 String encPAN = decodeData.get("encPAN");
                 String trackRandomNumber = decodeData.get("trackRandomNumber");
                 String pinRandomNumber = decodeData.get("pinRandomNumber");
+                Hashtable<String, String> h = pos.getNFCBatchData(); // By calling this method, you can obtain a list of NFC tags.  
             } else if ((result == DoTradeResult.NFC_DECLINED)) {
                 statusEditText.setText(getString(R.string.transaction_declined));
             } else if (result == DoTradeResult.PLS_SEE_PHONE) {
@@ -270,13 +271,6 @@ The real PIN value can be caculated using formated pin data and PAN as inputs, a
 > XOR (0000365212501000, 041127ADEDAFEFFF) = 041111FFFFFFFFFF
 > In our example, the plain PIN is 4 bytes in length with data "1111"
 
-### Get NFC Batch Data
-
-```java
-    Hashtable<String, String> h = pos.getNFCBatchData();
-
-```
-
 ## Chip Card Transaction
 
 EMV Chip card transaction is much more complicate than magnetic swipe card transaction. The EMV kernel inside the device may need a lot of information to process the transaction, including:
@@ -302,12 +296,7 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 				statusEditText.setText(getString(R.string.icc_card_inserted));
 				TRACE.d("EMV ICC Start")
 				pos.doEmvApp(EmvOption.START);
-			}  else if (result == DoTradeResult.MCR) {
-                //handling MSR transaction
-            } else  if (result == DoTradeResult.PLS_SEE_PHONE) {
-				statusEditText.setText(getString(R.string.pls_see_phone));
-			}
-			                                       }  
+			} 	                          
 ```    
 
 ### Input PIN 
@@ -324,7 +313,6 @@ CR100：The PIN information can be sent to the EMV kernel by:
 ```
 2. input the cipher pinblock on the client app side
 ```java
-
         String newPin = "";
         //this part is used to enctypt the plaintext pin with random seed
         if (pos.getCvmKeyList() != null && !("").equals.pos.getCvmKeyList()) {
@@ -397,7 +385,6 @@ D20：
 		public void onQposRequestPinResult(List<String> dataList, int offlinePinTimes) {
 				//draw the pin input keyboard,after finish the keyboard,then call the below api
 				pos.pinMapSync(value,30);//the value is the keyboard pin coordinate position
-				
 		}
 ```
 
@@ -407,7 +394,6 @@ After sending the pin keyboard coordinate position to the D20 device, then you c
 		@Override
 		public void onReturnGetPinInputResult(int num) {
 				//the num is the counter of your pin input
-				
 		}
 ```
 
@@ -454,7 +440,7 @@ If the EMV kernel found the transaction need to go online, below call back will 
 			 response=sendTlvToServer()
              ....
              //send the received online processing result to POS
-			 //response should contain tag 8A (Authorisation Response Code) and tag 91 (Issuer Authentication Data) 
+			 //response should contain tag 8A (Authorisation Response Code) and tag 91 (Issuer Authentication Data) and tag 71/72 (Issuer Script)
              pos.sendOnlineProcessResult(response);
         }
 ```
