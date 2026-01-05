@@ -141,7 +141,6 @@ The setAmount method has below parameters:
 4. transactionType : which kind of transaction to be started. The transaction type can be:
 
 ```java
-
 	public static enum TransactionType {
 		GOODS, 
 		SERVICES, 
