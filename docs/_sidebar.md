@@ -18,9 +18,6 @@
 
 - TMS Service
   - [TMS SE](TMS-SE.md)
-     - [Files Upload and Push](Files-Upload-and-Push.md)
-     - [Operation Video](Operation-Video.md)
-     - [Supplementary Explanation](Supplementary-Explanation.md)
   - [Lark TMS](Lark-TMS.md)
      - [Login and Manual](Login-and-manual.md)
      - [Operation Videos](Operation-Videos.md)
