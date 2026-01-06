@@ -30,7 +30,7 @@
   - [Scanning Code Method](Scanning_Code_Method.md)
  
 - Customized OS Service
-    - [OS Customization List](Customized_OS_Services.md)
+    - [Customized OS List](Customized_OS_Services.md)
 
 - Printer SDK
 
