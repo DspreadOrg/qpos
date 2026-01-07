@@ -14,7 +14,7 @@ If you want to check more information about TMS SE, please donwload [TMS SE Manu
 
 ![lark2-manual](./_images/TMSSELaunchImage.png)
 
-## Operation Video
+## Operation Videos
 **1. Register Devices**
 
 <iframe width="800" height="450" src="./_video/registerDeviceVideo.html" frameborder="0"  scrolling="no" allowfullscreen></iframe>
