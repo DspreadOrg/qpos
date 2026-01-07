@@ -1,6 +1,6 @@
 ## Login and Manual
 
-#### Login TMS SE
+**1. Login TMS SE**
 
 URL: https://www.dspreadser.net/#/login
 
@@ -8,27 +8,25 @@ URL: https://www.dspreadser.net/#/login
 
 ![1-1](./_images/1-1.png)
 
-#### 2. Manual
+**2. Manual**
 
 If you want to check more information about TMS SE, please donwload [TMS SE Manual](https://github.com/DspreadOrg/FAQs_Document/blob/master/documents/TMS%20SE%20Manual.pdf).
 
-![lark2-manual](./_images/TMS SE Launch Image.png)
+![lark2-manual](./_images/TMSSELaunchImage.png)
 
-## Operation Videos
-
-#### 1. Register Devices
+## Operation Video
+**1. Register Devices**
 
 <iframe width="800" height="450" src="./_video/registerDeviceVideo.html" frameborder="0"  scrolling="no" allowfullscreen></iframe>
 
-#### 2. APP Upgrade
+**2. APP Upgrade**
 
 <iframe width="800" height="450" src="./_video/appUpdateVideo.html" frameborder="0"  scrolling="no" allowfullscreen></iframe>
 
-#### 3. Firmware Upgrade
+**3. Firmware Upgrade**
 
 <iframe width="800" height="450" src="./_video/firmwareUpdateVideo.html" frameborder="0"  scrolling="no" allowfullscreen></iframe>
 
-#### 4. ROM Upgrade
+**4. ROM Upgrade**
 
 <iframe width="800" height="450" src="./_video/romUpdateVideo.html" frameborder="0"  scrolling="no" allowfullscreen></iframe>
-
