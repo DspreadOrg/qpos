@@ -19,9 +19,7 @@
 - TMS Service
   - [TMS SE](TMS-SE.md)
   - [Lark TMS](Lark-TMS.md)
-     - [Login and Manual](Login-and-manual.md)
-     - [Operation Videos](Operation-Videos.md)
-
+    
 - Scanning Code Service
 
   - [Scanning Code Method](Scanning_Code_Method.md)
