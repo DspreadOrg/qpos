@@ -400,8 +400,7 @@ After sending the pin keyboard coordinate position to the device, then you can c
 
 **2. Send the key coordinate postition. The position should contains number(0-9) and function keys(confirm,cancel,delete) and their corresponding top left and bottom right coordinates in the screen.And it should be hexadecimal.**
 
-**The format for each key is :**
-​	2 bytes keyvalue + 2 bytes x-coordinate of the upper left corner +  2 bytes y-coordinate of the upper left corner + 2 bytes x- coordinate of the lower right corner +  2 bytes y- coordinate of the lower right corner
+The format for each key is: 2 bytes keyvalue + 2 bytes x-coordinate of the upper left corner +  2 bytes y-coordinate of the upper left corner + 2 bytes x- coordinate of the lower right corner +  2 bytes y- coordinate of the lower right corner
 
 For example：
 ```java
