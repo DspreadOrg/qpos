@@ -1,6 +1,6 @@
 - Help&Feedback
 
-  - [Help&Feedback](https://github.com/DspreadOrg/android/issues/new?template=Bug.yml)
+  - [Help&Feedback](https://github.com/orgs/DspreadOrg/discussions)
 
 - Download
 
