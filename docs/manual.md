@@ -20,9 +20,9 @@ You can download and install our [android-demo-app](https://www.pgyer.com/posand
 - [x] [Android SDK](https://github.com/DspreadOrg/android)
 - [x] [API Document](https://github.com/DspreadOrg/android/blob/master/QPOS-Android-SDK-Userguid-en-detail.pdf)  
 
-#### **IOS**
+#### **iOS**
 
-- [x] [IOS SDK](https://github.com/DspreadOrg/ios)
+- [x] [iOS SDK](https://github.com/DspreadOrg/ios)
 - [x] [API Document](https://github.com/DspreadOrg/ios/blob/master/QPOS-iOS-SDK-Userguid-en-detail.pdf) 
 
 #### **Windows**
