@@ -389,7 +389,7 @@ After sending the pin keyboard coordinate position to the device, then you can c
 
 ### Draw Keyboard
 
-1. Draw the pin keyboard according to dataList
+**1. Draw the pin keyboard according to dataList.**
 
 | KEY     | KEY VALUE |
 | ------- | --------- |
@@ -397,7 +397,8 @@ After sending the pin keyboard coordinate position to the device, then you can c
 | CANCEL  | 0D        |
 | DELETE  | 0E        |
 | CONFIRM | 0F        |
-3. Send the key coordinate postition. The position should contains number(0-9) and function keys(confirm,cancel,delete) and their corresponding top left and bottom right coordinates in the screen.And it should be hexadecimal.​
+
+**2. Send the key coordinate postition. The position should contains number(0-9) and function keys(confirm,cancel,delete) and their corresponding top left and bottom right coordinates in the screen.And it should be hexadecimal.**
 
 **The format for each key is :**
 ​	2 bytes keyvalue + 2 bytes x-coordinate of the upper left corner +  2 bytes y-coordinate of the upper left corner + 2 bytes x- coordinate of the lower right corner +  2 bytes y- coordinate of the lower right corner
@@ -416,7 +417,7 @@ It is complete parameter of position value, let's introduce with "1":
 0207 is y- coordinate of the lower right corner
 ```
 
-3. refer [our demo](https://github.com/DspreadOrg/android/tree/master/pos_android_studio_demo/pos_android_app/src/main/java/com/dspread/pos/ui/payment/pinkeyboard) for details
+**3. refer [our demo](https://github.com/DspreadOrg/android/tree/master/pos_android_studio_demo/pos_android_app/src/main/java/com/dspread/pos/ui/payment/pinkeyboard) for details.**
 
 ### Set Time
 
