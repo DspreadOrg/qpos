@@ -1,20 +1,17 @@
-
 ### Download
-You can download to install our [android-demo-app][android-app], [ios-demo-app][ios-app] and [windows-demo-app][windows-app].
-
-[android-app]: https://www.pgyer.com/posandroiddemo
-[ios-app]: https://apps.apple.com/us/app/mpos-reader/id6737266942
-[windows-app]: https://drive.google.com/file/d/1bB1tgXGzUQFDz8JoeXzbfWKJGpjlDKWd/view?usp=sharing
+You can download and install our [android-demo-app](https://www.pgyer.com/posandroiddemo), [ios-demo-app](https://apps.apple.com/us/app/mpos-reader/id6737266942), [windows-demo-app](https://drive.google.com/file/d/1bB1tgXGzUQFDz8JoeXzbfWKJGpjlDKWd/view?usp=sharing) and [web-demo](https://dspreadorg.github.io/qpos/webdemo/checkout.html)
 
 <!-- tabs:start -->
 
 #### **Android**
 
-- [x] [Android SDK](https://github.com/DspreadOrg/android) 
+- [x] [Android SDK](https://github.com/DspreadOrg/android)
+- [x] [API Document](https://github.com/DspreadOrg/android/blob/master/QPOS-Android-SDK-Userguid-en-detail.pdf)  
 
-#### **IOS**
+#### **iOS**
 
-- [x] [IOS SDK](https://github.com/DspreadOrg/ios)
+- [x] [iOS SDK](https://github.com/DspreadOrg/ios)
+- [x] [API Document](https://github.com/DspreadOrg/ios/blob/master/QPOS-iOS-SDK-Userguid-en-detail.pdf)
 
 #### **Windows**
 
@@ -49,6 +46,7 @@ You can download to install our [android-demo-app][android-app], [ios-demo-app][
 - [x] [JavaScript](https://github.com/DspreadOrg/Web-js-Demo) 
 
 <!-- tabs:end -->
+
 
 
 
