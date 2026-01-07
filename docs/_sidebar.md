@@ -1,6 +1,5 @@
 - Get Started
 
-  <!-- - [SDK Installation](manual.md) -->
   - [Introduction](introduction.md)
   - [Download](download.md)
   - [Tutorial Video](video-tutorial.md)
@@ -25,7 +24,7 @@
   - [Scanning Code Method](Scanning_Code_Method.md)
  
 - Customized OS Service
-    - [Customized OS List](Customized_OS_Services.md)
+  - [Customized OS List](Customized_OS_Services.md)
 
 - Printer SDK
 
@@ -40,6 +39,10 @@
   - [Mifare Desfire](mifare-desfire.md)
   - [Mifare UltraLight](mifare-ultralight.md)
 
+- Testing & Certification 
+
+  - [Certification](emv_l3.md)
+
 - Tools
 
   - [TVR Decoder](paymentcardtools.md)
@@ -47,10 +50,6 @@
   - [TLV Parser](emv-tool.md)
   - [ISO8583 Parser](emv-iso8583.md)
   - [Driver & Flash Tool](Update_ROM.md)
-
-- Testing & Certification 
-
-  - [Certification](emv_l3.md)
 
 - [**API Reference**](https://dspreadorg.github.io/qpos/api/index.html)
 - [**FAQs**](FAQs.md)
