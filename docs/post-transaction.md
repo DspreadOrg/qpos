@@ -594,39 +594,39 @@ During the transaction, if there is anything abnormal happened, the onError call
     }
 ```
 
-|   Enum Value          |         Description         |
-| --------------------- | --------------------------- |
-| TRY_ANOTHER_INTERFACE | For contactless transactions, please try other interfaces |
-| CARD_REMOVED          | The IC card was accidentally unplugged. This is only applicable to Qposmini |              
-| NO_UPDATE_WORK_KEY    | The IC card failed to power on |
-| DEVICE_ERROR          | When met Device self-destruct or Online data return value is empty will return|                
-| BAD_SWIPE             | The magnetic stripe card failed to be swiped |      
-| FALLBACK              | IC card transaction fallback, the kernel gac returned 6985 |      
-| NFC_TERMINATED        | NFC transaction was terminated|           
-| NONE                  | After 1620 issued the command, no magnetic stripe card was detected |   
-| AID_MISSING           | There was a problem with the IC card during the transaction or no EMV app was selected/selection of application failed |   
-| TRADE_LOG_FULL        | When the device log is full, it will return. This is only applicable to Qposmini | 
-| CONTACTLESS_TRANSACTION_NOT_ALLOW | Contactless transactions are not allowed and are only for specific customers| 
-| TRANS_TOKEN_INVALID               | The transaction token is invalid | 
-| CARD_BLOCKED_APDU_ERROR_6A81      | The card was locked, when selecting ppse or selecting aid, the return code is 6A81 | 
-| MULTIPLE_CARDS                    | Multiple contactless cards were detected | 
-| APP_BLOCKED_APDU_ERROR_6A83       | At final select, the return code is 6A83. This indicates that an application is locked | 
-| TRANSACTION_NOT_ALLOWED_AMOUNT_EXCEED | NFC transactions are not allowed to exceed the limit | 
-| NO_RESPONSE             | No response was received from the device after the SDK sent a command | 
-| MAC_ERROR               | The device reported a MAC verification failure for the command sent by the SDK |
-| TIMEOUT                 | The device returned a timeout due to prolonged inactivity after receiving a command from the SDK |
-| CMD_NOT_AVAILABLE       | The command sent by the SDK is not supported by the device |
-| DEVICE_RESET            | The device successfully reset after receiving a reset command from the SDK |
-| UNKNOWN                 | An internal exception occurred during SDK processing |
-| DEVICE_BUSY             | A new command was sent by the SDK before the device responded to the previous command |
-| DEVICE_IS_OCCUPIED      | The serial port is in use by another application and must be released before use |
-| APDU_ERROR              | An APDU communication error occurred between the device and the card |
-| APP_SELECT_TIMEOUT      | A timeout occurred during multi-application selection on the device |
-| ICC_ONLINE_TIMEOUT      | A timeout occurred while sending online data for a contact transaction |
-| DEVICE_IN_BOOT_STATE    | The firmware upgrade was interrupted, and the device entered BOOT mode |
-| REMOTE_SERVICE_EXCEPTION            | An error occurred while the SDK was accessing a remote service |
-| RECEIVE_PLAINT_IN_ENCRYPTION_MODE   | The device is in cipher mode, but the SDK sent plaintext data |
-| RECEIVE_CIPHER_IN_NONENCRYPTION_MODE| The device is in plaintext mode, but the SDK sent encrypted data |
-| DECRYPT_FAIL_IN_ENCRYPTION_MODE     | Decryption failed for encrypted data sent to the device while in cipher mode  |
-| EXPIRED_CERT           | The server certificate has expired |
-| INVALID_TRUSTED_CERT   | The server certificate is invalid |
+|   Enum Value          |         Description         |        Applicability        |
+| --------------------- | --------------------------- | --------------------------- | 
+| TRY_ANOTHER_INTERFACE | A apdu 6984 returned by the card during the Visa contactless GPO process        |        All devices            |
+| DEVICE_ERROR          | A high-impact drop or tampering triggers device self-destruction                |        All devices            |      
+| BAD_SWIPE             | Damaged magnetic stripe data or improper swipe operation                        |        Smart POS only         |     
+| FALLBACK              | Occurs if the card is inserted with the non-chip side toward the reader, or if the first GEN AC returns 6985 for contact |       All devices        |   
+| NFC_TERMINATED        | Occurs when processing an Amex transaction and the terminal EMV configuration is missing the Amex AID or other cases     |       All devices        |    
+| NONE                  | If a card swipe fails twice with BAD_SWIPE, a third failure will result in NONE |      Smart POS only         | 
+| AID_MISSING           | Card AID not configured in the terminal                                         |          All devices        | 
+| TRADE_LOG_FULL        | Occurs for specific customers when performing over 185 consecutive transactions, filling the terminal's flash transaction log |    QPOS mini only    |
+| CONTACTLESS_TRANSACTION_NOT_ALLOW | The terminal should prevent contactless transactions as required by Amex AXP EP094 for specific configuration     |        NA            |
+| CARD_BLOCKED_APDU_ERROR_6A81      | When selecting ppse or selecting aid, card return 6A81 apdu                                                       |      All devices     |   
+| MULTIPLE_CARDS                    | Multiple contactless cards were detected                            |       All devices        |   
+| APP_BLOCKED_APDU_ERROR_6A83       | At emv ap  plication final select, card return 6A83 apdu            |    All devices           |   
+| TRANSACTION_NOT_ALLOWED_AMOUNT_EXCEED | Transaction amount exceeds the contactless transaction limit for encryption mode 0007 |     QPOS mini only    |
+| CARD_REMOVED                      | Occurs when the card is removed during a contact transaction for special configuration    |     QPOS mini only    |    
+| NO_UPDATE_WORK_KEY                | Occurs when a production device attempts a transaction without updating the work key for encryption mode 0004     |     QPOS mini only    |
+| TRANS_TOKEN_INVALID               | Occurs when a transaction is initiated before the token has been activated                |     CR100 only        |
+| NO_RESPONSE             | No response was received from the device after the SDK sent a command          |  All devices     |  
+| MAC_ERROR               | The device reported a MAC verification failure for the command sent by the SDK |  All devices     |  
+| TIMEOUT                 | The device returned a timeout due to prolonged inactivity after receiving a command from the SDK  |  All devices     |  
+| CMD_NOT_AVAILABLE       | The command sent by the SDK is not supported by the device                     |  All devices     |  
+| DEVICE_RESET            | The device successfully reset after receiving a reset command from the SDK     |  All devices     |  
+| UNKNOWN                 | An internal exception occurred during SDK processing                           |  All devices     |  
+| DEVICE_BUSY             | A new command was sent by the SDK before the device responded to the previous command | All devices     |  
+| DEVICE_IS_OCCUPIED      | The serial port is in use by another application and must be released before use |  Smart POS only   |
+| APDU_ERROR              | An APDU communication error occurred between the device and the card           |  All devices     | 
+| APP_SELECT_TIMEOUT      | A timeout occurred during multi-application selection on the app               |  All devices     | 
+| ICC_ONLINE_TIMEOUT      | A timeout occurred while sending online request to bank for a contact transaction | All devices   | 
+| DEVICE_IN_BOOT_STATE    | The firmware upgrade was interrupted, and the device entered BOOT mode         |  All devices     | 
+| REMOTE_SERVICE_EXCEPTION            | An error occurred while the SDK was binding a remote service       |  Smart POS only  | 
+| RECEIVE_PLAINT_IN_ENCRYPTION_MODE   | The device is in cipher mode, but the SDK sent plaintext data      |  CR100 only 
+| RECEIVE_CIPHER_IN_NONENCRYPTION_MODE| The device is in plaintext mode, but the SDK sent encrypted data   |  CR100 only 
+| DECRYPT_FAIL_IN_ENCRYPTION_MODE     | Decryption failed for encrypted data sent to the device while in cipher mode  | CR100 only |
+| EXPIRED_CERT           | The server certificate has expired                                              |  All devices     | 
+| INVALID_TRUSTED_CERT   | The server certificate is invalid                                               |  All devices     | 
