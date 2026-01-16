@@ -603,7 +603,7 @@ During the transaction, if there is anything abnormal happened, the onError call
 | NFC_TERMINATED        | Occurs when processing an Amex transaction and the terminal EMV configuration is missing the Amex AID or other cases     |       All devices        |    
 | NONE                  | If a card swipe fails twice with BAD_SWIPE, a third failure will result in NONE |      Smart POS only         | 
 | AID_MISSING           | Card AID not configured in the terminal                                         |          All devices        | 
-| TRADE_LOG_FULL        | Occurs for specific customers when performing over 185 consecutive transactions, filling the terminal's flash transaction log |    QPOS mini only    |
+| TRADE_LOG_FULL        | Occurs when performing over 185 consecutive transactions, filling the terminal's flash transaction log for specific configuration |    QPOS mini only    |
 | CONTACTLESS_TRANSACTION_NOT_ALLOW | The terminal should prevent contactless transactions as required by Amex AXP EP094 for specific configuration     |        NA            |
 | CARD_BLOCKED_APDU_ERROR_6A81      | When selecting ppse or selecting aid, card return 6A81 apdu                                                       |      All devices     |   
 | MULTIPLE_CARDS                    | Multiple contactless cards were detected                            |       All devices        |   
