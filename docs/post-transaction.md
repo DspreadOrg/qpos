@@ -373,7 +373,7 @@ D20/D30/D35/D50/D60/D80：
 ```java
     @Override
     public void onQposRequestPinResult(List<String> dataList, int offlinePinTimes) {
-        //"dataList": the key list of the randomized PIN keypad, which is used to render the PIN keypad layout for secure PIN entry.
+        //"dataList": the key list of the randomized PIN keypad, which is used to draw the PIN keypad for secure PIN entry.
         //"offlinePinTimes": the remaining number of offline PIN attempts, this value is returned only when an offline PIN verification is performed.
 
 		//draw the pin input keyboard,after finish the keyboard,then call the below api
