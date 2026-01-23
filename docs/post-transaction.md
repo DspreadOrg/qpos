@@ -373,6 +373,9 @@ D20/D30/D35/D50/D60/D80：
 ```java
     @Override
     public void onQposRequestPinResult(List<String> dataList, int offlinePinTimes) {
+        //"dataList": the key list of the randomized PIN keypad, which is used to render the PIN keypad layout for secure PIN entry.
+        //"offlinePinTimes": the remaining number of offline PIN attempts, this value is returned only when an offline PIN verification is performed.
+
 		//draw the pin input keyboard,after finish the keyboard,then call the below api
 		pos.pinMapSync(value,30);//the value is the keyboard pin coordinate position and send it to device
     }
@@ -382,14 +385,17 @@ After sending the pin keyboard coordinate position to the device, then you can c
 
 ```java
     @Override
-    public void onReturnGetPinInputResult(int num) {
-         //the num is the counter of your pin input
+    public void onReturnGetPinInputResult(int num, QPOSService.PinError error, int minLen, int maxLen) {
+        //"num": the number of PIN digits currently entered by the cardholder.
+        //"error": indicates the validation result of the PIN entry, such as success or PIN length violations.
+        //"minLen": the minimum required PIN length for the transaction.
+        //"maxLen": the maximum allowed PIN length for the transaction.
     }
 ```
 
 ### Draw Keyboard
 
-**1. Draw the pin keyboard according to dataList.**
+**1. Draw the pin keyboard according to dataList in the onQposRequestPinResult() callback.**
 
 | KEY     | KEY VALUE |
 | ------- | --------- |
