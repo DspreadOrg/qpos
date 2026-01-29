@@ -606,7 +606,7 @@ During the transaction, if there is anything abnormal happened, the onError call
 | DEVICE_ERROR          | A high-impact drop or tampering triggers device self-destruction                |        All devices            |      
 | BAD_SWIPE             | Damaged magnetic stripe data or improper swipe operation                        |        Smart POS only         |     
 | FALLBACK              | Occurs if the card is inserted with the non-chip side toward the reader, or if the first GEN AC returns 6985 for contact |       All devices        |   
-| NFC_TERMINATED        | Occurs when processing an Amex transaction and the terminal EMV configuration is missing the Amex AID or other cases     |       All devices        |    
+| NFC_TERMINATED        | Occurs when the terminal is missing the card AID or the card does not return mandatory EMV-required data        |       All devices        |    
 | NONE                  | If a card swipe fails twice with BAD_SWIPE, a third failure will result in NONE |      Smart POS only         | 
 | AID_MISSING           | Card AID not configured in the terminal                                         |          All devices        | 
 | TRADE_LOG_FULL        | Occurs when performing over 185 consecutive transactions, filling the terminal's flash transaction log for specific configuration |    QPOS mini only    |
