@@ -101,7 +101,7 @@ The app can start a magnatic swipe card transaction, or an NFC/ICC card transact
 ```java
 	pos.doTrade(60);
 ```
-The only paramter is the time out value in second. If the you wants to process a magnetic swipe card transaction without entering a PIN, please use the **pos.doCheckCard(60)** instead of **pos.doTrade(60)** to initiate the swipe/NFC/ICC transaction.  
+The only paramter is the time out value in second. If the you wants to process a magnetic swipe card transaction without entering a PIN, please use the **pos.doCheckCard(60)** instead of **pos.doTrade(60)** to initiate the MSR/NFC/ICC transaction.  
 
 ## Set Transaction Amount
 
