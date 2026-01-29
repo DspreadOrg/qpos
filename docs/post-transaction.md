@@ -613,7 +613,7 @@ During the transaction, if there is anything abnormal happened, the onError call
 | CONTACTLESS_TRANSACTION_NOT_ALLOW | The terminal should prevent contactless transactions as required by Amex AXP EP094 for specific configuration     |        NA            |
 | CARD_BLOCKED_APDU_ERROR_6A81      | When selecting ppse or selecting aid, card return 6A81 apdu                                                       |      All devices     |   
 | MULTIPLE_CARDS                    | Multiple contactless cards were detected                            |       All devices        |   
-| APP_BLOCKED_APDU_ERROR_6A83       | At emv ap  plication final select, card return 6A83 apdu            |    All devices           |   
+| APP_BLOCKED_APDU_ERROR_6A83       | At emv application final select, card return 6A83 apdu              |       All devices        |   
 | TRANSACTION_NOT_ALLOWED_AMOUNT_EXCEED | Transaction amount exceeds the contactless transaction limit for encryption mode 0007 |     QPOS mini only    |
 | CARD_REMOVED                      | Occurs when the card is removed during a contact transaction for special configuration    |     QPOS mini only    |    
 | NO_UPDATE_WORK_KEY                | Occurs when a production device attempts a transaction without updating the work key for encryption mode 0004     |     QPOS mini only    |
