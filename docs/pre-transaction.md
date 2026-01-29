@@ -97,11 +97,11 @@ Below table describes the meaning of each enumerate variables of CardTradeMode:
 | SWIPE_TAP_INSERT_CARD_UNALLOWED_LOW_TRADE      | MAG/ICC is only enabled by default, and NFC is activated by pressing the up arrow key "▲". Downgrading transactions not allowed(If the card support ICC, the MAG is not allow)|
 | SWIPE_TAP_INSERT_CARD_NOTUP_UNALLOWED_LOW_TRADE| MAG/ICC/NFC is enabled by default. Downgrading transactions not allowed.|
 
-The app can start a magnatic swipe card transaction, or an EMV chip card transaction, by below method:
+The app can start a magnatic swipe card transaction, or an NFC/ICC card transaction, by below method:
 ```java
 	pos.doTrade(60);
 ```
-The only paramter is the time out value in second. If the user is using magnatic swipe card, after timeout seconds, the transaction will be timed out.  
+The only paramter is the time out value in second. If the you wants to process a magnetic swipe card transaction without entering a PIN, please use the **pos.doCheckCard(60)** instead of **pos.doTrade(60)** to initiate the swipe/NFC/ICC transaction.  
 
 ## Set Transaction Amount
 
