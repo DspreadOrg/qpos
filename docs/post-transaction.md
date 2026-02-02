@@ -606,7 +606,7 @@ During the transaction, if there is anything abnormal happened, the onError call
 | TRY_ANOTHER_INTERFACE | A apdu 6984 returned by the card during the Visa contactless GPO process        |        All devices            |
 | DEVICE_ERROR          | A high-impact drop or tampering triggers device self-destruction                |        All devices            |      
 | BAD_SWIPE             | Damaged magnetic stripe data or improper swipe operation                        |        Smart POS only         |     
-| FALLBACK              | Occurs if the card is inserted with the non-chip side toward the reader, or if the first GEN AC returns 6985 for contact |       All devices        |   
+| FALLBACK              | Occurs if the card is inserted with the non-chip side toward the reader, or if the card returns 6985 in the first GEN AC  |       All devices        |   
 | NFC_TERMINATED        | Occurs when the terminal is missing the card AID or the card does not return mandatory EMV-required data        |       All devices        |    
 | NONE                  | If a card swipe fails twice with BAD_SWIPE, a third failure will result in NONE |      Smart POS only         | 
 | AID_MISSING           | The terminal is missing the card AID, or the card returns error code 6283 during the application selection process            |        All devices       | 
