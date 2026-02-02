@@ -50,7 +50,8 @@ After the app start a transaction, if the user use a magnatic card or a NFC card
             String encPAN = decodeData.get("encPAN");
             String trackRandomNumber = decodeData.get("trackRandomNumber");
             String pinRandomNumber = decodeData.get("pinRandomNumber");
-            Hashtable<String, String> h = pos.getNFCBatchData(); // By calling this method, you can obtain a list of NFC tags.  
+            // By calling the below method, you can obtain a list of NFC tags.  
+            Hashtable<String, String> h = pos.getNFCBatchData();
          } else if ((result == DoTradeResult.NFC_DECLINED)) {
             statusEditText.setText(getString(R.string.transaction_declined));
          } else if (result == DoTradeResult.PLS_SEE_PHONE) {
