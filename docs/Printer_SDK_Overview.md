@@ -30,19 +30,20 @@ You can click the links below to download the printer demo.
 
 ### 4. How to use the SDK
 
-After integrating the SDK, firstly you can use the getPrinter() method to get the printer.
+1. After integrating the SDK, firstly you can use the getPrinter() method to get the printer.
 ``` java
    PrinterDevice mPrinter = PrinterManager.getInstance().getPrinter();
    mPrinter.initPrinter(context, new PrinterInitListener() {
        @Override
-       public void connected() { 
+       public void connected() {
+          //print tickets here
        }
        @Override
        public void disconnected() {
        }
    });
 ```
- 3. Initialize callback API
+2. Initialize callback API
 ``` java
    MyPrinterListener myPrinterListener = new MyPrinterListener();
    mPrinter.setPrintListener(myPrinterListener);
