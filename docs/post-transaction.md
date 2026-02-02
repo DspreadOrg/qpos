@@ -609,7 +609,7 @@ During the transaction, if there is anything abnormal happened, the onError call
 | FALLBACK              | Occurs if the card is inserted with the non-chip side toward the reader, or if the first GEN AC returns 6985 for contact |       All devices        |   
 | NFC_TERMINATED        | Occurs when the terminal is missing the card AID or the card does not return mandatory EMV-required data        |       All devices        |    
 | NONE                  | If a card swipe fails twice with BAD_SWIPE, a third failure will result in NONE |      Smart POS only         | 
-| AID_MISSING           | Card AID not configured in the terminal                                         |          All devices        | 
+| AID_MISSING           | The terminal is missing the card AID, or the card returns error code 6283 during the application selection process            |        All devices       | 
 | TRADE_LOG_FULL        | Occurs when performing over 185 consecutive transactions, filling the terminal's flash transaction log for specific configuration |    QPOS mini only    |
 | CONTACTLESS_TRANSACTION_NOT_ALLOW | The terminal should prevent contactless transactions as required by Amex AXP EP094 for specific configuration     |        NA            |
 | CARD_BLOCKED_APDU_ERROR_6A81      | When selecting ppse or selecting aid, card return 6A81 apdu                                                       |      All devices     |   
