@@ -10,6 +10,7 @@ By default, QPOS is injected TMK in factory. default tmk: **0123456789ABCDEFFEDC
 
 > server side should use same tmk as inside terminal to encrypt IPEK keys to get encryptedIPEK and calculate its Key Check Value, then call API pos.updateIPEKOperation() to inject into terminal
 ``` java
+String tmk = "0123456789ABCDEFFEDCBA9876543210"
 String demoTrackKsn ="09120200630001E0004C"
 String demoTrackIpek="5AF93691729D99703E3F2E386B619DFC"
 String demoIpekKcv = TDES.tdesECBEncrypt(demoTrackIpek, "0000000000000000"));
@@ -81,6 +82,7 @@ By default, QPOS is injected TMK in factory. default TMK: **0123456789ABCDEFFEDC
 
 ?>server side should use same TMK as inside terminal to encrypt session keys to get encrypted session keys and calculate its Key Check Value, then call API pos.updateWorkKey() to inject into terminal
 ``` java
+String tmk = "0123456789ABCDEFFEDCBA9876543210"
 String demoPINKey="11111111111111111111111111111111"
 String encDemoPINKey = TDES.tdesECBEncrypt(tmk, demoPINKey)); 
 //encDemoPINKey = 9B3A7B883A100F739B3A7B883A100F73
@@ -114,6 +116,7 @@ By default, QPOS is injected TMK in factory. default TMK: **0123456789ABCDEFFEDC
 
 ?>server side should use default TMK to encrypt new TMK to get encrypted new TMK key and calculate its Key Check Value, then call API pos.updateMasterKey() to inject into terminal
 ``` java
+String tmk = "0123456789ABCDEFFEDCBA9876543210"
 String demoNewMasterKey="22222222222222222222222222222222"
 String encDemoNewMasterKey = TDES.tdesECBEncrypt(tmk, demoNewMasterKey)); 
 
