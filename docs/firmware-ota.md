@@ -1,4 +1,4 @@
-If you want to implement firmware upgrade, please folow below code. 
+If you want to implement firmware upgrade, please folow below code, it support bluetooth and USB OTG.
 For more details, please refer to [demo project](https://drive.google.com/file/d/1J96jJSse7pbJN_DRDqxiW62ZBXjesSiA/view?usp=sharing)
 
 ``` java
