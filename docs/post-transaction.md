@@ -610,13 +610,13 @@ During the transaction, if there is anything abnormal happened, the onError call
 | NFC_TERMINATED        | Occurs when the terminal is missing the card AID or the card does not return mandatory EMV-required data        |       All devices        |    
 | NONE                  | If a card swipe fails twice with BAD_SWIPE, a third failure will result in NONE |      Smart POS only         | 
 | AID_MISSING           | The terminal is missing the card AID, or the card returns error code 6283 during the application selection process            |        All devices       | 
-| TRADE_LOG_FULL        | Occurs when performing over 185 consecutive transactions, filling the terminal's flash transaction log for specific configuration |    QPOS mini only    |
-| CONTACTLESS_TRANSACTION_NOT_ALLOW | The terminal should prevent contactless transactions as required by Amex AXP EP094 for specific configuration     |        NA            |
+| TRADE_LOG_FULL        | Occurs when performing over 185 consecutive transactions, filling the terminal's flash transaction log for special firmware  |    QPOS mini only    |
+| CONTACTLESS_TRANSACTION_NOT_ALLOW | The terminal should prevent contactless transactions as required by Amex AXP EP094 for special firmware          |        NA            |
 | CARD_BLOCKED_APDU_ERROR_6A81      | When selecting ppse or selecting aid, card return 6A81 apdu                                                       |      All devices     |   
 | MULTIPLE_CARDS                    | Multiple contactless cards were detected                            |       All devices        |   
 | APP_BLOCKED_APDU_ERROR_6A83       | At emv application final select, card return 6A83 apdu              |       All devices        |   
 | TRANSACTION_NOT_ALLOWED_AMOUNT_EXCEED | Transaction amount exceeds the contactless transaction limit for encryption mode 0007 |     QPOS mini only    |
-| CARD_REMOVED                      | Occurs when the card is removed during a contact transaction for special configuration    |     QPOS mini only    |    
+| CARD_REMOVED                      | Occurs when the card is removed during a contact transaction for special firmware         |     QPOS mini only    |    
 | NO_UPDATE_WORK_KEY                | Occurs when a production device attempts a transaction without updating the work key for encryption mode 0004     |     QPOS mini only    |
 | TRANS_TOKEN_INVALID               | Occurs when a transaction is initiated before the token has been activated                |     CR100 only        |
 | NO_RESPONSE             | No response was received from the device after the SDK sent a command          |  All devices     |  
