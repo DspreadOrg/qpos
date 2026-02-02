@@ -1,7 +1,7 @@
 ### 1. Dspread Printing SDK Overview
 
 Please follow the below printer sdk document to integrate printer functions
-- [Printer SDK Guide](https://drive.google.com/file/d/1YBazNrtAoo5b_dZIu_UNelvgUPjas96J/view?usp=sharing)
+- [Printer SDK Guide](https://github.com/DspreadOrg/android/blob/master/QPOS-Android-PrinterSDK-Userguid-en-detail.pdf)
 
 ### 2. How to integrate SDK
 
@@ -9,7 +9,7 @@ The Dspread print SDK can be obtained through a remote repository. You only need
 ``` java
 Gradle Groovy DSL install command.
 
-implementation 'com.dspread.print:dspread_print_sdk:1.5.5-beta'
+implementation 'com.dspread.print:dspread_print_sdk:1.8.4'
 
 Add Gradle Groovy DSL repository command.
 
@@ -38,25 +38,29 @@ After integrating the SDK, firstly you can use the getPrinter() method to get th
 ``` java
    mPrinter.initPrinter(context);
 ```
- 2. D30 device integration SDK..
+ 2. D30 device integration SDK.
 ```java
   mPrinter.initPrinter(context, new PrinterInitListener() {
-            @Override
-            public void connected() { 
-            }
-@Override
-            public void disconnected() {
-            }
-        });
+       @Override
+       public void connected() { 
+       }
+       @Override
+       public void disconnected() {
+       }
+ });
 ```
  3. Initialize callback API
 ``` java
    MyPrinterListener myPrinterListener = new MyPrinterListener();
    mPrinter.setPrintListener(myPrinterListener);
    class MyPrinterListener implements PrintListener{
-    @Override
-    public void printResult(boolean b, String status, int type)
-}
+       @Override
+       public void printResult(boolean b, String status, int type){
+           if(pos != null){
+              mPrinter.close();
+           }
+       }
+   }
 ```
 ### 5. SDK exceptions
 
