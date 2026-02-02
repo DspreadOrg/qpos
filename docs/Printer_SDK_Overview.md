@@ -33,21 +33,14 @@ You can click the links below to download the printer demo.
 After integrating the SDK, firstly you can use the getPrinter() method to get the printer.
 ``` java
    PrinterDevice mPrinter = PrinterManager.getInstance().getPrinter();
-```
- 1. D60、D70 device integration SDK.
-``` java
-   mPrinter.initPrinter(context);
-```
- 2. D30 device integration SDK.
-```java
-  mPrinter.initPrinter(context, new PrinterInitListener() {
+   mPrinter.initPrinter(context, new PrinterInitListener() {
        @Override
        public void connected() { 
        }
        @Override
        public void disconnected() {
        }
- });
+   });
 ```
  3. Initialize callback API
 ``` java
