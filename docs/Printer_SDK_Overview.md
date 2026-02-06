@@ -49,7 +49,7 @@ You can click the links below to download the printer demo.
    mPrinter.setPrintListener(myPrinterListener);
    class MyPrinterListener implements PrintListener{
        @Override
-       public void printResult(boolean b, String status, int type){
+       public void printResult(boolean isSuccess, String status, PrinterDevice.ResultType type){
            if(pos != null){
               mPrinter.close();
            }
