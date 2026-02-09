@@ -108,8 +108,7 @@ The only paramter is the time out value in second. If the you wants to process a
 The transaction amount can be set by:
 
 ```java
-	pos.setAmount(amount, cashbackAmount, currencyCode,
-									TransactionType.GOODS);
+	pos.setAmount(amount, cashbackAmount, currencyCode, TransactionType.GOODS);
 ```
 
 The transaction icon can be set by:
