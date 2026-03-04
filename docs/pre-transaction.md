@@ -72,10 +72,6 @@ The code below shows how to open the communication bridge with the open() method
 	}
 ```
 
-Note: The reason why the CommunicationMode is specified as UART_SERVICE in the above code.  
-Serial ports, like cameras, belong to public resources and only have one. Multiple apps accessing the serial port simultaneously can lead to the issue of serial port occupation. This problem can be effectively solved by the serial port service(UART_SERVICE), which stipulates that only one app can access the serial port at the same time.
-
-
 ## Start Transaction
 
 Before initiating a transaction, you can set the card trade mode to set the card reading mode allowed by the device, by below method:
