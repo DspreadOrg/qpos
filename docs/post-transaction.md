@@ -320,7 +320,7 @@ CR100：The PIN information can be sent to the EMV kernel by:
     String pinBlock = buildCvmPinBlock(pos.getEncryptData(), newPin);// build the ISO format4 pin block
     sendCvmPin(pinBlock, true);
 ```
-The below method is used to build the ISO format-4 pinblock which meet the SPOC protocol
+The below method is used to build the ISO format-4 pinblock which meet the MPOC protocol
 ```java
     private String buildCvmPinBlock(Hashtable<String, String> value, String pin) {
         String randomData = value.get("RandomData") == null ? "" : value.get("RandomData");
@@ -370,7 +370,7 @@ if the user want to cancel the transaction, the app should call
 	pos.cancelPin();
 ```
 
-D20/D30/D35/D50/D60/D80：
+D20/D30/D35/D50/D60/D80：SDK will callback the below method when terminal request pin
 ```java
     @Override
     public void onQposRequestPinResult(List<String> dataList, int offlinePinTimes) {
