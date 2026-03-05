@@ -4,6 +4,7 @@
 ![](./mifare_card.jpg)
 
 As the above image, we can know the work flow for the Mifare Classic.
+
 1).poll on Card
 ```java
 	pos.activateMifareCard(int timeout)
