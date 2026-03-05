@@ -6,28 +6,46 @@
 As the above image, we can know the work flow for the Mifare Classic.
 1).poll on Card
 ```java
-	pos.pollOnMifareCard(int timeout)
+	pos.activateMifareCard(int timeout)
+//callback
+    onActivateMifareCardResult(Hashtable<String, String> arg0)
 ```
 2).Verify Key A/B
 ```java
 	pos.authenticateMifareCard(MifareCardType cardType,String keyType,String block,String keyValue,int timeout)
+//callback
+    onAuthenticateMifareCardResult(boolean arg0)
 ```
 3).Operate Card
-- Add/Reduce/Restore
+- Add
 ```java
-	pos.operateMifareCardData(MifareCardOperationType type,String block,String data,int timeout)
+	pos.increaseValue(String block,String data,int timeout)
+//callback
+    onIncreaseValueResult(boolean result)
+```
+- Reduce
+```java
+	pos.decreaseValue(String block,String data,int timeout)
+//callback
+    onDecreaseValueResult(boolean result)
 ```
 - Read
 ```java
-	pos.readMifareCard(MifareCardType cardType,String block,int timeout)
+	pos.readMifareBlock(MifareCardType cardType,String block,int timeout)
+//callback
+    onReadMifareBlockResult(String flag)
 ```
 - Write
 ```java
-	pos.writeMifareCard(MifareCardType cardType,String block,String data,int timeout)
+	pos.writeMifareBlock(MifareCardType cardType,String block,String data,int timeout)
+//callback
+    onWriteMifareBlockResult(boolean arg0)
 ```
 4).Finish
 
 ```java
-	pos.finishMifareCard(int timeout)
+	pos.deactivateMifareCard(int timeout)
+//callback
+    onDeactivateMifareCardResult(boolean arg0)
 ```
 
