@@ -30,17 +30,35 @@ As the above image, we can know the work flow for the Mifare Classic.
 //callback
     onDecreaseValueResult(boolean result)
 ```
-- Read
+- Read Value
+```java
+	pos.readMifareValue(String block,int timeout)
+//callback
+    onReadMifareValueResult(int flag)
+```
+- Read Card
 ```java
 	pos.readMifareBlock(MifareCardType cardType,String block,int timeout)
 //callback
     onReadMifareBlockResult(String flag)
 ```
-- Write
+- Write Value
+```java
+	pos.writeMifareValue(String block,int timeout)
+//callback
+    onWriteMifareValueResult(int flag)
+```
+- Write Card
 ```java
 	pos.writeMifareBlock(MifareCardType cardType,String block,String data,int timeout)
 //callback
     onWriteMifareBlockResult(boolean arg0)
+```
+- Transfer Block
+```java
+	pos.transferBlock(String block)
+//callback
+    onTransferValueResult(int flag)
 ```
 4).Finish
 
