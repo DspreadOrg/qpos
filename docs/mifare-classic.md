@@ -7,64 +7,64 @@ As the above image, we can know the work flow for the Mifare Classic.
 
 1).poll on Card
 ```java
-	pos.activateMifareCard(int timeout)
+pos.activateMifareCard(int timeout)
 //callback
-    onActivateMifareCardResult(Hashtable<String, String> arg0)
+onActivateMifareCardResult(Hashtable<String, String> arg0)
 ```
 2).Verify Key A/B
 ```java
-	pos.authenticateMifareCard(MifareCardType cardType,String keyType,String block,String keyValue,int timeout)
+pos.authenticateMifareCard(MifareCardType cardType,String keyType,String block,String keyValue,int timeout)
 //callback
-    onAuthenticateMifareCardResult(boolean arg0)
+onAuthenticateMifareCardResult(boolean arg0)
 ```
 3).Operate Card
 - Add
 ```java
-	pos.increaseValue(String block,String data,int timeout)
+pos.increaseValue(String block,String data,int timeout)
 //callback
-    onIncreaseValueResult(boolean result)
+onIncreaseValueResult(boolean result)
 ```
 - Reduce
 ```java
-	pos.decreaseValue(String block,String data,int timeout)
+pos.decreaseValue(String block,String data,int timeout)
 //callback
-    onDecreaseValueResult(boolean result)
+onDecreaseValueResult(boolean result)
 ```
 - Read Value
 ```java
-	pos.readMifareValue(String block,int timeout)
+pos.readMifareValue(String block,int timeout)
 //callback
-    onReadMifareValueResult(int flag)
+onReadMifareValueResult(int flag)
 ```
 - Read Card
 ```java
-	pos.readMifareBlock(MifareCardType cardType,String block,int timeout)
+pos.readMifareBlock(MifareCardType cardType,String block,int timeout)
 //callback
-    onReadMifareBlockResult(String flag)
+onReadMifareBlockResult(String flag)
 ```
 - Write Value
 ```java
-	pos.writeMifareValue(String block,int timeout)
+pos.writeMifareValue(String block,int timeout)
 //callback
-    onWriteMifareValueResult(int flag)
+onWriteMifareValueResult(int flag)
 ```
 - Write Card
 ```java
-	pos.writeMifareBlock(MifareCardType cardType,String block,String data,int timeout)
+pos.writeMifareBlock(MifareCardType cardType,String block,String data,int timeout)
 //callback
-    onWriteMifareBlockResult(boolean arg0)
+onWriteMifareBlockResult(boolean arg0)
 ```
 - Transfer Block
 ```java
-	pos.transferBlock(String block)
+pos.transferBlock(String block)
 //callback
-    onTransferValueResult(int flag)
+onTransferValueResult(int flag)
 ```
 4).Finish
 
 ```java
-	pos.deactivateMifareCard(int timeout)
+pos.deactivateMifareCard(int timeout)
 //callback
-    onDeactivateMifareCardResult(boolean arg0)
+onDeactivateMifareCardResult(boolean arg0)
 ```
 
