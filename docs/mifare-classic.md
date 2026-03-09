@@ -1,7 +1,7 @@
 ## mifare classic
 **Mifare Classic**
 
-![](./mifare_card.jpg)
+ ![](./_images/mifare_card.png)
 
 As the above image, we can know the work flow for the Mifare Classic.
 
