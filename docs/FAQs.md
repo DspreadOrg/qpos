@@ -41,7 +41,7 @@ overdischarge
 ### 6、How to share keys in secure way?
 - There are two ways to share keys that including express delivery and PGP keys, please refer the [Share Keys](https://github.com/DspreadOrg/FAQs_Document/blob/master/documents/Share%20Keys.pdf) document for details.
 
-### 7.  Sign the third-party App
+### 7、Sign the third-party App
 
 - Open your local Android SDK folder -> bulid-tools, select one version (in my instance, I choose 30.0.2); it has apksigner.bat in there. 
 
@@ -60,3 +60,5 @@ overdischarge
 
 ![](./_images/signApp3.jpg)
 
+### 8、Dynamic currency conversion solution for contact 
+![](./_images/dccsolution.png)
