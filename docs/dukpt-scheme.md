@@ -10,7 +10,8 @@ The below keyBlock parameter is TR31 data block(support B and D version) which g
 
 ![](./_images/TR31VersionB.png)
 ```java
-pos.updateKeyByTR_31(keyBlock);
+//call the below api to inject ipek, let keyIndex = 0
+pos.updateKeyByTR_31(keyIndex,keyBlock);
 ```
 
 **2. Update IPEK key by TMK (symetrical)**
