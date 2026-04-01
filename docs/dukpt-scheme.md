@@ -65,15 +65,15 @@ pos.generateTransportKey(timeout);
 // this parameter timeout which unit is second
 
 public void onRequestGenerateTransportKey(Hashtable result) {
-        try {
-            InputStream priopen = getAssets().open("rsa_private_pkcs8_1024.pem");
-            RSA rsa = new RSA();
-            rsa.loadPrivateKey(priopen);
-            byte[] bytes = rsa.decrypt(QPOSUtil.HexStringToByteArray((String) result.get("transportKey")));
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
- }
+    try {
+        InputStream priopen = getAssets().open("rsa_private_pkcs8_1024.pem");
+        RSA rsa = new RSA();
+        rsa.loadPrivateKey(priopen);
+        byte[] bytes = rsa.decrypt(QPOSUtil.HexStringToByteArray((String) result.get("transportKey")));
+    }catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 //get decryped random key
 
 pos.updateIPEKByTransportKey(keyIndex,   
