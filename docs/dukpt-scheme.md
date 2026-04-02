@@ -17,6 +17,8 @@ Note: The length value equals 2+2+20 (24). The length value is encoded in Hex-AS
 ```java
 //call the below api to inject ipek, let keyIndex = 0
 pos.updateKeyByTR_31(keyIndex,keyBlock);
+//callback
+onReturnUpdateKeyByTR_31Result(boolean result);
 ```
 
 **2. Update IPEK key by TMK (symetrical)**
@@ -53,6 +55,8 @@ pos.doUpdateIPEKOperation(keyIndex,
         demoTrackKsn,encDemoTrackIpek,demoIpekKcv,   
         demoEmvKsn,encDemoEmvIpek,demoEmvIpekKcv,   
         demoPinKsn,encDemoPinIpek,demoPinIpekKcv);
+//callback
+onReturnUpdateIPEKResult(boolean isSuccess);
 ```
 
 [Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=FA21E5290EE89881AF360574087496EA&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
@@ -61,9 +65,9 @@ pos.doUpdateIPEKOperation(keyIndex,
 
 Firstly,we need call API pos.generateTransportKey() to exchange the random key by RSA then using random key encrypt IPEK.Server side should use random key to encrypt IPEK keys to get encryptedIPEK and calculate its Key Check Value then call API pos.updateIPEKByTransportKey() to inject into terminal
 ``` java
+//server public key encrypt random key and return encrypted random key and KCV 
 pos.generateTransportKey(timeout);
-// this parameter timeout which unit is second
-
+//callback
 public void onRequestGenerateTransportKey(Hashtable result) {
     try {
         InputStream priopen = getAssets().open("rsa_private_pkcs8_1024.pem");
@@ -74,12 +78,13 @@ public void onRequestGenerateTransportKey(Hashtable result) {
         e.printStackTrace();
     }
 }
-//get decryped random key
-
+//random key encrypt IPEK to inject it
 pos.updateIPEKByTransportKey(keyIndex,   
         demoTrackKsn,encDemoTrackIpek,demoIpekKcv,   
         demoEmvKsn,encDemoEmvIpek,demoEmvIpekKcv,   
         demoPinKsn,encDemoPinIpek,demoPinIpekKcv);
+//callback
+onReturnUpdateIPEKResult(boolean isSuccess);
 ```
 
 ## MK/SK
@@ -112,7 +117,8 @@ pos.udpateWorkKey(
                     encDemoTRACKKey, demoTRACKKeyKcv,  //TRACK KEY
                     encDemoMACKey, demoMACKeyKcv, //MAC KEY
                     keyIndex);
-
+//callback
+onRequestUpdateWorkKeyResult(UpdateInformationResult result);
 ```
 
 [Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=11111111111111111111111111111111&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
@@ -132,9 +138,9 @@ String encDemoNewMasterKey = TDES.tdesECBEncrypt(tmk, demoNewMasterKey));
 String demoNewMasterKeyKcv = TDES.tdesECBEncrypt(demoNewMasterKey, "0000000000000000")); 
 
 //call api to inject new master key, let keyIndex =0
-pos.setMasterKey(encDemoNewMasterKey, demoNewMasterKeyKcv, //new master key
-                    keyIndex);
-
+pos.setMasterKey(encDemoNewMasterKey, demoNewMasterKeyKcv, keyIndex); //new master key
+//callback
+onReturnSetMasterKeyResult(boolean isSuccess, Hashtable<String, String> result);
 ```
 
 [Online Tool to 3des calculation demo](https://neapay.com/online-tools/des-calculator.html?data=22222222222222222222222222222222&key=0123456789ABCDEFFEDCBA9876543210&algo=3DES&decr=false)
