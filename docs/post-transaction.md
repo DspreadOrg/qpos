@@ -302,7 +302,7 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 		 //pos.cancelPin();   //Cancel the transaction
 	}
 ```
-2. Build ISO format-4 pinblock on the client app and send cipher to SDK.
+2. Build ISO format-4 pinblock on the customer app and send it to SDK.
 ```java
     String newPin = "";
     //this part is used to enctypt the plaintext pin with random seed
@@ -320,7 +320,7 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
     String pinBlock = buildCvmPinBlock(pos.getEncryptData(), newPin);// build the ISO format4 pin block
     sendCvmPin(pinBlock, true);
 ```
-The below method is used to build the ISO format-4 pinblock which meet the MPOC protocol
+The below method is used to build the ISO format-4 pinblock which meet the MPOC requirements
 ```java
     private String buildCvmPinBlock(Hashtable<String, String> value, String pin) {
         String randomData = value.get("RandomData") == null ? "" : value.get("RandomData");
@@ -370,7 +370,7 @@ if the user want to cancel the transaction, the app should call
 	pos.cancelPin();
 ```
 
-**D20/D30/D35/D50/D60/D80：They don't have physical keyboards and SDK will callback the below method when terminal request pin**
+**D20/D30/D35/D50/D60/D80：They don't have physical keyboards, The SDK will call back the method below to draw the virtual keyboard and remind the customer for a PIN when the terminal requests a PIN**
 ```java
     @Override
     public void onQposRequestPinResult(List<String> dataList, int offlinePinTimes) {
@@ -393,7 +393,7 @@ After sending the pin keyboard coordinate position to the device, then you can c
         //"maxLen": the maximum allowed PIN length for the transaction.
     }
 ```
-**QPOS mini/QPOS Cute/D70/D80K：They have physical keyboards and SDK will callback the below method when terminal request pin**
+**QPOS mini/QPOS Cute/D70/D80K：They have physical keyboards and SDK will callback the below method to remind the customer to enter a PIN when terminal request pin**
 
 ```java
     @Override
