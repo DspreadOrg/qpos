@@ -293,7 +293,7 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 ### Input PIN 
 
 CR100：The PIN information can be sent to the EMV kernel by:
-1. input the plaintext pin
+1. Send the plaintext pin to SDK, SDK build ISO format-4 pinblock.
 ```java
 	@Override
 	public void onRequestSetPin() {
@@ -302,7 +302,7 @@ CR100：The PIN information can be sent to the EMV kernel by:
 		 //pos.cancelPin();   //Cancel the transaction
 	}
 ```
-2. input the cipher pinblock on the client app side
+2. Build ISO format-4 pinblock on the client app and send cipher to SDK.
 ```java
     String newPin = "";
     //this part is used to enctypt the plaintext pin with random seed
