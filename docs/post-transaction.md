@@ -292,7 +292,7 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 
 ### Input PIN 
 
-CR100：The PIN information can be sent to the EMV kernel by:
+**CR100：The PIN information can be sent to the EMV kernel by:**
 1. Send the plaintext pin to SDK, SDK build ISO format-4 pinblock.
 ```java
 	@Override
@@ -370,7 +370,7 @@ if the user want to cancel the transaction, the app should call
 	pos.cancelPin();
 ```
 
-D20/D30/D35/D50/D60/D80：SDK will callback the below method when terminal request pin
+**D20/D30/D35/D50/D60/D80：They don't have physical keyboards and SDK will callback the below method when terminal request pin**
 ```java
     @Override
     public void onQposRequestPinResult(List<String> dataList, int offlinePinTimes) {
@@ -391,6 +391,20 @@ After sending the pin keyboard coordinate position to the device, then you can c
         //"error": indicates the validation result of the PIN entry, such as success or PIN length violations.
         //"minLen": the minimum required PIN length for the transaction.
         //"maxLen": the maximum allowed PIN length for the transaction.
+    }
+```
+**QPOS mini/QPOS Cute/D70/D80K：They have physical keyboards and SDK will callback the below method when terminal request pin**
+
+```java
+    @Override
+    public void onRequestDisplay(Display displayMsg) { 
+        if (displayMsg == Display.INPUT_ONLINE_PIN) {
+            msg = "please input online pin on pos";
+        } else if (displayMsg == Display.INPUT_OFFLINE_PIN) {
+            msg = "please input offline pin on pos";
+        } else if (displayMsg == Display.INPUT_LAST_OFFLINE_PIN) {
+            msg = "please input last offline pin on pos";
+        }
     }
 ```
 
