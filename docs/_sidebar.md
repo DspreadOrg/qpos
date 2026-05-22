@@ -16,8 +16,7 @@
   - [LED Indicator](led-indicator.md)
 
 - TMS Service
-  - [TMS SE](TMS-SE.md)
-  - [Lark TMS](Lark-TMS.md)
+  - [Smart TMS](Smart_TMS.md)
     
 - Scanning Code Service
 
