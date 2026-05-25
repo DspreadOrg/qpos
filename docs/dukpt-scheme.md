@@ -89,11 +89,16 @@ onReturnUpdateIPEKResult(boolean isSuccess);
 
 ## MK/SK
 
-**1. Update session key**
+**1. Update session key by TR-31 (recommend)**
+By default, QPOS is injected KBPK in factory. default KBPK: **0123456789ABCDEFFEDCBA9876543210**. 
 
+?>HSM should use same KBPK as inside terminal to encrypt session keys to get tr31 block, then call API pos.updateKeyByTR_31() to inject into terminal
+
+**2. Update session key by TMK**
 By default, QPOS is injected TMK in factory. default TMK: **0123456789ABCDEFFEDCBA9876543210**. 
 
-?>server side should use same TMK as inside terminal to encrypt session keys to get encrypted session keys and calculate its Key Check Value, then call API pos.updateWorkKey() to inject into terminal
+?>HSM should use same TMK as inside terminal to encrypt session keys to get encrypted session keys and calculate its Key Check Value, then call API pos.updateWorkKey() to inject into terminal
+
 ``` java
 String tmk = "0123456789ABCDEFFEDCBA9876543210"
 String demoPINKey="11111111111111111111111111111111"
