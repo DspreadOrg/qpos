@@ -149,6 +149,7 @@ By default, QPOS is injected KBPK in factory. default KBPK: **0123456789ABCDEFFE
 pos.updateKeyByTR_31(keyIndex,keyBlock);
 //callback
 onReturnUpdateKeyByTR_31Result(boolean result);
+```
 
 **4. Update master key by TMK**
 
