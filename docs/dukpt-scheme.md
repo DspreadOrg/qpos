@@ -95,7 +95,7 @@ By default, QPOS is injected KBPK in factory. default KBPK: **0123456789ABCDEFFE
 
 ?>HSM should use same KBPK as inside terminal to encrypt session keys to get tr31 block, then call API pos.updateKeyByTR_31() to inject into terminal
 
-![](./_images/UpdateIPEKKSNByTR31.png)
+![](./_images/UpdateTMKByTR31.png)
 ```java
 //call the below api to inject ipek, let keyIndex = 0
 pos.updateKeyByTR_31(keyIndex,keyBlock);
