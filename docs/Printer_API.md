@@ -12,7 +12,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | ---------------------------------------------------------- |
 | Description   | please new a PrintLineStyle object and set print text align.  |
 | Callback      | N/A                                                        | 
-| printer       | D30/D60/D70                                             |
+| printer       | D30/D60/D70/D80/D80k                                              |
 
 **Parameter Description:** 
 - style:
@@ -37,7 +37,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | ---------------------------------------------------------- |
 | Description   | Print text.                                                |
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
-| printer       | D30/D60/D70                                             |
+| printer       | D30/D60/D70/D80/D80k                                              |
 
 **Parameter Description:** 
 
@@ -49,7 +49,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | ---------------------------------------------------------- |
 | Description   | Print BarCode.                                             |
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
-| printer       | D30/D60/D70                                             |
+| printer       | D30/D60/D70/D80/D80k                                              |
 
 **Parameter Description:** 
 - context: Context. 
@@ -72,7 +72,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | ---------------------------------------------------------- |
 | Description   | Print QRCode.                                              |
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
-| printer       | D30/D60/D70                                              | 
+| printer       | D30/D60/D70/D80/D80k                                               | 
 
 **Parameter Description:** 
 - context: Context.
@@ -91,7 +91,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | ---------------------------------------------------------- |
 | Description   | Print Bitmap                                               |
 | Callback      | void printResult(boolean isSuccess, String status,int type)| 
-| printer       | D30/D60/D70                                              | 
+| printer       | D30/D60/D70/D80/D80k                                              | 
 
 **Parameter Description:** 
 - cotext: Context.
@@ -103,7 +103,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | --------------------------------------------------------------------         |
 | Description   |Send print content to the printer in a row with fixed size fixed style content|
 | Callback      | N/A                 | 
-| printer       | D30/D60/D70                                                               |
+| printer       | D30/D60/D70/D80/D80k                                                                |
 
 **Parameter Description:** 
 - texts: Each column to print, the array size is the number of columns.
@@ -116,7 +116,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | --------------------------------------------------------------------         |
 | Description   |Add printed text|
 | Callback      | N/A                 | 
-| printer       | D30/D60/D70                                                               |
+| printer       | D30/D60/D70/D80/D80k                                                                |
 
 **Parameter Description:** 
 - text: printed text content
@@ -127,7 +127,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | --------------------------------------------------------------------         |
 | Description   |Add printed BarCode|
 | Callback      | N/A                 | 
-| printer       | D30/D60/D70     |
+| printer       | D30/D60/D70/D80/D80k      |
 
 **Parameter Description:** 
  -	Context
@@ -144,7 +144,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | --------------------------------------------------------------------         |
 | Description   |Add printed QRCode|
 | Callback      | N/A              | 
-| printer       | D30/D60/D70     |
+| printer       | D30/D60/D70/D80/D80k      |
 
 **Parameter Description:** 
   - width: QRcode width
@@ -159,7 +159,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | --------------------------------------------------------------------         |
 | Description   |Add printed QRCode|
 | Callback      | N/A              | 
-| printer       | D30/D60/D70     |
+| printer       | D30/D60/D70/D80/D80k      |
 
 **Parameter Description:** 
   
@@ -173,7 +173,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | --------------------------------------------------------------------         |
 | Description   |the API sets the text font size, position, and font style for api addText|
 | Callback      | N/A              | 
-| printer       | D30/D60/D70     |
+| printer       | D30/D60/D70/D80/D80k      |
 
 **Parameter Description:**  
  - style: PrintLineStyle (need new PrintLineStyle object ) 
@@ -185,7 +185,7 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | --------------------------------------------------------------------         |
 | Description   |Set text line spacing|
 | Callback      | N/A              | 
-| printer       | D30/D60/D70     |
+| printer       | D30/D60/D70/D80/D80k      |
 
 **Parameter Description:**  
  - mlineSpace: setting value 2.3.4.5.6...
@@ -196,13 +196,20 @@ The printer object can use the following APIs to manage printers and meet differ
 | --------      | --------------------------------------------------------------------         |
 | Description   |Set bitmap line spacing|
 | Callback      | N/A              | 
-| printer       | D30/D60/D70     |
+| printer       | D30/D60/D70/D80/D80k      |
 
 **Parameter Description:**  
  - bitmapSpace: setting value 2.3.4.5.6...
 
+ ### 14. getReceiptBitmap
 
-### 14. Print composite content
+| API           |public Bitmap getReceiptBitmap() ()|
+| --------      | --------------------------------------------------------------------         |
+| Description   |Return bitmap, Print composite type files,First add the different types of files. Then call this api to get bitmap,then call api printBitmap|
+| Callback      | N/A              | 
+| printer       | D30/D60/D70/D80/D80k     |
+
+### 15. Print composite content
 
 before calling the method, you can call the following method to add content: 
 - addTexts()
@@ -216,13 +223,13 @@ before calling the method, you can call the following method to add content:
 | --------      | --------------------------------------------------------------------         |
 | Description   | Print composite type files,First add the different types of files. Then call this interface to print|
 | Callback      | void printResult(boolean isSuccess, String status,int type)                  | 
-| printer       | D30/D60/D70                                                               |
+| printer       | D30/D60/D70/D80/D80k                                                                |
 
 **Parameter Description:** 
 - context: Context.
 
  
-### 15. close printer
+### 16. close printer
 
 | API           | public void close()                                           |
 | --------      | --------------------------------------------------------------------         |
@@ -230,12 +237,12 @@ before calling the method, you can call the following method to add content:
 | Callback      | N/A                  | 
 | printer       | D30/D60/D70                                                               |
 
-### 16. Print CallBack Method
+### 17. Print CallBack Method
 
 | API           | public void printResult(boolean isSuccess, String status,int type) |
 | --------      | ------------------------------------------------------------       |
 | Description   | Callback interface                                                 |
-| printer       | D30/D60/D70                                                     |
+| printer       | D30/D60/D70/D80/D80k                                                      |
 
 **Parameter Description:** 
 - isSuccess: true/false. 
