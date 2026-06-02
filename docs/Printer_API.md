@@ -235,7 +235,7 @@ before calling the method, you can call the following method to add content:
 | --------      | --------------------------------------------------------------------         |
 | Description   | Close the printer after printing is complete|
 | Callback      | N/A                  | 
-| printer       | D30/D60/D70                                                               |
+| printer       | D30/D60/D70/D80/D80k                                                              |
 
 ### 17. Print CallBack Method
 
