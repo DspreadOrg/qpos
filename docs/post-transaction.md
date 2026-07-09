@@ -297,7 +297,7 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
 ```java
 	@Override
 	public void onRequestSetPin() {
-		 pos.sendPin("123456"); 
+		 pos.sendPin("123456".getBytes()); 
 		 //pos.bypassPin();    //Bypass PIN Entry
 		 //pos.cancelPin();   //Cancel the transaction
 	}
@@ -318,7 +318,7 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
         }
     }
     String pinBlock = buildCvmPinBlock(pos.getIsoFormat4PinBlockParams(), newPin);// build the ISO format4 pin block
-    sendCvmPin(pinBlock, true);
+    sendCvmPin(pinBlock.getBytes(), true);
 ```
 The below method is used to build the ISO format-4 pinblock which meet the MPOC requirements
 ```java
