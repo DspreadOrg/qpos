@@ -317,45 +317,84 @@ This is usually happens inside the call back of onDoTradeResult(), as below demo
             }
         }
     }
-    String pinBlock = buildCvmPinBlock(pos.getEncryptData(), newPin);// build the ISO format4 pin block
+    String pinBlock = buildCvmPinBlock(pos.getIsoFormat4PinBlockParams(), newPin);// build the ISO format4 pin block
     sendCvmPin(pinBlock, true);
 ```
 The below method is used to build the ISO format-4 pinblock which meet the MPOC requirements
 ```java
-    private String buildCvmPinBlock(Hashtable<String, String> value, String pin) {
-        String randomData = value.get("RandomData") == null ? "" : value.get("RandomData");
-        String pan = value.get("PAN") == null ? "" : value.get("PAN");
-        String AESKey = value.get("AESKey") == null ? "" : value.get("AESKey");
-        String isOnline = value.get("isOnlinePin") == null ? "" : value.get("isOnlinePin");
-        String pinTryLimit = value.get("pinTryLimit") == null ? "" : value.get("pinTryLimit");
+    private String buildCvmPinBlock(Hashtable<String, byte[]> pinParams, String userPin) {
+        if (pinParams == null) {
+            ToastUtils.showLong("PIN params can't be null");
+            return null;
+        }
+        if (userPin == null || userPin.length()<4 || userPin.length()>12) {
+            ToastUtils.showLong("PIN length must be 4-12");
+            return null;
+        }
+
+        String randomData = getRequiredParam(pinParams, "RandomData");
+        String pan = getRequiredParam(pinParams, "PAN");
+        String AESKey = getRequiredParam(pinParams, "AESKey");
+
         //iso-format4 pinblock
-        int pinLen = pin.length();
-        pin = "4" + Integer.toHexString(pinLen) + pin;
-        for (int i = 0; i < 14 - pinLen; i++) {
-            pin = pin + "A";
-        }
-        pin += randomData.substring(0, 16);
-        String panBlock = "";
-        int panLen = pan.length();
-        int m = 0;
-        if (panLen < 12) {
-            panBlock = "0";
-            for (int i = 0; i < 12 - panLen; i++) {
-                panBlock += "0";
-            }
-            panBlock = panBlock + pan + "0000000000000000000";
-        } else {
-            m = pan.length() - 12;
-            panBlock = m + pan;
-            for (int i = 0; i < 31 - panLen; i++) {
-                panBlock += "0";
-            }
-        }
-        String pinBlock1 = AESUtil.encrypt(AESKey, pin);
-        pin = Util.xor16(HexStringToByteArray(pinBlock1), HexStringToByteArray(panBlock));
-        String pinBlock2 = AESUtil.encrypt(AESKey, pin);
-        return pinBlock2;
+        String pinBlock = buildPinDataBlock(userPin, randomData);
+        String panBlock = buildPanDataBlock(pan);
+
+        String encryptedPinBlock = AESUtil.encrypt(AESKey, pinBlock);
+        String xoredResult = Util.xor16(HexStringToByteArray(encryptedPinBlock), HexStringToByteArray(panBlock));
+        return AESUtil.encrypt(AESKey, xoredResult);
     }
+
+	 private static String getRequiredParam(Map<String, byte[]> params, String key) {
+		String value = Util.byteArray2Hex(params.get(key));
+		if (value == null || value.trim().isEmpty()) {
+			ToastUtils.showLong("Missing required parameter: " + key);
+			return null;
+		}
+		return value.trim();
+	}
+
+	 private static String buildPinDataBlock(String userPin, String randomData) {
+		int pinLength = userPin.length();
+
+		StringBuilder pinBlockBuilder = new StringBuilder()
+				.append("4")                            // ISO format4 label
+				.append(Integer.toHexString(pinLength)) // PIN length
+				.append(userPin);                       // PIN
+
+		// fill 'A' to block lenth to 16
+		for (int i = 0; i < 16 - 2 -pinLength; i++) {
+			pinBlockBuilder.append("A");
+		}
+
+		// add random data
+		pinBlockBuilder.append(randomData, 0, 16);
+
+		return pinBlockBuilder.toString();
+	}
+
+	private static String buildPanDataBlock(String pan) {
+		int panLength = pan.length();
+
+		StringBuilder panBlockBuilder = new StringBuilder();
+
+		if (panLength < 12) {
+			panBlockBuilder.append("0");
+			panBlockBuilder.append(String.format("%0" + (12 - panLength) + "d", 0));
+			panBlockBuilder.append(pan);
+		} else {
+			int rightOffset = panLength - 12;
+			panBlockBuilder.append(Integer.toHexString(rightOffset));
+			panBlockBuilder.append(pan);
+		}
+
+		// fill the pan lentght to 32 with 0(16bytes)
+		while (panBlockBuilder.length() < 32) {
+			panBlockBuilder.append("0");
+		}
+
+		return panBlockBuilder.toString();
+	}
 ```
 
 Note, the kernel will not call the callback if PIN is not required for the transaction, or if the QPOS itself is with an embedded PINPAD.
