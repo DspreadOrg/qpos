@@ -9,7 +9,7 @@ The Dspread print SDK can be obtained through a remote repository. You only need
 ``` java
 Gradle Groovy DSL install command.
 
-implementation 'com.dspread.print:dspread_print_sdk:1.8.4'
+implementation 'com.dspread.print:dspread_print_sdk:2.0.1'
 
 Add Gradle Groovy DSL repository command.
 
