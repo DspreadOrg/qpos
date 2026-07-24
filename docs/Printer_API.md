@@ -228,8 +228,36 @@ before calling the method, you can call the following method to add content:
 **Parameter Description:** 
 - context: Context.
 
+### 16. setCustomFontType
+
+| API           |public void setCustomFontType (PrinterDevice.FontType fontType)|
+| --------      | --------------------------------------------------------------------         |
+| Description   |Set custom font type|
+| Callback      | N/A              | 
+| printer       | D30/D60/D70/D80/D80k      |
+
+**Parameter Description:**  
+ - fontType
+        STANDARD,  // standard monospace font.
+        SMALL,     // Small monospace font
+        DEFAULT,//default
+        MONOSPACE,// monospace
+        Persian, // Persian bold
+        Vazirmatn,//Regular vazirmatn
+        FARSI
+
+### 17. feedLines
+
+| API           |public void feedLines (int feedLines)|
+| --------      | --------------------------------------------------------------------         |
+| Description   |Paper feed height|
+| Callback      | N/A              | 
+| printer       | D30/D60/D70/D80/D80k      |
+
+**Parameter Description:**  
+ - feedLines Height in pixels.
  
-### 16. close printer
+### 18. close printer
 
 | API           | public void close()                                           |
 | --------      | --------------------------------------------------------------------         |
@@ -237,7 +265,7 @@ before calling the method, you can call the following method to add content:
 | Callback      | N/A                  | 
 | printer       | D30/D60/D70/D80/D80k                                                              |
 
-### 17. Print CallBack Method
+### 19. Print CallBack Method
 
 | API           | public void printResult(boolean isSuccess, String status,int type) |
 | --------      | ------------------------------------------------------------       |
